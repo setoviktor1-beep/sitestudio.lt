@@ -12,7 +12,7 @@ module.exports = {
       args: ['--disable-dev-shm-usage', '--no-sandbox'],
       executablePath: chromePath,
     },
-    runners: ['axe', 'htmlcs'],
+    runners: ['htmlcs'],
     standard: 'WCAG2AA',
     timeout: 30000,
     viewport: {

@@ -502,6 +502,10 @@ p {
   color: #c8ceda;
 }
 
+.section-dark .eyebrow {
+  color: var(--accent);
+}
+
 .card-grid {
   display: grid;
   gap: 1rem;
