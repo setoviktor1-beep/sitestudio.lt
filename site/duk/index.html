@@ -18,36 +18,76 @@
     <meta name="twitter:card" content="summary" />
     <link rel="stylesheet" href="/styles.css" />
     <script type="application/ld+json">
-      {
+{
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Ar kiekvienai svetainei reikia CMS?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Ne. Jei turinį retai atnaujina vienas savininkas ir nereikia prisijungimų ar serverinių integracijų, statinė svetainė dažnai yra racionalesnė."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Ar svetainė bus pritaikyta telefonams?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Taip. Sąsaja kuriama mobile-first principu ir tikrinama mažuose, planšetės bei darbalaukio ekranuose."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Kas publikuoja svetainę?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Statinės svetainės artefaktą sukuria ir publikuoja GitHub Actions tik po sėkmingų kokybės patikrų."
-            }
-          }
+                {
+                        "@type": "Question",
+                        "name": "Ar kiekvienai svetainei reikia CMS?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Ne. Retai keičiamam turiniui statinė svetainė dažnai yra racionalesnė."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "Ar svetainė bus pritaikyta telefonams?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Taip. Sąsaja kuriama mobile-first principu ir tikrinama skirtinguose ekranuose."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "Kas publikuoja svetainę?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "GitHub Actions publikuoja tik po sėkmingų kokybės patikrų."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "Ar svetainė naudos VPS?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Statinė GitHub Pages svetainė VPS nenaudoja. CMS infrastruktūra projektuojama atskirai."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "Ar įtraukiamas SEO?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Taip: metadata, canonical, Open Graph, robots, sitemap ir struktūriniai duomenys."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "Kas parengia tekstus?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Galime dirbti su paruošta medžiaga arba padėti ją susisteminti. Faktus patvirtina savininkas."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "Ar galima vėliau pridėti puslapių?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Taip. Architektūra turi aiškų plėtros kelią, o CMS pridedamas esant realiam poreikiui."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "Kaip apskaičiuojama kaina?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Vertiname turinio apimtį, unikalius komponentus, integracijas ir priežiūros poreikį."
+                        }
+                }
         ]
-      }
+}
     </script>
   </head>
   <body>
@@ -71,38 +111,40 @@
       <section class="section">
         <div class="container measure">
           <div class="faq-list">
+            <!-- CMS:FAQS:START -->
             <details open>
               <summary>Ar kiekvienai svetainei reikia CMS?</summary>
-              <div class="faq-answer"><p>Ne. Jei turinį retai atnaujina vienas savininkas ir nereikia prisijungimų ar serverinių integracijų, statinė svetainė dažnai yra racionalesnė.</p></div>
+              <div class="faq-answer"><p>Ne. Retai keičiamam turiniui statinė svetainė dažnai yra racionalesnė.</p></div>
             </details>
             <details>
               <summary>Ar svetainė bus pritaikyta telefonams?</summary>
-              <div class="faq-answer"><p>Taip. Sąsaja kuriama mobile-first principu ir tikrinama mažuose, planšetės bei darbalaukio ekranuose, taip pat didinant vaizdą.</p></div>
+              <div class="faq-answer"><p>Taip. Sąsaja kuriama mobile-first principu ir tikrinama skirtinguose ekranuose.</p></div>
             </details>
             <details>
               <summary>Kas publikuoja svetainę?</summary>
-              <div class="faq-answer"><p>Statinės svetainės artefaktą sukuria ir publikuoja GitHub Actions tik po sėkmingų HTML, CSS, nuorodų, sitemap ir kitų kokybės patikrų.</p></div>
+              <div class="faq-answer"><p>GitHub Actions publikuoja tik po sėkmingų kokybės patikrų.</p></div>
             </details>
             <details>
               <summary>Ar svetainė naudos VPS?</summary>
-              <div class="faq-answer"><p>Statinė GitHub Pages svetainė VPS visai nenaudoja. Jei vėliau pagrįstai prireiktų CMS, jo infrastruktūra būtų projektuojama atskirai.</p></div>
+              <div class="faq-answer"><p>Statinė GitHub Pages svetainė VPS nenaudoja. CMS infrastruktūra projektuojama atskirai.</p></div>
             </details>
             <details>
               <summary>Ar įtraukiamas SEO?</summary>
-              <div class="faq-answer"><p>Taip. Parengiame unikalius title ir description, canonical, Open Graph, robots.txt, sitemap.xml, semantinę antraščių struktūrą ir tinkamus struktūrinius duomenis.</p></div>
+              <div class="faq-answer"><p>Taip: metadata, canonical, Open Graph, robots, sitemap ir struktūriniai duomenys.</p></div>
             </details>
             <details>
               <summary>Kas parengia tekstus?</summary>
-              <div class="faq-answer"><p>Galime dirbti su jūsų paruošta medžiaga arba padėti ją struktūruoti. Galutiniai faktai, kontaktai ir teiginiai turi būti patvirtinti savininko.</p></div>
+              <div class="faq-answer"><p>Galime dirbti su paruošta medžiaga arba padėti ją susisteminti. Faktus patvirtina savininkas.</p></div>
             </details>
             <details>
-              <summary>Ar galima vėliau pridėti naujų puslapių?</summary>
-              <div class="faq-answer"><p>Taip. Statinė architektūra netrukdo plėtrai. CMS pridedamas tik tada, kai dažnas administravimas tampa realiu poreikiu.</p></div>
+              <summary>Ar galima vėliau pridėti puslapių?</summary>
+              <div class="faq-answer"><p>Taip. Architektūra turi aiškų plėtros kelią, o CMS pridedamas esant realiam poreikiui.</p></div>
             </details>
             <details>
               <summary>Kaip apskaičiuojama kaina?</summary>
-              <div class="faq-answer"><p>Vertiname turinio ir maršrutų apimtį, unikalius komponentus, integracijas, parengimo darbus bei priežiūros poreikį. Pasiūlymo ribos sutariamos iš anksto.</p></div>
+              <div class="faq-answer"><p>Vertiname turinio apimtį, unikalius komponentus, integracijas ir priežiūros poreikį.</p></div>
             </details>
+            <!-- CMS:FAQS:END -->
           </div>
         </div>
       </section>

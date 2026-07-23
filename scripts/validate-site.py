@@ -211,8 +211,11 @@ def validate_page(route: str, path: Path, titles: set[str]) -> PageParser:
         fail(f"{route}: main-content target is missing")
     if parser.iframes:
         fail(f"{route}: automatically loaded iframe is forbidden")
-    if parser.external_scripts:
-        fail(f"{route}: external JavaScript is forbidden")
+    for source in parser.external_scripts:
+        if source != "/contact.js" or route != "/kontaktai/":
+            fail(f"{route}: JavaScript source is not allowlisted: {source}")
+        elif not (SITE_ROOT / source.removeprefix("/")).is_file():
+            fail(f"{route}: local JavaScript file is missing: {source}")
     if parser.nested_anchors:
         fail(f"{route}: nested anchor elements are forbidden")
     for image in parser.images:
@@ -287,10 +290,12 @@ def validate_project_previews(parsed_pages: dict[str, PageParser]) -> None:
             if not image.get("alt", "").strip():
                 fail(f"{route}: {src} must have meaningful alt text")
             anchors = [anchor for anchor in parsed_pages[route].anchors if anchor.get("href") == href]
-            if len(anchors) != 2:
-                fail(f"{route}: expected image and text links to {href}, found {len(anchors)}")
+            if len(anchors) != 1:
+                fail(f"{route}: expected one whole-card link to {href}, found {len(anchors)}")
                 continue
             for anchor in anchors:
+                if "work-card-whole" not in anchor.get("class", "").split():
+                    fail(f"{route}: project link to {href} must cover the whole card")
                 if anchor.get("target") != "_blank":
                     fail(f"{route}: project link to {href} must open in a new tab")
                 if "naujame lange" not in anchor.get("aria-label", ""):
@@ -370,8 +375,8 @@ def main() -> int:
             home_types.append(json.loads(raw).get("@type"))
         except json.JSONDecodeError:
             pass
-    if "Organization" not in home_types:
-        fail("/: Organization JSON-LD is missing")
+    if not {"Organization", "ProfessionalService"}.intersection(home_types):
+        fail("/: Organization or ProfessionalService JSON-LD is missing")
     faq_types = []
     for raw in parsed_pages["/duk/"].json_ld_parts:
         try:
@@ -399,8 +404,20 @@ def main() -> int:
         fail("robots.txt: canonical sitemap is missing")
     if (SITE_ROOT / "CNAME").read_text(encoding="utf-8").strip() != "sitestudio.lt":
         fail("CNAME must contain sitestudio.lt")
-    if next(PROJECT_ROOT.rglob("*.js"), None) is not None:
-        fail("client-side JavaScript files are not allowed in this static release")
+    scripts = {
+        path.relative_to(SITE_ROOT).as_posix()
+        for path in SITE_ROOT.rglob("*.js")
+        if path.is_file()
+    }
+    if scripts != {"contact.js"}:
+        fail(f"client-side JavaScript allowlist differs: {sorted(scripts)}")
+
+    admin = (SITE_ROOT / "admin" / "index.html").read_text(encoding="utf-8")
+    expected_admin = "https://cms.sitestudio.lt/admin"
+    if f'content="0; url={expected_admin}"' not in admin:
+        fail("admin redirect target is missing")
+    if f'href="{expected_admin}"' not in admin:
+        fail("admin fallback link is missing")
 
     if ERRORS:
         for error in ERRORS:

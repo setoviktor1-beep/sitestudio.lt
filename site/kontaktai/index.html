@@ -17,6 +17,7 @@
     <meta property="og:url" content="https://sitestudio.lt/kontaktai/" />
     <meta name="twitter:card" content="summary" />
     <link rel="stylesheet" href="/styles.css" />
+    <script src="/contact.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Pereiti prie turinio</a>
@@ -38,14 +39,41 @@
       </header>
       <section class="section">
         <div class="container contact-grid">
+          <div>
+            <p class="eyebrow">Trumpa užklausa</p>
+            <h2>Pradėkime nuo esmės</h2>
+            <p>Užpildykite formą arba rašykite <a class="contact-value" href="mailto:labas@sitestudio.lt">labas@sitestudio.lt</a>. Nesiųskite slaptažodžių ar kitų jautrių duomenų.</p>
+            <form class="contact-form" id="contact-form" novalidate>
+              <div class="field">
+                <label for="contact-name">Vardas</label>
+                <input id="contact-name" name="name" type="text" autocomplete="name" minlength="2" maxlength="120" required />
+              </div>
+              <div class="field">
+                <label for="contact-email">El. paštas</label>
+                <input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required />
+              </div>
+              <div class="field">
+                <label for="contact-phone">Telefonas <span class="muted-text">(nebūtina)</span></label>
+                <input id="contact-phone" name="phone" type="tel" autocomplete="tel" maxlength="40" />
+              </div>
+              <div class="field">
+                <label for="contact-message">Apie projektą</label>
+                <textarea id="contact-message" name="message" minlength="10" maxlength="5000" rows="7" required></textarea>
+              </div>
+              <div class="honeypot" aria-hidden="true">
+                <label for="contact-website">Svetainė</label>
+                <input id="contact-website" name="website" type="text" autocomplete="off" tabindex="-1" />
+              </div>
+              <label class="consent-row">
+                <input name="consentAccepted" type="checkbox" required />
+                <span>Sutinku, kad pateikti duomenys būtų naudojami atsakyti į užklausą. Susipažinau su <a href="/privatumas/">privatumo informacija</a>.</span>
+              </label>
+              <button class="button button-accent" type="submit">Siųsti užklausą</button>
+              <p class="form-status" id="contact-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
           <article class="card contact-card">
             <span class="card-number">01</span>
-            <h2>El. paštu</h2>
-            <p>Parašykite apie veiklą, auditoriją ir norimą rezultatą. Nesiųskite slaptažodžių ar kitų jautrių duomenų.</p>
-            <a class="contact-value" href="mailto:labas@sitestudio.lt">labas@sitestudio.lt</a>
-          </article>
-          <article class="card contact-card">
-            <span class="card-number">02</span>
             <h2>Ką verta pridėti</h2>
             <ul class="check-list">
               <li>Dabartinės svetainės nuorodą, jei ji yra</li>

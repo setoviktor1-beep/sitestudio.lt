@@ -1,0 +1,199 @@
+{
+  "exportedAt": "2026-07-23T00:00:00.000Z",
+  "schemaVersion": 1,
+  "tenant": {
+    "domain": "sitestudio.lt",
+    "name": "SiteStudio",
+    "slug": "sitestudio-lt"
+  },
+  "pages": [
+    {
+      "slug": "pradzia",
+      "title": "Aiški svetainė. Tvirtas pagrindas.",
+      "summary": "Kuriame originalias verslo svetaines, kurios greitai užsikrauna, aiškiai paaiškina jūsų vertę ir saugiai pasiekia produkciją.",
+      "seo": {
+        "title": "SiteStudio – greitos verslo svetainės",
+        "description": "SiteStudio kuria greitas, aiškias ir saugiai publikuojamas verslo svetaines: nuo statinio puslapio iki pagrįsto CMS sprendimo.",
+        "canonical": "https://sitestudio.lt/",
+        "ogTitle": "SiteStudio – greitos verslo svetainės",
+        "ogDescription": "Originalus dizainas, aiški struktūra, techninis SEO ir patikimas publikavimo procesas."
+      }
+    },
+    {
+      "slug": "paslaugos",
+      "title": "Sprendimas pagal užduotį, ne pagal madą",
+      "summary": "Parenkame mažiausią pakankamą technologiją, kad svetainė būtų greita šiandien ir turėtų aiškų plėtros kelią rytoj.",
+      "seo": {
+        "title": "Svetainių kūrimo paslaugos | SiteStudio",
+        "description": "Statinės verslo svetainės, turinio architektūra, pagrįsti CMS sprendimai ir techninė kokybės priežiūra.",
+        "canonical": "https://sitestudio.lt/paslaugos/",
+        "ogTitle": "Svetainių kūrimo paslaugos | SiteStudio",
+        "ogDescription": "Tinkamas technologinis profilis, originalus dizainas, SEO ir saugus publikavimas."
+      }
+    },
+    {
+      "slug": "darbai",
+      "title": "Svetainės, kurias galima aplankyti",
+      "summary": "Trumpa atrinktų darbų apžvalga – nuo aiškaus paslaugos pristatymo iki patogaus kelio susisiekti.",
+      "seo": {
+        "title": "Darbų galerija | SiteStudio",
+        "description": "SiteStudio darbų galerija: atrinktos verslo svetainės, jų vizualinės peržiūros ir nuorodos į gyvus projektus.",
+        "canonical": "https://sitestudio.lt/darbai/",
+        "ogTitle": "Darbų galerija | SiteStudio",
+        "ogDescription": "Atrinktos verslo svetainės su pagrindinių puslapių peržiūromis ir nuorodomis į gyvus projektus."
+      }
+    },
+    {
+      "slug": "procesas",
+      "title": "Mažiau spėlionių, daugiau aiškių sprendimų",
+      "summary": "Kiekvienas etapas turi rezultatą ir patikros kriterijų. Tai padeda valdyti apimtį, terminus ir techninę riziką.",
+      "seo": {
+        "title": "Svetainės kūrimo procesas | SiteStudio",
+        "description": "Aiški SiteStudio darbo eiga: kryptis, turinio struktūra, originalus dizainas, realizacija, automatinės patikros ir saugus leidimas.",
+        "canonical": "https://sitestudio.lt/procesas/",
+        "ogTitle": "Svetainės kūrimo procesas | SiteStudio",
+        "ogDescription": "Nuo poreikio išgryninimo iki patikrinto ir saugiai publikuoto rezultato."
+      }
+    },
+    {
+      "slug": "kainos",
+      "title": "Pirmiausia apimtis. Tada tikslus pasiūlymas.",
+      "summary": "Kaina formuojama pagal sprendžiamą užduotį. Prieš darbus aiškiai sutariame, kas įeina į rezultatą.",
+      "seo": {
+        "title": "Svetainių kainų principai | SiteStudio",
+        "description": "Kaip SiteStudio formuoja svetainės pasiūlymą: puslapių apimtis, turinys, unikalūs komponentai, integracijos ir priežiūros poreikis.",
+        "canonical": "https://sitestudio.lt/kainos/",
+        "ogTitle": "Svetainių kainų principai | SiteStudio",
+        "ogDescription": "Aiškiai sutarta apimtis ir rezultatas prieš pradedant svetainės kūrimą."
+      }
+    },
+    {
+      "slug": "duk",
+      "title": "Trumpai prieš pradedant",
+      "summary": "Jei atsakymo nerandate, parašykite. Geras projektas prasideda nuo tikslaus klausimo.",
+      "seo": {
+        "title": "Dažniausiai užduodami klausimai | SiteStudio",
+        "description": "Atsakymai apie SiteStudio svetainių kūrimo terminus, turinį, CMS, SEO, priežiūrą, hostingą ir publikavimo procesą.",
+        "canonical": "https://sitestudio.lt/duk/",
+        "ogTitle": "Dažniausiai užduodami klausimai | SiteStudio",
+        "ogDescription": "Trumpi atsakymai prieš pradedant svetainės projektą."
+      }
+    },
+    {
+      "slug": "kontaktai",
+      "title": "Papasakokite, ką turi nuveikti jūsų svetainė",
+      "summary": "Užtenka trumpo aprašymo. Jei dar nežinote tinkamos technologijos ar apimties, pradėsime nuo klausimų.",
+      "seo": {
+        "title": "Kontaktai – aptarkime svetainės projektą | SiteStudio",
+        "description": "Susisiekite su SiteStudio dėl statinės verslo svetainės, turinio architektūros, CMS poreikio ar techninės priežiūros.",
+        "canonical": "https://sitestudio.lt/kontaktai/",
+        "ogTitle": "Kontaktai | SiteStudio",
+        "ogDescription": "Trumpai aprašykite veiklą ir norimą svetainės rezultatą."
+      }
+    },
+    {
+      "slug": "privatumas",
+      "title": "Mažiau duomenų – mažiau rizikos",
+      "summary": "Renkame tik užklausai atsakyti reikalingus duomenis ir nenaudojame reklaminių sekiklių.",
+      "seo": {
+        "title": "Privatumo informacija | SiteStudio",
+        "description": "Informacija apie SiteStudio svetainės techninius duomenis, slapukus, išorines nuorodas ir kontaktinių užklausų tvarkymą.",
+        "canonical": "https://sitestudio.lt/privatumas/",
+        "ogTitle": "Privatumo informacija | SiteStudio",
+        "ogDescription": "Kaip SiteStudio tvarko kontaktines užklausas ir kokių sekimo priemonių nenaudoja."
+      }
+    }
+  ],
+  "services": [
+    {
+      "order": 10,
+      "title": "Statinė verslo svetainė",
+      "summary": "Greitas ir saugus pagrindas paslaugų verslui bei portfolio.",
+      "body": "Originalus responsive dizainas, aiški puslapių struktūra, techninis SEO ir publikavimas per GitHub Pages."
+    },
+    {
+      "order": 20,
+      "title": "Turinio architektūra",
+      "summary": "Susisteminta informacija padeda lankytojui greičiau suprasti pasiūlymą.",
+      "body": "Auditorijos ir tikslų analizė, navigacijos žemėlapis, antraščių bei kvietimų veikti hierarchija."
+    },
+    {
+      "order": 30,
+      "title": "Next.js ir Payload CMS",
+      "summary": "CMS pridedame tik tada, kai administravimo nauda pagrindžia infrastruktūrą.",
+      "body": "Struktūriniai turinio modeliai, juodraščiai, redaktorių rolės ir izoliuota duomenų bei medijos infrastruktūra."
+    },
+    {
+      "order": 40,
+      "title": "Kokybė ir priežiūra",
+      "summary": "Pakartojami kokybės vartai saugo veikiančią produkcinę versiją.",
+      "body": "Automatinės HTML, CSS, nuorodų, SEO, prieinamumo ir build patikros prieš kiekvieną leidimą."
+    }
+  ],
+  "projects": [
+    {
+      "order": 10,
+      "title": "situacija.eu",
+      "summary": "Aiški paslaugų svetainė, pristatanti plytelių klijavimo darbus.",
+      "externalURL": "https://situacija.eu",
+      "previewAssetPath": "/assets/projects/situacija-eu.webp"
+    },
+    {
+      "order": 20,
+      "title": "leonamai.lt",
+      "summary": "Vonios remonto ir būsto apdailos paslaugų svetainė.",
+      "externalURL": "https://www.leonamai.lt",
+      "previewAssetPath": "/assets/projects/leonamai-lt.webp"
+    }
+  ],
+  "faqs": [
+    {
+      "order": 10,
+      "question": "Ar kiekvienai svetainei reikia CMS?",
+      "answer": "Ne. Retai keičiamam turiniui statinė svetainė dažnai yra racionalesnė."
+    },
+    {
+      "order": 20,
+      "question": "Ar svetainė bus pritaikyta telefonams?",
+      "answer": "Taip. Sąsaja kuriama mobile-first principu ir tikrinama skirtinguose ekranuose."
+    },
+    {
+      "order": 30,
+      "question": "Kas publikuoja svetainę?",
+      "answer": "GitHub Actions publikuoja tik po sėkmingų kokybės patikrų."
+    },
+    {
+      "order": 40,
+      "question": "Ar svetainė naudos VPS?",
+      "answer": "Statinė GitHub Pages svetainė VPS nenaudoja. CMS infrastruktūra projektuojama atskirai."
+    },
+    {
+      "order": 50,
+      "question": "Ar įtraukiamas SEO?",
+      "answer": "Taip: metadata, canonical, Open Graph, robots, sitemap ir struktūriniai duomenys."
+    },
+    {
+      "order": 60,
+      "question": "Kas parengia tekstus?",
+      "answer": "Galime dirbti su paruošta medžiaga arba padėti ją susisteminti. Faktus patvirtina savininkas."
+    },
+    {
+      "order": 70,
+      "question": "Ar galima vėliau pridėti puslapių?",
+      "answer": "Taip. Architektūra turi aiškų plėtros kelią, o CMS pridedamas esant realiam poreikiui."
+    },
+    {
+      "order": 80,
+      "question": "Kaip apskaičiuojama kaina?",
+      "answer": "Vertiname turinio apimtį, unikalius komponentus, integracijas ir priežiūros poreikį."
+    }
+  ],
+  "settings": {
+    "siteName": "SiteStudio",
+    "tagline": "Originalios, greitos ir saugiai publikuojamos verslo svetainės.",
+    "contactEmail": "labas@sitestudio.lt",
+    "seo": {
+      "jsonLd": "{\"@context\":\"https://schema.org\",\"@type\":\"ProfessionalService\",\"@id\":\"https://sitestudio.lt/#organization\",\"name\":\"SiteStudio\",\"url\":\"https://sitestudio.lt/\",\"description\":\"Originalios, greitos ir saugiai publikuojamos verslo svetainės.\",\"areaServed\":{\"@type\":\"Country\",\"name\":\"Lithuania\"}}"
+    }
+  }
+}
