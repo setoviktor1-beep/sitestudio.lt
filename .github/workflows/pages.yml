@@ -27,9 +27,16 @@ jobs:
   quality:
     name: Generate and validate Pages artifact
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 2
+      - name: Use current stable Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          cache: npm
+          node-version: 24
       - name: Select allowlisted CMS-exported tenant snapshot
         shell: bash
         env:
@@ -49,13 +56,24 @@ jobs:
         run: |
           set -Eeuo pipefail
           sudo apt-get update
-          sudo apt-get install --yes ripgrep
+          sudo apt-get install --yes ripgrep shellcheck
+      - name: Install locked browser-quality dependencies
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: "true"
+        run: npm ci
+      - name: Audit production dependency surface
+        run: npm audit --omit=dev --audit-level=high
       - name: Validate SiteStudio project contract
         run: ./scripts/sitestudio-validate-project.sh --project "$GITHUB_WORKSPACE" --profile static
       - name: Validate HTML, CSS, links, sitemap, SEO, and accessibility contract
         run: python3 scripts/validate-site.py
       - name: Compile Python generators and validators
-        run: python3 -m py_compile scripts/render-cms-content.py scripts/validate-site.py
+        run: python3 -m py_compile scripts/render-cms-content.py scripts/submit-indexnow.py scripts/validate-site.py
+      - name: Run shellcheck
+        run: |
+          set -Eeuo pipefail
+          mapfile -d '' shell_scripts < <(find scripts -type f -name '*.sh' -print0)
+          shellcheck "${shell_scripts[@]}"
       - name: Run actionlint
         shell: bash
         env:
@@ -73,6 +91,29 @@ jobs:
           mkdir -p _site
           cp -a site/. _site/
           touch _site/.nojekyll
+      - name: Run desktop and mobile smoke tests
+        env:
+          CHROME_PATH: /usr/bin/google-chrome
+          SITE_ORIGIN: http://127.0.0.1:4173
+        run: |
+          set -Eeuo pipefail
+          python3 -m http.server 4173 --bind 127.0.0.1 --directory _site >"$RUNNER_TEMP/site-server.log" 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for _ in {1..30}; do
+            curl --fail --silent http://127.0.0.1:4173/ >/dev/null && break
+            sleep 1
+          done
+          node scripts/smoke-browser.mjs
+          npx --no-install pa11y-ci --config pa11yci.cjs
+      - name: Run mobile Lighthouse CI
+        env:
+          CHROME_PATH: /usr/bin/google-chrome
+        run: npx --no-install lhci autorun --config lighthouserc.json
+      - name: Run desktop Lighthouse CI
+        env:
+          CHROME_PATH: /usr/bin/google-chrome
+        run: npx --no-install lhci autorun --config lighthouserc-desktop.json
       - name: Upload approved Pages artifact
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
@@ -93,3 +134,28 @@ jobs:
       - name: Deploy approved artifact
         id: deployment
         uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
+
+  indexnow:
+    name: Notify IndexNow after production deploy
+    needs: deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 2
+      - name: Render the deployed canonical URL set
+        run: |
+          set -Eeuo pipefail
+          python3 scripts/render-cms-content.py \
+            --content content/sitestudio.lt.json \
+            --site-root site
+      - name: Submit changed, added, and removed URLs
+        env:
+          AFTER_SHA: ${{ github.sha }}
+          BEFORE_SHA: ${{ github.event.before }}
+        run: |
+          set -Eeuo pipefail
+          python3 scripts/submit-indexnow.py \
+            --before "$BEFORE_SHA" \
+            --after "$AFTER_SHA"

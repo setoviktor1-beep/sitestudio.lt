@@ -1,0 +1,74 @@
+[
+  {
+    "source": "/lt/",
+    "behavior": "redirect",
+    "target": "/",
+    "reason": "Lietuviška pradžios versija perkelta į kanoninį domeno šaknies URL."
+  },
+  {
+    "source": "/lt/privacy-policy/",
+    "behavior": "redirect",
+    "target": "/privatumas/",
+    "reason": "Lietuviška privatumo informacija turi naują kanoninį URL."
+  },
+  {
+    "source": "/en/privacy-policy/",
+    "behavior": "redirect",
+    "target": "/privatumas/",
+    "reason": "Ankstesnė privatumo nuoroda pakeista aktualiu viešu privatumo puslapiu."
+  },
+  {
+    "source": "/privacy-policy/",
+    "behavior": "redirect",
+    "target": "/privatumas/",
+    "reason": "Ankstesnė privatumo nuoroda pakeista aktualiu viešu privatumo puslapiu."
+  },
+  {
+    "source": "/portfolio/",
+    "behavior": "redirect",
+    "target": "/darbai/",
+    "reason": "Darbų galerija turi naują kanoninį URL."
+  },
+  {
+    "source": "/lt/portfolio/",
+    "behavior": "redirect",
+    "target": "/darbai/",
+    "reason": "Lietuviška darbų galerija turi naują kanoninį URL."
+  },
+  {
+    "source": "/en/",
+    "behavior": "removed",
+    "target": null,
+    "reason": "Pilna angliška svetainės versija šiuo metu nepalaikoma."
+  },
+  {
+    "source": "/en/portfolio/",
+    "behavior": "removed",
+    "target": null,
+    "reason": "Pilna angliška darbų galerija šiuo metu nepalaikoma."
+  },
+  {
+    "source": "/lt/portfolio/london-handyman-pro/",
+    "behavior": "removed",
+    "target": null,
+    "reason": "Projektas nėra tikras viešas SiteStudio darbas."
+  },
+  {
+    "source": "/en/portfolio/london-handyman-pro/",
+    "behavior": "removed",
+    "target": null,
+    "reason": "Projektas nėra tikras viešas SiteStudio darbas."
+  },
+  {
+    "source": "/en/portfolio/ai-audit-saas/",
+    "behavior": "removed",
+    "target": null,
+    "reason": "Projektas nėra tikras viešas SiteStudio darbas."
+  },
+  {
+    "source": "/paslaugu-teikimo-salygos/",
+    "behavior": "legal-draft",
+    "target": null,
+    "reason": "Paslaugų teikimo sąlygų tekstas nėra galutinai teisiškai patvirtintas."
+  }
+]

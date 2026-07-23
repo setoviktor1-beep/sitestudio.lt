@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">SiteStudio</title>
+  <description id="description">Aiškios, greitos ir saugios verslo svetainės</description>
+  <rect width="1200" height="630" fill="#111827"/>
+  <circle cx="1060" cy="92" r="180" fill="#563fef" opacity=".95"/>
+  <circle cx="1110" cy="560" r="245" fill="#4dd4a8" opacity=".16"/>
+  <path d="M0 520C210 430 354 566 555 487s350-149 645-33v176H0z" fill="#563fef" opacity=".42"/>
+  <rect x="76" y="70" width="94" height="94" rx="24" fill="#fbfbf7"/>
+  <text x="98" y="137" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800">S/</text>
+  <text x="196" y="139" fill="#fbfbf7" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="750">SiteStudio</text>
+  <text x="76" y="310" fill="#fbfbf7" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="800">Aiški svetainė.</text>
+  <text x="76" y="394" fill="#fbfbf7" font-family="Arial, Helvetica, sans-serif" font-size="72" font-weight="800">Tvirtas pagrindas.</text>
+  <text x="80" y="474" fill="#d8dbe4" font-family="Arial, Helvetica, sans-serif" font-size="28">Dizainas · Greitis · SEO ir AEO · Saugus publikavimas</text>
+  <rect x="78" y="530" width="234" height="8" rx="4" fill="#4dd4a8"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">SiteStudio logotipas</title>
+  <rect width="512" height="512" rx="116" fill="#111827"/>
+  <circle cx="422" cy="88" r="112" fill="#563fef"/>
+  <path d="M0 400C104 350 170 432 270 382s150-87 242-40v170H0z" fill="#4dd4a8" opacity=".3"/>
+  <text x="92" y="324" fill="#fbfbf7" font-family="Arial, Helvetica, sans-serif" font-size="184" font-weight="800">S/</text>
+</svg>

@@ -1,0 +1,20 @@
+{
+  "name": "sitestudio-lt-quality",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22 <25"
+  },
+  "scripts": {
+    "test:a11y": "pa11y-ci --config pa11yci.cjs",
+    "test:lighthouse:desktop": "lhci autorun --config lighthouserc-desktop.json",
+    "test:lighthouse:mobile": "lhci autorun --config lighthouserc.json",
+    "test:smoke": "node scripts/smoke-browser.mjs"
+  },
+  "devDependencies": {
+    "@lhci/cli": "0.15.1",
+    "pa11y-ci": "4.1.1",
+    "puppeteer-core": "25.3.0"
+  }
+}

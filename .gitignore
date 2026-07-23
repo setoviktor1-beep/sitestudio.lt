@@ -2,11 +2,13 @@
 .env.*
 !.env.example
 node_modules/
+__pycache__/
 .next/
 out/
 dist/
 build/
 coverage/
+.lighthouseci/
 *.log
 *.tsbuildinfo
 media/

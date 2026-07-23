@@ -1,0 +1,139 @@
+# SiteStudio – išsamus viešo turinio eksportas
+
+> SiteStudio yra svetainių kūrimo studija Lietuvos rinkai. Ji kuria statines ir turinio valdymą turinčias verslo svetaines, daug dėmesio skirdama informacijos architektūrai, greičiui, prieinamumui, SEO, AEO ir saugiam publikavimui.
+
+Oficiali svetainė: https://sitestudio.lt/
+
+Auditorija: paslaugų verslai, specialistai ir organizacijos, kurioms reikia naujos svetainės, nukreipimo puslapio, Payload CMS, esamos svetainės atnaujinimo arba SEO ir AEO sutvarkymo.
+
+Aptarnaujama rinka: Lietuva; projektai gali būti vykdomi nuotoliniu būdu.
+
+# Paslaugos
+
+## Svetainių kūrimas
+
+URL: https://sitestudio.lt/svetainiu-kurimas/
+
+Pilnas verslo svetainės kelias nuo struktūros iki patikrinto publikavimo.
+
+Sukuriame semantišką, greitai užsikraunančią ir telefonams pritaikytą svetainę. Pradedame nuo auditorijos, turinio ir aiškaus lankytojo veiksmo, o technologiją parenkame pagal realų administravimo poreikį.
+
+Į darbą įeina informacijos architektūra, originali sąsaja, techninis SEO, prieinamumo pagrindai ir automatinės kokybės patikros prieš publikavimą.
+
+## Verslo svetainės
+
+URL: https://sitestudio.lt/verslo-svetaines/
+
+Aiški, patikima ir lengvai prižiūrima paslaugų verslo svetainė.
+
+Verslo svetainei svarbu greitai paaiškinti, kam skirta paslauga, kuo ji naudinga ir kaip susisiekti. Turinį dėliojame pagal lankytojo klausimus, o ne pagal vidinę įmonės struktūrą.
+
+Sprendimas gali būti statinis ir itin lengvas arba turėti atskirą turinio valdymą, jeigu redagavimo nauda pateisina papildomą infrastruktūrą.
+
+## Landing page kūrimas
+
+URL: https://sitestudio.lt/landing-page-kurimas/
+
+Koncentruotas nukreipimo puslapis vienam pasiūlymui ir aiškiam veiksmui.
+
+Vieno tikslo puslapis sutelkia dėmesį į konkretų pasiūlymą, auditoriją ir veiksmą. Suderiname antraščių hierarchiją, įrodymų vietas, dažniausius klausimus ir kontaktinį kelią be perteklinių efektų.
+
+Puslapis kuriamas kaip greitas, savarankiškas URL su unikalia metadata, analitikai paruoštais veiksmais ir aiškiu plėtros keliu.
+
+## Payload CMS
+
+URL: https://sitestudio.lt/payload-cms/
+
+Struktūrinis turinio valdymas su rolėmis, juodraščiais ir saugiu publikavimu.
+
+Payload CMS pasirenkame tada, kai turinį turi valdyti redaktoriai, reikalingi juodraščiai, publikavimo teisės, struktūriniai modeliai ar kelių svetainių valdymas. Viešai svetainei pateikiama tik siaura publikuoto turinio projekcija.
+
+Turinio valdymas atskiriamas nuo viešos svetainės: lankytojams pateikiama patikrinta statinė versija, kuri išlieka pasiekiama ir laikinai sutrikus administravimui.
+
+## Svetainių atnaujinimas
+
+URL: https://sitestudio.lt/svetainiu-atnaujinimas/
+
+Saugus turinio, dizaino ir techninio pagrindo atnaujinimas.
+
+Atnaujinimą pradedame nuo turinio, indeksuojamų URL, greičio ir prieinamumo audito. Išsaugome vertingus adresus, suplanuojame migraciją ir tik tada keičiame struktūrą ar vizualinę sistemą.
+
+Tikslas – ne kosmetinis perpiešimas, o aiškesnė informacija, mažesnė techninė rizika ir patikimas publikavimo procesas.
+
+## SEO ir AEO optimizavimas
+
+URL: https://sitestudio.lt/seo-aeo-optimizavimas/
+
+Techninis SEO, atsakymams pritaikytas turinys ir patikimi struktūriniai duomenys.
+
+SEO ir AEO pradedame nuo techniškai pasiekiamo, semantiško ir naudingo turinio. Sutvarkome canonical, sitemap, metadata, vidines nuorodas ir su matomu turiniu sutampančius struktūrinius duomenis.
+
+Atsakymų sistemoms padeda aiškios sąvokos, trumpos išvados, tikslūs DUK ir viešo turinio Markdown santrauka. Nė vienas failas ar schema negarantuoja pozicijų.
+
+# Darbai
+
+## situacija.eu
+
+SiteStudio puslapis: https://sitestudio.lt/darbai/situacija-eu/
+
+Gyva svetainė: https://situacija.eu
+
+Aiški paslaugų svetainė, pristatanti plytelių klijavimo darbus.
+
+## leonamai.lt
+
+SiteStudio puslapis: https://sitestudio.lt/darbai/leonamai-lt/
+
+Gyva svetainė: https://www.leonamai.lt
+
+Vonios remonto ir būsto apdailos paslaugų svetainė.
+
+Projektų puslapiuose naudojama tik viešai naršyklėje matoma informacija. Nevieši klientų duomenys, administravimo turinys ir išgalvoti rezultatai nepateikiami.
+
+# Procesas
+
+Kiekvienas etapas turi rezultatą ir patikros kriterijų. Tai padeda valdyti apimtį, terminus ir techninę riziką.
+
+SiteStudio darbą skirsto į aiškius etapus: užduoties ir auditorijos išgryninimą, turinio struktūrą, dizainą bei įgyvendinimą, automatines patikras ir kontroliuojamą publikavimą. Produkcinė versija publikuojama tik po sėkmingų patikrų.
+
+# Kainų principai
+
+Kaina formuojama pagal sprendžiamą užduotį. Prieš darbus aiškiai sutariame, kas įeina į rezultatą.
+
+Pasiūlymas priklauso nuo turinio apimties, unikalių komponentų, integracijų, administravimo ir priežiūros poreikio. Išgalvotos fiksuotos kainos ar nepatvirtinti pažadai nepateikiami.
+
+# Dažniausi klausimai
+
+### Ar kiekvienai svetainei reikia CMS?
+
+Ne. Retai keičiamam turiniui statinė svetainė dažnai yra racionalesnė.
+
+### Ar svetainė bus pritaikyta telefonams?
+
+Taip. Sąsaja kuriama mobile-first principu ir tikrinama skirtinguose ekranuose.
+
+### Ar įtraukiamas SEO?
+
+Taip: metadata, canonical, Open Graph, robots, sitemap ir struktūriniai duomenys.
+
+### Kas parengia tekstus?
+
+Galime dirbti su paruošta medžiaga arba padėti ją susisteminti. Faktus patvirtina savininkas.
+
+### Ar galima vėliau pridėti puslapių?
+
+Taip. Architektūra turi aiškų plėtros kelią, o CMS pridedamas esant realiam poreikiui.
+
+### Kaip apskaičiuojama kaina?
+
+Vertiname turinio apimtį, unikalius komponentus, integracijas ir priežiūros poreikį.
+
+# Apie ir kontaktai
+
+Apie SiteStudio: https://sitestudio.lt/apie/
+
+Kontaktai: https://sitestudio.lt/kontaktai/
+
+Privatumo informacija: https://sitestudio.lt/privatumas/
+
+Šis Markdown eksportas apima tik viešą SiteStudio turinį ir neteikia neviešos ar vidinės techninės informacijos. Šių informacinių failų naudojimas nėra paieškos ar AI matomumo ir reitingavimo garantija.

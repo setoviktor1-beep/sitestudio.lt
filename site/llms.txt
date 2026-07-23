@@ -1,0 +1,33 @@
+# SiteStudio
+
+> SiteStudio kuria originalias, greitas ir saugiai publikuojamas verslo svetaines Lietuvos rinkai. Pagrindinė auditorija – paslaugų verslai ir organizacijos, kurioms reikia aiškaus turinio, patikimo techninio pagrindo ir pamatuojamų kokybės vartų.
+
+Pagrindinis oficialus URL: https://sitestudio.lt/
+
+## Paslaugos
+
+- [Svetainių kūrimas](https://sitestudio.lt/svetainiu-kurimas/): Pilnas verslo svetainės kelias nuo struktūros iki patikrinto publikavimo.
+- [Verslo svetainės](https://sitestudio.lt/verslo-svetaines/): Aiški, patikima ir lengvai prižiūrima paslaugų verslo svetainė.
+- [Landing page kūrimas](https://sitestudio.lt/landing-page-kurimas/): Koncentruotas nukreipimo puslapis vienam pasiūlymui ir aiškiam veiksmui.
+- [Payload CMS](https://sitestudio.lt/payload-cms/): Struktūrinis turinio valdymas su rolėmis, juodraščiais ir saugiu publikavimu.
+- [Svetainių atnaujinimas](https://sitestudio.lt/svetainiu-atnaujinimas/): Saugus turinio, dizaino ir techninio pagrindo atnaujinimas.
+- [SEO ir AEO optimizavimas](https://sitestudio.lt/seo-aeo-optimizavimas/): Techninis SEO, atsakymams pritaikytas turinys ir patikimi struktūriniai duomenys.
+
+## Svarbiausi puslapiai
+
+- [Paslaugos](https://sitestudio.lt/paslaugos/): visų paslaugų apžvalga.
+- [Darbai](https://sitestudio.lt/darbai/): vieši SiteStudio darbų pavyzdžiai.
+- [Procesas](https://sitestudio.lt/procesas/): darbų etapai ir kokybės vartai.
+- [Kainos](https://sitestudio.lt/kainos/): pasiūlymo ir apimties principai.
+- [DUK](https://sitestudio.lt/duk/): atsakymai į dažniausius klausimus.
+- [Apie SiteStudio](https://sitestudio.lt/apie/): veiklos ir techninių sprendimų principai.
+- [Kontaktai](https://sitestudio.lt/kontaktai/): oficialus kontaktinis puslapis.
+
+## Vieši darbų pavyzdžiai
+
+- [situacija.eu – projekto aprašymas](https://sitestudio.lt/darbai/situacija-eu/): Aiški paslaugų svetainė, pristatanti plytelių klijavimo darbus.
+- [leonamai.lt – projekto aprašymas](https://sitestudio.lt/darbai/leonamai-lt/): Vonios remonto ir būsto apdailos paslaugų svetainė.
+
+situacija.eu ir leonamai.lt šiame domene pateikiami tik kaip vieši SiteStudio darbų pavyzdžiai su nuorodomis į gyvas svetaines.
+
+Šis Markdown failas yra informacinė viešo turinio santrauka. Jo naudojimas nėra Google, kitos paieškos sistemos ar AI matomumo ir reitingavimo garantija.
