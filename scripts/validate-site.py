@@ -52,6 +52,9 @@ class PageParser(HTMLParser):
         self.canonicals: list[str] = []
         self.links: list[str] = []
         self.anchors: list[dict[str, str]] = []
+        self.current_anchor: dict[str, str] | None = None
+        self.linked_images: list[tuple[dict[str, str], dict[str, str] | None]] = []
+        self.nested_anchors = 0
         self.ids: set[str] = set()
         self.images: list[dict[str, str]] = []
         self.main_count = 0
@@ -79,10 +82,14 @@ class PageParser(HTMLParser):
         elif tag == "link" and "canonical" in values.get("rel", "").split():
             self.canonicals.append(values.get("href", ""))
         elif tag == "a":
+            if self.current_anchor is not None:
+                self.nested_anchors += 1
             self.links.append(values.get("href", ""))
             self.anchors.append(values)
+            self.current_anchor = values
         elif tag == "img":
             self.images.append(values)
+            self.linked_images.append((values, self.current_anchor))
         elif tag == "main":
             self.main_count += 1
         elif tag == "iframe":
@@ -98,6 +105,8 @@ class PageParser(HTMLParser):
     def handle_endtag(self, tag: str) -> None:
         if tag == "title":
             self.in_title = False
+        elif tag == "a":
+            self.current_anchor = None
         elif self.heading_level is not None and tag == f"h{self.heading_level}":
             text = " ".join("".join(self.heading_parts).split())
             self.headings.append((self.heading_level, text))
@@ -204,6 +213,8 @@ def validate_page(route: str, path: Path, titles: set[str]) -> PageParser:
         fail(f"{route}: automatically loaded iframe is forbidden")
     if parser.external_scripts:
         fail(f"{route}: external JavaScript is forbidden")
+    if parser.nested_anchors:
+        fail(f"{route}: nested anchor elements are forbidden")
     for image in parser.images:
         if not image.get("width") or not image.get("height"):
             fail(f"{route}: image is missing intrinsic dimensions")
@@ -276,17 +287,25 @@ def validate_project_previews(parsed_pages: dict[str, PageParser]) -> None:
             if not image.get("alt", "").strip():
                 fail(f"{route}: {src} must have meaningful alt text")
             anchors = [anchor for anchor in parsed_pages[route].anchors if anchor.get("href") == href]
-            if len(anchors) != 1:
-                fail(f"{route}: expected one project link to {href}, found {len(anchors)}")
+            if len(anchors) != 2:
+                fail(f"{route}: expected image and text links to {href}, found {len(anchors)}")
                 continue
-            anchor = anchors[0]
-            if anchor.get("target") != "_blank":
-                fail(f"{route}: project link to {href} must open in a new tab")
-            if "naujame lange" not in anchor.get("aria-label", ""):
-                fail(f"{route}: project link to {href} must announce the new window")
-            rel = set(anchor.get("rel", "").split())
-            if not {"noopener", "noreferrer", "external"}.issubset(rel):
-                fail(f"{route}: project link to {href} needs noopener noreferrer external")
+            for anchor in anchors:
+                if anchor.get("target") != "_blank":
+                    fail(f"{route}: project link to {href} must open in a new tab")
+                if "naujame lange" not in anchor.get("aria-label", ""):
+                    fail(f"{route}: project link to {href} must announce the new window")
+                if set(anchor.get("rel", "").split()) != {"noopener", "noreferrer"}:
+                    fail(f"{route}: project link to {href} needs rel='noopener noreferrer'")
+            linked_images = [
+                linked_anchor
+                for linked_image, linked_anchor in parsed_pages[route].linked_images
+                if linked_image.get("src") == src
+            ]
+            if len(linked_images) != 1 or linked_images[0] is None:
+                fail(f"{route}: {src} must be wrapped in one anchor")
+            elif linked_images[0].get("href") != href:
+                fail(f"{route}: {src} must link to {href}")
 
 
 def validate_sitemap() -> None:
@@ -318,6 +337,9 @@ def validate_css() -> None:
         fail("styles.css has unbalanced braces")
     if re.search(r"@import|url\(\s*['\"]?https?://", text, re.IGNORECASE):
         fail("styles.css must not load remote assets")
+    for declaration in ("aspect-ratio: 16 / 10", "width: 100%", "height: 100%", "object-fit: cover"):
+        if declaration not in text:
+            fail(f"styles.css: project preview rule is missing {declaration}")
 
 
 def validate_workflows() -> None:
