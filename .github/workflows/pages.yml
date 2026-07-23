@@ -38,10 +38,12 @@ jobs:
         run: |
           set -Eeuo pipefail
           content_file="$RUNNER_TEMP/sitestudio-content.json"
-          if [[ "$EVENT_NAME" == "workflow_dispatch" ]]; then
+          if [[ "$EVENT_NAME" == "workflow_dispatch" || -f .sitestudio-cms-trigger.json ]]; then
             if [[ "$TENANT_DOMAIN" != "sitestudio.lt" ]]; then
-              echo "Only the sitestudio.lt tenant may be published" >&2
-              exit 1
+              if [[ "$EVENT_NAME" == "workflow_dispatch" ]]; then
+                echo "Only the sitestudio.lt tenant may be published" >&2
+                exit 1
+              fi
             fi
             curl \
               --fail \
