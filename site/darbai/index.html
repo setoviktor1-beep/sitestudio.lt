@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Darbų galerija | SiteStudio</title>
-    <meta name="description" content="SiteStudio darbų galerija: viešų projektų kortelės ir išorinės nuorodos, nekopijuojant svetimų failų ar medijos." />
+    <meta name="description" content="SiteStudio darbų galerija: atrinktos verslo svetainės, jų vizualinės peržiūros ir nuorodos į gyvus projektus." />
     <meta name="robots" content="index,follow" />
     <meta name="theme-color" content="#111827" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -13,7 +13,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="SiteStudio" />
     <meta property="og:title" content="Darbų galerija | SiteStudio" />
-    <meta property="og:description" content="Atrinkti vieši projektai ir aiškiai pažymėtos būsimų darbų vietos." />
+    <meta property="og:description" content="Atrinktos verslo svetainės su pagrindinių puslapių peržiūromis ir nuorodomis į gyvus projektus." />
     <meta property="og:url" content="https://sitestudio.lt/darbai/" />
     <meta name="twitter:card" content="summary" />
     <link rel="stylesheet" href="/styles.css" />
@@ -32,29 +32,33 @@
         <div class="container">
           <nav class="breadcrumbs" aria-label="Kelio nuorodos"><a href="/">Pradžia</a> / Darbai</nav>
           <p class="eyebrow">Darbų galerija</p>
-          <h1>Vieši rezultatai, aiškios ribos</h1>
-          <p>Galerijoje pateikiame tik projekto kortelę ir išorinę nuorodą. Svetimų repozitorijų, medijos ar produkcinių duomenų nekopijuojame.</p>
+          <h1>Svetainės, kurias galima aplankyti</h1>
+          <p>Trumpa atrinktų darbų apžvalga – nuo aiškaus paslaugos pristatymo iki patogaus kelio susisiekti.</p>
         </div>
       </header>
       <section class="section">
         <div class="container">
           <div class="work-grid">
-            <article class="work-card">
-              <div class="work-visual" aria-hidden="true"></div>
+            <article class="work-card work-card-clickable">
+              <div class="work-media">
+                <img src="/assets/projects/situacija-eu.webp" width="1440" height="900" loading="lazy" decoding="async" alt="Situacija.eu pagrindinis puslapis su plytelių klijavimo paslaugos pristatymu" />
+              </div>
               <div class="work-body">
                 <div class="work-meta"><span class="tag">Verslo svetainė</span><span aria-hidden="true">↗</span></div>
                 <h2>situacija.eu</h2>
-                <p class="muted-text">Viešas atlikto darbo pavyzdys. Ši kortelė veda tiesiai į išorinę svetainę.</p>
-                <a class="text-link" href="https://situacija.eu" rel="external">Atidaryti situacija.eu <span aria-hidden="true">↗</span></a>
+                <p class="muted-text">Aiški paslaugų svetainė, pristatanti plytelių klijavimo darbus ir vedanti lankytoją į užklausą.</p>
+                <a class="text-link work-card-link" href="https://situacija.eu" target="_blank" rel="noopener noreferrer external" aria-label="Atidaryti situacija.eu naujame lange">Atidaryti situacija.eu <span aria-hidden="true">↗</span></a>
               </div>
             </article>
-            <article class="work-card">
-              <div class="work-visual visual-warm" aria-hidden="true"></div>
+            <article class="work-card work-card-clickable">
+              <div class="work-media">
+                <img src="/assets/projects/leonamai-lt.webp" width="1440" height="900" loading="lazy" decoding="async" alt="Leonamai.lt pagrindinis puslapis su vonios remonto ir apdailos paslaugų pristatymu" />
+              </div>
               <div class="work-body">
-                <div class="work-meta"><span class="tag">Statinė svetainė</span><span aria-hidden="true">↗</span></div>
+                <div class="work-meta"><span class="tag">Paslaugų svetainė</span><span aria-hidden="true">↗</span></div>
                 <h2>leonamai.lt</h2>
-                <p class="muted-text">GitHub Pages svetainė, rodoma tik išorine projekto nuoroda.</p>
-                <a class="text-link" href="https://www.leonamai.lt" rel="external">Atidaryti leonamai.lt <span aria-hidden="true">↗</span></a>
+                <p class="muted-text">Vonios remonto ir būsto apdailos paslaugų svetainė, orientuota į Vilniaus regiono klientus.</p>
+                <a class="text-link work-card-link" href="https://www.leonamai.lt" target="_blank" rel="noopener noreferrer external" aria-label="Atidaryti leonamai.lt naujame lange">Atidaryti leonamai.lt <span aria-hidden="true">↗</span></a>
               </div>
             </article>
             <article class="work-card">
@@ -76,7 +80,6 @@
               </div>
             </article>
           </div>
-          <div class="notice"><strong>Skaidrumo principas.</strong> Placeholderiai nėra pristatomi kaip atlikti darbai, o išoriniai projektai neįtraukiami į šios svetainės šaltinio kodą.</div>
         </div>
       </section>
       <section class="section section-soft">

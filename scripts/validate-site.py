@@ -15,6 +15,13 @@ from urllib.parse import urlparse
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 SITE_ROOT = PROJECT_ROOT / "site"
 ORIGIN = "https://sitestudio.lt"
+PROJECT_PREVIEWS = {
+    "/assets/projects/situacija-eu.webp": "https://situacija.eu",
+    "/assets/projects/leonamai-lt.webp": "https://www.leonamai.lt",
+}
+PROJECT_PREVIEW_WIDTH = 1440
+PROJECT_PREVIEW_HEIGHT = 900
+PROJECT_PREVIEW_MAX_BYTES = 150_000
 ROUTES = {
     "/": SITE_ROOT / "index.html",
     "/paslaugos/": SITE_ROOT / "paslaugos" / "index.html",
@@ -44,6 +51,7 @@ class PageParser(HTMLParser):
         self.meta: dict[str, str] = {}
         self.canonicals: list[str] = []
         self.links: list[str] = []
+        self.anchors: list[dict[str, str]] = []
         self.ids: set[str] = set()
         self.images: list[dict[str, str]] = []
         self.main_count = 0
@@ -72,6 +80,7 @@ class PageParser(HTMLParser):
             self.canonicals.append(values.get("href", ""))
         elif tag == "a":
             self.links.append(values.get("href", ""))
+            self.anchors.append(values)
         elif tag == "img":
             self.images.append(values)
         elif tag == "main":
@@ -131,6 +140,27 @@ def route_for_href(href: str, source: Path) -> tuple[Path | None, str]:
     return target.resolve(), parsed.fragment
 
 
+def webp_dimensions(path: Path) -> tuple[int, int] | None:
+    data = path.read_bytes()
+    if len(data) < 30 or data[:4] != b"RIFF" or data[8:12] != b"WEBP":
+        return None
+    offset = 12
+    while offset + 8 <= len(data):
+        kind = data[offset : offset + 4]
+        size = int.from_bytes(data[offset + 4 : offset + 8], "little")
+        payload = data[offset + 8 : offset + 8 + size]
+        if kind == b"VP8 " and len(payload) >= 10 and payload[3:6] == b"\x9d\x01\x2a":
+            width = int.from_bytes(payload[6:8], "little") & 0x3FFF
+            height = int.from_bytes(payload[8:10], "little") & 0x3FFF
+            return width, height
+        if kind == b"VP8X" and len(payload) >= 10:
+            width = int.from_bytes(payload[4:7], "little") + 1
+            height = int.from_bytes(payload[7:10], "little") + 1
+            return width, height
+        offset += 8 + size + (size % 2)
+    return None
+
+
 def validate_page(route: str, path: Path, titles: set[str]) -> PageParser:
     if not path.is_file():
         fail(f"{route}: missing HTML file {path.relative_to(PROJECT_ROOT)}")
@@ -179,6 +209,16 @@ def validate_page(route: str, path: Path, titles: set[str]) -> PageParser:
             fail(f"{route}: image is missing intrinsic dimensions")
         if "alt" not in image:
             fail(f"{route}: image is missing alt")
+        src = image.get("src", "")
+        parsed_src = urlparse(src)
+        if not src:
+            fail(f"{route}: image is missing src")
+        elif parsed_src.scheme in {"http", "https"}:
+            fail(f"{route}: remote image hotlink is forbidden: {src}")
+        elif src.startswith("/"):
+            image_path = (SITE_ROOT / src.removeprefix("/")).resolve()
+            if not image_path.is_file():
+                fail(f"{route}: image file is missing: {src}")
     for raw_json in parser.json_ld_parts:
         try:
             json.loads(raw_json)
@@ -205,6 +245,48 @@ def validate_page(route: str, path: Path, titles: set[str]) -> PageParser:
             if fragment not in target_parser.ids:
                 fail(f"{route}: missing fragment target {href}")
     return parser
+
+
+def validate_project_previews(parsed_pages: dict[str, PageParser]) -> None:
+    for src, href in PROJECT_PREVIEWS.items():
+        path = SITE_ROOT / src.removeprefix("/")
+        if not path.is_file():
+            fail(f"project preview is missing: {src}")
+            continue
+        if path.stat().st_size > PROJECT_PREVIEW_MAX_BYTES:
+            fail(f"{src}: exceeds {PROJECT_PREVIEW_MAX_BYTES} bytes")
+        dimensions = webp_dimensions(path)
+        if dimensions != (PROJECT_PREVIEW_WIDTH, PROJECT_PREVIEW_HEIGHT):
+            fail(f"{src}: expected {PROJECT_PREVIEW_WIDTH}x{PROJECT_PREVIEW_HEIGHT}, found {dimensions}")
+        for route in ("/", "/darbai/"):
+            images = [image for image in parsed_pages[route].images if image.get("src") == src]
+            if len(images) != 1:
+                fail(f"{route}: expected one {src} image, found {len(images)}")
+                continue
+            image = images[0]
+            expected_attrs = {
+                "width": str(PROJECT_PREVIEW_WIDTH),
+                "height": str(PROJECT_PREVIEW_HEIGHT),
+                "loading": "lazy",
+                "decoding": "async",
+            }
+            for name, value in expected_attrs.items():
+                if image.get(name) != value:
+                    fail(f"{route}: {src} must have {name}={value!r}")
+            if not image.get("alt", "").strip():
+                fail(f"{route}: {src} must have meaningful alt text")
+            anchors = [anchor for anchor in parsed_pages[route].anchors if anchor.get("href") == href]
+            if len(anchors) != 1:
+                fail(f"{route}: expected one project link to {href}, found {len(anchors)}")
+                continue
+            anchor = anchors[0]
+            if anchor.get("target") != "_blank":
+                fail(f"{route}: project link to {href} must open in a new tab")
+            if "naujame lange" not in anchor.get("aria-label", ""):
+                fail(f"{route}: project link to {href} must announce the new window")
+            rel = set(anchor.get("rel", "").split())
+            if not {"noopener", "noreferrer", "external"}.issubset(rel):
+                fail(f"{route}: project link to {href} needs noopener noreferrer external")
 
 
 def validate_sitemap() -> None:
@@ -259,6 +341,7 @@ def validate_forbidden_files() -> None:
 def main() -> int:
     titles: set[str] = set()
     parsed_pages = {route: validate_page(route, path, titles) for route, path in ROUTES.items()}
+    validate_project_previews(parsed_pages)
     home_types = []
     for raw in parsed_pages["/"].json_ld_parts:
         try:
