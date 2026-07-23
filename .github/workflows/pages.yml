@@ -1,0 +1,72 @@
+name: Quality, build, and deploy Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  quality:
+    name: Static analysis and content checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Validate SiteStudio project contract
+        run: ./scripts/sitestudio-validate-project.sh --project "$GITHUB_WORKSPACE" --profile static
+      - name: Validate HTML, CSS, links, sitemap, and SEO
+        run: python3 scripts/validate-site.py
+      - name: Compile Python validator
+        run: python3 -m py_compile scripts/validate-site.py
+      - name: Run actionlint
+        shell: bash
+        env:
+          ACTIONLINT_VERSION: v1.7.7
+        run: |
+          set -Eeuo pipefail
+          export GOBIN="$RUNNER_TEMP/actionlint-bin"
+          mkdir -p "$GOBIN"
+          go install "github.com/rhysd/actionlint/cmd/actionlint@${ACTIONLINT_VERSION}"
+          "$GOBIN/actionlint" .github/workflows/*.yml
+
+  build:
+    name: Build deterministic Pages artifact
+    needs: quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Build static artifact
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          mkdir -p _site
+          cp -a site/. _site/
+          touch _site/.nojekyll
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: _site
+
+  deploy:
+    name: Deploy GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy approved artifact
+        id: deployment
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0
