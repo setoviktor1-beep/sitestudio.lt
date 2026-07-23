@@ -35,6 +35,7 @@ const viewports = [
 try {
   for (const viewport of viewports) {
     const page = await browser.newPage()
+    await page.setCacheEnabled(false)
     await page.setViewport({ height: viewport.height, width: viewport.width })
     const errors = []
     page.on('console', (message) => {
@@ -47,7 +48,7 @@ try {
         waitUntil: 'networkidle0',
         timeout: 30000,
       })
-      if (!response || response.status() !== 200) {
+      if (!response || (!response.ok() && response.status() !== 304)) {
         throw new Error(`${viewport.label} ${route} returned ${response?.status() ?? 'no response'}`)
       }
       const result = await page.evaluate(() => ({
