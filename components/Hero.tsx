@@ -1,14 +1,18 @@
 import Link from "next/link";
+import HeroCanvas from "./HeroCanvas";
 
 export default function Hero() {
   return (
     <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden hero-gradient">
+      {/* Interactive particle canvas */}
+      <HeroCanvas />
+
       {/* Glow orbs */}
       <div className="hero-glow top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#2563eb]/25" />
       <div className="hero-glow top-1/4 right-1/4 w-[300px] h-[200px] bg-[#7c3aed]/20" />
       <div className="hero-glow top-1/3 left-1/4 w-[250px] h-[180px] bg-[#ff5a1f]/10" />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 rounded-full bg-white/5 backdrop-blur border border-white/10 px-4 py-1.5 text-xs md:text-sm font-medium text-blue-300 mb-8">
           <span className="flex h-2 w-2 rounded-full bg-blue-400 animate-pulse" />
