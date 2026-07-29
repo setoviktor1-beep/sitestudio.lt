@@ -10,7 +10,7 @@ import CookieConsent from "@/components/CookieConsent";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0b0f19] text-slate-100 selection:bg-indigo-500 selection:text-white">
+    <div className="min-h-screen bg-white text-[#0b0b14] antialiased">
       <Navbar />
       <main>
         <Hero />

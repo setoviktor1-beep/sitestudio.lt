@@ -4,7 +4,7 @@ export default function Pricing() {
   const plans = [
     {
       name: "Startas",
-      badge: "Smulkiam verslui",
+      badge: null,
       price: "Nuo €290",
       description: "Puikiai tinka greitam reprezentacinės svetainės paleidimui.",
       features: [
@@ -12,7 +12,7 @@ export default function Pricing() {
         "Mobili versija & SEO",
         "Kontaktų forma su el. paštu",
         "Nemokamas SSL sertifikatas",
-        "VPS talpinimas 1 mėnesį nemokamai",
+        "VPS talpinimas 1 mėn. nemokamai",
       ],
       popular: false,
       cta: "Užsakyti Startą",
@@ -24,9 +24,9 @@ export default function Pricing() {
       description: "Visapusiškas sprendimas su patogia Directus turinio valdymo sistema.",
       features: [
         "Next.js svetainė + Directus CMS",
-        "Klientas pati keičia tekstus/nuotraukas",
+        "Klientas pats keičia tekstus/nuotraukas",
         "Atskiras PostgreSQL konteineris",
-        "Grepita eiga & AEO optimizacija",
+        "Greita eiga & AEO optimizacija",
         "Automatinės S3 atsarginės kopijos",
         "Nemokamas palaikymas 3 mėn.",
       ],
@@ -35,9 +35,9 @@ export default function Pricing() {
     },
     {
       name: "Enterprise App",
-      badge: "Sistemoms & Proj.",
+      badge: null,
       price: "Nuo €990",
-      description: "Individualūs web projektai su registracija, klientų skydeliu bei integracijomis.",
+      description: "Individualūs projektai su registracija, klientų skydeliu bei integracijomis.",
       features: [
         "Better Auth vartotojų registracija",
         "Kliento ir Admin skydeliai",
@@ -47,44 +47,48 @@ export default function Pricing() {
         "24/7 Monitoringas ir SLA",
       ],
       popular: false,
-      cta: "Susisiekti Dėl Projekto",
+      cta: "Susisiekti",
     },
   ];
 
   return (
-    <section id="kainos" className="py-24 relative">
+    <section id="kainos" className="py-24 bg-[#f7f7fb]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-xs uppercase font-bold tracking-widest text-indigo-400 mb-3">Kainodara</h2>
-          <p className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-            Aiški ir skaidri <span className="gradient-text">kainų struktūra</span>
+          <p className="text-sm font-semibold text-[#2563eb] uppercase tracking-wider mb-3">Kainodara</p>
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0b0b14] tracking-tight">
+            Aiškios kainos, <span className="gradient-text">be paslėptų mokesčių</span>
+          </h2>
+          <p className="mt-4 text-[#6b6b80] text-base">
+            Jokių paslėptų skaičiavimų — žinote, už ką mokate. Galimybė mokėti dalimis.
           </p>
-          <p className="mt-4 text-slate-400 text-base">Jokių paslėptų mokesčių. Galimybė mokėti dalimis.</p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
           {plans.map((plan, idx) => (
             <div
               key={idx}
-              className={`glass-panel p-8 rounded-3xl flex flex-col justify-between relative ${
-                plan.popular ? "border-indigo-500/50 shadow-2xl shadow-indigo-500/20 bg-slate-900/90" : ""
+              className={`bg-white p-8 rounded-3xl border relative flex flex-col justify-between ${
+                plan.popular
+                  ? "border-[#2563eb] shadow-[0_20px_60px_-12px_rgba(37,99,235,0.15)] md:scale-105"
+                  : "border-black/5 shadow-[0_8px_30px_rgba(20,18,60,0.04)]"
               }`}
             >
-              {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 px-4 py-1 text-xs font-bold text-white shadow-md">
+              {plan.badge && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-[#2563eb] to-[#7c3aed] px-4 py-1 text-xs font-bold text-white shadow-md whitespace-nowrap">
                   {plan.badge}
                 </div>
               )}
 
               <div>
-                <div className="text-xl font-bold text-white mb-1">{plan.name}</div>
-                <div className="text-3xl font-extrabold text-white my-4">{plan.price}</div>
-                <p className="text-slate-300 text-xs sm:text-sm mb-6">{plan.description}</p>
+                <div className="text-xl font-bold text-[#0b0b14] mb-1">{plan.name}</div>
+                <div className="text-4xl font-extrabold text-[#0b0b14] my-4">{plan.price}</div>
+                <p className="text-[#6b6b80] text-sm mb-6">{plan.description}</p>
 
-                <ul className="space-y-3 border-t border-slate-800/80 pt-6 mb-8">
+                <ul className="space-y-3 border-t border-black/5 pt-6 mb-8">
                   {plan.features.map((feat, fIdx) => (
-                    <li key={fIdx} className="flex items-center text-xs sm:text-sm text-slate-300">
-                      <span className="text-indigo-400 mr-2 font-bold">✓</span>
+                    <li key={fIdx} className="flex items-center text-sm text-[#3b3b50]">
+                      <span className="text-[#2563eb] mr-2.5 font-bold">✓</span>
                       {feat}
                     </li>
                   ))}
@@ -93,10 +97,10 @@ export default function Pricing() {
 
               <Link
                 href="#kontaktai"
-                className={`w-full text-center py-3.5 rounded-xl font-semibold text-sm transition-all ${
+                className={`w-full text-center py-3.5 rounded-full font-semibold text-sm transition-all ${
                   plan.popular
-                    ? "bg-gradient-to-r from-indigo-500 to-purple-600 text-white shadow-lg shadow-indigo-500/30 hover:opacity-95"
-                    : "glass-panel text-slate-200 hover:text-white hover:bg-slate-800"
+                    ? "bg-gradient-to-r from-[#2563eb] to-[#7c3aed] text-white shadow-lg shadow-blue-500/20 hover:opacity-90"
+                    : "bg-[#0b0b14] text-white hover:bg-[#1e1b4b]"
                 }`}
               >
                 {plan.cta}

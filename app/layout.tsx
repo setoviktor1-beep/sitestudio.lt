@@ -1,5 +1,18 @@
 import type { Metadata } from "next";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "SiteStudio.lt — Web Puslapių Kūrimas, Administravimas Ir VPS Hostingas",
@@ -10,8 +23,8 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="lt" className="scroll-smooth">
-      <body className="min-h-screen bg-[#0b0f19] text-slate-100 antialiased selection:bg-indigo-500 selection:text-white">
+    <html lang="lt" className={`scroll-smooth ${inter.variable} ${jakarta.variable}`}>
+      <body className="min-h-screen bg-white text-[#0b0b14] antialiased selection:bg-blue-500/20 selection:text-[#2563eb]">
         {children}
       </body>
     </html>

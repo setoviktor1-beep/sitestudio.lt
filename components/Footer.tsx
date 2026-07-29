@@ -2,11 +2,11 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-800/80 bg-slate-950 py-12 text-slate-400 text-xs">
+    <footer className="bg-[#0b0b14] py-12 text-white/60 text-sm">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-tr from-indigo-600 to-violet-500 text-white font-bold text-base">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#2563eb] to-[#7c3aed] text-white font-bold">
               S
             </div>
             <span className="text-lg font-bold text-white tracking-tight">
@@ -14,7 +14,7 @@ export default function Footer() {
             </span>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6 text-slate-300 font-medium">
+          <div className="flex flex-wrap justify-center gap-6 text-white/70 font-medium">
             <Link href="/privatumo-politika" className="hover:text-white transition-colors">
               Privatumo politika
             </Link>
