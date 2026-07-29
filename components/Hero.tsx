@@ -4,13 +4,13 @@ import HeroCanvas from "./HeroCanvas";
 export default function Hero() {
   return (
     <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden hero-gradient">
-      {/* Interactive particle canvas */}
+      {/* Interactive particle canvas - behind everything */}
       <HeroCanvas />
 
-      {/* Glow orbs */}
-      <div className="hero-glow top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#2563eb]/25" />
-      <div className="hero-glow top-1/4 right-1/4 w-[300px] h-[200px] bg-[#7c3aed]/20" />
-      <div className="hero-glow top-1/3 left-1/4 w-[250px] h-[180px] bg-[#ff5a1f]/10" />
+      {/* Glow orbs - behind canvas */}
+      <div className="hero-glow top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#2563eb]/25" style={{ zIndex: -2 }} />
+      <div className="hero-glow top-1/4 right-1/4 w-[300px] h-[200px] bg-[#7c3aed]/20" style={{ zIndex: -2 }} />
+      <div className="hero-glow top-1/3 left-1/4 w-[250px] h-[180px] bg-[#ff5a1f]/10" style={{ zIndex: -2 }} />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
         {/* Badge */}

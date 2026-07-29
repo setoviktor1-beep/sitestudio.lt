@@ -120,7 +120,7 @@ export default function HeroCanvas() {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 w-full h-full pointer-events-auto"
-      style={{ zIndex: 0 }}
+      style={{ zIndex: -1 }}
     />
   );
 }
