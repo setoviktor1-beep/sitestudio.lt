@@ -10,9 +10,15 @@ RUN npm ci --no-audit --no-fund
 FROM node:24-alpine AS builder
 WORKDIR /app
 ENV NEXT_TELEMETRY_DISABLED=1
+# Ensure BETTER_AUTH_URL has a valid fallback during build
+ARG BETTER_AUTH_URL="https://sitestudio.lt"
+ENV BETTER_AUTH_URL=$BETTER_AUTH_URL
+ARG BETTER_AUTH_SECRET="build-placeholder-secret-not-for-production"
+ENV BETTER_AUTH_SECRET=$BETTER_AUTH_SECRET
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
-RUN npm run build
+# Override invalid placeholder values passed by Coolify during build
+RUN BETTER_AUTH_URL="https://sitestudio.lt" BETTER_AUTH_SECRET="build-placeholder-secret-not-for-production-32chars" npm run build
 
 # ---- Runtime ----
 FROM node:24-alpine AS runner
