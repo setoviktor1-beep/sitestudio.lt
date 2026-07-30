@@ -3,7 +3,8 @@ import { pool } from "./db";
 import { sendMail } from "./email";
 import { writeAuditLog } from "./audit";
 
-const appUrl = process.env.BETTER_AUTH_URL ?? "http://localhost:3000";
+const rawUrl = process.env.BETTER_AUTH_URL;
+const appUrl = rawUrl && rawUrl.startsWith("http") ? rawUrl : "http://localhost:3000";
 
 /**
  * better-auth instance.
