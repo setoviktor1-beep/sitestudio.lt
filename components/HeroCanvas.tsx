@@ -15,18 +15,18 @@ export default function HeroCanvas() {
     let height = (canvas.height = canvas.offsetHeight);
     let animationId = 0;
 
-    // Particle system
-    const colors = ["#2563eb", "#7c3aed", "#ff5a1f"];
-    const particleCount = Math.min(50, Math.floor((width * height) / 25000));
+    // Particle system — diweb.lt colors: violet, rose, flame
+    const colors = ["#7c3aed", "#e11d48", "#ff5a1f"];
+    const particleCount = Math.min(60, Math.floor((width * height) / 20000));
 
     const particles = Array.from({ length: particleCount }, () => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      vx: (Math.random() - 0.5) * 0.3,
-      vy: (Math.random() - 0.5) * 0.3,
-      radius: Math.random() * 2 + 0.5,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      radius: Math.random() * 2.5 + 0.8,
       color: colors[Math.floor(Math.random() * colors.length)],
-      opacity: Math.random() * 0.4 + 0.1,
+      opacity: Math.random() * 0.5 + 0.15,
     }));
 
     // Mouse interaction
@@ -81,7 +81,7 @@ export default function HeroCanvas() {
           if (cdist < 140) {
             ctx.beginPath();
             ctx.strokeStyle = p.color;
-            ctx.globalAlpha = (1 - cdist / 140) * 0.08;
+            ctx.globalAlpha = (1 - cdist / 140) * 0.12;
             ctx.lineWidth = 0.8;
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
@@ -98,8 +98,8 @@ export default function HeroCanvas() {
 
         // Glow
         ctx.beginPath();
-        ctx.globalAlpha = p.opacity * 0.3;
-        ctx.arc(p.x, p.y, p.radius * 3, 0, Math.PI * 2);
+        ctx.globalAlpha = p.opacity * 0.35;
+        ctx.arc(p.x, p.y, p.radius * 3.5, 0, Math.PI * 2);
         ctx.fill();
       }
 
@@ -119,8 +119,8 @@ export default function HeroCanvas() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full pointer-events-auto"
-      style={{ zIndex: -1 }}
+      className="absolute inset-0 w-full h-full pointer-events-none"
+      style={{ zIndex: 0 }}
     />
   );
 }

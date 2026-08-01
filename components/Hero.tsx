@@ -8,9 +8,9 @@ export default function Hero() {
       <HeroCanvas />
 
       {/* Glow orbs — diweb.lt style: violet, rose, flame with animations */}
-      <div className="hero-glow top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#7c3aed]/25 animate-glowPulse" style={{ zIndex: -2 }} />
-      <div className="hero-glow top-1/4 right-1/4 w-[300px] h-[200px] bg-[#e11d48]/20 animate-floatSlow" style={{ zIndex: -2 }} />
-      <div className="hero-glow top-1/3 left-1/4 w-[250px] h-[180px] bg-[#ff5a1f]/10 animate-floatSlow2" style={{ zIndex: -2 }} />
+      <div className="hero-glow top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#7c3aed]/25 animate-glowPulse" style={{ zIndex: -1 }} />
+      <div className="hero-glow top-1/4 right-1/4 w-[300px] h-[200px] bg-[#e11d48]/20 animate-floatSlow" style={{ zIndex: -1 }} />
+      <div className="hero-glow top-1/3 left-1/4 w-[250px] h-[180px] bg-[#ff5a1f]/10 animate-floatSlow2" style={{ zIndex: -1 }} />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
         {/* Badge */}
