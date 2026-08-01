@@ -9,8 +9,8 @@
   --color-border-subtle: rgba(11, 11, 20, 0.06);
   --color-grad-sky: #2563eb;
   --color-grad-violet: #7c3aed;
-  --color-grad-flame: #ff5a1f;
   --color-grad-red: #e11d48;
+  --color-grad-flame: #ff5a1f;
   --font-display: var(--font-jakarta), "Inter", system-ui, sans-serif;
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
@@ -22,6 +22,7 @@
     font-family: var(--font-sans);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -29,14 +30,58 @@
   }
 }
 
-/* Gradient text */
+/* Gradient text — diweb.lt style: violet → rose → flame */
 .gradient-text {
-  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  background: linear-gradient(120deg, #7c3aed, #e11d48 55%, #ff5a1f);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
-/* Hero gradient background */
+/* Primary button — diweb.lt style */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-image: linear-gradient(120deg, #7c3aed, #e11d48, #ff5a1f);
+  background-size: 200% 200%;
+  box-shadow: 0 8px 30px rgba(20, 18, 60, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover {
+  background-position: 100% 0;
+  transform: translateY(-1px);
+  box-shadow: 0 16px 40px -12px rgba(225, 29, 72, 0.45);
+}
+
+/* Ghost button — diweb.lt style */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(11, 11, 20, 0.1);
+  background-color: #ffffff;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  color: #0b0b14;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-ghost:hover {
+  background-color: rgba(11, 11, 20, 0.05);
+}
+
+/* Hero gradient background — dark with subtle glow */
 .hero-gradient {
   background: radial-gradient(ellipse 80% 60% at 50% 0%, #1e1b4b 0%, #0b0b14 50%, #0b0b14 100%);
 }
@@ -46,6 +91,62 @@
   border-radius: 50%;
   filter: blur(120px);
   pointer-events: none;
+}
+
+/* Blob — diweb.lt floating orbs */
+.blob {
+  pointer-events: none;
+  position: absolute;
+  border-radius: 9999px;
+  opacity: 0.6;
+  filter: blur(64px);
+  will-change: transform;
+}
+
+/* Animations — diweb.lt style */
+@keyframes floatSlow {
+  0%, 100% { transform: translate(0) scale(1); }
+  50% { transform: translate(20px, -30px) scale(1.05); }
+}
+
+@keyframes floatSlow2 {
+  0%, 100% { transform: translate(0) scale(1); }
+  50% { transform: translate(-30px, 20px) scale(1.08); }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 0.95; transform: scale(1.05); }
+}
+
+@keyframes glowSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-floatSlow {
+  animation: floatSlow 14s ease-in-out infinite;
+}
+
+.animate-floatSlow2 {
+  animation: floatSlow2 18s ease-in-out infinite;
+}
+
+.animate-floatY {
+  animation: floatY 6s ease-in-out infinite;
+}
+
+.animate-glowPulse {
+  animation: glowPulse 5s ease-in-out infinite;
+}
+
+.animate-glowSpin {
+  animation: glowSpin 22s linear infinite;
 }
 
 /* Card hover */
@@ -58,17 +159,46 @@
   box-shadow: 0 12px 40px -8px rgba(20, 18, 60, 0.12);
 }
 
-/* Custom Scrollbar */
+/* Shadow utilities — diweb.lt style */
+.shadow-soft {
+  box-shadow: 0 8px 30px rgba(20, 18, 60, 0.08);
+}
+
+.shadow-card {
+  box-shadow: 0 24px 60px -24px rgba(15, 12, 41, 0.18);
+}
+
+/* Custom Scrollbar — diweb.lt style */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
+  height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #f7f7fb;
+  background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #d1d5db;
-  border-radius: 4px;
+  background: linear-gradient(180deg, rgba(124, 58, 237, 0.35), rgba(225, 29, 72, 0.35));
+  border-radius: 999px;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: #9ca3af;
+
+/* Selection — diweb.lt style */
+::selection {
+  background: rgba(124, 58, 237, 0.18);
+  color: #0b0b14;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

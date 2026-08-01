@@ -27,7 +27,7 @@ export default function Navbar() {
           <div
             className={`flex h-10 w-10 items-center justify-center rounded-2xl text-white font-bold text-xl transition-all group-hover:scale-105 ${
               scrolled
-                ? "bg-gradient-to-br from-[#2563eb] to-[#7c3aed] shadow-md shadow-blue-500/20"
+                ? "bg-gradient-to-br from-[#7c3aed] to-[#e11d48] shadow-md shadow-violet-500/20"
                 : "bg-white/10 backdrop-blur border border-white/20"
             }`}
           >
@@ -40,19 +40,19 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <nav className={`hidden md:flex items-center gap-8 text-sm font-medium ${scrolled ? "text-[#3b3b50]" : "text-white/80"}`}>
-          <Link href="#paslaugos" className="hover:text-[#2563eb] transition-colors">
+          <Link href="#paslaugos" className="hover:text-[#7c3aed] transition-colors">
             Paslaugos
           </Link>
-          <Link href="#procesas" className="hover:text-[#2563eb] transition-colors">
+          <Link href="#procesas" className="hover:text-[#7c3aed] transition-colors">
             Procesas
           </Link>
-          <Link href="#kainos" className="hover:text-[#2563eb] transition-colors">
+          <Link href="#kainos" className="hover:text-[#7c3aed] transition-colors">
             Kainodara
           </Link>
-          <Link href="#faq" className="hover:text-[#2563eb] transition-colors">
+          <Link href="#faq" className="hover:text-[#7c3aed] transition-colors">
             D.U.K.
           </Link>
-          <Link href="#kontaktai" className="hover:text-[#2563eb] transition-colors">
+          <Link href="#kontaktai" className="hover:text-[#7c3aed] transition-colors">
             Kontaktai
           </Link>
         </nav>
@@ -98,19 +98,19 @@ export default function Navbar() {
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-b border-black/5 px-6 py-6 mt-3 space-y-4 shadow-xl">
-          <Link href="#paslaugos" onClick={() => setMobileMenuOpen(false)} className="block text-[#3b3b50] hover:text-[#2563eb] font-medium">
+          <Link href="#paslaugos" onClick={() => setMobileMenuOpen(false)} className="block text-[#3b3b50] hover:text-[#7c3aed] font-medium">
             Paslaugos
           </Link>
-          <Link href="#procesas" onClick={() => setMobileMenuOpen(false)} className="block text-[#3b3b50] hover:text-[#2563eb] font-medium">
+          <Link href="#procesas" onClick={() => setMobileMenuOpen(false)} className="block text-[#3b3b50] hover:text-[#7c3aed] font-medium">
             Procesas
           </Link>
-          <Link href="#kainos" onClick={() => setMobileMenuOpen(false)} className="block text-[#3b3b50] hover:text-[#2563eb] font-medium">
+          <Link href="#kainos" onClick={() => setMobileMenuOpen(false)} className="block text-[#3b3b50] hover:text-[#7c3aed] font-medium">
             Kainodara
           </Link>
-          <Link href="#faq" onClick={() => setMobileMenuOpen(false)} className="block text-[#3b3b50] hover:text-[#2563eb] font-medium">
+          <Link href="#faq" onClick={() => setMobileMenuOpen(false)} className="block text-[#3b3b50] hover:text-[#7c3aed] font-medium">
             D.U.K.
           </Link>
-          <Link href="#kontaktai" onClick={() => setMobileMenuOpen(false)} className="block text-[#3b3b50] hover:text-[#2563eb] font-medium">
+          <Link href="#kontaktai" onClick={() => setMobileMenuOpen(false)} className="block text-[#3b3b50] hover:text-[#7c3aed] font-medium">
             Kontaktai
           </Link>
           <div className="pt-4 border-t border-black/5 flex flex-col gap-3">

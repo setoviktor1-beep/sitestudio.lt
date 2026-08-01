@@ -20,7 +20,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Info Side */}
           <div>
-            <p className="text-sm font-semibold text-[#2563eb] uppercase tracking-wider mb-3">Kontaktai</p>
+            <p className="text-sm font-semibold text-[#7c3aed] uppercase tracking-wider mb-3">Kontaktai</p>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0b0b14] tracking-tight leading-tight">
               Pradėkime jūsų <span className="gradient-text">projektą šiandien</span>
             </h2>
@@ -29,8 +29,8 @@ export default function Contact() {
             </p>
 
             <div className="mt-8 space-y-4">
-              <div className="flex items-center gap-4 bg-white p-5 rounded-2xl border border-black/5 shadow-[0_4px_20px_rgba(20,18,60,0.03)]">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-xl">
+              <div className="flex items-center gap-4 bg-white p-5 rounded-2xl border border-[#0b0b14]/10 shadow-soft">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-violet-50 text-xl">
                   ✉️
                 </div>
                 <div>
@@ -39,8 +39,8 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 bg-white p-5 rounded-2xl border border-black/5 shadow-[0_4px_20px_rgba(20,18,60,0.03)]">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-violet-50 text-xl">
+              <div className="flex items-center gap-4 bg-white p-5 rounded-2xl border border-[#0b0b14]/10 shadow-soft">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-rose-50 text-xl">
                   🌐
                 </div>
                 <div>
@@ -49,7 +49,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 bg-white p-5 rounded-2xl border border-black/5 shadow-[0_4px_20px_rgba(20,18,60,0.03)]">
+              <div className="flex items-center gap-4 bg-white p-5 rounded-2xl border border-[#0b0b14]/10 shadow-soft">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-50 text-xl">
                   ⚡
                 </div>
@@ -62,7 +62,7 @@ export default function Contact() {
           </div>
 
           {/* Form Side */}
-          <div className="bg-white p-8 sm:p-10 rounded-3xl border border-black/5 shadow-[0_8px_40px_rgba(20,18,60,0.06)]">
+          <div className="bg-white p-8 sm:p-10 rounded-3xl border border-[#0b0b14]/10 shadow-card">
             {submitted ? (
               <div className="text-center py-12">
                 <div className="text-5xl mb-4">✅</div>
@@ -70,7 +70,7 @@ export default function Contact() {
                 <p className="text-[#6b6b80] text-sm">Susisieksime su jumis per kelias valandas.</p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="mt-6 text-sm text-[#2563eb] hover:underline font-medium"
+                  className="mt-6 text-sm text-[#7c3aed] hover:underline font-medium"
                 >
                   Siųsti kitą žinutę
                 </button>
@@ -85,7 +85,7 @@ export default function Contact() {
                     type="text"
                     required
                     placeholder="Vardas Pavardė"
-                    className="w-full rounded-xl bg-[#f7f7fb] border border-black/5 px-4 py-3 text-sm text-[#0b0b14] placeholder-[#9ca3af] focus:border-[#2563eb] focus:outline-none focus:ring-2 focus:ring-blue-500/10 transition-all"
+                    className="w-full rounded-xl bg-[#f7f7fb] border border-[#0b0b14]/10 px-4 py-3 text-sm text-[#0b0b14] placeholder-[#9ca3af] focus:border-[#7c3aed] focus:outline-none focus:ring-2 focus:ring-violet-500/10 transition-all"
                   />
                 </div>
 
@@ -95,7 +95,7 @@ export default function Contact() {
                     type="email"
                     required
                     placeholder="vardas@imone.lt"
-                    className="w-full rounded-xl bg-[#f7f7fb] border border-black/5 px-4 py-3 text-sm text-[#0b0b14] placeholder-[#9ca3af] focus:border-[#2563eb] focus:outline-none focus:ring-2 focus:ring-blue-500/10 transition-all"
+                    className="w-full rounded-xl bg-[#f7f7fb] border border-[#0b0b14]/10 px-4 py-3 text-sm text-[#0b0b14] placeholder-[#9ca3af] focus:border-[#7c3aed] focus:outline-none focus:ring-2 focus:ring-violet-500/10 transition-all"
                   />
                 </div>
 
@@ -105,14 +105,14 @@ export default function Contact() {
                     required
                     rows={4}
                     placeholder="Aprašykite savo poreikius ar klausimą..."
-                    className="w-full rounded-xl bg-[#f7f7fb] border border-black/5 px-4 py-3 text-sm text-[#0b0b14] placeholder-[#9ca3af] focus:border-[#2563eb] focus:outline-none focus:ring-2 focus:ring-blue-500/10 transition-all resize-none"
+                    className="w-full rounded-xl bg-[#f7f7fb] border border-[#0b0b14]/10 px-4 py-3 text-sm text-[#0b0b14] placeholder-[#9ca3af] focus:border-[#7c3aed] focus:outline-none focus:ring-2 focus:ring-violet-500/10 transition-all resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full rounded-full bg-gradient-to-r from-[#2563eb] to-[#7c3aed] py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 hover:opacity-90 disabled:opacity-50 transition-all"
+                  className="w-full btn-primary disabled:opacity-50"
                 >
                   {loading ? "Siunčiama..." : "Siųsti užklausą →"}
                 </button>

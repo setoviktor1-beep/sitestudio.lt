@@ -7,15 +7,15 @@ export default function Hero() {
       {/* Interactive particle canvas - behind everything */}
       <HeroCanvas />
 
-      {/* Glow orbs - behind canvas */}
-      <div className="hero-glow top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#2563eb]/25" style={{ zIndex: -2 }} />
-      <div className="hero-glow top-1/4 right-1/4 w-[300px] h-[200px] bg-[#7c3aed]/20" style={{ zIndex: -2 }} />
-      <div className="hero-glow top-1/3 left-1/4 w-[250px] h-[180px] bg-[#ff5a1f]/10" style={{ zIndex: -2 }} />
+      {/* Glow orbs — diweb.lt style: violet, rose, flame with animations */}
+      <div className="hero-glow top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#7c3aed]/25 animate-glowPulse" style={{ zIndex: -2 }} />
+      <div className="hero-glow top-1/4 right-1/4 w-[300px] h-[200px] bg-[#e11d48]/20 animate-floatSlow" style={{ zIndex: -2 }} />
+      <div className="hero-glow top-1/3 left-1/4 w-[250px] h-[180px] bg-[#ff5a1f]/10 animate-floatSlow2" style={{ zIndex: -2 }} />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 rounded-full bg-white/5 backdrop-blur border border-white/10 px-4 py-1.5 text-xs md:text-sm font-medium text-blue-300 mb-8">
-          <span className="flex h-2 w-2 rounded-full bg-blue-400 animate-pulse" />
+        <div className="inline-flex items-center gap-2 rounded-full bg-white/5 backdrop-blur border border-white/10 px-4 py-1.5 text-xs md:text-sm font-medium text-violet-300 mb-8">
+          <span className="flex h-2 w-2 rounded-full bg-violet-400 animate-pulse" />
           <span>Nuo idėjos iki veikiančios svetainės — greitai ir aiškiai</span>
         </div>
 
@@ -27,7 +27,7 @@ export default function Hero() {
         </h1>
 
         {/* Subtitle */}
-        <p className="mt-6 text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        <p className="mt-6 text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
           Kuriame ultra-greitus Next.js tinklapius, diegiame Directus CMS ir užtikriname saugų VPS talpinimą su automatiniu SSL bei 24/7 monitoringu.
         </p>
 
@@ -35,20 +35,20 @@ export default function Hero() {
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="#kontaktai"
-            className="w-full sm:w-auto rounded-full bg-white text-[#0b0b14] px-8 py-4 text-base font-semibold shadow-xl hover:scale-[1.02] transition-all"
+            className="btn-primary w-full sm:w-auto"
           >
             Gauti pasiūlymą
           </Link>
           <Link
             href="#paslaugos"
-            className="w-full sm:w-auto rounded-full bg-white/5 backdrop-blur border border-white/15 px-8 py-4 text-base font-semibold text-white hover:bg-white/10 transition-all"
+            className="w-full sm:w-auto rounded-2xl bg-white/5 backdrop-blur border border-white/15 px-8 py-4 text-base font-semibold text-white hover:bg-white/10 transition-all"
           >
             Mūsų paslaugos →
           </Link>
         </div>
 
         {/* Trust line */}
-        <p className="mt-6 text-sm text-slate-400">
+        <p className="mt-6 text-sm text-white/40">
           Nemokama konsultacija · be įsipareigojimų · atsakome per 24 val.
         </p>
 
@@ -60,9 +60,9 @@ export default function Hero() {
             { value: "99.9%", label: "Uptime garantija" },
             { value: "<100ms", label: "Serverio atsakas" },
           ].map((stat, i) => (
-            <div key={i} className="bg-white/5 backdrop-blur border border-white/10 p-5 rounded-2xl text-left">
+            <div key={i} className="bg-white/5 backdrop-blur border border-white/10 p-5 rounded-2xl text-left animate-floatY" style={{ animationDelay: `${i * 0.5}s` }}>
               <div className="text-2xl md:text-3xl font-extrabold text-white">{stat.value}</div>
-              <div className="text-xs text-slate-400 mt-1">{stat.label}</div>
+              <div className="text-xs text-white/40 mt-1">{stat.label}</div>
             </div>
           ))}
         </div>

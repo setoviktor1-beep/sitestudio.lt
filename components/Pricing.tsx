@@ -55,7 +55,7 @@ export default function Pricing() {
     <section id="kainos" className="py-24 bg-[#f7f7fb]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-sm font-semibold text-[#2563eb] uppercase tracking-wider mb-3">Kainodara</p>
+          <p className="text-sm font-semibold text-[#7c3aed] uppercase tracking-wider mb-3">Kainodara</p>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0b0b14] tracking-tight">
             Aiškios kainos, <span className="gradient-text">be paslėptų mokesčių</span>
           </h2>
@@ -70,12 +70,12 @@ export default function Pricing() {
               key={idx}
               className={`bg-white p-8 rounded-3xl border relative flex flex-col justify-between ${
                 plan.popular
-                  ? "border-[#2563eb] shadow-[0_20px_60px_-12px_rgba(37,99,235,0.15)] md:scale-105"
-                  : "border-black/5 shadow-[0_8px_30px_rgba(20,18,60,0.04)]"
+                  ? "border-[#7c3aed] shadow-[0_20px_60px_-12px_rgba(124,58,237,0.15)] md:scale-105"
+                  : "border-[#0b0b14]/10 shadow-soft"
               }`}
             >
               {plan.badge && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-[#2563eb] to-[#7c3aed] px-4 py-1 text-xs font-bold text-white shadow-md whitespace-nowrap">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-[#7c3aed] to-[#e11d48] px-4 py-1 text-xs font-bold text-white shadow-md whitespace-nowrap">
                   {plan.badge}
                 </div>
               )}
@@ -85,10 +85,10 @@ export default function Pricing() {
                 <div className="text-4xl font-extrabold text-[#0b0b14] my-4">{plan.price}</div>
                 <p className="text-[#6b6b80] text-sm mb-6">{plan.description}</p>
 
-                <ul className="space-y-3 border-t border-black/5 pt-6 mb-8">
+                <ul className="space-y-3 border-t border-[#0b0b14]/5 pt-6 mb-8">
                   {plan.features.map((feat, fIdx) => (
                     <li key={fIdx} className="flex items-center text-sm text-[#3b3b50]">
-                      <span className="text-[#2563eb] mr-2.5 font-bold">✓</span>
+                      <span className="text-[#7c3aed] mr-2.5 font-bold">✓</span>
                       {feat}
                     </li>
                   ))}
@@ -99,7 +99,7 @@ export default function Pricing() {
                 href="#kontaktai"
                 className={`w-full text-center py-3.5 rounded-full font-semibold text-sm transition-all ${
                   plan.popular
-                    ? "bg-gradient-to-r from-[#2563eb] to-[#7c3aed] text-white shadow-lg shadow-blue-500/20 hover:opacity-90"
+                    ? "bg-gradient-to-r from-[#7c3aed] to-[#e11d48] text-white shadow-lg shadow-violet-500/20 hover:opacity-90"
                     : "bg-[#0b0b14] text-white hover:bg-[#1e1b4b]"
                 }`}
               >

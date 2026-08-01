@@ -32,7 +32,7 @@ export default function Faq() {
     <section id="faq" className="py-24 bg-white">
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <div className="text-center mb-14">
-          <p className="text-sm font-semibold text-[#2563eb] uppercase tracking-wider mb-3">D.U.K.</p>
+          <p className="text-sm font-semibold text-[#7c3aed] uppercase tracking-wider mb-3">D.U.K.</p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0b0b14] tracking-tight">
             Dažniausiai užduodami <span className="gradient-text">klausimai</span>
           </h2>
@@ -45,7 +45,7 @@ export default function Faq() {
               <div
                 key={idx}
                 className={`bg-[#f7f7fb] rounded-2xl overflow-hidden transition-all border ${
-                  isOpen ? "border-[#2563eb]/20" : "border-transparent"
+                  isOpen ? "border-[#7c3aed]/20" : "border-transparent"
                 }`}
               >
                 <button
@@ -53,7 +53,7 @@ export default function Faq() {
                   className="w-full text-left p-5 font-semibold text-[#0b0b14] flex justify-between items-center text-base"
                 >
                   <span>{faq.q}</span>
-                  <span className={`text-[#2563eb] transition-transform duration-200 text-xl flex-shrink-0 ml-4 ${isOpen ? "rotate-180" : ""}`}>
+                  <span className={`text-[#7c3aed] transition-transform duration-200 text-xl flex-shrink-0 ml-4 ${isOpen ? "rotate-180" : ""}`}>
                     ↓
                   </span>
                 </button>
