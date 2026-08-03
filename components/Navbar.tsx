@@ -2,16 +2,10 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import type { Dict, Locale } from "@/lib/i18n";
+import { locales, localeNames, homePath } from "@/lib/i18n";
 
-const navLinks = [
-  { href: "/#paslaugos", label: "Paslaugos" },
-  { href: "/#darbai", label: "Darbai" },
-  { href: "/#procesas", label: "Procesas" },
-  { href: "/#kainos", label: "Kainos" },
-  { href: "/#duk", label: "DUK" },
-];
-
-export default function Navbar() {
+export default function Navbar({ dict, locale = "lt" }: { dict: Dict; locale?: Locale }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -21,6 +15,34 @@ export default function Navbar() {
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const base = homePath(locale);
+  const anchor = (hash: string) => (base === "/" ? `/#${hash}` : `${base}#${hash}`);
+
+  const navLinks = [
+    { href: anchor("paslaugos"), label: dict.nav.services },
+    { href: anchor("darbai"), label: dict.nav.works },
+    { href: anchor("procesas"), label: dict.nav.process },
+    { href: anchor("kainos"), label: dict.nav.pricing },
+    { href: anchor("duk"), label: dict.nav.faq },
+  ];
+
+  const langSwitcher = (
+    <div className="flex items-center gap-1" aria-label="Language">
+      {locales.map((l) => (
+        <Link
+          key={l}
+          href={homePath(l)}
+          hrefLang={l}
+          className={`rounded-md px-1.5 py-1 text-xs font-semibold transition-colors ${
+            l === locale ? "bg-[#2456d6] text-white" : "text-[#64748b] hover:text-[#2456d6]"
+          }`}
+        >
+          {localeNames[l]}
+        </Link>
+      ))}
+    </div>
+  );
 
   return (
     <header
@@ -32,7 +54,7 @@ export default function Navbar() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 group" aria-label="SiteStudio — į pradžią">
+        <Link href={base} className="flex items-center gap-2.5 group" aria-label="SiteStudio">
           <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#2456d6] text-white font-bold text-lg transition-transform group-hover:scale-105">
             S
           </span>
@@ -42,7 +64,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-[#334155]" aria-label="Pagrindinė navigacija">
+        <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-[#334155]">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href} className="hover:text-[#2456d6] transition-colors">
               {link.label}
@@ -50,21 +72,21 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Primary CTA */}
-        <div className="hidden md:block">
+        <div className="hidden lg:flex items-center gap-5">
+          {langSwitcher}
           <Link
-            href="/#kontaktai"
+            href={anchor("kontaktai")}
             className="rounded-xl bg-[#2456d6] px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#1a41ab] transition-colors"
           >
-            Gauti pasiūlymą
+            {dict.nav.cta}
           </Link>
         </div>
 
         {/* Mobile menu button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 text-[#0f172a]"
-          aria-label={mobileMenuOpen ? "Uždaryti meniu" : "Atidaryti meniu"}
+          className="lg:hidden p-2 text-[#0f172a]"
+          aria-label={mobileMenuOpen ? dict.nav.menuClose : dict.nav.menuOpen}
           aria-expanded={mobileMenuOpen}
         >
           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -79,7 +101,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <nav className="md:hidden bg-white border-b border-black/5 px-6 py-6 mt-3 space-y-4 shadow-xl" aria-label="Mobili navigacija">
+        <nav className="lg:hidden bg-white border-b border-black/5 px-6 py-6 mt-3 space-y-4 shadow-xl">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -90,13 +112,14 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <div className="pt-4 border-t border-black/5">
+          <div className="pt-4 border-t border-black/5 space-y-4">
+            {langSwitcher}
             <Link
-              href="/#kontaktai"
+              href={anchor("kontaktai")}
               onClick={() => setMobileMenuOpen(false)}
               className="block rounded-xl bg-[#2456d6] text-white px-5 py-3 text-sm font-semibold text-center"
             >
-              Gauti pasiūlymą
+              {dict.nav.cta}
             </Link>
           </div>
         </nav>

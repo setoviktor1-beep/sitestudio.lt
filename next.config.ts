@@ -53,8 +53,8 @@ const nextConfig: NextConfig = {
       { source: "/kainos", destination: "/#kainos", permanent: true },
       { source: "/duk", destination: "/#duk", permanent: true },
       { source: "/procesas", destination: "/#procesas", permanent: true },
-      { source: "/en", destination: "/", permanent: true },
-      { source: "/en/:path*", destination: "/", permanent: true },
+      // /en, /pl, /lv, /et, /ru are now real localized pages.
+      { source: "/en/:path+", destination: "/en", permanent: true },
       { source: "/lt", destination: "/", permanent: true },
       { source: "/lt/:path*", destination: "/:path*", permanent: true },
       { source: "/portfolio", destination: "/darbai", permanent: true },

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { getDict } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Kontaktai",
@@ -10,14 +11,15 @@ export const metadata: Metadata = {
   alternates: { canonical: "/kontaktai" },
 };
 
-export default function KontaktaiPage() {
+export default async function KontaktaiPage() {
+  const dict = await getDict("lt");
   return (
     <div className="min-h-screen bg-white text-[#0f172a] antialiased">
-      <Navbar />
+      <Navbar dict={dict} locale="lt" />
       <main className="pt-16">
-        <Contact />
+        <Contact dict={dict} locale="lt" />
       </main>
-      <Footer />
+      <Footer dict={dict} locale="lt" />
     </div>
   );
 }

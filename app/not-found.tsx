@@ -1,11 +1,13 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { getDict } from "@/lib/i18n";
 
-export default function NotFound() {
+export default async function NotFound() {
+  const dict = await getDict("lt");
   return (
     <div className="min-h-screen bg-white text-[#0f172a] flex flex-col">
-      <Navbar />
+      <Navbar dict={dict} locale="lt" />
       <main className="flex-1 flex items-center justify-center px-6 pt-24 pb-16">
         <div className="text-center max-w-md">
           <p className="section-label mb-3">Klaida 404</p>
@@ -21,7 +23,7 @@ export default function NotFound() {
           </div>
         </div>
       </main>
-      <Footer />
+      <Footer dict={dict} locale="lt" />
     </div>
   );
 }

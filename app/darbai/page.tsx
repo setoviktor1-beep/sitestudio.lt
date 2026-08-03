@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Works from "@/components/Works";
 import Footer from "@/components/Footer";
+import { getDict } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Darbai — atlikti projektai",
@@ -11,12 +12,13 @@ export const metadata: Metadata = {
   alternates: { canonical: "/darbai" },
 };
 
-export default function DarbaiPage() {
+export default async function DarbaiPage() {
+  const dict = await getDict("lt");
   return (
     <div className="min-h-screen bg-white text-[#0f172a] antialiased">
-      <Navbar />
+      <Navbar dict={dict} locale="lt" />
       <main className="pt-16">
-        <Works />
+        <Works dict={dict} />
         <div className="mx-auto max-w-7xl px-6 lg:px-8 pb-20">
           <div className="rounded-2xl bg-[#0f172a] p-8 sm:p-10 text-center">
             <h2 className="text-2xl font-bold text-white">Norite tokio rezultato savo verslui?</h2>
@@ -29,7 +31,7 @@ export default function DarbaiPage() {
           </div>
         </div>
       </main>
-      <Footer />
+      <Footer dict={dict} locale="lt" />
     </div>
   );
 }

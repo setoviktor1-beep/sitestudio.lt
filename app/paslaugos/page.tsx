@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Services from "@/components/Services";
 import Pricing from "@/components/Pricing";
 import Footer from "@/components/Footer";
+import { getDict } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Paslaugos — svetainių kūrimas, el. parduotuvės, automatizavimas",
@@ -12,10 +13,11 @@ export const metadata: Metadata = {
   alternates: { canonical: "/paslaugos" },
 };
 
-export default function PaslaugosPage() {
+export default async function PaslaugosPage() {
+  const dict = await getDict("lt");
   return (
     <div className="min-h-screen bg-white text-[#0f172a] antialiased">
-      <Navbar />
+      <Navbar dict={dict} locale="lt" />
       <main className="pt-28 md:pt-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 pb-4">
           <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0f172a]">
@@ -30,10 +32,10 @@ export default function PaslaugosPage() {
             — patarsime nemokamai.
           </p>
         </div>
-        <Services />
-        <Pricing />
+        <Services dict={dict} />
+        <Pricing dict={dict} locale="lt" />
       </main>
-      <Footer />
+      <Footer dict={dict} locale="lt" />
     </div>
   );
 }

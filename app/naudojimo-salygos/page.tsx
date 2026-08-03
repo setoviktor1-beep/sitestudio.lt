@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { getDict } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Paslaugų teikimo sąlygos",
@@ -9,10 +10,11 @@ export const metadata: Metadata = {
   alternates: { canonical: "/naudojimo-salygos" },
 };
 
-export default function NaudojimoSalygos() {
+export default async function NaudojimoSalygos() {
+  const dict = await getDict("lt");
   return (
     <div className="min-h-screen bg-white text-[#0f172a]">
-      <Navbar />
+      <Navbar dict={dict} locale="lt" />
       <main className="pt-32 pb-20 max-w-3xl mx-auto px-6 lg:px-8">
         <Link href="/" className="text-xs font-semibold text-[#2456d6] hover:underline mb-6 inline-block">
           ← Grįžti į pagrindinį
@@ -69,7 +71,7 @@ export default function NaudojimoSalygos() {
           <p className="text-xs text-[#64748b] pt-4">Atnaujinta: 2026 m. rugpjūtis.</p>
         </div>
       </main>
-      <Footer />
+      <Footer dict={dict} locale="lt" />
     </div>
   );
 }
