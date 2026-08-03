@@ -1,15 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import type { Dict, Locale } from "@/lib/i18n";
 
 type Status = "idle" | "loading" | "success" | "error";
 
 const inputClass =
   "w-full rounded-xl bg-[#f6f8fb] border border-[#0f172a]/10 px-4 py-3 text-sm text-[#0f172a] placeholder-[#94a3b8] focus:border-[#2456d6] focus:outline-none focus:ring-2 focus:ring-[#2456d6]/15 transition-all";
 
-export default function Contact() {
+export default function Contact({ dict, locale = "lt" }: { dict: Dict; locale?: Locale }) {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const t = dict.contact;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -36,16 +38,12 @@ export default function Contact() {
         form.reset();
       } else {
         const payload = await res.json().catch(() => null);
-        setErrorMessage(
-          payload?.error ??
-            "Nepavyko išsiųsti užklausos. Pabandykite dar kartą arba parašykite info@sitestudio.lt."
-        );
+        // Server validation messages are Lithuanian; show them only on the LT site.
+        setErrorMessage(locale === "lt" && payload?.error ? payload.error : t.form.error);
         setStatus("error");
       }
     } catch {
-      setErrorMessage(
-        "Nepavyko išsiųsti užklausos — patikrinkite interneto ryšį arba parašykite info@sitestudio.lt."
-      );
+      setErrorMessage(t.form.error);
       setStatus("error");
     }
   };
@@ -56,15 +54,11 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Info side */}
           <div>
-            <p className="section-label mb-3">Kontaktai</p>
+            <p className="section-label mb-3">{t.eyebrow}</p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
-              Papasakokite apie savo projektą
+              {t.title}
             </h2>
-            <p className="mt-4 text-[#475569] text-base sm:text-lg leading-relaxed max-w-xl">
-              Trumpai aprašykite, ko reikia — svetainės, parduotuvės, atnaujinimo ar
-              automatizavimo. Per vieną darbo dieną atsakysime su klausimais arba
-              konkrečiu pasiūlymu. Konsultacija neįpareigoja.
-            </p>
+            <p className="mt-4 text-[#475569] text-base sm:text-lg leading-relaxed max-w-xl">{t.sub}</p>
 
             <div className="mt-8 space-y-4 max-w-xl">
               <div className="flex items-center gap-4 bg-white p-5 rounded-2xl border border-[#0f172a]/10 shadow-soft">
@@ -74,7 +68,7 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <div className="text-xs text-[#64748b]">El. paštas</div>
+                  <div className="text-xs text-[#64748b]">{t.emailLabel}</div>
                   <a href="mailto:info@sitestudio.lt" className="text-[#0f172a] font-semibold hover:text-[#2456d6] transition-colors">
                     info@sitestudio.lt
                   </a>
@@ -88,8 +82,8 @@ export default function Contact() {
                   </svg>
                 </div>
                 <div>
-                  <div className="text-xs text-[#64748b]">Atsakymas</div>
-                  <div className="text-[#0f172a] font-semibold">Per vieną darbo dieną</div>
+                  <div className="text-xs text-[#64748b]">{t.responseLabel}</div>
+                  <div className="text-[#0f172a] font-semibold">{t.responseValue}</div>
                 </div>
               </div>
             </div>
@@ -104,24 +98,22 @@ export default function Contact() {
                     <path fillRule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 111.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-[#0f172a] mb-2">Užklausa gauta</h3>
-                <p className="text-[#475569] text-sm">
-                  Ačiū! Atsakysime per vieną darbo dieną adresu, kurį nurodėte.
-                </p>
+                <h3 className="text-2xl font-bold text-[#0f172a] mb-2">{t.form.successTitle}</h3>
+                <p className="text-[#475569] text-sm">{t.form.successText}</p>
                 <button
                   onClick={() => setStatus("idle")}
                   className="mt-6 text-sm text-[#2456d6] hover:underline font-medium"
                 >
-                  Siųsti kitą žinutę
+                  {t.form.sendAnother}
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5" noValidate={false}>
-                <h3 className="text-xl font-bold text-[#0f172a] mb-2">Gauti pasiūlymą</h3>
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <h3 className="text-xl font-bold text-[#0f172a] mb-2">{t.form.heading}</h3>
 
                 <div>
                   <label htmlFor="contact-name" className="block text-xs font-semibold text-[#334155] mb-1.5">
-                    Vardas arba įmonė *
+                    {t.form.name}
                   </label>
                   <input
                     id="contact-name"
@@ -131,7 +123,7 @@ export default function Contact() {
                     minLength={2}
                     maxLength={200}
                     autoComplete="name"
-                    placeholder="Jūsų vardas"
+                    placeholder={t.form.namePlaceholder}
                     className={inputClass}
                   />
                 </div>
@@ -139,7 +131,7 @@ export default function Contact() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="contact-email" className="block text-xs font-semibold text-[#334155] mb-1.5">
-                      El. paštas *
+                      {t.form.email}
                     </label>
                     <input
                       id="contact-email"
@@ -154,7 +146,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <label htmlFor="contact-phone" className="block text-xs font-semibold text-[#334155] mb-1.5">
-                      Telefonas (nebūtina)
+                      {t.form.phone}
                     </label>
                     <input
                       id="contact-phone"
@@ -170,7 +162,7 @@ export default function Contact() {
 
                 <div>
                   <label htmlFor="contact-message" className="block text-xs font-semibold text-[#334155] mb-1.5">
-                    Ko reikia? *
+                    {t.form.message}
                   </label>
                   <textarea
                     id="contact-message"
@@ -179,14 +171,14 @@ export default function Contact() {
                     minLength={10}
                     maxLength={5000}
                     rows={4}
-                    placeholder="Pvz.: reikia svetainės statybų įmonei — paslaugos, darbų nuotraukos, užklausų forma…"
+                    placeholder={t.form.messagePlaceholder}
                     className={`${inputClass} resize-none`}
                   />
                 </div>
 
                 {/* Honeypot — hidden from humans, bots fill it */}
                 <div className="hidden" aria-hidden="true">
-                  <label htmlFor="contact-website">Palikite tuščią</label>
+                  <label htmlFor="contact-website">{t.form.honeypot}</label>
                   <input id="contact-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
                 </div>
 
@@ -201,16 +193,15 @@ export default function Contact() {
                   disabled={status === "loading"}
                   className="w-full btn-primary disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  {status === "loading" ? "Siunčiama…" : "Siųsti užklausą"}
+                  {status === "loading" ? t.form.submitting : t.form.submit}
                 </button>
 
                 <p className="text-center text-xs text-[#94a3b8]">
-                  Pateikdami formą sutinkate, kad nurodytus duomenis naudosime atsakymui
-                  į jūsų užklausą (plačiau —{" "}
+                  {t.form.consentPrefix}
                   <a href="/privatumo-politika" className="underline hover:text-[#2456d6]">
-                    privatumo politikoje
+                    {t.form.consentLink}
                   </a>
-                  ).
+                  {t.form.consentSuffix}
                 </p>
               </form>
             )}

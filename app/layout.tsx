@@ -22,7 +22,18 @@ export const metadata: Metadata = {
   },
   description:
     "SiteStudio kuria svetaines, el. parduotuves ir interneto sistemas mažam ir vidutiniam Lietuvos verslui. Aiški kaina, aiškus terminas, tiesioginis ryšys su vykdytoju.",
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+    languages: {
+      lt: "/",
+      en: "/en",
+      pl: "/pl",
+      lv: "/lv",
+      et: "/et",
+      ru: "/ru",
+      "x-default": "/",
+    },
+  },
   openGraph: {
     type: "website",
     locale: "lt_LT",

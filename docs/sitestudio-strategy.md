@@ -96,6 +96,15 @@ Kiekvienam planui viešai nurodoma: kam skirtas, kas įtraukta, kas neįtraukta,
 Talpinimas ir priežiūra — neprivalomas priedas („pasirūpinsime paleidimu, talpinimu,
 kopijomis ir priežiūra"), ne tapatybė.
 
+### Korekcija (2026-08-03, savininko sprendimas)
+
+Viktoro nurodymu kainos pakoreguotos žemyn ir talpinimas iškeltas į atskirą
+mokestį: Startas (landing / iki 5 psl.) nuo 200 €, Verslas nuo 500 €,
+Individualus — individualus pasiūlymas; talpinimas atitinkamai 8 €/mėn. (80 €/m)
+ir 10 €/mėn. (100 €/m). „Dažniausio pasirinkimo" ženkliukas pašalintas.
+Svetainė išversta į EN, PL, LV, ET, RU (pagrindinė kalba — lietuvių, /{locale}
+adresai, hreflang).
+
 ## Tonas ir dizainas
 
 - Kalba: natūrali lietuvių, be anglicizmų ir be „ultra/revoliucinis/naujos kartos".

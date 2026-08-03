@@ -1,23 +1,23 @@
 "use client";
 
 import { useState } from "react";
-import { faqs } from "./faq-data";
+import type { Dict } from "@/lib/i18n";
 
-export default function Faq() {
+export default function Faq({ dict }: { dict: Dict }) {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
     <section id="duk" className="py-20 md:py-24 bg-white">
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
         <div className="mb-12">
-          <p className="section-label mb-3">DUK</p>
+          <p className="section-label mb-3">{dict.faq.eyebrow}</p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
-            Dažniausiai užduodami klausimai
+            {dict.faq.title}
           </h2>
         </div>
 
         <div className="space-y-3">
-          {faqs.map((faq, idx) => {
+          {dict.faq.items.map((faq, idx) => {
             const isOpen = openIdx === idx;
             return (
               <div
@@ -44,9 +44,7 @@ export default function Faq() {
                   </svg>
                 </button>
                 {isOpen && (
-                  <div className="px-5 pb-5 text-[#475569] text-sm leading-relaxed">
-                    {faq.a}
-                  </div>
+                  <div className="px-5 pb-5 text-[#475569] text-sm leading-relaxed">{faq.a}</div>
                 )}
               </div>
             );
