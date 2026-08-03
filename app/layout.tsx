@@ -15,8 +15,33 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "SiteStudio.lt — Web Puslapių Kūrimas, Administravimas Ir VPS Hostingas",
-  description: "Modernių Next.js svetainių kūrimas, Directus CMS integracija, techninis administravimas bei saugus Docker VPS talpinimas Lietuvoje.",
+  metadataBase: new URL("https://sitestudio.lt"),
+  title: {
+    default: "Svetainių kūrimas verslui — SiteStudio",
+    template: "%s — SiteStudio",
+  },
+  description:
+    "SiteStudio kuria svetaines, el. parduotuves ir interneto sistemas mažam ir vidutiniam Lietuvos verslui. Aiški kaina, aiškus terminas, tiesioginis ryšys su vykdytoju.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "lt_LT",
+    url: "https://sitestudio.lt",
+    siteName: "SiteStudio",
+    title: "Svetainių kūrimas verslui — SiteStudio",
+    description:
+      "Svetainės, el. parduotuvės ir interneto sistemos Lietuvos verslui. Aiški kaina, aiškus terminas, tiesioginis ryšys su vykdytoju.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Svetainių kūrimas verslui — SiteStudio",
+    description:
+      "Svetainės, el. parduotuvės ir interneto sistemos Lietuvos verslui.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -24,7 +49,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="lt" className={`scroll-smooth ${inter.variable} ${jakarta.variable}`}>
-      <body className="min-h-screen bg-white text-[#0b0b14] antialiased selection:bg-blue-500/20 selection:text-[#2563eb]">
+      <body className="min-h-screen bg-white text-[#0f172a] antialiased">
         {children}
       </body>
     </html>

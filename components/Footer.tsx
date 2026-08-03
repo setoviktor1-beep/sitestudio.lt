@@ -2,19 +2,52 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0b0b14] py-12 text-white/60 text-sm">
+    <footer className="bg-[#0f172a] py-14 text-white/60 text-sm">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-[#7c3aed] to-[#e11d48] text-white font-bold">
-              S
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+          <div>
+            <div className="flex items-center gap-2.5 mb-4">
+              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#2456d6] text-white font-bold">
+                S
+              </span>
+              <span className="text-lg font-bold text-white tracking-tight">
+                Site<span className="text-[#7c9bef]">Studio</span>
+              </span>
             </div>
-            <span className="text-lg font-bold text-white tracking-tight">
-              Site<span className="gradient-text">Studio</span>
-            </span>
+            <p className="leading-relaxed max-w-xs">
+              Svetainių ir interneto sistemų studija Lietuvos verslui.
+              Bendraujate tiesiogiai su projekto vykdytoju.
+            </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6 text-white/70 font-medium">
+          <div>
+            <h3 className="text-white font-semibold mb-4">Naršymas</h3>
+            <ul className="space-y-2.5">
+              <li><Link href="/#paslaugos" className="hover:text-white transition-colors">Paslaugos</Link></li>
+              <li><Link href="/#darbai" className="hover:text-white transition-colors">Darbai</Link></li>
+              <li><Link href="/#kainos" className="hover:text-white transition-colors">Kainos</Link></li>
+              <li><Link href="/#duk" className="hover:text-white transition-colors">DUK</Link></li>
+              <li><Link href="/kontaktai" className="hover:text-white transition-colors">Kontaktai</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-white font-semibold mb-4">Kontaktai</h3>
+            <ul className="space-y-2.5">
+              <li>
+                <a href="mailto:info@sitestudio.lt" className="hover:text-white transition-colors">
+                  info@sitestudio.lt
+                </a>
+              </li>
+              <li>Dirbame visoje Lietuvoje, nuotoliniu būdu</li>
+              <li>Atsakome per vieną darbo dieną</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div>© {new Date().getFullYear()} SiteStudio.lt. Visos teisės saugomos.</div>
+          <div className="flex flex-wrap justify-center gap-6 text-white/70">
             <Link href="/privatumo-politika" className="hover:text-white transition-colors">
               Privatumo politika
             </Link>
@@ -22,12 +55,8 @@ export default function Footer() {
               Slapukų politika
             </Link>
             <Link href="/naudojimo-salygos" className="hover:text-white transition-colors">
-              Naudojimo sąlygos
+              Paslaugų teikimo sąlygos
             </Link>
-          </div>
-
-          <div>
-            © {new Date().getFullYear()} SiteStudio.lt. Visos teisės saugomos.
           </div>
         </div>
       </div>

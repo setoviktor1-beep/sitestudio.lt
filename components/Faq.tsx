@@ -1,40 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import { faqs } from "./faq-data";
 
 export default function Faq() {
-  const faqs = [
-    {
-      q: "Kiek laiko užtrunka puslapio kūrimas?",
-      a: "Paprasta reprezentacinė svetainė sukuriama per 3–7 darbo dienas. Sudėtingesni projektai su Directus CMS ar vartotojų registracija užtrunka nuo 1 iki 3 savaičių.",
-    },
-    {
-      q: "Ar galėsiu pats keisti svetainės turinį?",
-      a: "Taip! Projektai su Directus CMS turi intuityvią valdymo panelę, kurioje galėsite redaguoti tekstus, nuotraukas, paslaugas bei straipsnius be jokių programavimo žinių.",
-    },
-    {
-      q: "Kur bus talpinama mano svetainė?",
-      a: "Svetainė talpinama šiuolaikinėje VPS infrastruktūroje (Docker konteineriuose per Coolify). Užtikrinamas nemokamas SSL (HTTPS) sertifikatas bei automatinės atsarginės kopijos.",
-    },
-    {
-      q: "Ar teikiate palaikymą po svetainės paleidimo?",
-      a: "Taip, teikiame nuolatinį techninį palaikymą, saugumo atnaujinimus, greitaveikos monitoringą bei pagalbą atsiradus klausimams.",
-    },
-    {
-      q: "Ar kainos su PVM?",
-      a: "Nurodytos kainos yra be PVM. Pasiūlyme visada matysite galutinę sumą su visais mokesčiais — jokių netikėtumų.",
-    },
-  ];
-
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-24 bg-white">
+    <section id="duk" className="py-20 md:py-24 bg-white">
       <div className="mx-auto max-w-3xl px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <p className="text-sm font-semibold text-[#7c3aed] uppercase tracking-wider mb-3">D.U.K.</p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0b0b14] tracking-tight">
-            Dažniausiai užduodami <span className="gradient-text">klausimai</span>
+        <div className="mb-12">
+          <p className="section-label mb-3">DUK</p>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
+            Dažniausiai užduodami klausimai
           </h2>
         </div>
 
@@ -43,22 +21,30 @@ export default function Faq() {
             const isOpen = openIdx === idx;
             return (
               <div
-                key={idx}
-                className={`bg-[#f7f7fb] rounded-2xl overflow-hidden transition-all border ${
-                  isOpen ? "border-[#7c3aed]/20" : "border-transparent"
+                key={faq.q}
+                className={`bg-[#f6f8fb] rounded-2xl overflow-hidden transition-all border ${
+                  isOpen ? "border-[#2456d6]/25" : "border-transparent"
                 }`}
               >
                 <button
                   onClick={() => setOpenIdx(isOpen ? null : idx)}
-                  className="w-full text-left p-5 font-semibold text-[#0b0b14] flex justify-between items-center text-base"
+                  className="w-full text-left p-5 font-semibold text-[#0f172a] flex justify-between items-center text-base"
+                  aria-expanded={isOpen}
                 >
                   <span>{faq.q}</span>
-                  <span className={`text-[#7c3aed] transition-transform duration-200 text-xl flex-shrink-0 ml-4 ${isOpen ? "rotate-180" : ""}`}>
-                    ↓
-                  </span>
+                  <svg
+                    className={`h-5 w-5 shrink-0 ml-4 text-[#2456d6] transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                  </svg>
                 </button>
                 {isOpen && (
-                  <div className="px-5 pb-5 text-[#6b6b80] text-sm leading-relaxed">
+                  <div className="px-5 pb-5 text-[#475569] text-sm leading-relaxed">
                     {faq.a}
                   </div>
                 )}
