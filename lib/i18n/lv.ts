@@ -168,6 +168,18 @@ export const lv: Dict = {
           "Mājaslapa flīzētājam Viļņas reģionā: paveikto darbu prezentācija un satura pārvaldības sistēma, kas ļauj pašam atjaunināt darbu fotogrāfijas.",
         tags: ["Pakalpojumu lapa", "Satura pārvaldība", "Darbu galerija"],
       },
+      {
+        title: "MiniSocial — sociālais tīkls",
+        description:
+          "Pilnvērtīga tīmekļa lietotne mini-social.online: reģistrācija, ieraksti un diskusijas, ziņas reāllaikā un Android lietotne. Parāda, cik sarežģītas sistēmas veidojam no nulles.",
+        tags: ["Tīmekļa lietotne", "Reāllaika ziņas", "Android lietotne"],
+      },
+      {
+        title: "Teisinė Atrama — juridiskās palīdzības lapa",
+        description:
+          "Juridiskās palīdzības mājaslapa teisinėatrama.lt: pakalpojumu prezentācija, konsultāciju pieteikumi un vietējai meklēšanai sagatavota struktūra. Drīzumā tiks palaista.",
+        tags: ["Pakalpojumu lapa", "Pieteikumu forma", "Drīzumā"],
+      },
     ],
   },
   process: {

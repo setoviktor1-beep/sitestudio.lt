@@ -168,6 +168,18 @@ export const et: Dict = {
           "Plaatija koduleht Vilniuse piirkonnas: tehtud tööde esitlus ja sisuhaldussüsteem, mis laseb omanikul ise tööde fotosid uuendada.",
         tags: ["Teenuseleht", "Sisuhaldus", "Tööde galerii"],
       },
+      {
+        title: "MiniSocial — sotsiaalvõrgustik",
+        description:
+          "Täisväärtuslik veebirakendus mini-social.online: registreerimine, postitused ja arutelud, reaalajas sõnumid ning Androidi rakendus. Näitab, milliseid süsteeme nullist ehitame.",
+        tags: ["Veebirakendus", "Reaalajas sõnumid", "Androidi rakendus"],
+      },
+      {
+        title: "Teisinė Atrama — õigusabi veebileht",
+        description:
+          "Õigusabi veebileht teisinėatrama.lt: teenuste tutvustus, konsultatsioonipäringud ja kohalikuks otsinguks ette valmistatud struktuur. Peagi avatakse.",
+        tags: ["Teenuseleht", "Päringuvorm", "Peagi avatakse"],
+      },
     ],
   },
   process: {

@@ -168,6 +168,18 @@ export const pl: Dict = {
           "Strona glazurnika działającego w regionie wileńskim: prezentacja wykonanych prac i system zarządzania treścią, dzięki któremu właściciel sam aktualizuje zdjęcia realizacji.",
         tags: ["Strona usługowa", "Zarządzanie treścią", "Galeria realizacji"],
       },
+      {
+        title: "MiniSocial — sieć społecznościowa",
+        description:
+          "Pełna aplikacja internetowa mini-social.online: rejestracja, wpisy i dyskusje, wiadomości w czasie rzeczywistym oraz aplikacja na Androida. Pokazuje, jakie systemy budujemy od zera.",
+        tags: ["Aplikacja internetowa", "Wiadomości w czasie rzeczywistym", "Aplikacja Android"],
+      },
+      {
+        title: "Teisinė Atrama — strona pomocy prawnej",
+        description:
+          "Strona pomocy prawnej teisinėatrama.lt: prezentacja usług, zapytania o konsultacje i struktura przygotowana pod wyszukiwanie lokalne. Start już wkrótce.",
+        tags: ["Strona usługowa", "Formularz zapytań", "Wkrótce start"],
+      },
     ],
   },
   process: {

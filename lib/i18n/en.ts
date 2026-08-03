@@ -168,6 +168,18 @@ export const en: Dict = {
           "A website for a tiling specialist in the Vilnius region: portfolio presentation and a content management system that lets the owner update work photos himself.",
         tags: ["Service website", "Content management", "Work gallery"],
       },
+      {
+        title: "MiniSocial — social network",
+        description:
+          "A full web application at mini-social.online: registration, posts and discussions, real-time messaging and an Android app. Shows the level of systems we build from scratch.",
+        tags: ["Web application", "Real-time messaging", "Android app"],
+      },
+      {
+        title: "Teisinė Atrama — legal support website",
+        description:
+          "A legal support website at teisinėatrama.lt: service presentation, consultation enquiries and a structure prepared for local search. Launching soon.",
+        tags: ["Service website", "Enquiry form", "Launching soon"],
+      },
     ],
   },
   process: {

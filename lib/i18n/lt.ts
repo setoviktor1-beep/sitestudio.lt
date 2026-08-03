@@ -166,6 +166,18 @@ export const lt = {
           "Svetainė plytelių klojimo meistrui Pabradėje, Švenčionyse ir Vilniuje: atliktų darbų pristatymas ir turinio valdymo sistema, leidžianti pačiam atnaujinti darbų nuotraukas.",
         tags: ["Paslaugų svetainė", "Turinio valdymas", "Darbų galerija"],
       },
+      {
+        title: "MiniSocial — socialinis tinklas",
+        description:
+          "Pilna interneto aplikacija mini-social.online: registracija, įrašai ir diskusijos, žinutės realiu laiku bei Android programėlė. Parodo, kokio sudėtingumo sistemas kuriame nuo nulio.",
+        tags: ["Interneto aplikacija", "Realaus laiko žinutės", "Android programėlė"],
+      },
+      {
+        title: "Teisinė Atrama — teisinės pagalbos svetainė",
+        description:
+          "Teisinės pagalbos svetainė teisinėatrama.lt: paslaugų pristatymas, konsultacijų užklausos ir vietinei paieškai paruošta struktūra. Projektas ruošiamas paleidimui.",
+        tags: ["Paslaugų svetainė", "Užklausų forma", "Ruošiama paleisti"],
+      },
     ],
   },
   process: {

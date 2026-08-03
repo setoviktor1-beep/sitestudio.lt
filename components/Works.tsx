@@ -1,8 +1,15 @@
+import Image from "next/image";
 import type { Dict } from "@/lib/i18n";
 
 const workUrls = [
-  { url: "https://leonamai.lt", domain: "leonamai.lt" },
-  { url: "https://situacija.eu", domain: "situacija.eu" },
+  { url: "https://leonamai.lt", domain: "leonamai.lt", image: "/works/leonamai.png" },
+  { url: "https://situacija.eu", domain: "situacija.eu", image: "/works/situacija.png" },
+  { url: "https://mini-social.online", domain: "mini-social.online", image: "/works/mini-social.png" },
+  {
+    url: "https://xn--teisinatrama-jvb.lt",
+    domain: "teisinėatrama.lt",
+    image: "/works/teisine-atrama.png",
+  },
 ];
 
 export default function Works({ dict }: { dict: Dict }) {
@@ -36,6 +43,15 @@ export default function Works({ dict }: { dict: Dict }) {
                 <svg className="h-4 w-4 text-[#94a3b8] group-hover:text-[#2456d6] transition-colors" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                 </svg>
+              </div>
+              <div className="relative aspect-[16/10] overflow-hidden border-b border-black/5 bg-[#f6f8fb]">
+                <Image
+                  src={workUrls[idx].image}
+                  alt={work.title}
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                />
               </div>
               <div className="p-7">
                 <h3 className="text-xl font-bold text-[#0f172a] group-hover:text-[#2456d6] transition-colors">

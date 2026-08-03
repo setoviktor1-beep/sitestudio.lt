@@ -8,14 +8,40 @@ import { getDict } from "@/lib/i18n";
 export const metadata: Metadata = {
   title: "Darbai — atlikti projektai",
   description:
-    "SiteStudio atlikti darbai: veikiančios svetainės Lietuvos paslaugų verslams — leonamai.lt ir situacija.eu. Realūs, gyvi projektai, kuriuos galite atsidaryti.",
+    "SiteStudio atlikti darbai: veikiančios svetainės ir aplikacijos — leonamai.lt, situacija.eu, mini-social.online ir teisinėatrama.lt. Realūs projektai, kuriuos galite atsidaryti.",
   alternates: { canonical: "/darbai" },
 };
 
+const portfolioUrls = [
+  "https://leonamai.lt",
+  "https://situacija.eu",
+  "https://mini-social.online",
+  "https://xn--teisinatrama-jvb.lt",
+];
+
 export default async function DarbaiPage() {
   const dict = await getDict("lt");
+  const portfolioJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "SiteStudio atlikti darbai",
+    itemListElement: dict.works.items.map((work, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      item: {
+        "@type": "WebSite",
+        name: work.title,
+        url: portfolioUrls[idx],
+        description: work.description,
+      },
+    })),
+  };
   return (
     <div className="min-h-screen bg-white text-[#0f172a] antialiased">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(portfolioJsonLd) }}
+      />
       <Navbar dict={dict} locale="lt" />
       <main className="pt-16">
         <Works dict={dict} />
