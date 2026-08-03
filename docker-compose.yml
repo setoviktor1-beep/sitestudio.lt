@@ -23,6 +23,8 @@ services:
       SMTP_USER: ${SMTP_USER:-}
       SMTP_PASS: ${SMTP_PASS:-}
       SMTP_FROM: ${SMTP_FROM:-}
+      # Contact-form notification recipient (defaults to info@sitestudio.lt).
+      CONTACT_EMAIL: ${CONTACT_EMAIL:-}
       # Optional S3-compatible storage (leave empty to disable uploads).
       S3_ENDPOINT: ${S3_ENDPOINT:-}
       S3_REGION: ${S3_REGION:-}

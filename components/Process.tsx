@@ -1,36 +1,53 @@
 export default function Process() {
   const steps = [
-    { number: "01", title: "Konsultacija & Analizė", description: "Išgryniname jūsų verslo tikslus, tikslinę auditoriją bei reikalingą funkcionalumą." },
-    { number: "02", title: "Dizainas & Architektūra", description: "Paruošiame šiuolaikišką dizainą ir suplanuojame saugią duomenų struktūrą." },
-    { number: "03", title: "Programavimas & Testavimas", description: "Kuriame švarų Next.js kodą, sujungiame CMS / Auth bei atliekame SEO auditą." },
-    { number: "04", title: "Paleidimas & Priežiūra", description: "Talpiname Coolify VPS serveryje su automatiniu SSL ir teikiame 24/7 palaikymą." },
+    {
+      number: "01",
+      title: "Pokalbis ir pasiūlymas",
+      description:
+        "Aptariame jūsų veiklą, tikslus ir biudžetą. Per 1–2 darbo dienas gaunate konkretų pasiūlymą su apimtimi, kaina ir terminu.",
+    },
+    {
+      number: "02",
+      title: "Struktūra ir dizainas",
+      description:
+        "Paruošiame svetainės struktūrą ir dizainą, pritaikytą jūsų klientams. Deriname tol, kol rezultatas jums tinka.",
+    },
+    {
+      number: "03",
+      title: "Kūrimas ir turinys",
+      description:
+        "Sukuriame svetainę, sudedame turinį, sutvarkome greitį, mobilią versiją ir bazinį SEO. Prieš paleidimą viską peržiūrite.",
+    },
+    {
+      number: "04",
+      title: "Paleidimas ir priežiūra",
+      description:
+        "Paleidžiame svetainę su jūsų domenu, apmokome valdyti turinį ir, jei norite, toliau prižiūrime bei tobuliname.",
+    },
   ];
 
   return (
-    <section id="procesas" className="py-24 bg-white">
+    <section id="procesas" className="py-20 md:py-24 bg-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-sm font-semibold text-[#7c3aed] uppercase tracking-wider mb-3">Kaip dirbame</p>
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0b0b14] tracking-tight">
-            Nuo užklausos iki <span className="gradient-text">sprendimo</span>
+        <div className="max-w-3xl mb-14">
+          <p className="section-label mb-3">Kaip dirbame</p>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0f172a] tracking-tight">
+            Keturi žingsniai nuo užklausos iki veikiančios svetainės
           </h2>
-          <p className="mt-4 text-[#6b6b80] text-base">
-            Aiškus procesas trimis žingsniais. Be sudėtingo techninio žargono.
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((step, idx) => (
-            <div key={idx} className="bg-[#f7f7fb] p-7 rounded-3xl relative overflow-hidden card-hover border border-[#0b0b14]/5">
-              <div className="text-6xl font-black text-[#0b0b14]/5 absolute top-4 right-4 select-none">
+          {steps.map((step) => (
+            <div key={step.number} className="bg-[#f6f8fb] p-7 rounded-2xl relative overflow-hidden card-hover border border-[#0f172a]/5">
+              <div className="text-6xl font-black text-[#0f172a]/5 absolute top-4 right-4 select-none" aria-hidden="true">
                 {step.number}
               </div>
               <div className="relative">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#7c3aed] to-[#e11d48] text-white text-sm font-bold flex items-center justify-center mb-4">
+                <div className="w-10 h-10 rounded-xl bg-[#2456d6] text-white text-sm font-bold flex items-center justify-center mb-4">
                   {step.number}
                 </div>
-                <h3 className="text-lg font-bold text-[#0b0b14] mb-2">{step.title}</h3>
-                <p className="text-[#6b6b80] text-sm leading-relaxed">{step.description}</p>
+                <h3 className="text-lg font-bold text-[#0f172a] mb-2">{step.title}</h3>
+                <p className="text-[#475569] text-sm leading-relaxed">{step.description}</p>
               </div>
             </div>
           ))}

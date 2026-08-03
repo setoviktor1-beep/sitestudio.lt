@@ -1,70 +1,100 @@
 import Link from "next/link";
-import HeroCanvas from "./HeroCanvas";
+
+/**
+ * Stylized browser mockup — a stand-in for real screenshots that keeps the
+ * hero honest (no stock photos) while showing what SiteStudio builds.
+ */
+function SiteMockup() {
+  return (
+    <div className="browser-frame" aria-hidden="true">
+      <div className="browser-frame-bar">
+        <span className="browser-dot" />
+        <span className="browser-dot" />
+        <span className="browser-dot" />
+        <span className="ml-3 flex-1 rounded-md bg-white border border-black/5 px-3 py-1 text-[11px] text-[#64748b]">
+          jusuverslas.lt
+        </span>
+      </div>
+      <div className="p-5 space-y-4">
+        <div className="flex items-center justify-between">
+          <div className="h-3 w-20 rounded bg-[#0f172a]/80" />
+          <div className="flex gap-2">
+            <div className="h-2.5 w-10 rounded bg-[#e2e8f0]" />
+            <div className="h-2.5 w-10 rounded bg-[#e2e8f0]" />
+            <div className="h-2.5 w-14 rounded bg-[#2456d6]" />
+          </div>
+        </div>
+        <div className="space-y-2 pt-2">
+          <div className="h-4 w-3/4 rounded bg-[#cbd5e1]" />
+          <div className="h-4 w-1/2 rounded bg-[#cbd5e1]" />
+          <div className="h-2.5 w-2/3 rounded bg-[#e2e8f0]" />
+        </div>
+        <div className="flex gap-2 pt-1">
+          <div className="h-8 w-28 rounded-lg bg-[#2456d6]" />
+          <div className="h-8 w-24 rounded-lg border border-[#e2e8f0] bg-white" />
+        </div>
+        <div className="grid grid-cols-3 gap-3 pt-2">
+          {[0, 1, 2].map((i) => (
+            <div key={i} className="rounded-lg border border-[#eef2f7] bg-[#f6f8fb] p-3 space-y-2">
+              <div className="h-6 w-6 rounded-md bg-[#e8eefc]" />
+              <div className="h-2 w-full rounded bg-[#e2e8f0]" />
+              <div className="h-2 w-2/3 rounded bg-[#e2e8f0]" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Hero() {
   return (
-    <section className="relative pt-32 pb-20 md:pt-44 md:pb-32 overflow-hidden hero-gradient">
-      {/* Interactive particle canvas - behind everything */}
-      <HeroCanvas />
+    <section className="hero-surface relative pt-32 pb-16 md:pt-44 md:pb-24 overflow-hidden">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Text */}
+          <div>
+            <p className="section-label mb-4">Svetainių ir interneto sistemų studija</p>
+            <h1 className="text-4xl sm:text-5xl lg:text-[3.4rem] font-extrabold tracking-tight text-[#0f172a] leading-[1.12]">
+              Svetainė, kuri padeda parduoti.
+              <br />
+              <span className="text-[#2456d6]">Sistemos, kurios taupo laiką.</span>
+            </h1>
+            <p className="mt-6 text-lg text-[#475569] max-w-xl leading-relaxed">
+              Kuriame svetaines, el. parduotuves ir individualias interneto sistemas
+              mažam ir vidutiniam Lietuvos verslui. Aiški apimtis, aiški kaina ir
+              terminas — dar prieš pradedant darbus.
+            </p>
 
-      {/* Glow orbs — diweb.lt style: violet, rose, flame with animations */}
-      <div className="hero-glow top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#7c3aed]/25 animate-glowPulse" style={{ zIndex: -1 }} />
-      <div className="hero-glow top-1/4 right-1/4 w-[300px] h-[200px] bg-[#e11d48]/20 animate-floatSlow" style={{ zIndex: -1 }} />
-      <div className="hero-glow top-1/3 left-1/4 w-[250px] h-[180px] bg-[#ff5a1f]/10 animate-floatSlow2" style={{ zIndex: -1 }} />
-
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 rounded-full bg-white/5 backdrop-blur border border-white/10 px-4 py-1.5 text-xs md:text-sm font-medium text-violet-300 mb-8">
-          <span className="flex h-2 w-2 rounded-full bg-violet-400 animate-pulse" />
-          <span>Nuo idėjos iki veikiančios svetainės — greitai ir aiškiai</span>
-        </div>
-
-        {/* Title */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-[1.1]" style={{ fontFamily: '"Plus Jakarta Sans", Inter, sans-serif' }}>
-          Svetainės ir sistemos,
-          <br />
-          <span className="gradient-text">kurie dirba už jus</span>
-        </h1>
-
-        {/* Subtitle */}
-        <p className="mt-6 text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
-          Kuriame ultra-greitus Next.js tinklapius, diegiame Directus CMS ir užtikriname saugų VPS talpinimą su automatiniu SSL bei 24/7 monitoringu.
-        </p>
-
-        {/* CTA Buttons */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            href="#kontaktai"
-            className="btn-primary w-full sm:w-auto"
-          >
-            Gauti pasiūlymą
-          </Link>
-          <Link
-            href="#paslaugos"
-            className="w-full sm:w-auto rounded-2xl bg-white/5 backdrop-blur border border-white/15 px-8 py-4 text-base font-semibold text-white hover:bg-white/10 transition-all"
-          >
-            Mūsų paslaugos →
-          </Link>
-        </div>
-
-        {/* Trust line */}
-        <p className="mt-6 text-sm text-white/40">
-          Nemokama konsultacija · be įsipareigojimų · atsakome per 24 val.
-        </p>
-
-        {/* Stats */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-          {[
-            { value: "nuo 290€", label: "Svetainė su SEO" },
-            { value: "24 val.", label: "Atsakymas į užklausą" },
-            { value: "99.9%", label: "Uptime garantija" },
-            { value: "<100ms", label: "Serverio atsakas" },
-          ].map((stat, i) => (
-            <div key={i} className="bg-white/5 backdrop-blur border border-white/10 p-5 rounded-2xl text-left animate-floatY" style={{ animationDelay: `${i * 0.5}s` }}>
-              <div className="text-2xl md:text-3xl font-extrabold text-white">{stat.value}</div>
-              <div className="text-xs text-white/40 mt-1">{stat.label}</div>
+            <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <Link href="/#kontaktai" className="btn-primary">
+                Gauti pasiūlymą
+              </Link>
+              <Link href="/#darbai" className="btn-ghost">
+                Žiūrėti darbus
+              </Link>
             </div>
-          ))}
+
+            <ul className="mt-8 space-y-2 text-sm text-[#475569]">
+              {[
+                "Bendraujate tiesiogiai su projekto vykdytoju",
+                "Kaina ir terminas sutariami raštu prieš pradedant",
+                "Atsakome per vieną darbo dieną",
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-2.5">
+                  <svg className="h-4 w-4 shrink-0 text-[#2456d6]" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fillRule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 111.4-1.4L8 12.6l7.3-7.3a1 1 0 011.4 0z" clipRule="evenodd" />
+                  </svg>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Visual */}
+          <div className="relative hidden sm:block">
+            <SiteMockup />
+          </div>
         </div>
       </div>
     </section>
