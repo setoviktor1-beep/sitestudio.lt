@@ -1,13 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import type { Dict, Locale } from "@/lib/i18n";
-import { locales, localeNames, homePath } from "@/lib/i18n";
+import { locales, localeNames, localeFullNames, homePath } from "@/lib/i18n";
+import Flag from "./Flag";
 
 export default function Navbar({ dict, locale = "lt" }: { dict: Dict; locale?: Locale }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const langRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -15,6 +18,15 @@ export default function Navbar({ dict, locale = "lt" }: { dict: Dict; locale?: L
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!langOpen) return;
+    const handleClick = (e: MouseEvent) => {
+      if (langRef.current && !langRef.current.contains(e.target as Node)) setLangOpen(false);
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [langOpen]);
 
   const base = homePath(locale);
   const anchor = (hash: string) => (base === "/" ? `/#${hash}` : `${base}#${hash}`);
@@ -28,19 +40,53 @@ export default function Navbar({ dict, locale = "lt" }: { dict: Dict; locale?: L
   ];
 
   const langSwitcher = (
-    <div className="flex items-center gap-1" aria-label="Language">
-      {locales.map((l) => (
-        <Link
-          key={l}
-          href={homePath(l)}
-          hrefLang={l}
-          className={`rounded-md px-1.5 py-1 text-xs font-semibold transition-colors ${
-            l === locale ? "bg-[#2456d6] text-white" : "text-[#64748b] hover:text-[#2456d6]"
-          }`}
+    <div ref={langRef} className="relative" aria-label="Language">
+      <button
+        onClick={() => setLangOpen(!langOpen)}
+        aria-expanded={langOpen}
+        aria-haspopup="menu"
+        className="flex items-center gap-1.5 rounded-lg border border-black/10 bg-white px-2.5 py-1.5 text-xs font-semibold text-[#334155] hover:border-[#2456d6]/40 hover:text-[#2456d6] transition-colors"
+      >
+        <Flag locale={locale} className="h-3.5 w-5 rounded-[3px] shadow-sm ring-1 ring-black/10" />
+        {localeNames[locale]}
+        <svg
+          className={`w-3 h-3 transition-transform ${langOpen ? "rotate-180" : ""}`}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
         >
-          {localeNames[l]}
-        </Link>
-      ))}
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      {langOpen && (
+        <div
+          role="menu"
+          className="absolute left-0 lg:left-auto lg:right-0 top-full mt-2 w-40 rounded-xl border border-black/5 bg-white py-1.5 shadow-xl"
+        >
+          {locales.map((l) => (
+            <Link
+              key={l}
+              href={homePath(l)}
+              hrefLang={l}
+              role="menuitem"
+              onClick={() => {
+                setLangOpen(false);
+                setMobileMenuOpen(false);
+              }}
+              className={`flex items-center gap-2.5 px-3.5 py-2 text-sm transition-colors ${
+                l === locale
+                  ? "bg-[#2456d6]/10 font-semibold text-[#2456d6]"
+                  : "text-[#334155] hover:bg-black/5"
+              }`}
+            >
+              <Flag locale={l} className="h-3.5 w-5 rounded-[3px] shadow-sm ring-1 ring-black/10" />
+              {localeFullNames[l]}
+            </Link>
+          ))}
+        </div>
+      )}
     </div>
   );
 

@@ -17,6 +17,15 @@ export const localeNames: Record<Locale, string> = {
   ru: "RU",
 };
 
+export const localeFullNames: Record<Locale, string> = {
+  lt: "Lietuvių",
+  en: "English",
+  pl: "Polski",
+  lv: "Latviešu",
+  et: "Eesti",
+  ru: "Русский",
+};
+
 export function isLocale(value: string): value is Locale {
   return (locales as readonly string[]).includes(value);
 }
