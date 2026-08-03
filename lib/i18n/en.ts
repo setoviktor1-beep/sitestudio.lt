@@ -28,6 +28,7 @@ export const en: Dict = {
       "Price and deadline agreed in writing before we start",
       "We reply within one business day",
     ],
+    badge: "Real client projects",
   },
   problems: {
     eyebrow: "Why businesses come to us",

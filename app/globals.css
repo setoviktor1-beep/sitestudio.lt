@@ -95,6 +95,51 @@
     linear-gradient(180deg, #f6f8fb 0%, #ffffff 100%);
 }
 
+/* Hero entrance + float animations */
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-fade-up {
+  animation: hero-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-delay-1 { animation-delay: 0.08s; }
+.hero-delay-2 { animation-delay: 0.16s; }
+.hero-delay-3 { animation-delay: 0.24s; }
+.hero-delay-4 { animation-delay: 0.32s; }
+.hero-delay-5 { animation-delay: 0.45s; }
+
+@keyframes hero-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -10px;
+  }
+}
+
+.hero-float {
+  animation:
+    hero-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both,
+    hero-float 7s ease-in-out 1.2s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-fade-up,
+  .hero-float {
+    animation: none;
+  }
+}
+
 /* Card hover */
 .card-hover {
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;

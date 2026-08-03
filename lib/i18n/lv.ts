@@ -28,6 +28,7 @@ export const lv: Dict = {
       "Cena un termiņš tiek saskaņoti rakstiski pirms sākuma",
       "Atbildam vienas darba dienas laikā",
     ],
+    badge: "Reāli klientu projekti",
   },
   problems: {
     eyebrow: "Kāpēc uzņēmumi vēršas pie mums",

@@ -26,6 +26,7 @@ export const lt = {
       "Kaina ir terminas sutariami raštu prieš pradedant",
       "Atsakome per vieną darbo dieną",
     ],
+    badge: "Tikri klientų projektai",
   },
   problems: {
     eyebrow: "Kodėl verslai kreipiasi",

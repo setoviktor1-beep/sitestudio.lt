@@ -28,6 +28,7 @@ export const et: Dict = {
       "Hind ja tähtaeg lepitakse kirjalikult kokku enne algust",
       "Vastame ühe tööpäeva jooksul",
     ],
+    badge: "Päris klienditööd",
   },
   problems: {
     eyebrow: "Miks ettevõtted meie poole pöörduvad",

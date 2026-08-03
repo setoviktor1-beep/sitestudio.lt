@@ -28,6 +28,7 @@ export const pl: Dict = {
       "Cena i termin ustalone na piśmie przed startem",
       "Odpowiadamy w ciągu jednego dnia roboczego",
     ],
+    badge: "Prawdziwe projekty klientów",
   },
   problems: {
     eyebrow: "Dlaczego firmy się do nas zgłaszają",
