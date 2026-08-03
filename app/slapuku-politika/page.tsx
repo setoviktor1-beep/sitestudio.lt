@@ -1,42 +1,52 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+export const metadata: Metadata = {
+  title: "Slapukų politika",
+  description: "SiteStudio.lt slapukų politika: svetainė naudoja tik būtinuosius slapukus, analitinių ar rinkodaros slapukų nėra.",
+  alternates: { canonical: "/slapuku-politika" },
+};
+
 export default function SlapukuPolitika() {
   return (
-    <div className="min-h-screen bg-[#0b0f19] text-slate-100">
+    <div className="min-h-screen bg-white text-[#0f172a]">
       <Navbar />
-      <main className="pt-36 pb-20 max-w-4xl mx-auto px-6 lg:px-8">
-        <div className="glass-panel p-8 sm:p-12 rounded-3xl border border-slate-800">
-          <Link href="/" className="text-xs font-semibold text-indigo-400 hover:underline mb-6 inline-block">
-            ← Grįžti į pagrindinį
-          </Link>
+      <main className="pt-32 pb-20 max-w-3xl mx-auto px-6 lg:px-8">
+        <Link href="/" className="text-xs font-semibold text-[#2456d6] hover:underline mb-6 inline-block">
+          ← Grįžti į pagrindinį
+        </Link>
 
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-white mb-6">
-            Slapukų <span className="gradient-text">Politika</span> (Cookies)
-          </h1>
+        <h1 className="text-3xl sm:text-4xl font-extrabold mb-8">Slapukų politika</h1>
 
-          <div className="prose prose-invert prose-slate max-w-none text-sm leading-relaxed space-y-6 text-slate-300">
-            <p>
-              Šioje Slapukų politikoje paaiškinama, kaip **SiteStudio.lt** naudoja slapukus (cookies) bei panašias technologijas jūsų lankymosi patirčiai gerinti.
-            </p>
+        <div className="space-y-6 text-sm leading-relaxed text-[#334155]">
+          <p>
+            Slapukai (angl. cookies) — tai maži tekstiniai failai, kuriuos svetainė
+            išsaugo jūsų naršyklėje.
+          </p>
 
-            <h2 className="text-lg font-bold text-white mt-6 mb-2">1. Kas Yra Slapukai?</h2>
-            <p>
-              Slapukai yra maži tekstiniai failai, saugomi jūsų įrenginio naršyklėje. Jie padeda svetainei įsiminti jūsų pasirinkimus bei užtikrina sklandų vartotojo paskyros veikimą.
-            </p>
+          <h2 className="text-lg font-bold text-[#0f172a] pt-2">Kokius slapukus naudojame</h2>
+          <p>
+            <strong>sitestudio.lt</strong> šiuo metu nenaudoja jokių analitinių ar
+            rinkodaros slapukų ir jokių trečiųjų šalių sekimo priemonių. Vienintelis
+            atvejis, kai gali būti įrašomas slapukas — techninis sesijos slapukas,
+            reikalingas prisijungus prie administravimo aplinkos (taikoma tik
+            svetainės administratoriui, ne lankytojams).
+          </p>
+          <p>
+            Kadangi nebūtinųjų slapukų nenaudojame, sutikimo juosta svetainėje
+            nerodoma. Jei ateityje įdiegtume lankomumo analitiką, ši politika bus
+            atnaujinta ir, jei reikės, paprašysime jūsų sutikimo.
+          </p>
 
-            <h2 className="text-lg font-bold text-white mt-6 mb-2">2. Naudojami Slapukai</h2>
-            <ul className="list-disc pl-5 space-y-2">
-              <li><strong>Būtinieji slapukai:</strong> Reikalingi sesijos valdymui (`sitestudio_session`, `XSRF-TOKEN`) bei slapukų sutikimo būsenai atsiminti.</li>
-              <li><strong>Analitiniai slapukai:</strong> Padeda mums suprasti lankytojų srautą bei tobulinti puslapio greitaveiką.</li>
-            </ul>
+          <h2 className="text-lg font-bold text-[#0f172a] pt-2">Slapukų valdymas naršyklėje</h2>
+          <p>
+            Visus slapukus galite peržiūrėti, ištrinti arba užblokuoti savo naršyklės
+            nustatymuose. Tai padarius, svetainė lankytojams veiks įprastai.
+          </p>
 
-            <h2 className="text-lg font-bold text-white mt-6 mb-2">3. Slapukų Valdymas</h2>
-            <p>
-              Jūs galite bet kada pakeisti arba atšaukti savo sutikimą naudodami slapukų valdymo skydelį svetainės apačioje arba pakeitę savo naršyklės nustatymus.
-            </p>
-          </div>
+          <p className="text-xs text-[#64748b] pt-4">Atnaujinta: 2026 m. rugpjūtis.</p>
         </div>
       </main>
       <Footer />

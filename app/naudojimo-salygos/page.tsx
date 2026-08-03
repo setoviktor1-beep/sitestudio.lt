@@ -1,41 +1,72 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
+export const metadata: Metadata = {
+  title: "Paslaugų teikimo sąlygos",
+  description: "SiteStudio.lt paslaugų teikimo sąlygos: darbų apimtis, atsiskaitymas, intelektinė nuosavybė ir atsakomybė.",
+  alternates: { canonical: "/naudojimo-salygos" },
+};
+
 export default function NaudojimoSalygos() {
   return (
-    <div className="min-h-screen bg-[#0b0f19] text-slate-100">
+    <div className="min-h-screen bg-white text-[#0f172a]">
       <Navbar />
-      <main className="pt-36 pb-20 max-w-4xl mx-auto px-6 lg:px-8">
-        <div className="glass-panel p-8 sm:p-12 rounded-3xl border border-slate-800">
-          <Link href="/" className="text-xs font-semibold text-indigo-400 hover:underline mb-6 inline-block">
-            ← Grįžti į pagrindinį
-          </Link>
+      <main className="pt-32 pb-20 max-w-3xl mx-auto px-6 lg:px-8">
+        <Link href="/" className="text-xs font-semibold text-[#2456d6] hover:underline mb-6 inline-block">
+          ← Grįžti į pagrindinį
+        </Link>
 
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-white mb-6">
-            Naudojimo <span className="gradient-text">Sąlygos</span>
-          </h1>
+        <h1 className="text-3xl sm:text-4xl font-extrabold mb-8">Paslaugų teikimo sąlygos</h1>
 
-          <div className="prose prose-invert prose-slate max-w-none text-sm leading-relaxed space-y-6 text-slate-300">
-            <p>
-              Sveiki atvykę į **SiteStudio.lt**. Naudodamiesi mūsų paslaugomis, jūs sutinkate su šiomis Naudojimo sąlygomis.
-            </p>
+        <div className="space-y-6 text-sm leading-relaxed text-[#334155]">
+          <h2 className="text-lg font-bold text-[#0f172a]">1. Paslaugų apimtis</h2>
+          <p>
+            SiteStudio teikia svetainių, el. parduotuvių ir interneto sistemų kūrimo,
+            atnaujinimo, priežiūros bei procesų automatizavimo paslaugas. Konkreti
+            darbų apimtis, kaina ir terminai kiekvienam projektui suderinami raštu
+            (el. paštu arba sutartyje) prieš pradedant darbus. Darbai, nenumatyti
+            suderintoje apimtyje, vertinami ir derinami atskirai.
+          </p>
 
-            <h2 className="text-lg font-bold text-white mt-6 mb-2">1. Paslaugų Teikimas</h2>
-            <p>
-              SiteStudio teikia web svetainių kūrimo, administravimo bei VPS talpinimo paslaugas pagal su klientu suderintą sąlygų aprašą ir pasirinktą paslaugų planą.
-            </p>
+          <h2 className="text-lg font-bold text-[#0f172a] pt-2">2. Atsiskaitymas</h2>
+          <p>
+            Įprastai taikomas dalinis išankstinis mokėjimas pradedant darbus, o
+            likusi dalis apmokama prieš svetainės paleidimą. Tiksli atsiskaitymo
+            tvarka nurodoma pasiūlyme. Svetainėje skelbiamos kainos yra orientacinės
+            „nuo“ kainos be PVM; galutinė kaina visada patvirtinama raštu.
+          </p>
 
-            <h2 className="text-lg font-bold text-white mt-6 mb-2">2. Intelektinė Nuosavybė</h2>
-            <p>
-              Sukurta svetainė ir jos turinys, atlikus pilną atsiskaitymą, tampa kliento nuosavybe, išskyrus licencijuojamus atvirojo kodo komponentus bei sisteminius kodo modulius.
-            </p>
+          <h2 className="text-lg font-bold text-[#0f172a] pt-2">3. Intelektinė nuosavybė</h2>
+          <p>
+            Atlikus pilną atsiskaitymą, sukurta svetainė, jos dizainas ir turinys
+            tampa kliento nuosavybe, išskyrus atvirojo kodo komponentus, kuriems
+            taikomos jų licencijos. Domenas visada registruojamas kliento vardu.
+          </p>
 
-            <h2 className="text-lg font-bold text-white mt-6 mb-2">3. Atsakomybė</h2>
-            <p>
-              SiteStudio įsipareigoja užtikrinti aukščiausią paslaugų kokybę, 99.9% serveryje veikiančių sistemų pasiekiamumą bei reguliarų duomenų kopijavimą.
-            </p>
-          </div>
+          <h2 className="text-lg font-bold text-[#0f172a] pt-2">4. Talpinimas ir priežiūra</h2>
+          <p>
+            Talpinimo ir priežiūros paslaugos teikiamos pagal atskirą susitarimą už
+            sutartą mėnesinį mokestį. Klientas gali bet kada perimti svetainės
+            talpinimą pas kitą tiekėją — perduodame visus failus ir duomenis.
+          </p>
+
+          <h2 className="text-lg font-bold text-[#0f172a] pt-2">5. Atsakomybė</h2>
+          <p>
+            Įsipareigojame atlikti darbus kokybiškai ir per suderintus terminus.
+            Neatsakome už nuostolius, atsiradusius dėl trečiųjų šalių paslaugų
+            (pvz., domenų registratorių, mokėjimų sistemų) sutrikimų, tačiau visada
+            padedame tokius sutrikimus spręsti.
+          </p>
+
+          <h2 className="text-lg font-bold text-[#0f172a] pt-2">6. Kontaktai</h2>
+          <p>
+            Klausimai dėl šių sąlygų —{" "}
+            <a href="mailto:info@sitestudio.lt" className="text-[#2456d6] underline">info@sitestudio.lt</a>.
+          </p>
+
+          <p className="text-xs text-[#64748b] pt-4">Atnaujinta: 2026 m. rugpjūtis.</p>
         </div>
       </main>
       <Footer />
