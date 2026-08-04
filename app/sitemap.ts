@@ -5,13 +5,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://sitestudio.lt";
   const lastModified = new Date();
 
+  const heroImages = [`${base}/works/leonamai.png`, `${base}/works/mini-social.png`];
+
   return [
-    { url: `${base}/`, lastModified, changeFrequency: "monthly" as const, priority: 1 },
+    {
+      url: `${base}/`,
+      lastModified,
+      changeFrequency: "monthly" as const,
+      priority: 1,
+      images: heroImages,
+    },
     ...prefixedLocales.map((locale) => ({
       url: `${base}/${locale}`,
       lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.9,
+      images: heroImages,
     })),
     { url: `${base}/paslaugos`, lastModified, changeFrequency: "monthly" as const, priority: 0.8 },
     {
