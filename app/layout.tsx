@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
+import CookieConsent from "@/components/CookieConsent";
 import "./globals.css";
 
 const GA_MEASUREMENT_ID = "G-5GZ1Y6V6XF";
@@ -73,10 +74,17 @@ export default function RootLayout({
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              analytics_storage: 'denied',
+              ad_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied'
+            });
             gtag('js', new Date());
             gtag('config', '${GA_MEASUREMENT_ID}');
           `}
         </Script>
+        <CookieConsent />
       </body>
     </html>
   );
