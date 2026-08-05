@@ -1,8 +1,8 @@
 export const lt = {
   meta: {
-    title: "Svetainių kūrimas verslui — SiteStudio",
+    title: "Svetainių kūrimas verslui Lietuvoje | SiteStudio",
     description:
-      "SiteStudio kuria svetaines, el. parduotuves ir interneto sistemas mažam ir vidutiniam Lietuvos verslui. Aiški kaina, aiškus terminas, tiesioginis ryšys su vykdytoju.",
+      "Profesionalus svetainių kūrimas verslui: internetinės svetainės, el. parduotuvės ir individualios interneto sistemos visoje Lietuvoje. Aiški kaina ir terminas raštu, tiesioginis ryšys su vykdytoju.",
   },
   nav: {
     services: "Paslaugos",
@@ -16,9 +16,9 @@ export const lt = {
   },
   hero: {
     eyebrow: "Svetainių ir interneto sistemų studija",
-    h1a: "Svetainė, kuri padeda parduoti.",
-    h1b: "Sistemos, kurios taupo laiką.",
-    sub: "Kuriame svetaines, el. parduotuves ir individualias interneto sistemas mažam ir vidutiniam verslui. Aiški apimtis, aiški kaina ir terminas — dar prieš pradedant darbus.",
+    h1a: "Svetainių kūrimas verslui,",
+    h1b: "kuris padeda parduoti.",
+    sub: "Kuriame internetines svetaines, el. parduotuves ir individualias interneto sistemas mažam ir vidutiniam verslui visoje Lietuvoje, o pasikartojančius darbus automatizuojame. Aiški apimtis, aiški kaina ir terminas — dar prieš pradedant darbus.",
     ctaPrimary: "Gauti pasiūlymą",
     ctaSecondary: "Žiūrėti darbus",
     bullets: [

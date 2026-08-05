@@ -21,11 +21,11 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://sitestudio.lt"),
   title: {
-    default: "Svetainių kūrimas verslui — SiteStudio",
-    template: "%s — SiteStudio",
+    default: "Svetainių kūrimas verslui Lietuvoje | SiteStudio",
+    template: "%s | SiteStudio",
   },
   description:
-    "SiteStudio kuria svetaines, el. parduotuves ir interneto sistemas mažam ir vidutiniam Lietuvos verslui. Aiški kaina, aiškus terminas, tiesioginis ryšys su vykdytoju.",
+    "Profesionalus svetainių kūrimas verslui: internetinės svetainės, el. parduotuvės ir individualios interneto sistemos visoje Lietuvoje. Aiški kaina ir terminas raštu, tiesioginis ryšys su vykdytoju.",
   alternates: {
     canonical: "/",
     languages: {
@@ -43,15 +43,16 @@ export const metadata: Metadata = {
     locale: "lt_LT",
     url: "https://sitestudio.lt",
     siteName: "SiteStudio",
-    title: "Svetainių kūrimas verslui — SiteStudio",
+    title: "Svetainių kūrimas verslui Lietuvoje | SiteStudio",
     description:
-      "Svetainės, el. parduotuvės ir interneto sistemos Lietuvos verslui. Aiški kaina, aiškus terminas, tiesioginis ryšys su vykdytoju.",
+      "Internetinės svetainės, el. parduotuvės ir interneto sistemos Lietuvos verslui. Aiški kaina, aiškus terminas, tiesioginis ryšys su vykdytoju.",
   },
+  // og:image and twitter:image come from app/opengraph-image.tsx.
   twitter: {
     card: "summary_large_image",
-    title: "Svetainių kūrimas verslui — SiteStudio",
+    title: "Svetainių kūrimas verslui Lietuvoje | SiteStudio",
     description:
-      "Svetainės, el. parduotuvės ir interneto sistemos Lietuvos verslui.",
+      "Internetinės svetainės, el. parduotuvės ir interneto sistemos Lietuvos verslui.",
   },
   robots: {
     index: true,
@@ -65,6 +66,12 @@ export default function RootLayout({
   return (
     <html lang="lt" className={`scroll-smooth ${inter.variable} ${jakarta.variable}`}>
       <body className="min-h-screen bg-white text-[#0f172a] antialiased">
+        <a
+          href="#turinys"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-xl focus:bg-[#2456d6] focus:px-4 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-white"
+        >
+          Pereiti prie turinio
+        </a>
         {children}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}

@@ -1,4 +1,15 @@
-import type { Dict } from "@/lib/i18n";
+import Link from "next/link";
+import type { Dict, Locale } from "@/lib/i18n";
+
+// Dedicated LT landing pages per service card (index-aligned with dict.services.items).
+const serviceCardLinks = [
+  { href: "/svetainiu-kurimas", label: "Plačiau apie svetainių kūrimą" },
+  { href: "/el-parduotuviu-kurimas", label: "Plačiau apie el. parduotuvių kūrimą" },
+  { href: "/svetainiu-kurimas#turinio-valdymas", label: "Turinio valdymas svetainėse" },
+  { href: "/svetainiu-atnaujinimas", label: "Plačiau apie svetainių atnaujinimą" },
+  { href: "/interneto-sistemu-kurimas", label: "Plačiau apie interneto sistemas" },
+  { href: "/ai-automatizavimas", label: "Plačiau apie AI automatizavimą" },
+];
 
 const icons = [
   // globe
@@ -15,7 +26,7 @@ const icons = [
   <path key="spark" strokeLinecap="round" strokeLinejoin="round" d="M9.81 15.9L9 20.25l6.75-8.25h-4.56l.81-4.35L4.5 15.9h5.31zM15.75 3.75l.47 1.28 1.28.47-1.28.47-.47 1.28-.47-1.28-1.28-.47 1.28-.47.47-1.28zM19.5 9l.35.96.96.35-.96.35-.35.96-.35-.96-.96-.35.96-.35L19.5 9z" />,
 ];
 
-export default function Services({ dict }: { dict: Dict }) {
+export default function Services({ dict, locale = "lt" }: { dict: Dict; locale?: Locale }) {
   return (
     <section id="paslaugos" className="py-20 md:py-24 bg-[#f6f8fb]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -47,6 +58,15 @@ export default function Services({ dict }: { dict: Dict }) {
                   </li>
                 ))}
               </ul>
+              {locale === "lt" && serviceCardLinks[idx] && (
+                <Link
+                  href={serviceCardLinks[idx].href}
+                  className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-[#2456d6] hover:underline"
+                >
+                  {serviceCardLinks[idx].label}
+                  <span aria-hidden="true">→</span>
+                </Link>
+              )}
             </div>
           ))}
         </div>

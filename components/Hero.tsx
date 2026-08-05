@@ -29,10 +29,10 @@ export default function Hero({ dict, locale = "lt" }: { dict: Dict; locale?: Loc
             <p className="hero-fade-up hero-delay-2 mt-6 text-lg text-[#475569] max-w-xl leading-relaxed">{dict.hero.sub}</p>
 
             <div className="hero-fade-up hero-delay-3 mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-              <Link href={anchor("kontaktai")} className="btn-primary">
+              <Link href={locale === "lt" ? "/kontaktai" : anchor("kontaktai")} className="btn-primary">
                 {dict.hero.ctaPrimary}
               </Link>
-              <Link href={anchor("darbai")} className="btn-ghost">
+              <Link href={locale === "lt" ? "/darbai" : anchor("darbai")} className="btn-ghost">
                 {dict.hero.ctaSecondary}
               </Link>
             </div>

@@ -1,33 +1,44 @@
 import type { MetadataRoute } from "next";
 import { prefixedLocales } from "@/lib/i18n";
 
+// Real content-change dates — bump the matching constant when a page's content
+// actually changes instead of stamping every request with the current time.
+const SEO_OVERHAUL = new Date("2026-08-05");
+const LEGAL_UPDATED = new Date("2026-08-03");
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://sitestudio.lt";
-  const lastModified = new Date();
 
   const heroImages = [`${base}/works/leonamai.png`, `${base}/works/mini-social.png`];
 
   return [
     {
       url: `${base}/`,
-      lastModified,
+      lastModified: SEO_OVERHAUL,
       changeFrequency: "monthly" as const,
       priority: 1,
       images: heroImages,
     },
     ...prefixedLocales.map((locale) => ({
       url: `${base}/${locale}`,
-      lastModified,
+      lastModified: SEO_OVERHAUL,
       changeFrequency: "monthly" as const,
-      priority: 0.9,
+      priority: 0.8,
       images: heroImages,
     })),
-    { url: `${base}/paslaugos`, lastModified, changeFrequency: "monthly" as const, priority: 0.8 },
+    // Service hub + dedicated service pages.
+    { url: `${base}/paslaugos`, lastModified: SEO_OVERHAUL, changeFrequency: "monthly" as const, priority: 0.9 },
+    { url: `${base}/svetainiu-kurimas`, lastModified: SEO_OVERHAUL, changeFrequency: "monthly" as const, priority: 0.9 },
+    { url: `${base}/el-parduotuviu-kurimas`, lastModified: SEO_OVERHAUL, changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${base}/svetainiu-atnaujinimas`, lastModified: SEO_OVERHAUL, changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${base}/interneto-sistemu-kurimas`, lastModified: SEO_OVERHAUL, changeFrequency: "monthly" as const, priority: 0.8 },
+    { url: `${base}/ai-automatizavimas`, lastModified: SEO_OVERHAUL, changeFrequency: "monthly" as const, priority: 0.8 },
+    // Portfolio hub + case studies.
     {
       url: `${base}/darbai`,
-      lastModified,
+      lastModified: SEO_OVERHAUL,
       changeFrequency: "monthly" as const,
-      priority: 0.7,
+      priority: 0.8,
       images: [
         `${base}/works/leonamai.png`,
         `${base}/works/situacija.png`,
@@ -35,9 +46,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
         `${base}/works/teisine-atrama.png`,
       ],
     },
-    { url: `${base}/kontaktai`, lastModified, changeFrequency: "yearly" as const, priority: 0.6 },
-    { url: `${base}/privatumo-politika`, lastModified, changeFrequency: "yearly" as const, priority: 0.2 },
-    { url: `${base}/slapuku-politika`, lastModified, changeFrequency: "yearly" as const, priority: 0.2 },
-    { url: `${base}/naudojimo-salygos`, lastModified, changeFrequency: "yearly" as const, priority: 0.2 },
+    { url: `${base}/darbai/leonamai`, lastModified: SEO_OVERHAUL, changeFrequency: "yearly" as const, priority: 0.6, images: [`${base}/works/leonamai.png`] },
+    { url: `${base}/darbai/situacija`, lastModified: SEO_OVERHAUL, changeFrequency: "yearly" as const, priority: 0.6, images: [`${base}/works/situacija.png`] },
+    { url: `${base}/darbai/mini-social`, lastModified: SEO_OVERHAUL, changeFrequency: "yearly" as const, priority: 0.6, images: [`${base}/works/mini-social.png`] },
+    // About + contact.
+    { url: `${base}/apie`, lastModified: SEO_OVERHAUL, changeFrequency: "yearly" as const, priority: 0.7 },
+    { url: `${base}/kontaktai`, lastModified: SEO_OVERHAUL, changeFrequency: "yearly" as const, priority: 0.7 },
+    // Legal.
+    { url: `${base}/privatumo-politika`, lastModified: LEGAL_UPDATED, changeFrequency: "yearly" as const, priority: 0.2 },
+    { url: `${base}/slapuku-politika`, lastModified: LEGAL_UPDATED, changeFrequency: "yearly" as const, priority: 0.2 },
+    { url: `${base}/naudojimo-salygos`, lastModified: LEGAL_UPDATED, changeFrequency: "yearly" as const, priority: 0.2 },
   ];
 }

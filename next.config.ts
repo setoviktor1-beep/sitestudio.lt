@@ -53,6 +53,10 @@ const nextConfig: NextConfig = {
       { source: "/kainos", destination: "/#kainos", permanent: true },
       { source: "/duk", destination: "/#duk", permanent: true },
       { source: "/procesas", destination: "/#procesas", permanent: true },
+      // Legacy terms URL indexed by Google before the rename.
+      { source: "/paslaugu-teikimo-salygos", destination: "/naudojimo-salygos", permanent: true },
+      // Old EN portfolio URLs — the closest relevant replacement is the portfolio hub.
+      { source: "/en/portfolio/:path*", destination: "/darbai", permanent: true },
       // /en, /pl, /lv, /et, /ru are now real localized pages.
       { source: "/en/:path+", destination: "/en", permanent: true },
       { source: "/lt", destination: "/", permanent: true },

@@ -12,50 +12,29 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import type { Dict, Locale } from "@/lib/i18n";
 import { homePath } from "@/lib/i18n";
+import { siteGraph, webPageNode, faqNode } from "@/lib/jsonld";
 
 export default function HomePage({ dict, locale }: { dict: Dict; locale: Locale }) {
-  const organizationJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: "SiteStudio",
-    url: `https://sitestudio.lt${homePath(locale) === "/" ? "" : homePath(locale)}`,
-    email: "info@sitestudio.lt",
-    description: dict.meta.description,
-    areaServed: { "@type": "Country", name: "Lietuva" },
-    knowsLanguage: ["lt", "en", "pl", "lv", "et", "ru"],
-    makesOffer: dict.services.items.map((s) => ({
-      "@type": "Offer",
-      itemOffered: { "@type": "Service", name: s.title },
-    })),
-  };
-
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: dict.faq.items.map((faq) => ({
-      "@type": "Question",
-      name: faq.q,
-      acceptedAnswer: { "@type": "Answer", text: faq.a },
-    })),
-  };
+  const path = homePath(locale) === "/" ? "" : homePath(locale);
+  const jsonLd = siteGraph(
+    webPageNode(path || "/", dict.meta.title, dict.meta.description),
+    // FAQ content below is rendered visibly by the Faq component.
+    faqNode(path || "/", dict.faq.items),
+  );
 
   return (
     <div className="min-h-screen bg-white text-[#0f172a] antialiased">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Navbar dict={dict} locale={locale} />
-      <main>
+      <main id="turinys">
         <Hero dict={dict} locale={locale} />
         <Problems dict={dict} />
-        <Services dict={dict} />
+        <Services dict={dict} locale={locale} />
         <WhyUs dict={dict} />
-        <Works dict={dict} />
+        <Works dict={dict} locale={locale} showAllLink />
         <Process dict={dict} />
         <Pricing dict={dict} locale={locale} />
         <Automation dict={dict} />

@@ -18,7 +18,9 @@ export async function generateMetadata({
   if (!isLocale(locale)) return {};
   const dict = await getDict(locale);
   return {
-    title: dict.meta.title,
+    // absolute: the dictionary titles already carry the brand — the root
+    // "%s | SiteStudio" template would duplicate it.
+    title: { absolute: dict.meta.title },
     description: dict.meta.description,
     alternates: {
       canonical: `/${locale}`,
@@ -31,6 +33,15 @@ export async function generateMetadata({
       siteName: "SiteStudio",
       title: dict.meta.title,
       description: dict.meta.description,
+      // Defining openGraph here replaces the inherited one, so re-attach the
+      // shared social image (served by app/opengraph-image.tsx).
+      images: ["/opengraph-image"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dict.meta.title,
+      description: dict.meta.description,
+      images: ["/opengraph-image"],
     },
   };
 }

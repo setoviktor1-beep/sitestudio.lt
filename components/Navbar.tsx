@@ -31,13 +31,26 @@ export default function Navbar({ dict, locale = "lt" }: { dict: Dict; locale?: L
   const base = homePath(locale);
   const anchor = (hash: string) => (base === "/" ? `/#${hash}` : `${base}#${hash}`);
 
-  const navLinks = [
-    { href: anchor("paslaugos"), label: dict.nav.services },
-    { href: anchor("darbai"), label: dict.nav.works },
-    { href: anchor("procesas"), label: dict.nav.process },
-    { href: anchor("kainos"), label: dict.nav.pricing },
-    { href: anchor("duk"), label: dict.nav.faq },
-  ];
+  // The Lithuanian site has real crawlable pages; other locales only have a
+  // localized one-pager, so they keep the section anchors.
+  const navLinks =
+    locale === "lt"
+      ? [
+          { href: "/paslaugos", label: dict.nav.services },
+          { href: "/darbai", label: dict.nav.works },
+          { href: "/apie", label: "Apie" },
+          { href: "/#kainos", label: dict.nav.pricing },
+          { href: "/#duk", label: dict.nav.faq },
+        ]
+      : [
+          { href: anchor("paslaugos"), label: dict.nav.services },
+          { href: anchor("darbai"), label: dict.nav.works },
+          { href: anchor("procesas"), label: dict.nav.process },
+          { href: anchor("kainos"), label: dict.nav.pricing },
+          { href: anchor("duk"), label: dict.nav.faq },
+        ];
+
+  const ctaHref = locale === "lt" ? "/kontaktai" : anchor("kontaktai");
 
   const langSwitcher = (
     <div ref={langRef} className="relative" aria-label="Language">
@@ -121,7 +134,7 @@ export default function Navbar({ dict, locale = "lt" }: { dict: Dict; locale?: L
         <div className="hidden lg:flex items-center gap-5">
           {langSwitcher}
           <Link
-            href={anchor("kontaktai")}
+            href={ctaHref}
             className="rounded-xl bg-[#2456d6] px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#1a41ab] transition-colors"
           >
             {dict.nav.cta}
@@ -161,7 +174,7 @@ export default function Navbar({ dict, locale = "lt" }: { dict: Dict; locale?: L
           <div className="pt-4 border-t border-black/5 space-y-4">
             {langSwitcher}
             <Link
-              href={anchor("kontaktai")}
+              href={ctaHref}
               onClick={() => setMobileMenuOpen(false)}
               className="block rounded-xl bg-[#2456d6] text-white px-5 py-3 text-sm font-semibold text-center"
             >
