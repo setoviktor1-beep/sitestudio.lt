@@ -16,8 +16,8 @@ export const lt = {
   },
   hero: {
     eyebrow: "Svetainių ir interneto sistemų studija",
-    h1a: "Svetainių kūrimas verslui,",
-    h1b: "kuris padeda parduoti.",
+    h1a: "Svetainių kūrimas verslui —",
+    h1b: "svetainės, kurios padeda parduoti.",
     sub: "Kuriame internetines svetaines, el. parduotuves ir individualias interneto sistemas mažam ir vidutiniam verslui visoje Lietuvoje, o pasikartojančius darbus automatizuojame. Aiški apimtis, aiški kaina ir terminas — dar prieš pradedant darbus.",
     ctaPrimary: "Gauti pasiūlymą",
     ctaSecondary: "Žiūrėti darbus",

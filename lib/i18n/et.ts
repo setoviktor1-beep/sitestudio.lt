@@ -18,8 +18,8 @@ export const et: Dict = {
   },
   hero: {
     eyebrow: "Kodulehtede ja veebisüsteemide stuudio",
-    h1a: "Koduleht, mis aitab müüa.",
-    h1b: "Süsteemid, mis säästavad aega.",
+    h1a: "Kodulehtede loomine ettevõtetele —",
+    h1b: "kodulehed, mis aitavad müüa.",
     sub: "Loome kodulehti, e-poode ja kohandatud veebisüsteeme väikestele ja keskmistele ettevõtetele. Selge maht, hind ja tähtaeg — juba enne tööde algust.",
     ctaPrimary: "Küsi pakkumist",
     ctaSecondary: "Vaata töid",

@@ -18,8 +18,8 @@ export const pl: Dict = {
   },
   hero: {
     eyebrow: "Studio stron i systemów internetowych",
-    h1a: "Strona, która pomaga sprzedawać.",
-    h1b: "Systemy, które oszczędzają czas.",
+    h1a: "Tworzenie stron internetowych dla firm —",
+    h1b: "strony, które pomagają sprzedawać.",
     sub: "Tworzymy strony internetowe, sklepy online i indywidualne systemy webowe dla małych i średnich firm. Jasny zakres, cena i termin — ustalone przed rozpoczęciem prac.",
     ctaPrimary: "Otrzymaj wycenę",
     ctaSecondary: "Zobacz realizacje",

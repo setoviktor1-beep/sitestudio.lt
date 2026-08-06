@@ -49,7 +49,7 @@ export default function OpengraphImage() {
             maxWidth: "980px",
           }}
         >
-          Svetainių kūrimas verslui, kuris padeda parduoti
+          Svetainių kūrimas verslui — svetainės, kurios padeda parduoti
         </div>
         <div style={{ marginTop: "32px", fontSize: "30px", color: "#cbd5e1", maxWidth: "900px" }}>
           Svetainės, el. parduotuvės ir interneto sistemos visoje Lietuvoje

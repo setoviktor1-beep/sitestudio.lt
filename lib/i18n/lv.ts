@@ -18,8 +18,8 @@ export const lv: Dict = {
   },
   hero: {
     eyebrow: "Mājaslapu un tīmekļa sistēmu studija",
-    h1a: "Mājaslapa, kas palīdz pārdot.",
-    h1b: "Sistēmas, kas ietaupa laiku.",
+    h1a: "Mājaslapu izstrāde uzņēmumiem —",
+    h1b: "mājaslapas, kas palīdz pārdot.",
     sub: "Veidojam mājaslapas, interneta veikalus un individuālas tīmekļa sistēmas maziem un vidējiem uzņēmumiem. Skaidrs apjoms, cena un termiņš — vēl pirms darbu sākuma.",
     ctaPrimary: "Saņemt piedāvājumu",
     ctaSecondary: "Skatīt darbus",

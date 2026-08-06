@@ -18,8 +18,8 @@ export const en: Dict = {
   },
   hero: {
     eyebrow: "Website & web systems studio",
-    h1a: "A website that helps you sell.",
-    h1b: "Systems that save your time.",
+    h1a: "Website development for business —",
+    h1b: "websites that help you sell.",
     sub: "We build websites, online stores and custom web systems for small and medium businesses. Clear scope, price and deadline — agreed before the work starts.",
     ctaPrimary: "Get a quote",
     ctaSecondary: "See our work",
