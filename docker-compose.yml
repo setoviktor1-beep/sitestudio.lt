@@ -23,6 +23,9 @@ services:
       SMTP_USER: ${SMTP_USER:-}
       SMTP_PASS: ${SMTP_PASS:-}
       SMTP_FROM: ${SMTP_FROM:-}
+      # Preferred HTTPS email delivery via Brevo (avoids outbound SMTP blocks).
+      BREVO_API_KEY: ${BREVO_API_KEY:-}
+      BREVO_SENDER: ${BREVO_SENDER:-}
       # Contact-form notification recipient (defaults to info@sitestudio.lt).
       CONTACT_EMAIL: ${CONTACT_EMAIL:-}
       # Optional S3-compatible storage (leave empty to disable uploads).

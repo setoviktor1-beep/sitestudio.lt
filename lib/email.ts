@@ -1,11 +1,11 @@
 import nodemailer from "nodemailer";
 
 /**
- * SMTP transport configured entirely through environment variables.
+ * Email delivery can use Brevo's HTTPS API or an SMTP transport.
  *
- * If SMTP_HOST is not set (local development without a mail server),
- * emails are printed to the server console instead of being sent,
- * so verification / reset links remain reachable during development.
+ * Brevo is preferred when BREVO_API_KEY is set. This avoids relying on
+ * outbound SMTP ports, which some VPS providers restrict. SMTP remains a
+ * fallback for installations that do not use Brevo.
  */
 const smtpConfigured = Boolean(process.env.SMTP_HOST);
 
@@ -20,12 +20,53 @@ const transporter = smtpConfigured
     })
   : null;
 
+function sender() {
+  const from = process.env.BREVO_SENDER ?? process.env.SMTP_FROM ?? "no-reply@example.com";
+  const match = from.match(/^(.*?)\s*<([^>]+)>$/);
+
+  return match
+    ? { name: match[1].trim() || undefined, email: match[2].trim() }
+    : { email: from.trim() };
+}
+
+async function sendWithBrevo(params: {
+  to: string;
+  subject: string;
+  text: string;
+  html?: string;
+}): Promise<void> {
+  const response = await fetch("https://api.brevo.com/v3/smtp/email", {
+    method: "POST",
+    headers: {
+      "api-key": process.env.BREVO_API_KEY!,
+      "content-type": "application/json",
+    },
+    body: JSON.stringify({
+      sender: sender(),
+      to: [{ email: params.to }],
+      subject: params.subject,
+      textContent: params.text,
+      ...(params.html ? { htmlContent: params.html } : {}),
+    }),
+  });
+
+  if (!response.ok) {
+    // Do not include response details: they can contain account metadata.
+    throw new Error(`Brevo delivery failed (HTTP ${response.status}).`);
+  }
+}
+
 export async function sendMail(params: {
   to: string;
   subject: string;
   text: string;
   html?: string;
 }): Promise<void> {
+  if (process.env.BREVO_API_KEY) {
+    await sendWithBrevo(params);
+    return;
+  }
+
   const from = process.env.SMTP_FROM ?? "no-reply@example.com";
 
   if (!transporter) {
