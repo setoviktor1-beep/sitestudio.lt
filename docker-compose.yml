@@ -26,6 +26,9 @@ services:
       # Preferred HTTPS email delivery via Brevo (avoids outbound SMTP blocks).
       BREVO_API_KEY: ${BREVO_API_KEY:-}
       BREVO_SENDER: ${BREVO_SENDER:-}
+      # Optional Telegram alert for each saved contact-form request.
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:-}
+      TELEGRAM_CHAT_ID: ${TELEGRAM_CHAT_ID:-}
       # Contact-form notification recipient (defaults to info@sitestudio.lt).
       CONTACT_EMAIL: ${CONTACT_EMAIL:-}
       # Optional S3-compatible storage (leave empty to disable uploads).

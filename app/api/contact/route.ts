@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { pool } from "@/lib/db";
 import { sendMail } from "@/lib/email";
+import { sendTelegramContactNotification } from "@/lib/telegram";
 
 export const runtime = "nodejs";
 
@@ -120,18 +121,24 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // Best-effort notification — the lead is already safe in the DB.
+  // Best-effort notifications — the lead is already safe in the DB.
   const notifyTo = process.env.CONTACT_EMAIL || "info@sitestudio.lt";
-  try {
-    await sendMail({
+  const results = await Promise.allSettled([
+    sendMail({
       to: notifyTo,
       subject: `Nauja užklausa iš sitestudio.lt — ${name}`,
       text:
         `Vardas: ${name}\nEl. paštas: ${email}\nTelefonas: ${phone || "—"}\n\n` +
         `Žinutė:\n${message}`,
-    });
-  } catch (err) {
-    console.error("[contact] notification email failed (lead stored):", err);
+    }),
+    sendTelegramContactNotification({ name, email, phone, message }),
+  ]);
+
+  if (results[0].status === "rejected") {
+    console.error("[contact] notification email failed (lead stored):", results[0].reason);
+  }
+  if (results[1].status === "rejected") {
+    console.error("[contact] Telegram notification failed (lead stored):", results[1].reason);
   }
 
   return NextResponse.json({ ok: true });
