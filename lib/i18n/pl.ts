@@ -176,6 +176,12 @@ export const pl: Dict = {
         tags: ["Aplikacja internetowa", "Wiadomości w czasie rzeczywistym", "Aplikacja Android"],
       },
       {
+        title: "FutTech — demonstracyjny sklep internetowy",
+        description:
+          "W pełni działające demo sklepu technologicznego: katalog 20 produktów, koszyk, płatności testowe Stripe, panel klienta, logowanie Google i zarządzanie treścią Directus.",
+        tags: ["Sklep internetowy", "Płatności Stripe", "Directus CMS"],
+      },
+      {
         title: "Teisinė Atrama — strona pomocy prawnej",
         description:
           "Strona pomocy prawnej teisinėatrama.lt: prezentacja usług, zapytania o konsultacje i struktura przygotowana pod wyszukiwanie lokalne. Start już wkrótce.",

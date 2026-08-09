@@ -36,6 +36,13 @@ const workMeta: WorkMeta[] = [
     status: "own",
   },
   {
+    url: "https://futtech.store",
+    domain: "futtech.store",
+    image: "/works/futtech-store.png",
+    caseStudy: "/darbai/futtech-store",
+    status: "own",
+  },
+  {
     // teisinėatrama.lt is not reachable yet — no outbound link until it works.
     url: null,
     domain: "teisinėatrama.lt",

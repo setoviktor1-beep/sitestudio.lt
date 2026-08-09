@@ -176,6 +176,12 @@ export const en: Dict = {
         tags: ["Web application", "Real-time messaging", "Android app"],
       },
       {
+        title: "FutTech — demo online store",
+        description:
+          "A fully functional technology store demo: a 20-product catalogue, cart, Stripe test payments, customer dashboard, Google sign-in and Directus content management.",
+        tags: ["Online store", "Stripe payments", "Directus CMS"],
+      },
+      {
         title: "Teisinė Atrama — legal support website",
         description:
           "A legal support website at teisinėatrama.lt: service presentation, consultation enquiries and a structure prepared for local search. Launching soon.",

@@ -176,6 +176,12 @@ export const et: Dict = {
         tags: ["Veebirakendus", "Reaalajas sõnumid", "Androidi rakendus"],
       },
       {
+        title: "FutTech — e-poe demo",
+        description:
+          "Täielikult toimiv tehnoloogiakaupluse demo: 20 toote kataloog, ostukorv, Stripe'i testmaksed, kliendipaneel, Google'iga sisselogimine ja Directuse sisuhaldus.",
+        tags: ["E-pood", "Stripe'i maksed", "Directus CMS"],
+      },
+      {
         title: "Teisinė Atrama — õigusabi veebileht",
         description:
           "Õigusabi veebileht teisinėatrama.lt: teenuste tutvustus, konsultatsioonipäringud ja kohalikuks otsinguks ette valmistatud struktuur. Peagi avatakse.",

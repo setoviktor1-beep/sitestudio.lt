@@ -4,6 +4,7 @@ import { prefixedLocales } from "@/lib/i18n";
 // Real content-change dates — bump the matching constant when a page's content
 // actually changes instead of stamping every request with the current time.
 const SEO_OVERHAUL = new Date("2026-08-05");
+const PORTFOLIO_UPDATED = new Date("2026-08-09");
 const LEGAL_UPDATED = new Date("2026-08-03");
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -14,14 +15,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: `${base}/`,
-      lastModified: SEO_OVERHAUL,
+      lastModified: PORTFOLIO_UPDATED,
       changeFrequency: "monthly" as const,
       priority: 1,
       images: heroImages,
     },
     ...prefixedLocales.map((locale) => ({
       url: `${base}/${locale}`,
-      lastModified: SEO_OVERHAUL,
+      lastModified: PORTFOLIO_UPDATED,
       changeFrequency: "monthly" as const,
       priority: 0.8,
       images: heroImages,
@@ -36,19 +37,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     // Portfolio hub + case studies.
     {
       url: `${base}/darbai`,
-      lastModified: SEO_OVERHAUL,
+      lastModified: PORTFOLIO_UPDATED,
       changeFrequency: "monthly" as const,
       priority: 0.8,
       images: [
         `${base}/works/leonamai.png`,
         `${base}/works/situacija.png`,
         `${base}/works/mini-social.png`,
+        `${base}/works/futtech-store.png`,
         `${base}/works/teisine-atrama.png`,
       ],
     },
     { url: `${base}/darbai/leonamai`, lastModified: SEO_OVERHAUL, changeFrequency: "yearly" as const, priority: 0.6, images: [`${base}/works/leonamai.png`] },
     { url: `${base}/darbai/situacija`, lastModified: SEO_OVERHAUL, changeFrequency: "yearly" as const, priority: 0.6, images: [`${base}/works/situacija.png`] },
     { url: `${base}/darbai/mini-social`, lastModified: SEO_OVERHAUL, changeFrequency: "yearly" as const, priority: 0.6, images: [`${base}/works/mini-social.png`] },
+    { url: `${base}/darbai/futtech-store`, lastModified: PORTFOLIO_UPDATED, changeFrequency: "yearly" as const, priority: 0.6, images: [`${base}/works/futtech-store.png`] },
     // About + contact.
     { url: `${base}/apie`, lastModified: SEO_OVERHAUL, changeFrequency: "yearly" as const, priority: 0.7 },
     { url: `${base}/kontaktai`, lastModified: SEO_OVERHAUL, changeFrequency: "yearly" as const, priority: 0.7 },

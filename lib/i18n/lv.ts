@@ -176,6 +176,12 @@ export const lv: Dict = {
         tags: ["Tīmekļa lietotne", "Reāllaika ziņas", "Android lietotne"],
       },
       {
+        title: "FutTech — demonstrācijas interneta veikals",
+        description:
+          "Pilnībā funkcionējoša tehnoloģiju veikala demonstrācija: 20 preču katalogs, grozs, Stripe testa maksājumi, klienta panelis, Google pieteikšanās un Directus satura pārvaldība.",
+        tags: ["Interneta veikals", "Stripe maksājumi", "Directus CMS"],
+      },
+      {
         title: "Teisinė Atrama — juridiskās palīdzības lapa",
         description:
           "Juridiskās palīdzības mājaslapa teisinėatrama.lt: pakalpojumu prezentācija, konsultāciju pieteikumi un vietējai meklēšanai sagatavota struktūra. Drīzumā tiks palaista.",

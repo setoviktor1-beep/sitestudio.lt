@@ -174,6 +174,12 @@ export const lt = {
         tags: ["Interneto aplikacija", "Realaus laiko žinutės", "Android programėlė"],
       },
       {
+        title: "FutTech — demonstracinė el. parduotuvė",
+        description:
+          "Pilnai veikianti technologijų el. parduotuvės demonstracija: 20 prekių katalogas, krepšelis, Stripe testiniai mokėjimai, kliento paskyra, Google prisijungimas ir Directus turinio valdymas.",
+        tags: ["El. parduotuvė", "Stripe mokėjimai", "Directus CMS"],
+      },
+      {
         title: "Teisinė Atrama — teisinės pagalbos svetainė",
         description:
           "Teisinės pagalbos svetainė teisinėatrama.lt: paslaugų pristatymas, konsultacijų užklausos ir vietinei paieškai paruošta struktūra. Projektas ruošiamas paleidimui.",

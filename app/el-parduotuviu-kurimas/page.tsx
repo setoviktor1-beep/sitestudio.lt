@@ -110,10 +110,10 @@ const content: ServicePageContent = {
     title: "Susiję darbai",
     items: [
       {
-        name: "MiniSocial — interneto aplikacija",
-        href: "/darbai/mini-social",
+        name: "FutTech — demonstracinė el. parduotuvė",
+        href: "/darbai/futtech-store",
         description:
-          "Pilna interneto sistema su paskyromis, mokėjimais ir realaus laiko funkcijomis — parodo, kokio sudėtingumo sprendimus kuriame.",
+          "Pilnas katalogo, krepšelio, testinių mokėjimų, kliento paskyros ir turinio valdymo sprendimas, kurį galite išbandyti gyvai.",
       },
       {
         name: "Leonamai — paslaugų svetainė",
