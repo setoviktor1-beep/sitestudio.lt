@@ -52,6 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/darbai/situacija`, lastModified: SEO_OVERHAUL, changeFrequency: "yearly" as const, priority: 0.6, images: [`${base}/works/situacija.png`] },
     { url: `${base}/darbai/mini-social`, lastModified: SEO_OVERHAUL, changeFrequency: "yearly" as const, priority: 0.6, images: [`${base}/works/mini-social.png`] },
     { url: `${base}/darbai/futtech-store`, lastModified: PORTFOLIO_UPDATED, changeFrequency: "yearly" as const, priority: 0.6, images: [`${base}/works/futtech-store.png`] },
+    { url: `${base}/darbai/teisine-atrama`, lastModified: PORTFOLIO_UPDATED, changeFrequency: "yearly" as const, priority: 0.6, images: [`${base}/works/teisine-atrama.png`] },
     // About + contact.
     { url: `${base}/apie`, lastModified: SEO_OVERHAUL, changeFrequency: "yearly" as const, priority: 0.7 },
     { url: `${base}/kontaktai`, lastModified: SEO_OVERHAUL, changeFrequency: "yearly" as const, priority: 0.7 },

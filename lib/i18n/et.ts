@@ -184,8 +184,8 @@ export const et: Dict = {
       {
         title: "Teisinė Atrama — õigusabi veebileht",
         description:
-          "Õigusabi veebileht teisinėatrama.lt: teenuste tutvustus, konsultatsioonipäringud ja kohalikuks otsinguks ette valmistatud struktuur. Peagi avatakse.",
-        tags: ["Teenuseleht", "Päringuvorm", "Peagi avatakse"],
+          "Toimiv õigusabi veebileht teisinėatrama.lt: täitemenetlus, dokumentide koostamine ja nõustamine, spetsialisti profiil, KKK ning õigusartiklid.",
+        tags: ["Teenuseleht", "Õigussisu", "SEO ja artiklid"],
       },
     ],
   },

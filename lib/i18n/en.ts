@@ -184,8 +184,8 @@ export const en: Dict = {
       {
         title: "Teisinė Atrama — legal support website",
         description:
-          "A legal support website at teisinėatrama.lt: service presentation, consultation enquiries and a structure prepared for local search. Launching soon.",
-        tags: ["Service website", "Enquiry form", "Launching soon"],
+          "A live legal support website at teisinėatrama.lt: enforcement procedures, document preparation and consultations, a specialist profile, FAQs and useful legal articles.",
+        tags: ["Service website", "Legal content", "SEO and articles"],
       },
     ],
   },

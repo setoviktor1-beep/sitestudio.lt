@@ -43,12 +43,11 @@ const workMeta: WorkMeta[] = [
     status: "own",
   },
   {
-    // teisinėatrama.lt is not reachable yet — no outbound link until it works.
-    url: null,
+    url: "https://xn--teisinatrama-jvb.lt",
     domain: "teisinėatrama.lt",
     image: "/works/teisine-atrama.png",
-    caseStudy: null,
-    status: "development",
+    caseStudy: "/darbai/teisine-atrama",
+    status: "client",
   },
 ];
 

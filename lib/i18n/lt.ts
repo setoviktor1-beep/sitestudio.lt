@@ -182,8 +182,8 @@ export const lt = {
       {
         title: "Teisinė Atrama — teisinės pagalbos svetainė",
         description:
-          "Teisinės pagalbos svetainė teisinėatrama.lt: paslaugų pristatymas, konsultacijų užklausos ir vietinei paieškai paruošta struktūra. Projektas ruošiamas paleidimui.",
-        tags: ["Paslaugų svetainė", "Užklausų forma", "Ruošiama paleisti"],
+          "Veikianti teisinės pagalbos svetainė teisinėatrama.lt: vykdymo procesų, dokumentų rengimo ir konsultacijų pristatymas, specialistės profilis, DUK bei naudingi teisiniai straipsniai.",
+        tags: ["Paslaugų svetainė", "Teisinis turinys", "SEO ir straipsniai"],
       },
     ],
   },

@@ -184,8 +184,8 @@ export const lv: Dict = {
       {
         title: "Teisinė Atrama — juridiskās palīdzības lapa",
         description:
-          "Juridiskās palīdzības mājaslapa teisinėatrama.lt: pakalpojumu prezentācija, konsultāciju pieteikumi un vietējai meklēšanai sagatavota struktūra. Drīzumā tiks palaista.",
-        tags: ["Pakalpojumu lapa", "Pieteikumu forma", "Drīzumā"],
+          "Darbojoša juridiskās palīdzības vietne teisinėatrama.lt: izpildprocesi, dokumentu sagatavošana un konsultācijas, speciālistes profils, BUJ un juridiskie raksti.",
+        tags: ["Pakalpojumu lapa", "Juridiskais saturs", "SEO un raksti"],
       },
     ],
   },

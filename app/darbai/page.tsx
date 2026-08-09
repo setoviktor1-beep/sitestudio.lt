@@ -10,17 +10,17 @@ import { siteGraph, webPageNode, breadcrumbNode } from "@/lib/jsonld";
 export const metadata: Metadata = {
   title: "Atlikti svetainių kūrimo darbai",
   description:
-    "SiteStudio atlikti darbai: klientų svetainės, interneto aplikacija mini-social.online ir demonstracinė el. parduotuvė futtech.store. Realūs, veikiantys projektai.",
+    "SiteStudio atlikti darbai: klientų svetainės, teisinėatrama.lt, interneto aplikacija mini-social.online ir demonstracinė el. parduotuvė futtech.store.",
   alternates: { canonical: "/darbai" },
 };
 
-// Case-study pages exist for live projects; teisinėatrama.lt is still in development.
+// Case-study pages exist for all live projects.
 const portfolioItems = [
   { name: "Leonamai", url: "https://leonamai.lt", caseStudy: "/darbai/leonamai" },
   { name: "Situacija", url: "https://situacija.eu", caseStudy: "/darbai/situacija" },
   { name: "MiniSocial", url: "https://mini-social.online", caseStudy: "/darbai/mini-social" },
   { name: "FutTech", url: "https://futtech.store", caseStudy: "/darbai/futtech-store" },
-  { name: "Teisinė Atrama", url: null, caseStudy: null },
+  { name: "Teisinė Atrama", url: "https://xn--teisinatrama-jvb.lt", caseStudy: "/darbai/teisine-atrama" },
 ];
 
 export default async function DarbaiPage() {

@@ -184,8 +184,8 @@ export const pl: Dict = {
       {
         title: "Teisinė Atrama — strona pomocy prawnej",
         description:
-          "Strona pomocy prawnej teisinėatrama.lt: prezentacja usług, zapytania o konsultacje i struktura przygotowana pod wyszukiwanie lokalne. Start już wkrótce.",
-        tags: ["Strona usługowa", "Formularz zapytań", "Wkrótce start"],
+          "Działająca strona pomocy prawnej teisinėatrama.lt: postępowania egzekucyjne, przygotowanie dokumentów i konsultacje, profil specjalistki, FAQ oraz artykuły prawne.",
+        tags: ["Strona usługowa", "Treści prawne", "SEO i artykuły"],
       },
     ],
   },
