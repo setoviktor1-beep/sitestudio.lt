@@ -65,7 +65,7 @@ export default async function NaudojimoSalygos() {
           <h2 className="text-lg font-bold text-[#0f172a] pt-2">6. Kontaktai</h2>
           <p>
             Klausimai dėl šių sąlygų —{" "}
-            <a href="mailto:info@sitestudio.lt" className="text-[#2456d6] underline">info@sitestudio.lt</a>.
+            <a href="mailto:viktor@sitestudio.lt" className="text-[#2456d6] underline">viktor@sitestudio.lt</a>.
           </p>
 
           <p className="text-xs text-[#64748b] pt-4">Atnaujinta: 2026 m. rugpjūtis.</p>

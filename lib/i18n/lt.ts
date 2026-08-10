@@ -355,7 +355,7 @@ export const lt = {
       successText: "Ačiū! Atsakysime per vieną darbo dieną adresu, kurį nurodėte.",
       sendAnother: "Siųsti kitą žinutę",
       error:
-        "Nepavyko išsiųsti užklausos. Pabandykite dar kartą arba parašykite info@sitestudio.lt.",
+        "Nepavyko išsiųsti užklausos. Pabandykite dar kartą arba parašykite viktor@sitestudio.lt.",
       consentPrefix: "Pateikdami formą sutinkate, kad nurodytus duomenis naudosime atsakymui į jūsų užklausą (plačiau — ",
       consentLink: "privatumo politikoje",
       consentSuffix: ").",

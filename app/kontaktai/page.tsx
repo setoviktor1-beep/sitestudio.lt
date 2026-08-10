@@ -9,7 +9,7 @@ import { siteGraph, webPageNode, breadcrumbNode } from "@/lib/jsonld";
 export const metadata: Metadata = {
   title: "Kontaktai — gaukite pasiūlymą dėl svetainės",
   description:
-    "Susisiekite su SiteStudio dėl svetainės, el. parduotuvės, interneto sistemos ar automatizavimo. Atsakome per vieną darbo dieną. El. paštas: info@sitestudio.lt.",
+    "Susisiekite su SiteStudio dėl svetainės, el. parduotuvės, interneto sistemos ar automatizavimo. Atsakome per vieną darbo dieną. El. paštas: viktor@sitestudio.lt.",
   alternates: { canonical: "/kontaktai" },
 };
 
