@@ -69,8 +69,8 @@ export default function Contact({ dict, locale = "lt" }: { dict: Dict; locale?: 
                 </div>
                 <div>
                   <div className="text-xs text-[#64748b]">{t.emailLabel}</div>
-                  <a href="mailto:info@sitestudio.lt" className="text-[#0f172a] font-semibold hover:text-[#2456d6] transition-colors">
-                    info@sitestudio.lt
+                  <a href="mailto:viktor@sitestudio.lt" className="text-[#0f172a] font-semibold hover:text-[#2456d6] transition-colors">
+                    viktor@sitestudio.lt
                   </a>
                 </div>
               </div>

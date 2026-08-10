@@ -355,7 +355,7 @@ export const et: Dict = {
       successTitle: "Päring kätte saadud",
       successText: "Aitäh! Vastame ühe tööpäeva jooksul teie märgitud aadressile.",
       sendAnother: "Saada veel üks sõnum",
-      error: "Päringu saatmine ebaõnnestus. Proovige uuesti või kirjutage info@sitestudio.lt.",
+      error: "Päringu saatmine ebaõnnestus. Proovige uuesti või kirjutage viktor@sitestudio.lt.",
       consentPrefix: "Vormi esitades nõustute, et kasutame esitatud andmeid teie päringule vastamiseks (täpsemalt — ",
       consentLink: "privaatsuspoliitikas",
       consentSuffix: ").",

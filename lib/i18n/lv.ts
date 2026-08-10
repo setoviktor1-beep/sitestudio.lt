@@ -355,7 +355,7 @@ export const lv: Dict = {
       successTitle: "Pieteikums saņemts",
       successText: "Paldies! Atbildēsim vienas darba dienas laikā uz norādīto adresi.",
       sendAnother: "Sūtīt vēl vienu ziņu",
-      error: "Neizdevās nosūtīt pieteikumu. Mēģiniet vēlreiz vai rakstiet uz info@sitestudio.lt.",
+      error: "Neizdevās nosūtīt pieteikumu. Mēģiniet vēlreiz vai rakstiet uz viktor@sitestudio.lt.",
       consentPrefix: "Iesniedzot formu, jūs piekrītat, ka norādītos datus izmantosim atbildei uz jūsu pieteikumu (vairāk — ",
       consentLink: "privātuma politikā",
       consentSuffix: ").",

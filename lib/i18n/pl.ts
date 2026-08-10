@@ -355,7 +355,7 @@ export const pl: Dict = {
       successTitle: "Zapytanie otrzymane",
       successText: "Dziękujemy! Odpowiemy w ciągu jednego dnia roboczego na podany adres.",
       sendAnother: "Wyślij kolejną wiadomość",
-      error: "Nie udało się wysłać zapytania. Spróbuj ponownie lub napisz na info@sitestudio.lt.",
+      error: "Nie udało się wysłać zapytania. Spróbuj ponownie lub napisz na viktor@sitestudio.lt.",
       consentPrefix: "Wysyłając formularz, zgadzasz się, że podane dane wykorzystamy do odpowiedzi na Twoje zapytanie (szczegóły w ",
       consentLink: "polityce prywatności",
       consentSuffix: ").",

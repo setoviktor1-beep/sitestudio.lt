@@ -74,8 +74,8 @@ export default function Footer({ dict, locale = "lt" }: { dict: Dict; locale?: L
             <h3 className="text-white font-semibold mb-4">{dict.footer.contactsHeading}</h3>
             <ul className="space-y-2.5">
               <li>
-                <a href="mailto:info@sitestudio.lt" className="hover:text-white transition-colors">
-                  info@sitestudio.lt
+                <a href="mailto:viktor@sitestudio.lt" className="hover:text-white transition-colors">
+                  viktor@sitestudio.lt
                 </a>
               </li>
               <li>{dict.footer.remote}</li>

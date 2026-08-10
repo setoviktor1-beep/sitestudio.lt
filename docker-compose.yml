@@ -29,7 +29,7 @@ services:
       # Optional Telegram alert for each saved contact-form request.
       TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:-}
       TELEGRAM_CHAT_ID: ${TELEGRAM_CHAT_ID:-}
-      # Contact-form notification recipient (defaults to info@sitestudio.lt).
+      # Contact-form notification recipient (defaults to viktor@sitestudio.lt).
       CONTACT_EMAIL: ${CONTACT_EMAIL:-}
       # Optional S3-compatible storage (leave empty to disable uploads).
       S3_ENDPOINT: ${S3_ENDPOINT:-}

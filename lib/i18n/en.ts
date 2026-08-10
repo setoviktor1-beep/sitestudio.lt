@@ -355,7 +355,7 @@ export const en: Dict = {
       successTitle: "Enquiry received",
       successText: "Thank you! We'll reply within one business day to the address you provided.",
       sendAnother: "Send another message",
-      error: "Could not send the enquiry. Please try again or write to info@sitestudio.lt.",
+      error: "Could not send the enquiry. Please try again or write to viktor@sitestudio.lt.",
       consentPrefix: "By submitting the form you agree that we use the provided data to answer your enquiry (details in the ",
       consentLink: "privacy policy",
       consentSuffix: ").",

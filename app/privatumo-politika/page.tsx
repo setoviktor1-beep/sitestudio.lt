@@ -27,7 +27,7 @@ export default async function PrivatumoPolitika() {
             Šioje politikoje aprašome, kokius asmens duomenis renka svetainė{" "}
             <strong>sitestudio.lt</strong> (toliau — SiteStudio), kam jie naudojami
             ir kokias teises turite. Duomenų valdytojo kontaktas:{" "}
-            <a href="mailto:info@sitestudio.lt" className="text-[#2456d6] underline">info@sitestudio.lt</a>.
+            <a href="mailto:viktor@sitestudio.lt" className="text-[#2456d6] underline">viktor@sitestudio.lt</a>.
           </p>
 
           <h2 className="text-lg font-bold text-[#0f172a] pt-2">1. Kokius duomenis renkame</h2>
@@ -66,7 +66,7 @@ export default async function PrivatumoPolitika() {
             ištrinti, apriboti tvarkymą arba pateikti skundą Valstybinei duomenų
             apsaugos inspekcijai (vdai.lrv.lt). Dėl bet kurios teisės kreipkitės
             el. paštu{" "}
-            <a href="mailto:info@sitestudio.lt" className="text-[#2456d6] underline">info@sitestudio.lt</a> —
+            <a href="mailto:viktor@sitestudio.lt" className="text-[#2456d6] underline">viktor@sitestudio.lt</a> —
             atsakysime ne vėliau kaip per 30 dienų.
           </p>
 

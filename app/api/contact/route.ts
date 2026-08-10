@@ -101,7 +101,7 @@ export async function POST(request: NextRequest) {
     request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
   if (rateLimited(ip)) {
     return NextResponse.json(
-      { error: "Per daug užklausų. Pabandykite po kelių minučių arba parašykite info@sitestudio.lt." },
+      { error: "Per daug užklausų. Pabandykite po kelių minučių arba parašykite viktor@sitestudio.lt." },
       { status: 429 }
     );
   }
@@ -116,13 +116,13 @@ export async function POST(request: NextRequest) {
   } catch (err) {
     console.error("[contact] failed to store request:", err);
     return NextResponse.json(
-      { error: "Nepavyko išsiųsti užklausos. Pabandykite dar kartą arba parašykite info@sitestudio.lt." },
+      { error: "Nepavyko išsiųsti užklausos. Pabandykite dar kartą arba parašykite viktor@sitestudio.lt." },
       { status: 500 }
     );
   }
 
   // Best-effort notifications — the lead is already safe in the DB.
-  const notifyTo = process.env.CONTACT_EMAIL || "info@sitestudio.lt";
+  const notifyTo = process.env.CONTACT_EMAIL || "viktor@sitestudio.lt";
   const results = await Promise.allSettled([
     sendMail({
       to: notifyTo,

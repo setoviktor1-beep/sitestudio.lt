@@ -15,7 +15,7 @@ export const organizationNode = {
   "@id": ORG_ID,
   name: "SiteStudio",
   url: BASE_URL,
-  email: "info@sitestudio.lt",
+  email: "viktor@sitestudio.lt",
   description:
     "Svetainių, el. parduotuvių ir interneto sistemų kūrimo studija mažam ir vidutiniam Lietuvos verslui.",
   areaServed: { "@type": "Country", name: "Lietuva" },
