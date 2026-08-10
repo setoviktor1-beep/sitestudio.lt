@@ -1,27 +1,21 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Works from "@/components/Works";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { getDict } from "@/lib/i18n";
-import { siteGraph, webPageNode, breadcrumbNode } from "@/lib/jsonld";
+import { siteGraph, webPageNode, breadcrumbNode, portfolioListNode } from "@/lib/jsonld";
+import { portfolioProjects } from "@/lib/portfolio";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Atlikti svetainių kūrimo darbai",
   description:
-    "SiteStudio atlikti darbai: klientų svetainės, teisinėatrama.lt, interneto aplikacija mini-social.online ir demonstracinė el. parduotuvė futtech.store.",
-  alternates: { canonical: "/darbai" },
-};
-
-// Case-study pages exist for all live projects.
-const portfolioItems = [
-  { name: "Leonamai", url: "https://leonamai.lt", caseStudy: "/darbai/leonamai" },
-  { name: "Situacija", url: "https://situacija.eu", caseStudy: "/darbai/situacija" },
-  { name: "MiniSocial", url: "https://mini-social.online", caseStudy: "/darbai/mini-social" },
-  { name: "FutTech", url: "https://futtech.store", caseStudy: "/darbai/futtech-store" },
-  { name: "Teisinė Atrama", url: "https://xn--teisinatrama-jvb.lt", caseStudy: "/darbai/teisine-atrama" },
-];
+    "SiteStudio atlikti darbai: leonamai.lt, situacija.eu, teisinėatrama.lt, interneto aplikacija mini-social.online ir demonstracinė el. parduotuvė futtech.store.",
+  keywords: ["atlikti svetainių kūrimo darbai", "svetainių kūrimo portfolio", "SiteStudio projektai", "interneto svetainių pavyzdžiai"],
+  path: "/darbai",
+  image: "/works/leonamai.png",
+});
 
 export default async function DarbaiPage() {
   const dict = await getDict("lt");
@@ -33,23 +27,17 @@ export default async function DarbaiPage() {
       "SiteStudio atlikti svetainių kūrimo darbai: realūs, veikiantys klientų projektai ir nuosavi produktai.",
     ),
     breadcrumbNode("/darbai", crumbs),
-    {
-      "@type": "ItemList",
-      "@id": "https://sitestudio.lt/darbai#portfolio",
-      name: "SiteStudio atlikti darbai",
-      itemListElement: dict.works.items.map((work, idx) => ({
-        "@type": "ListItem",
-        position: idx + 1,
-        item: {
-          "@type": "CreativeWork",
-          name: work.title,
-          description: work.description,
-          ...(portfolioItems[idx].caseStudy
-            ? { url: `https://sitestudio.lt${portfolioItems[idx].caseStudy}` }
-            : {}),
-        },
+    portfolioListNode(
+      "/darbai",
+      "SiteStudio atlikti svetainių kūrimo darbai",
+      dict.works.items.map((work, index) => ({
+        name: work.title,
+        description: work.description,
+        caseStudy: portfolioProjects[index].caseStudy,
+        liveUrl: portfolioProjects[index].liveUrl,
+        image: portfolioProjects[index].image,
       })),
-    },
+    ),
   );
 
   return (
@@ -67,7 +55,7 @@ export default async function DarbaiPage() {
           </h1>
           <p className="mt-3 text-[#475569] max-w-2xl">
             Rodome tik realius projektus: klientų svetaines, kurias galite atsidaryti dabar,
-            nuosavus produktus ir dar kuriamus darbus — kiekvienas pažymėtas atitinkamai.
+            ir veikiančius nuosavus produktus — kiekvienas aiškiai pažymėtas.
             Prie užbaigtų projektų rasite ir išsamias projektų istorijas.
           </p>
         </div>

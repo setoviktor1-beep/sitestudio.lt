@@ -1,12 +1,14 @@
-import type { Metadata } from "next";
 import CaseStudyPage, { type CaseStudyContent } from "@/components/CaseStudyPage";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Leonamai — svetainė vonios remonto meistrui",
   description:
     "Projekto istorija: leonamai.lt — paslaugų svetainė vonios remonto meistrui Lentvaryje, Vilniuje ir Trakuose. Darbų galerija, užklausų forma ir vietinei Google paieškai paruošta struktūra.",
-  alternates: { canonical: "/darbai/leonamai" },
-};
+  path: "/darbai/leonamai",
+  image: "/works/leonamai.png",
+  keywords: ["vonios remonto svetainė", "vietinis SEO", "svetainė meistrui", "leonamai.lt"],
+});
 
 const content: CaseStudyContent = {
   path: "/darbai/leonamai",

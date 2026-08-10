@@ -43,8 +43,14 @@ export default async function CaseStudyPage({ content }: { content: CaseStudyCon
       "@id": `${BASE_URL}${content.path}#project`,
       name: content.breadcrumbName,
       description: content.metaDescription,
+      url: `${BASE_URL}${content.path}`,
+      mainEntityOfPage: { "@id": `${BASE_URL}${content.path}#webpage` },
       creator: { "@id": ORG_ID },
-      ...(content.liveUrl ? { url: content.liveUrl } : {}),
+      publisher: { "@id": ORG_ID },
+      image: `${BASE_URL}${content.image.src}`,
+      inLanguage: "lt",
+      keywords: [content.projectType, ...content.features.slice(0, 5)],
+      ...(content.liveUrl ? { sameAs: content.liveUrl } : {}),
     },
   );
 

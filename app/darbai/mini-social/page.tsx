@@ -1,12 +1,14 @@
-import type { Metadata } from "next";
 import CaseStudyPage, { type CaseStudyContent } from "@/components/CaseStudyPage";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "MiniSocial — socialinis tinklas su Android programėle",
   description:
     "Projekto istorija: mini-social.online — SiteStudio sukurta pilna interneto aplikacija: registracija, įrašai, realaus laiko žinutės ir Android programėlė. Parodo, kokio sudėtingumo sistemas kuriame.",
-  alternates: { canonical: "/darbai/mini-social" },
-};
+  path: "/darbai/mini-social",
+  image: "/works/mini-social.png",
+  keywords: ["interneto aplikacijų kūrimas", "socialinio tinklo kūrimas", "Android programėlė", "mini-social.online"],
+});
 
 const content: CaseStudyContent = {
   path: "/darbai/mini-social",

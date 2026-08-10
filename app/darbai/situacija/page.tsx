@@ -1,12 +1,14 @@
-import type { Metadata } from "next";
 import CaseStudyPage, { type CaseStudyContent } from "@/components/CaseStudyPage";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Situacija — svetainė plytelių klojimo meistrui su turinio valdymu",
   description:
     "Projekto istorija: situacija.eu — svetainė plytelių klojimo meistrui Pabradėje, Švenčionyse ir Vilniuje su darbų galerija ir turinio valdymo sistema, leidžiančia pačiam atnaujinti nuotraukas.",
-  alternates: { canonical: "/darbai/situacija" },
-};
+  path: "/darbai/situacija",
+  image: "/works/situacija.png",
+  keywords: ["plytelių klojimo svetainė", "svetainė meistrui", "turinio valdymo sistema", "situacija.eu"],
+});
 
 const content: CaseStudyContent = {
   path: "/darbai/situacija",

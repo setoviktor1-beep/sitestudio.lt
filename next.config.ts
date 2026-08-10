@@ -11,11 +11,11 @@ const securityHeaders = [
     value: [
       "default-src 'self'",
       // Next.js inline runtime + JSON-LD scripts.
-      "script-src 'self' 'unsafe-inline'",
+      "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: blob:",
+      "img-src 'self' data: blob: https://www.google-analytics.com",
       "font-src 'self' data:",
-      "connect-src 'self'",
+      "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com",
       "frame-ancestors 'none'",
       "base-uri 'self'",
       "form-action 'self'",
@@ -57,8 +57,7 @@ const nextConfig: NextConfig = {
       { source: "/paslaugu-teikimo-salygos", destination: "/naudojimo-salygos", permanent: true },
       // Old EN portfolio URLs — the closest relevant replacement is the portfolio hub.
       { source: "/en/portfolio/:path*", destination: "/darbai", permanent: true },
-      // /en, /pl, /lv, /et, /ru are now real localized pages.
-      { source: "/en/:path+", destination: "/en", permanent: true },
+      // /en, /pl, /lv, /et and /ru include localized legal pages.
       { source: "/lt", destination: "/", permanent: true },
       { source: "/lt/:path*", destination: "/:path*", permanent: true },
       { source: "/portfolio", destination: "/darbai", permanent: true },
