@@ -1,11 +1,12 @@
 import type { MetadataRoute } from "next";
 import { prefixedLocales } from "@/lib/i18n";
+import { legalKeys, legalPath } from "@/lib/legal";
 
 // Real content-change dates — bump the matching constant when a page's content
 // actually changes instead of stamping every request with the current time.
 const SEO_OVERHAUL = new Date("2026-08-05");
 const PORTFOLIO_UPDATED = new Date("2026-08-09");
-const LEGAL_UPDATED = new Date("2026-08-03");
+const LEGAL_UPDATED = new Date("2026-08-10");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://sitestudio.lt";
@@ -60,5 +61,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/privatumo-politika`, lastModified: LEGAL_UPDATED, changeFrequency: "yearly" as const, priority: 0.2 },
     { url: `${base}/slapuku-politika`, lastModified: LEGAL_UPDATED, changeFrequency: "yearly" as const, priority: 0.2 },
     { url: `${base}/naudojimo-salygos`, lastModified: LEGAL_UPDATED, changeFrequency: "yearly" as const, priority: 0.2 },
+    ...prefixedLocales.flatMap((locale) =>
+      legalKeys.map((key) => ({
+        url: `${base}${legalPath(locale, key)}`,
+        lastModified: LEGAL_UPDATED,
+        changeFrequency: "yearly" as const,
+        priority: 0.2,
+      })),
+    ),
   ];
 }

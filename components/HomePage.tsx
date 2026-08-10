@@ -12,14 +12,27 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import type { Dict, Locale } from "@/lib/i18n";
 import { homePath } from "@/lib/i18n";
-import { siteGraph, webPageNode, faqNode } from "@/lib/jsonld";
+import { siteGraph, webPageNode, faqNode, portfolioListNode } from "@/lib/jsonld";
+import { portfolioProjects } from "@/lib/portfolio";
 
 export default function HomePage({ dict, locale }: { dict: Dict; locale: Locale }) {
   const path = homePath(locale) === "/" ? "" : homePath(locale);
   const jsonLd = siteGraph(
-    webPageNode(path || "/", dict.meta.title, dict.meta.description),
+    webPageNode(path || "/", dict.meta.title, dict.meta.description, locale),
     // FAQ content below is rendered visibly by the Faq component.
     faqNode(path || "/", dict.faq.items),
+    portfolioListNode(
+      path || "/",
+      dict.works.title,
+      dict.works.items.map((work, index) => ({
+        name: work.title,
+        description: work.description,
+        caseStudy: portfolioProjects[index].caseStudy,
+        liveUrl: portfolioProjects[index].liveUrl,
+        image: portfolioProjects[index].image,
+      })),
+      locale,
+    ),
   );
 
   return (

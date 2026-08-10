@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import type { Dict, Locale } from "@/lib/i18n";
+import { legalPath } from "@/lib/legal";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -198,7 +199,7 @@ export default function Contact({ dict, locale = "lt" }: { dict: Dict; locale?: 
 
                 <p className="text-center text-xs text-[#94a3b8]">
                   {t.form.consentPrefix}
-                  <a href="/privatumo-politika" className="underline hover:text-[#2456d6]">
+                  <a href={legalPath(locale, "privacy")} className="underline hover:text-[#2456d6]">
                     {t.form.consentLink}
                   </a>
                   {t.form.consentSuffix}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Dict, Locale } from "@/lib/i18n";
 import { homePath } from "@/lib/i18n";
+import { legalPath } from "@/lib/legal";
 
 export default function Footer({ dict, locale = "lt" }: { dict: Dict; locale?: Locale }) {
   const base = homePath(locale);
@@ -87,13 +88,13 @@ export default function Footer({ dict, locale = "lt" }: { dict: Dict; locale?: L
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <div>© {new Date().getFullYear()} SiteStudio.lt. {dict.footer.rights}</div>
           <div className="flex flex-wrap justify-center gap-6 text-white/70">
-            <Link href="/privatumo-politika" className="hover:text-white transition-colors">
+            <Link href={legalPath(locale, "privacy")} className="hover:text-white transition-colors">
               {dict.footer.privacy}
             </Link>
-            <Link href="/slapuku-politika" className="hover:text-white transition-colors">
+            <Link href={legalPath(locale, "cookies")} className="hover:text-white transition-colors">
               {dict.footer.cookies}
             </Link>
-            <Link href="/naudojimo-salygos" className="hover:text-white transition-colors">
+            <Link href={legalPath(locale, "terms")} className="hover:text-white transition-colors">
               {dict.footer.terms}
             </Link>
           </div>

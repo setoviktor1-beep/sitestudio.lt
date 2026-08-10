@@ -6,7 +6,15 @@ import type { Dict, Locale } from "@/lib/i18n";
 import { locales, localeNames, localeFullNames, homePath } from "@/lib/i18n";
 import Flag from "./Flag";
 
-export default function Navbar({ dict, locale = "lt" }: { dict: Dict; locale?: Locale }) {
+export default function Navbar({
+  dict,
+  locale = "lt",
+  languagePaths,
+}: {
+  dict: Dict;
+  locale?: Locale;
+  languagePaths?: Partial<Record<Locale, string>>;
+}) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
@@ -81,7 +89,7 @@ export default function Navbar({ dict, locale = "lt" }: { dict: Dict; locale?: L
           {locales.map((l) => (
             <Link
               key={l}
-              href={homePath(l)}
+              href={languagePaths?.[l] ?? homePath(l)}
               hrefLang={l}
               role="menuitem"
               onClick={() => {

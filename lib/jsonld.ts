@@ -54,15 +54,44 @@ export function siteGraph(...extraNodes: JsonLdNode[]) {
 }
 
 /** WebPage node for a given path. */
-export function webPageNode(path: string, name: string, description: string): JsonLdNode {
+export function webPageNode(path: string, name: string, description: string, language = "lt"): JsonLdNode {
   return {
     "@type": "WebPage",
     "@id": `${BASE_URL}${path}#webpage`,
     url: `${BASE_URL}${path}`,
     name,
     description,
-    inLanguage: "lt",
+    inLanguage: language,
     isPartOf: { "@id": WEBSITE_ID },
+  };
+}
+
+/** Portfolio projects that are visibly rendered on a page. */
+export function portfolioListNode(
+  path: string,
+  name: string,
+  items: { name: string; description: string; caseStudy: string; liveUrl: string; image: string }[],
+  language = "lt",
+): JsonLdNode {
+  return {
+    "@type": "ItemList",
+    "@id": `${BASE_URL}${path}#portfolio`,
+    name,
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "CreativeWork",
+        "@id": `${BASE_URL}${item.caseStudy}#project`,
+        name: item.name,
+        description: item.description,
+        url: `${BASE_URL}${item.caseStudy}`,
+        sameAs: item.liveUrl,
+        image: `${BASE_URL}${item.image}`,
+        inLanguage: language,
+        creator: { "@id": ORG_ID },
+      },
+    })),
   };
 }
 

@@ -1,12 +1,14 @@
-import type { Metadata } from "next";
 import CaseStudyPage, { type CaseStudyContent } from "@/components/CaseStudyPage";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "FutTech — demonstracinė el. parduotuvė su Stripe ir Directus",
   description:
     "Projekto istorija: futtech.store — pilnai veikianti demonstracinė el. parduotuvė su 20 prekių katalogu, Stripe testiniais mokėjimais, klientų paskyromis ir Directus CMS.",
-  alternates: { canonical: "/darbai/futtech-store" },
-};
+  path: "/darbai/futtech-store",
+  image: "/works/futtech-store.png",
+  keywords: ["el. parduotuvės kūrimas", "Stripe integracija", "Directus CMS", "futtech.store"],
+});
 
 const content: CaseStudyContent = {
   path: "/darbai/futtech-store",

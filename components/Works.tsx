@@ -1,60 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Dict, Locale } from "@/lib/i18n";
+import { portfolioProjects } from "@/lib/portfolio";
 
-type WorkMeta = {
-  /** Live site URL; null while the project is not publicly reachable. */
-  url: string | null;
-  domain: string;
-  image: string;
-  /** Dedicated Lithuanian case-study page. */
-  caseStudy: string | null;
-  status: "client" | "own" | "development";
-};
-
-// Index-aligned with dict.works.items.
-const workMeta: WorkMeta[] = [
-  {
-    url: "https://leonamai.lt",
-    domain: "leonamai.lt",
-    image: "/works/leonamai.png",
-    caseStudy: "/darbai/leonamai",
-    status: "client",
-  },
-  {
-    url: "https://situacija.eu",
-    domain: "situacija.eu",
-    image: "/works/situacija.png",
-    caseStudy: "/darbai/situacija",
-    status: "client",
-  },
-  {
-    url: "https://mini-social.online",
-    domain: "mini-social.online",
-    image: "/works/mini-social.png",
-    caseStudy: "/darbai/mini-social",
-    status: "own",
-  },
-  {
-    url: "https://futtech.store",
-    domain: "futtech.store",
-    image: "/works/futtech-store.png",
-    caseStudy: "/darbai/futtech-store",
-    status: "own",
-  },
-  {
-    url: "https://xn--teisinatrama-jvb.lt",
-    domain: "teisinėatrama.lt",
-    image: "/works/teisine-atrama.png",
-    caseStudy: "/darbai/teisine-atrama",
-    status: "client",
-  },
-];
-
-const statusLabels: Record<WorkMeta["status"], string> = {
+const statusLabels: Record<(typeof portfolioProjects)[number]["status"], string> = {
   client: "Kliento projektas",
   own: "SiteStudio produktas",
-  development: "Kuriama",
 };
 
 export default function Works({
@@ -81,7 +32,7 @@ export default function Works({
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {dict.works.items.map((work, idx) => {
-            const meta = workMeta[idx];
+            const meta = portfolioProjects[idx];
             const caseHref = isLt ? meta.caseStudy : null;
             return (
               <article key={meta.domain} className="browser-frame card-hover flex flex-col">
@@ -93,13 +44,7 @@ export default function Works({
                     {meta.domain}
                   </span>
                   {isLt && (
-                    <span
-                      className={`rounded-full px-2.5 py-0.5 text-[10px] font-semibold ${
-                        meta.status === "development"
-                          ? "bg-amber-100 text-amber-800"
-                          : "bg-[#e8eefc] text-[#2456d6]"
-                      }`}
-                    >
+                    <span className="rounded-full bg-[#e8eefc] px-2.5 py-0.5 text-[10px] font-semibold text-[#2456d6]">
                       {statusLabels[meta.status]}
                     </span>
                   )}
@@ -107,7 +52,7 @@ export default function Works({
                 <div className="relative aspect-[16/10] overflow-hidden border-b border-black/5 bg-[#f6f8fb]">
                   <Image
                     src={meta.image}
-                    alt={work.title}
+                    alt={`${work.title} — ${meta.domain}`}
                     fill
                     sizes="(min-width: 768px) 50vw, 100vw"
                     className="object-cover object-top"
@@ -137,9 +82,9 @@ export default function Works({
                         Skaityti projekto istoriją <span aria-hidden="true">→</span>
                       </Link>
                     )}
-                    {meta.url && (
+                    {meta.liveUrl && (
                       <a
-                        href={meta.url}
+                        href={meta.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-[#64748b] hover:text-[#2456d6] transition-colors"

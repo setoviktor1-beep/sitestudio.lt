@@ -1,12 +1,14 @@
-import type { Metadata } from "next";
 import CaseStudyPage, { type CaseStudyContent } from "@/components/CaseStudyPage";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Teisinė Atrama — teisinės pagalbos svetainė",
   description:
     "Projekto istorija: teisinėatrama.lt — profesionali teisinės pagalbos svetainė su paslaugų pristatymu, specialistės profiliu, DUK ir teisiniais straipsniais.",
-  alternates: { canonical: "/darbai/teisine-atrama" },
-};
+  path: "/darbai/teisine-atrama",
+  image: "/works/teisine-atrama.png",
+  keywords: ["teisininkės svetainė", "teisinių paslaugų SEO", "teisiniai straipsniai", "teisinėatrama.lt"],
+});
 
 const content: CaseStudyContent = {
   path: "/darbai/teisine-atrama",
