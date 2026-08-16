@@ -46,16 +46,18 @@ export default function Navbar({
       ? [
           { href: "/paslaugos", label: dict.nav.services },
           { href: "/darbai", label: dict.nav.works },
-          { href: "/tinklarastis", label: "Tinklaraštis" },
-          { href: "/skaiciuokle", label: "Skaičiuoklė" },
+          { href: "/tinklarastis", label: dict.nav.blog },
+          { href: "/skaiciuokle", label: dict.nav.calculator },
           { href: "/apie", label: "Apie" },
           { href: "/#kainos", label: dict.nav.pricing },
           { href: "/#duk", label: dict.nav.faq },
         ]
       : [
-          { href: anchor("paslaugos"), label: dict.nav.services },
-          { href: anchor("darbai"), label: dict.nav.works },
-          { href: anchor("procesas"), label: dict.nav.process },
+          { href: `/${locale}/paslaugos`, label: dict.nav.services },
+          { href: `/${locale}/darbai`, label: dict.nav.works },
+          { href: `/${locale}/tinklarastis`, label: dict.nav.blog },
+          { href: `/${locale}/skaiciuokle`, label: dict.nav.calculator },
+          { href: `/${locale}/apie`, label: "About" },
           { href: anchor("kainos"), label: dict.nav.pricing },
           { href: anchor("duk"), label: dict.nav.faq },
         ];

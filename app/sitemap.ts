@@ -51,7 +51,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/naudojimo-salygos`, lastModified: LEGAL_UPDATED, changeFrequency: "yearly", priority: 0.2 },
   ];
 
-  // 2. Multilingual locale pages (5 locales)
+  // 2. Multilingual locale pages (5 locales: en, pl, lv, et, ru)
   const localizedPages: MetadataRoute.Sitemap = prefixedLocales.flatMap((locale) => [
     { url: `${base}/${locale}`, lastModified: CONTENT_UPDATED, changeFrequency: "weekly" as const, priority: 0.8, images: heroImages },
     { url: `${base}/${locale}/paslaugos`, lastModified: CONTENT_UPDATED, changeFrequency: "monthly" as const, priority: 0.7 },
@@ -60,6 +60,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/${locale}/svetainiu-atnaujinimas`, lastModified: CONTENT_UPDATED, changeFrequency: "monthly" as const, priority: 0.7 },
     { url: `${base}/${locale}/interneto-sistemu-kurimas`, lastModified: CONTENT_UPDATED, changeFrequency: "monthly" as const, priority: 0.7 },
     { url: `${base}/${locale}/ai-automatizavimas`, lastModified: CONTENT_UPDATED, changeFrequency: "monthly" as const, priority: 0.7 },
+    { url: `${base}/${locale}/skaiciuokle`, lastModified: CONTENT_UPDATED, changeFrequency: "monthly" as const, priority: 0.75 },
     { url: `${base}/${locale}/darbai`, lastModified: CONTENT_UPDATED, changeFrequency: "monthly" as const, priority: 0.7, images: allPortfolioImages },
     ...portfolioProjects.map((p) => ({
       url: `${base}/${locale}${p.caseStudy}`,
@@ -67,6 +68,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.6,
       images: [`${base}${p.image}`],
+    })),
+    { url: `${base}/${locale}/tinklarastis`, lastModified: CONTENT_UPDATED, changeFrequency: "weekly" as const, priority: 0.75 },
+    ...BLOG_POSTS.map((post) => ({
+      url: `${base}/${locale}/tinklarastis/${post.slug}`,
+      lastModified: new Date(post.publishedAt),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
     })),
     { url: `${base}/${locale}/apie`, lastModified: CONTENT_UPDATED, changeFrequency: "monthly" as const, priority: 0.6 },
     { url: `${base}/${locale}/kontaktai`, lastModified: CONTENT_UPDATED, changeFrequency: "monthly" as const, priority: 0.7 },

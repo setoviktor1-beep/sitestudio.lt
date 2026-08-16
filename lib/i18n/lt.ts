@@ -7,6 +7,8 @@ export const lt = {
   nav: {
     services: "Paslaugos",
     works: "Darbai",
+    blog: "Tinklaraštis",
+    calculator: "Skaičiuoklė",
     process: "Procesas",
     pricing: "Kainos",
     faq: "DUK",

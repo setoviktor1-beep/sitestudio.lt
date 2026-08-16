@@ -5,7 +5,6 @@ import { legalPath } from "@/lib/legal";
 
 export default function Footer({ dict, locale = "lt" }: { dict: Dict; locale?: Locale }) {
   const base = homePath(locale);
-  const anchor = (hash: string) => (base === "/" ? `/#${hash}` : `${base}#${hash}`);
   const isLt = locale === "lt";
 
   // Dedicated Lithuanian service pages.
@@ -18,10 +17,19 @@ export default function Footer({ dict, locale = "lt" }: { dict: Dict; locale?: L
     { href: "/skaiciuokle", label: "Kainos skaičiuoklė" },
   ];
 
+  const localizedServiceLinks = [
+    { href: `/${locale}/svetainiu-kurimas`, label: dict.services.items[0]?.title ?? "Websites" },
+    { href: `/${locale}/el-parduotuviu-kurimas`, label: dict.services.items[1]?.title ?? "E-Commerce" },
+    { href: `/${locale}/svetainiu-atnaujinimas`, label: dict.services.items[3]?.title ?? "Redesign" },
+    { href: `/${locale}/interneto-sistemu-kurimas`, label: dict.services.items[2]?.title ?? "Web Systems" },
+    { href: `/${locale}/ai-automatizavimas`, label: "AI & Automation" },
+    { href: `/${locale}/skaiciuokle`, label: dict.nav.calculator },
+  ];
+
   return (
     <footer className="bg-[#0f172a] py-14 text-white/60 text-sm">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className={`grid grid-cols-1 gap-10 mb-10 ${isLt ? "md:grid-cols-4" : "md:grid-cols-3"}`}>
+        <div className="grid grid-cols-1 gap-10 mb-10 md:grid-cols-4">
           <div>
             <div className="flex items-center gap-2.5 mb-4">
               <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#2456d6] text-white font-bold">
@@ -50,8 +58,8 @@ export default function Footer({ dict, locale = "lt" }: { dict: Dict; locale?: L
                 <>
                   <li><Link href="/paslaugos" className="hover:text-white transition-colors">{dict.nav.services}</Link></li>
                   <li><Link href="/darbai" className="hover:text-white transition-colors">{dict.nav.works}</Link></li>
-                  <li><Link href="/tinklarastis" className="hover:text-white transition-colors">Gidai ir straipsniai</Link></li>
-                  <li><Link href="/skaiciuokle" className="hover:text-white transition-colors">Kainos skaičiuoklė</Link></li>
+                  <li><Link href="/tinklarastis" className="hover:text-white transition-colors">{dict.nav.blog}</Link></li>
+                  <li><Link href="/skaiciuokle" className="hover:text-white transition-colors">{dict.nav.calculator}</Link></li>
                   <li><Link href="/apie" className="hover:text-white transition-colors">Apie SiteStudio</Link></li>
                   <li><Link href="/#kainos" className="hover:text-white transition-colors">{dict.nav.pricing}</Link></li>
                   <li><Link href="/kontaktai" className="hover:text-white transition-colors">{dict.footer.contacts}</Link></li>
@@ -60,29 +68,28 @@ export default function Footer({ dict, locale = "lt" }: { dict: Dict; locale?: L
                 <>
                   <li><Link href={`/${locale}/paslaugos`} className="hover:text-white transition-colors">{dict.nav.services}</Link></li>
                   <li><Link href={`/${locale}/darbai`} className="hover:text-white transition-colors">{dict.nav.works}</Link></li>
+                  <li><Link href={`/${locale}/tinklarastis`} className="hover:text-white transition-colors">{dict.nav.blog}</Link></li>
+                  <li><Link href={`/${locale}/skaiciuokle`} className="hover:text-white transition-colors">{dict.nav.calculator}</Link></li>
                   <li><Link href={`/${locale}/apie`} className="hover:text-white transition-colors">About</Link></li>
-                  <li><Link href={anchor("kainos")} className="hover:text-white transition-colors">{dict.nav.pricing}</Link></li>
-                  <li><Link href={anchor("duk")} className="hover:text-white transition-colors">{dict.nav.faq}</Link></li>
+                  <li><Link href={`/${locale}/#kainos`} className="hover:text-white transition-colors">{dict.nav.pricing}</Link></li>
                   <li><Link href={`/${locale}/kontaktai`} className="hover:text-white transition-colors">{dict.footer.contacts}</Link></li>
                 </>
               )}
             </ul>
           </div>
 
-          {isLt && (
-            <div>
-              <h3 className="text-white font-semibold mb-4">Paslaugos</h3>
-              <ul className="space-y-2.5">
-                {serviceLinks.map((s) => (
-                  <li key={s.href}>
-                    <Link href={s.href} className="hover:text-white transition-colors">
-                      {s.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+          <div>
+            <h3 className="text-white font-semibold mb-4">{dict.nav.services}</h3>
+            <ul className="space-y-2.5">
+              {(isLt ? serviceLinks : localizedServiceLinks).map((s) => (
+                <li key={s.href}>
+                  <Link href={s.href} className="hover:text-white transition-colors">
+                    {s.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <div>
             <h3 className="text-white font-semibold mb-4">{dict.footer.contactsHeading}</h3>

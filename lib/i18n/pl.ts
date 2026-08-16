@@ -9,10 +9,12 @@ export const pl: Dict = {
   nav: {
     services: "Usługi",
     works: "Realizacje",
+    blog: "Blog",
+    calculator: "Kalkulator",
     process: "Proces",
     pricing: "Cennik",
     faq: "FAQ",
-    cta: "Otrzymaj wycenę",
+    cta: "Wycena",
     menuOpen: "Otwórz menu",
     menuClose: "Zamknij menu",
   },

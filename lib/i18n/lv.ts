@@ -9,10 +9,12 @@ export const lv: Dict = {
   nav: {
     services: "Pakalpojumi",
     works: "Darbi",
+    blog: "Blogs",
+    calculator: "Kalkulators",
     process: "Process",
     pricing: "Cenas",
     faq: "BUJ",
-    cta: "Saņemt piedāvājumu",
+    cta: "Pieteikties",
     menuOpen: "Atvērt izvēlni",
     menuClose: "Aizvērt izvēlni",
   },

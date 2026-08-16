@@ -9,6 +9,8 @@ export const en: Dict = {
   nav: {
     services: "Services",
     works: "Work",
+    blog: "Blog",
+    calculator: "Calculator",
     process: "Process",
     pricing: "Pricing",
     faq: "FAQ",
