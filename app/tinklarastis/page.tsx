@@ -8,7 +8,7 @@ import { BLOG_POSTS } from "@/lib/blog";
 import { siteGraph, webPageNode, breadcrumbNode } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
-  title: "Gidai ir straipsniai apie svetainių kūrimą ir SEO — SiteStudio",
+  title: "Gidai ir straipsniai apie svetainių kūrimą ir SEO",
   description:
     "Ekspertiniai gidai, kainų analizė, techninio SEO patarimai ir rekomendacijos Lietuvos verslui.",
   alternates: {

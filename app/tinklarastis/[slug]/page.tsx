@@ -32,7 +32,9 @@ export async function generateMetadata({
   const description = post.description;
 
   return {
-    title,
+    // absolute: title already carries "| SiteStudio" — the root
+    // "%s | SiteStudio" template would otherwise duplicate it.
+    title: { absolute: title },
     description,
     alternates: {
       canonical: `/tinklarastis/${post.slug}`,

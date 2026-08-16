@@ -35,7 +35,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const canonical = `https://sitestudio.lt/${locale}/tinklarastis/${slug}`;
 
   return {
-    title: `${post.title} | SiteStudio`,
+    // absolute: the string already carries "| SiteStudio" — the root
+    // "%s | SiteStudio" template would otherwise duplicate it.
+    title: { absolute: `${post.title} | SiteStudio` },
     description: post.description,
     alternates: {
       canonical,
