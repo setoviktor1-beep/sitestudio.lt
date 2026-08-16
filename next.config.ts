@@ -29,6 +29,9 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   // These packages use native/node-only APIs and must not be bundled.
   serverExternalPackages: ["pg", "nodemailer", "@aws-sdk/client-s3"],
+  images: {
+    formats: ["image/avif", "image/webp"],
+  },
 
   async headers() {
     return [

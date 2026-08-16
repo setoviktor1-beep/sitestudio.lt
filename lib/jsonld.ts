@@ -21,6 +21,13 @@ export const organizationNode = {
   areaServed: { "@type": "Country", name: "Lietuva" },
   knowsLanguage: ["lt", "en", "pl", "lv", "et", "ru"],
   founder: { "@id": PERSON_ID },
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "viktor@sitestudio.lt",
+    contactType: "customer service",
+    areaServed: "LT",
+    availableLanguage: ["lt", "en", "pl", "lv", "et", "ru"],
+  },
 };
 
 /** Person node — Viktor Seto, the person actually doing the work. */
@@ -112,12 +119,30 @@ export function serviceNode(
     areaServed: { "@type": "Country", name: "Lietuva" },
   };
   if (offers && offers.length > 0) {
-    node.offers = offers.map((o) => ({
-      "@type": "Offer",
-      name: o.name,
-      description: o.price,
-      priceCurrency: "EUR",
-    }));
+    node.offers = offers.map((o) => {
+      const offer: JsonLdNode = {
+        "@type": "Offer",
+        name: o.name,
+        description: o.price,
+        priceCurrency: "EUR",
+      };
+      // Derive a machine-readable minPrice from display strings like "nuo 200 €".
+      // Custom-quote rows ("pagal apimtį", "sutartinai") have no digits and are
+      // correctly left without a priceSpecification.
+      const match = o.price.match(/(\d[\d\s.,]*)\s*€/);
+      if (match) {
+        const minPrice = Number(match[1].replace(/[\s.]/g, "").replace(",", "."));
+        if (!Number.isNaN(minPrice)) {
+          offer.priceSpecification = {
+            "@type": "UnitPriceSpecification",
+            priceCurrency: "EUR",
+            minPrice,
+          };
+          offer.availability = "https://schema.org/InStock";
+        }
+      }
+      return offer;
+    });
   }
   return node;
 }

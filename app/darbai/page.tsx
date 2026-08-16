@@ -11,7 +11,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Atlikti svetainių kūrimo darbai",
   description:
-    "SiteStudio atlikti darbai: leonamai.lt, situacija.eu, teisinėatrama.lt, interneto aplikacija mini-social.online ir demonstracinė el. parduotuvė futtech.store.",
+    "SiteStudio atlikti darbai: leonamai.lt, situacija.eu, teisinėatrama.lt, mini-social.online ir demonstracinė el. parduotuvė futtech.store.",
   keywords: ["atlikti svetainių kūrimo darbai", "svetainių kūrimo portfolio", "SiteStudio projektai", "interneto svetainių pavyzdžiai"],
   path: "/darbai",
   image: "/works/leonamai.png",

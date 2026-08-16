@@ -36,8 +36,8 @@ const READ_TIME_SUFFIX: Record<Locale, string> = {
   ru: "чтения",
 };
 
-// Title and description translations
-const ARTICLE_I18N: Record<string, Partial<Record<Locale, { title: string; description: string; intro: string }>>> = {
+// Full per-locale article translations (title, description, intro, body sections, takeaways)
+const ARTICLE_I18N: Record<string, Partial<Record<Locale, LocalizedOverrides>>> = {
   "kiek-kainuoja-svetaines-kurimas": {
     en: {
       title: "How much does a website cost in 2026: Real market analysis",
@@ -168,8 +168,8 @@ export function getLocalizedBlogPost(slug: string, locale: Locale): BlogPost | u
     readTime: localizedReadTime,
     content: {
       intro: translation?.intro ?? original.content.intro,
-      sections: original.content.sections,
-      takeaways: original.content.takeaways,
+      sections: translation?.sections ?? original.content.sections,
+      takeaways: translation?.takeaways ?? original.content.takeaways,
     },
   };
 }

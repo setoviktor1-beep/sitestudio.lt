@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import ServicePage, { type ServicePageContent } from "@/components/ServicePage";
+import { pathAlternates } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Svetainių kūrimas — kaina nuo 200 €, terminas nuo 1 savaitės",
   description:
     "Svetainių kūrimas verslui ir specialistams visoje Lietuvoje: reprezentacinės ir paslaugų svetainės su užklausų formomis, mobilia versija ir baziniu SEO. Aiški kaina raštu prieš pradedant.",
-  alternates: { canonical: "/svetainiu-kurimas" },
+  alternates: { canonical: "/svetainiu-kurimas", languages: pathAlternates("/svetainiu-kurimas") },
 };
 
 const content: ServicePageContent = {

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { BASE_URL } from "@/lib/jsonld";
+import { pathAlternates } from "@/lib/i18n";
 
 export function pageMetadata({
   title,
@@ -20,7 +21,7 @@ export function pageMetadata({
     title,
     description,
     keywords,
-    alternates: { canonical: path },
+    alternates: { canonical: path, languages: pathAlternates(path) },
     openGraph: {
       type: "website",
       locale: "lt_LT",

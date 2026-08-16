@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import ServicePage, { type ServicePageContent } from "@/components/ServicePage";
+import { pathAlternates } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "AI ir verslo procesų automatizavimas — sutaupytos darbo valandos",
   description:
-    "AI ir automatizavimo sprendimai verslui: užklausų apdorojimas, dokumentų formavimas, duomenų suvedimas į lenteles ar CRM, atsakymai į dažnus klausimus. Automatizuojame tik ten, kur atsiperka.",
-  alternates: { canonical: "/ai-automatizavimas" },
+    "AI ir automatizavimo sprendimai verslui: užklausų apdorojimas, dokumentų formavimas, duomenų suvedimas ir atsakymai į dažnus klausimus.",
+  alternates: { canonical: "/ai-automatizavimas", languages: pathAlternates("/ai-automatizavimas") },
 };
 
 const content: ServicePageContent = {

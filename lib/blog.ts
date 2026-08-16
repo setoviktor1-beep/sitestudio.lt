@@ -18,7 +18,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Kiek kainuoja interneto svetainės kūrimas 2026 metais: reali kainų analizė",
     description: "Išsami interneto svetainių kainų apžvalga Lietuvoje: nuo reprezentacinių svetainių iki el. parduotuvių. Sužinokite, kas sudaro kainą.",
     publishedAt: "2026-08-01",
-    readTime: "8 min.",
+    readTime: "12 min.",
     category: "Kainodara",
     content: {
       intro: "Kiek kainuoja sukurti interneto svetainę Lietuvoje 2026 metais? Tai bene dažniausiai užduodamas klausimas, kurį užduoda verslininkai, specialistai ir įmonių vadovai. Kainų rėžiai rinkoje yra itin platūs — nuo 150 € pas pradedantį laisvai samdomą specialistą iki 10 000 € ar daugiau didelėse skaitmeninėse agentūrose. Šiame išsamiame gide atvirai išanalizuosime realią Lietuvos rinkos situaciją, skirtingų kategorijų kainų rėžius bei paaiškinsime, už ką iš tiesų mokate ir kaip nepermokėti.",
@@ -52,6 +52,23 @@ export const BLOG_POSTS: BlogPost[] = [
           paragraphs: [
             "Prieš kreipdamiesi į kūrėją, aiškiai susirašykite savo paslaugų sąrašą, preliminarias kainas ir paruoškite realias atliktų darbų nuotraukas. Kuo mažiau nežinomųjų starto metu — tuo tikslesnė ir mažesnė galutinė sąmata.",
             "Rinkitės tiesioginį ryšį su vykdytoju: dirbant su nepriklausoma specializuota studija, bendraujate tiesiai su programuotoju, todėl nemokate už agentūros vadybininkų grandinę, prabangius biurus ir administravimo antkainius.",
+            "Neskubėkite rinktis pačio pigiausio pasiūlymo vien dėl skaičiaus. Paprašykite kūrėjo parodyti bent 2–3 realiai veikiančius, jo paties sukurtus projektus (ne maketus) — patikrinkite jų greitį per Google PageSpeed Insights ir paskaitykite, ar tekstas svetainėje skamba profesionaliai.",
+          ],
+        },
+        {
+          heading: "5. Realūs kainų pavyzdžiai iš praktikos",
+          paragraphs: [
+            "Kad kainos nebūtų abstrakčios, pažiūrėkime į realius projektų tipus. Vieno meistro paslaugų svetainė su darbų galerija ir užklausos forma, pritaikyta vietinei Google paieškai (panašiai kaip leonamai.lt vonios remonto meistrui) — tai tipiškas 'Starto' kategorijos projektas, patenkantis į 200–500 € rėžį.",
+            "Verslo svetainė su turinio valdymo sistema, kur klientas pats atnaujina darbų nuotraukas be programuotojo pagalbos (panašiai kaip situacija.eu plytelių klojimo meistrui) — tai jau 'Verslo' kategorija, kainuojanti nuo 500 € iki 1500 €, priklausomai nuo puslapių skaičiaus ir integracijų.",
+            "Individuali interneto sistema ar internetinė aplikacija su paskyromis, realaus laiko funkcijomis ir mokėjimais (panašiai kaip socialinio tinklo tipo aplikacija) jau peržengia standartinės svetainės rėmus ir vertinama kaip atskiras programinės įrangos projektas — dažniausiai nuo 1800 € ir daugiau, priklausomai nuo funkcijų kiekio.",
+          ],
+        },
+        {
+          heading: "6. Dažniausiai užduodami klausimai apie kainą",
+          paragraphs: [
+            "Ar kaina gali pakisti darbų eigoje? Jei apimtis suderinta raštu prieš pradedant, kaina nesikeičia. Ji gali augti tik jei jūs patys prašote papildomų funkcijų, kurių nebuvo pradiniame pasiūlyme — ir tai visada suderinama iš anksto.",
+            "Ar reikia mokėti avansą? Dažniausiai taip, dalis sumos sumokama prieš pradedant darbus, o likutis — priėmus rezultatą. Tai apsaugo abi puses: kūrėjas gauna garantiją, kad projektas rimtas, o klientas — kad nemoka už dar nepradėtą darbą.",
+            "Kodėl kaina rodoma 'nuo'? Tikslią sumą įtakoja puslapių skaičius, turinio kiekis, reikalingos integracijos ir dizaino sudėtingumas. Todėl konkreti suma visada pateikiama raštišku pasiūlymu po trumpo pokalbio apie jūsų poreikius, o ne atspėjama iš anksto.",
           ],
         },
       ],
@@ -59,6 +76,7 @@ export const BLOG_POSTS: BlogPost[] = [
         "Rimtos reprezentacinės svetainės startas prasideda nuo 200–500 €, su turinio valdymu — nuo 500 €.",
         "Reikalaukite fiksuotos kainos ir termino sutarties raštu prieš pradedant darbus.",
         "Niekada nepirkite svetainės be garantijos, kad kodas ir domenas bus 100% jūsų nuosavybė.",
+        "Prieš pasirašydami sutartį, paprašykite pamatyti bent kelis realius, veikiančius kūrėjo projektus.",
       ],
     },
   },
@@ -67,7 +85,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Kiek kainuoja el. parduotuvės kūrimas ir paleidimas Lietuvoje?",
     description: "Ką reikia žinoti apie el. parduotuvės kainą: mokėjimai, pristatymas, dizainas ir nuolatinės išlaidos.",
     publishedAt: "2026-08-02",
-    readTime: "9 min.",
+    readTime: "12 min.",
     category: "El. komercija",
     content: {
       intro: "Elektroninė prekyba Lietuvoje ir visoje Europos Sąjungoje išgyvena brandos etapą. Pirkėjai tikisi ne tik gražių prekių nuotraukų, bet ir žaibiško puslapių krovimosi išmaniajame telefone, patogios atsiskaitymo vienu paspaudimu sistemos (Apple Pay, Google Pay, Montonio) bei momentinio paštomatų pasirinkimo. Šiame gide detaliai išnagrinėsime el. parduotuvės kūrimo kainą, platformų pasirinkimą ir būtinas integracijas.",
@@ -96,11 +114,28 @@ export const BLOG_POSTS: BlogPost[] = [
             "Mokėjimų tarpininkų komisiniai: skaičiuojami tik nuo realiai įvykusių pardavimų (fiksuotas mokestis už transakciją).",
           ],
         },
+        {
+          heading: "4. Kokia technologija tinka el. parduotuvei?",
+          paragraphs: [
+            "Rinkoje dominuoja dvi kryptys: gatavos SaaS platformos (Shopify, Shopify-analogai) su mėnesiniu abonentiniu mokesčiu bei nuosavybės teisių apribojimais, ir individualiai sukurta sistema, kuri visiškai priklauso jums.",
+            "Individualiai sukurta el. parduotuvė (pvz. Next.js pagrindu su PostgreSQL duomenų baze) reiškia, kad nemokate mėnesinio 'nuomos' mokesčio platformai, galite laisvai keisti dizainą ir funkcijas, o duomenys apie klientus ir užsakymus visada lieka jūsų valdomoje duomenų bazėje, ne trečiosios šalies serveryje.",
+            "Tokiam sprendimui reikalingas didesnis pradinis biudžetas, bet ilgainiui, augant apyvartai, jis atsiperka — nemokate procentinio mokesčio nuo kiekvieno pardavimo platformai, tik fiksuotus mokėjimų tarpininko komisinius.",
+          ],
+        },
+        {
+          heading: "5. Kaip paruošti asortimentą prieš paleidimą?",
+          paragraphs: [
+            "Prekių aprašymai: kiekvienai prekei paruoškite bent 2–3 sakinių unikalų aprašymą — nukopijuotas iš gamintojo svetainės tekstas Google akyse yra dubliuotas turinys ir pablogina jūsų pozicijas paieškoje.",
+            "Nuotraukos: vienodo formato, šviesaus fono produktų nuotraukos didina pasitikėjimą. Jei prekių daug, apsvarstykite profesionalią fotosesiją vienu metu — tai pigiau nei fotografuoti po vieną prekę atskirai.",
+            "Kategorijų struktūra: suplanuokite aiškią, negilią kategorijų medį (ne daugiau 2–3 lygių), kad pirkėjas rastų prekę per kelis paspaudimus, o ne klaidžiotų po dešimtis pokategorijų.",
+          ],
+        },
       ],
       takeaways: [
         "Didžiausią įtaką pardavimams daro atsiskaitymo žingsnių paprastumas telefone.",
         "Rinkitės modernią, greitą technologiją, kuri atlaiko srauto šuolius akcijų metu.",
         "Automatizuokite siuntų lipdukus ir sąskaitas nuo pat pirmos parduotuvės paleidimo dienos.",
+        "Individuali sistema ilgainiui atsiperka labiau nei SaaS platforma, jei planuojate augti.",
       ],
     },
   },
@@ -109,7 +144,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Next.js prieš WordPress: kurį pasirinkti verslo svetainei?",
     description: "Išsamus Next.js ir WordPress palyginimas verslo savininkui: greitis, saugumas, priežiūros kaštai ir SEO galimybės.",
     publishedAt: "2026-08-03",
-    readTime: "10 min.",
+    readTime: "13 min.",
     category: "Technologijos",
     content: {
       intro: "Daugiau nei 15 metų WordPress buvo numatytasis pasirinkimas beveik bet kuriai interneto svetainei. Tačiau internetas pasikeitė: vartotojai reikalauja akimirksniu atsidarančių puslapių telefone, o Google algoritmai negailestingai baudžia lėtas svetaines. Naujos kartos karkasas Next.js (React pagrindu) tapo modernių technologijų lyderiu. Šiame straipsnyje objektyviai palyginame abi technologijas verslo požiūriu.",
@@ -141,11 +176,27 @@ export const BLOG_POSTS: BlogPost[] = [
             "Next.js tinka: reprezentacinėms verslo svetainėms, paslaugų teikėjams, el. parduotuvėms ir augančioms įmonėms, kurioms svarbus nepriekaištingas greitis, SEO pozicijos ir ilgalaikis patikimumas.",
           ],
         },
+        {
+          heading: "5. Ilgalaikiai priežiūros kaštai — dažnai pamirštamas veiksnys",
+          paragraphs: [
+            "WordPress reikalauja nuolatinio dėmesio: kiekvieną mėnesį reikia atnaujinti pačią sistemą, temą ir visus 25–40 įskiepių. Praleidus vieną atnaujinimą, svetainė tampa pažeidžiama — būtent taip dauguma WordPress svetainių užsikrečia kenkėjišku kodu ar patenka į paieškos 'juoduosius sąrašus'.",
+            "Next.js svetainei tokio nuolatinio 'gaisrų gesinimo' nereikia. Kodas kompiliuojamas vieną kartą, priklausomybių yra kur kas mažiau, o saugumo pataisos apsiriboja retesniais, kontroliuojamais atnaujinimais. Tai reiškia mažiau netikėtų sąskaitų už 'skubų svetainės atstatymą po įsilaužimo'.",
+            "Ilguoju laikotarpiu (3–5 metai) bendra Next.js svetainės nuosavybės kaina dažnai išeina mažesnė nei WordPress, nepaisant to, kad pradinė kūrimo kaina gali būti šiek tiek aukštesnė.",
+          ],
+        },
+        {
+          heading: "6. Migracijos klausimas: ar galima pereiti nuo WordPress prie Next.js?",
+          paragraphs: [
+            "Taip, ir tai vyksta be turinio praradimo. Profesionalios migracijos metu visas esamas turinys (tekstai, nuotraukos, straipsniai) perkeliamas į naują sistemą, o svarbiausia — visi seni URL adresai išsaugomi arba nukreipiami 301 nukreipimais, todėl Google paieškos pozicijos ne tik nedingsta, bet dažniausiai po kurio laiko pagerėja dėl žymiai geresnio greičio.",
+            "Rekomenduojame migraciją planuoti tada, kai WordPress svetainė jau rodo aiškius senėjimo požymius: lėtą krovimąsi, dažnus įskiepių konfliktus arba tiesiog nebeatitinka šiuolaikinio dizaino standartų.",
+          ],
+        },
       ],
       takeaways: [
         "Next.js užtikrina 5–10 kartų greitesnį užkrovimą lyginant su standartiniu WordPress.",
         "Mažesnės ilgalaikės priežiūros išlaidos dėl nulinės įskiepių konfliktų rizikos.",
         "Aukštesni Google Core Web Vitals balai tiesiogiai gerina pozicijas paieškoje.",
+        "Migracija nuo WordPress prie Next.js gali vykti be jokio SEO pozicijų praradimo.",
       ],
     },
   },
@@ -154,7 +205,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Kada verta atnaujinti pasenusią svetainę: 7 aiškūs požymiai",
     description: "Kaip suprasti, kad jūsų svetainė atbaido klientus ir kada atnaujinimas atsiperka greičiausiai.",
     publishedAt: "2026-08-04",
-    readTime: "7 min.",
+    readTime: "10 min.",
     category: "Strategija",
     content: {
       intro: "Interneto svetainė yra jūsų verslo skaitmeninis biuras arba vitrina. Jei realiame gyvenime jūsų biuras tvarkingas, o svetainė internete atrodo lyg sukurta 2016 metais, potencialus klientas susidaro klaidingą įspūdį apie jūsų paslaugų kokybę dar prieš pirmą skambutį. Štai 7 aiškūs požymiai, rodantys, kad svetainės atnaujinimas yra neatidėliotinas.",
@@ -178,11 +229,26 @@ export const BLOG_POSTS: BlogPost[] = [
             "Profesionalaus atnaujinimo metu sudaromas visų senų adresų žemėlapis ir sukonfigūruojami 301 nukreipimai, todėl esamos pozicijos ne tik išsaugomos, bet po atnaujinimo dažniausiai pakyla dėl geresnio greičio.",
           ],
         },
+        {
+          heading: "3. Etapinis ar visiškas atnaujinimas — kaip apsispręsti?",
+          paragraphs: [
+            "Etapinis atnaujinimas (dizaino gaivinimas, greičio optimizavimas, naujų puslapių pridėjimas prie esamos struktūros) tinka, kai svetainės pagrindas dar technologiškai adekvatus, bet reikia vizualinio ir turinio atnaujinimo. Tai pigesnis ir greitesnis kelias.",
+            "Visiškas perkūrimas reikalingas, kai svetainė sukurta pasenusia technologija (senas WordPress, statinis HTML be jokios administravimo galimybės) arba struktūra nebeatitinka dabartinių verslo paslaugų. Tokiu atveju verta žiūrėti į atnaujinimą kaip į naują projektą su turinio migracija, o ne kaip į 'pataisymą'.",
+          ],
+        },
+        {
+          heading: "4. Ko tikėtis atnaujinimo proceso metu?",
+          paragraphs: [
+            "Pirmiausia atliekama esamos svetainės analizė: kurie puslapiai gauna daugiausiai srauto iš Google, kokie URL adresai turi būti išsaugoti, kokia informacija pasenusi ar nebeaktuali.",
+            "Tuomet suprojektuojama nauja struktūra ir dizainas, perkeliamas ir atnaujinamas turinys, sukonfigūruojami nukreipimai, ir tik po to svetainė paleidžiama viešai. Visą procesą rekomenduojama atlikti atskiroje testinėje aplinkoje, kad pagrindinė svetainė veiktų nepertraukiamai iki pat paleidimo momento.",
+          ],
+        },
       ],
       takeaways: [
         "Svetainės atnaujinimas yra investicija į konversijų didinimą, o ne tiesiog kosmetinis pakeitimas.",
         "Būtina išsaugoti senus URL adresus per 301 nukreipimus, kad neprarastumėte Google srauto.",
         "Mobilus patogumas ir krovimosi greitis turi būti svarbiausi atnaujinimo prioritetai.",
+        "Prieš sprendžiant tarp etapinio ir viso perkūrimo, įvertinkite, ar problema yra technologinė, ar tik vizualinė.",
       ],
     },
   },
@@ -191,7 +257,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Vietinis SEO: kaip paslaugų verslui užimti pirmąsias Google pozicijas?",
     description: "Praktinis gidas, kaip paslaugų meistrams ir įmonėms būti randamiems savo mieste ir rajone.",
     publishedAt: "2026-08-05",
-    readTime: "8 min.",
+    readTime: "11 min.",
     category: "SEO",
     content: {
       intro: "Kai žmogui sugenda automobilis, prireikia plytelių klojėjo, odontologo ar teisininko, jis retai naršo socialinius tinklus — jis atsidaro Google ir veda: 'vonios remontas Vilnius', 'autoservisas Kaune' arba 'odontologas Klaipėdoje'. Vietinis SEO (Local SEO) yra galingiausias būdas gauti pačius karščiausius, pirkti pasiruošusius klientus.",
@@ -211,11 +277,26 @@ export const BLOG_POSTS: BlogPost[] = [
             "Sukurkite aiškų kontaktų puslapį su interaktyviu žemėlapiu ir paspaudžiamais telefono numeriais.",
           ],
         },
+        {
+          heading: "3. NAP nuoseklumas — dažnai nepastebimas veiksnys",
+          paragraphs: [
+            "NAP (Name, Address, Phone) reiškia, kad jūsų įmonės pavadinimas, adresas ir telefono numeris turi būti identiškai užrašyti visur internete: svetainėje, Google Business profilyje, Facebook puslapyje ir įvairiuose verslo kataloguose (manodarbas.lt, 118.lt ir panašiuose).",
+            "Jei viename puslapyje rašote 'UAB Pavyzdys', o kitame — 'Pavyzdys UAB' su skirtingu telefono formatu, Google algoritmai sunkiau susieja šiuos įrašus su ta pačia įmone, ir tai silpnina jūsų vietinio paieškos rezultato patikimumą.",
+          ],
+        },
+        {
+          heading: "4. Kelių miestų ar rajonų aptarnavimas",
+          paragraphs: [
+            "Jei paslaugas teikiate keliuose miestuose ar rajonuose (pvz., Vilniuje, Kaune ir aplinkiniuose rajonuose), efektyviausia strategija — kiekvienam pagrindiniam aptarnavimo regionui sukurti atskirą, unikaliu turiniu pagrįstą puslapį, o ne vieną bendrą 'Aptarnaujame visą Lietuvą' tekstą.",
+            "Kiekvienas toks puslapis turėtų turėti bent kelis unikalius sakinius apie konkretų regioną — pvz., paminėtus rajonus ar gatves, kuriose dirbate — kad Google nelaikytų puslapių dubliuotu turiniu.",
+          ],
+        },
       ],
       takeaways: [
         "Vietinis SEO pritraukia klientus su didžiausia pirkimo intencija.",
         "Google Business Profile ir atsiliepimai yra tiesioginis raktas į 'Google 3-Pack' žemėlapio viršūnę.",
         "Techniškai tvarkinga svetainė padeda aplenkti konkurentus net be brangios reklamos.",
+        "Laikykitės vienodo įmonės pavadinimo, adreso ir telefono formato visuose interneto šaltiniuose.",
       ],
     },
   },
@@ -224,7 +305,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Kaip pasiruošti svetainės kūrimui: 7 žingsnių kontrolinis sąrašas",
     description: "Ką pasiruošti prieš kreipiantis į programuotoją, kad projektas būtų įgyvendintas dvigubai greičiau ir sklandžiau.",
     publishedAt: "2026-08-06",
-    readTime: "7 min.",
+    readTime: "10 min.",
     category: "Gidai",
     content: {
       intro: "Svetainės kūrimo procesas gali užtrukti 1 savaitę arba išsitęsti iki 3 mėnesių. Dažniausia vėlavimo priežastis — ne programavimo darbai, o užsakovo nepasiruošimas: trūksta tekstų, nuotraukų, neaiškūs tikslai. Šis kontrolinis sąrašas padės pasiruošti taip, kad darbai vyktų maksimaliai sklandžiai ir be streso.",
@@ -241,10 +322,25 @@ export const BLOG_POSTS: BlogPost[] = [
             "7. Nusistatykite realų biudžetą ir terminus: Apsibrėžkite, kada svetainė privalo startuoti.",
           ],
         },
+        {
+          heading: "2. Dažniausios klaidos, dėl kurių projektas vėluoja",
+          paragraphs: [
+            "Tekstų trūkumas: dažniausia vėlavimo priežastis. Jei tekstų nėra, programuotojas negali baigti puslapio maketo — dizainas 'pakimba' laukdamas turinio. Geriausia iš anksto paruošti bent juodraštinį tekstą kiekvienam puslapiui, net jei jis vėliau bus redaguojamas.",
+            "Sprendimų priėmimo delsimas: jei sprendimus turi priimti kelių žmonių komanda arba vadovas, kuris retai pasiekiamas, kiekvienas patvirtinimo etapas gali užtrukti savaitėmis. Paskirkite vieną atsakingą asmenį, kuris priims galutinius sprendimus dėl teksto ir dizaino.",
+            "Neaiškūs pakeitimų prašymai: vietoj 'norėčiau, kad atrodytų geriau', konkretizuokite — 'norėčiau didesnio šrifto antraštėje' arba 'norėčiau kitos spalvos mygtuko'. Konkretūs komentarai leidžia įgyvendinti pakeitimus per vieną kartą, o ne per penkis bandymus.",
+          ],
+        },
+        {
+          heading: "3. Ką paruošti, jei reikalinga el. parduotuvė",
+          paragraphs: [
+            "Papildomai prie bendro sąrašo, el. parduotuvei būtina iš anksto paruošti: pilną prekių sąrašą su kainomis, matmenimis ir aprašymais, pristatymo sąlygas ir kainas skirtingiems regionams, grąžinimo ir keitimo tvarką bei informaciją apie PVM tarifus.",
+          ],
+        },
       ],
       takeaways: [
         "Geras pasiruošimas leidžia kūrėjui pateikti fiksuotą kainą be vėlesnių papildomų mokesčių.",
         "Tikros nuotraukos visada veikia geriau nei perkamos iš interneto fotobankų.",
+        "Paskirkite vieną atsakingą asmenį sprendimams priimti — tai pagreitina projektą kelis kartus.",
       ],
     },
   },
@@ -253,7 +349,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Kas yra turinio valdymo sistema (CMS) ir kodėl verta ją turėti?",
     description: "Kaip veikia šiuolaikinė CMS ir kodėl nebereikia mokėti programuotojui už kiekvieną nuotraukos ar kainos pakeitimą.",
     publishedAt: "2026-08-07",
-    readTime: "7 min.",
+    readTime: "10 min.",
     category: "Technologijos",
     content: {
       intro: "Turinio valdymo sistema (angl. Content Management System, sutrumpintai CMS) — tai speciali administravimo aplinka, leidžianti svetainės savininkui savarankiškai kurti, redaguoti ir skelbti turinį be jokių programavimo žinių. Šiame straipsnyje paaiškiname, kaip veikia modernios CMS ir kodėl jos yra būtinos kiekvienam gyvam verslui.",
@@ -273,10 +369,25 @@ export const BLOG_POSTS: BlogPost[] = [
             "Modernios 'Headless' CMS (pvz., Directus) veikia atskirai nuo pačios svetainės. Jos yra žaibiškos, intuityvios, turi patogius nuotraukų karpymo įrankius ir leidžia apmokyti darbuotoją naudotis vos per vieną valandą.",
           ],
         },
+        {
+          heading: "3. Ką konkrečiai galima redaguoti per CMS?",
+          paragraphs: [
+            "Priklausomai nuo svetainės tipo, per administravimo aplinką paprastai galima keisti: puslapių tekstus ir antraštes, paslaugų sąrašą ir kainas, darbų/portfolio galerijos nuotraukas, tinklaraščio ar naujienų įrašus, DUK klausimus ir atsakymus, bei kontaktinę informaciją.",
+            "Sudėtingesnė struktūrinė svetainės architektūra (naujų puslapio tipų kūrimas, dizaino keitimas) vis tiek lieka programuotojo kompetencijoje — CMS skirta turinio, ne struktūros valdymui.",
+          ],
+        },
+        {
+          heading: "4. Kada CMS neverta diegti?",
+          paragraphs: [
+            "Jei jūsų svetainė yra vieno puslapio (landing page) sprendimas, kurio turinys keičiasi retai (kartą per metus ar rečiau), pilnos CMS diegimas gali būti nereikalingas papildomas kaštas. Tokiu atveju paprasčiau ir pigiau paprašyti kūrėjo atlikti retus pakeitimus tiesiogiai.",
+            "CMS tampa verta investicija, kai turinys keičiasi bent kartą per mėnesį — pridedami nauji darbai, keičiasi kainos, publikuojami straipsniai.",
+          ],
+        },
       ],
       takeaways: [
         "CMS suteikia pilną laisvę valdyti savo verslo informaciją be techninių tarpininkų.",
         "Headless CMS užtikrina maksimalų saugumą ir administravimo paprastumą.",
+        "CMS verta rinktis, jei turinį planuojate atnaujinti bent kartą per mėnesį.",
       ],
     },
   },
@@ -285,7 +396,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Kodėl svetainės greitis tiesiogiai lemia užklausų skaičių ir pardavimus?",
     description: "Kiekviena papildoma krovimosi sekundė kainuoja 10–20% prarastų klientų. Kaip pasiekti 100/100 Google PageSpeed rezultatą.",
     publishedAt: "2026-08-08",
-    readTime: "8 min.",
+    readTime: "11 min.",
     category: "Optimizacija",
     content: {
       intro: "Šiuolaikinis interneto vartotojas yra nekantrus. 'Google' ir 'Deloitte' atlikti tyrimai rodo: svetainės užkrovimo laikui pailgėjus vos 1 sekunde, konversijų skaičius krenta iki 20%, o atmetimo rodiklis (bounce rate) išauga daugiau nei 30%. Svetainės greitaveika nebėra tik programuotojų techninis rodiklis — tai tiesioginis jūsų verslo pajamų veiksnys.",
@@ -307,10 +418,25 @@ export const BLOG_POSTS: BlogPost[] = [
             "Šriftų ir kodo suspaudimas: Nenaudojami sunkūs išoriniai skriptai ar bibliotekos, kurios blokuoja naršyklės atvaizdavimą.",
           ],
         },
+        {
+          heading: "3. Kaip patikrinti savo svetainės greitį?",
+          paragraphs: [
+            "Nemokamas Google PageSpeed Insights įrankis per kelias sekundes parodo jūsų svetainės balą (0–100) tiek mobiliajame, tiek kompiuterio versijoje, kartu nurodydamas konkrečias problemas — pernelyg didelius paveikslėlius, neefektyvų talpinimą ar blokuojančius skriptus.",
+            "Rekomenduojame šį testą atlikti reguliariai, ypač po bet kokių didesnių pakeitimų svetainėje — naujo įskiepio, papildomo skripto ar didelio vaizdo įkėlimo, nes vienas neoptimizuotas elementas gali sumažinti balą dešimtimis punktų.",
+          ],
+        },
+        {
+          heading: "4. Trečiųjų šalių skriptų poveikis",
+          paragraphs: [
+            "Google Analytics, Facebook Pixel, gyvo pokalbio (chat) langeliai ir kiti trečiųjų šalių įrankiai yra naudingi, tačiau kiekvienas jų prideda papildomą kodo krūvį. Svarbu, kad šie skriptai būtų įkeliami asinchroniškai (nepertraukiant pagrindinio turinio atvaizdavimo) ir tik gavus vartotojo sutikimą, kaip to reikalauja BDAR ir ePrivacy direktyva.",
+            "Protingas skriptų valdymas — vienas iš dažniausiai nepastebimų, bet reikšmingiausių greičio optimizavimo veiksnių didelėse verslo svetainėse.",
+          ],
+        },
       ],
       takeaways: [
         "Greita svetainė = aukštesnės pozicijos Google ir daugiau užsakymų.",
         "Next.js statinis generavimas užtikrina žaibišką krovimąsi net prie silpno mobiliojo interneto ryšio.",
+        "Reguliariai tikrinkite greitį per Google PageSpeed Insights, ypač po pakeitimų svetainėje.",
       ],
     },
   },
@@ -319,7 +445,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Kaip AI ir automatizavimas padeda smulkiam verslui taupyti laiką?",
     description: "Praktiniai pavyzdžiai: kaip automatiškai apdoroti užklausas, generuoti sąskaitas ir atsakyti klientams.",
     publishedAt: "2026-08-09",
-    readTime: "8 min.",
+    readTime: "11 min.",
     category: "Automatizavimas",
     content: {
       intro: "Dirbtinis intelektas ir procesų automatizavimas nebėra tik didžiųjų technologijų korporacijų privilegija. Šiandien net 1–5 darbuotojų įmonė arba savarankiškai dirbantis meistras gali automatizuoti pasikartojančius darbus ir sutaupyti nuo 10 iki 20 valandų brangaus laiko kiekvieną savaitę.",
@@ -338,10 +464,24 @@ export const BLOG_POSTS: BlogPost[] = [
             "Taisyklė viena — automatizuokite tik ten, kur atsiperka. Nereikia diegti sudėtingų brangių sistemų ten, kur užtenka paprasto sujungimo tarp svetainės ir jūsų el. pašto ar CRM.",
           ],
         },
+        {
+          heading: "3. AI asistentai klientų aptarnavime",
+          paragraphs: [
+            "Dirbtinio intelekto pagalba galima automatiškai atsakyti į dažniausiai užduodamus klausimus (kainą, terminus, darbo laiką) dar prieš klientui susisiekiant tiesiogiai — tam pakanka svetainėje gerai parengto DUK skyriaus, kurį AI paieškos varikliai (ChatGPT, Perplexity, Google AI Overviews) gali tiesiogiai cituoti atsakydami vartotojui.",
+            "Sudėtingesniuose scenarijuose galima automatizuoti pirminį užklausų klasifikavimą — sistema atpažįsta, ar tai kainos klausimas, techninė problema ar bendradarbiavimo pasiūlymas, ir nukreipia atitinkamam žmogui arba pateikia automatinį pirminį atsakymą.",
+          ],
+        },
+        {
+          heading: "4. Kur automatizavimas neturėtų pakeisti žmogaus",
+          paragraphs: [
+            "Svarbu suprasti ribą: automatizavimas puikiai tinka pasikartojantiems, taisyklėmis pagrįstiems procesams (duomenų perkėlimas, pranešimai, sąskaitų generavimas), tačiau sudėtingi, individualaus sprendimo reikalaujantys pokalbiai su klientais (derybos dėl kainos, sudėtingų projektų aptarimas) turėtų likti žmogaus rankose — perdėtas automatizavimas čia gali sukurti šaltą, nepasitikėjimą keliantį klientų aptarnavimo įspūdį.",
+          ],
+        },
       ],
       takeaways: [
         "Automatizavimas leidžia verslui dirbti 24/7, net kai jūs ilsitės.",
         "Pradėkite nuo paprasčiausių procesų: užklausų registravimo ir momentinių pranešimų.",
+        "Gerai parengtas DUK skyrius svetainėje veikia kaip pirmoji automatinio klientų aptarnavimo linija.",
       ],
     },
   },
@@ -350,7 +490,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Mokėjimų integracijos el. parduotuvėms Lietuvoje: Stripe, Montonio, Paysera",
     description: "Kuris mokėjimų surinkimo partneris geriausiai tinka jūsų verslui: komisiniai mokesčiai, funkcijos ir diegimas.",
     publishedAt: "2026-08-10",
-    readTime: "8 min.",
+    readTime: "11 min.",
     category: "El. komercija",
     content: {
       intro: "Atsiskaitymo procesas yra ta vieta, kur įvyksta arba pardavimas, arba krepšelio apleidimas. Jei pirkėjas neranda savo mėgstamo banko ar atsiskaitymo kortele būdo, jis paprasčiausiai išeina pas konkurentą. Šiame gide palyginame tris populiariausius mokėjimų vartus Lietuvoje: Montonio, Stripe ir Paysera.",
@@ -376,10 +516,25 @@ export const BLOG_POSTS: BlogPost[] = [
             "Trūkumai: Šiek tiek senesnė vartotojo sąsaja lyginant su Montonio ar Stripe.",
           ],
         },
+        {
+          heading: "4. Ar galima integruoti kelis mokėjimų būdus vienu metu?",
+          paragraphs: [
+            "Taip, ir tai dažnai geriausia strategija — pagrindiniu partneriu rinktis Montonio (bankiniai pavedimai vietinei rinkai), o šalia jo prijungti Stripe kortelėms ir Apple/Google Pay. Taip pirkėjas visada mato jam patogiausią atsiskaitymo būdą, nepriklausomai nuo to, iš kurios šalies jis perka.",
+            "Techniškai kelių mokėjimų partnerių integravimas nėra sudėtingesnis — svarbiausia, kad el. parduotuvės sistema būtų suprojektuota taip, kad naujus mokėjimo būdus būtų galima pridėti be didelio perrašymo ateityje.",
+          ],
+        },
+        {
+          heading: "5. Saugumo ir BDAR reikalavimai",
+          paragraphs: [
+            "Nė vienas iš minėtų partnerių nereikalauja, kad jūs patys saugotumėte kliento kortelės duomenis — visa jautri informacija apdorojama tiesiogiai mokėjimų partnerio serveriuose pagal PCI DSS saugumo standartą. Tai reiškia mažesnę atsakomybę ir riziką jūsų verslui.",
+            "Svarbu tik teisingai sukonfigūruoti sėkmingo bei nesėkmingo mokėjimo grąžinimo adresus (webhook'us), kad užsakymo statusas jūsų sistemoje visada atitiktų realų mokėjimo rezultatą.",
+          ],
+        },
       ],
       takeaways: [
         "Vietinei prekybai Montonio šiuo metu siūlo geriausią kainos ir funkcijų santykį.",
         "Tarptautinei prekybai ir Apple Pay atsiskaitymams būtina integruoti Stripe.",
+        "Kelių mokėjimo partnerių derinimas padidina konversiją, nes pirkėjas renkasi jam patogiausią būdą.",
       ],
     },
   },
@@ -388,7 +543,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "10 dažniausių SEO klaidų, dėl kurių verslo svetainės negauna lankytojų",
     description: "Ką dažniausiai praleidžia verslai: netinkamos meta žymos, lėtas krovimas, trūkstami struktūriniai duomenys ir kaip tai ištaisyti.",
     publishedAt: "2026-08-11",
-    readTime: "9 min.",
+    readTime: "12 min.",
     category: "SEO",
     content: {
       intro: "Sukurti vizualiai patrauklią svetainę yra tik pusė darbo. Jei svetainė turi techninių SEO klaidų, Google paieškos robotai jos tiesiog nesupras arba nuvertins. Štai 10 kritinių SEO klaidų, kurias matome analizuodami verslo svetaines Lietuvoje.",
@@ -408,10 +563,25 @@ export const BLOG_POSTS: BlogPost[] = [
             "10. Trūkstamos kanoninės (canonical) žymos, sukeliančios turinio dubliavimą.",
           ],
         },
+        {
+          heading: "2. Kaip patikrinti, ar jūsų svetainė turi šių klaidų?",
+          paragraphs: [
+            "Nemokamas Google Search Console įrankis parodo, kuriuos puslapius Google iš viso indeksavo, kokios klaidos aptiktos ir kokiais raktažodžiais jūsų svetainė jau rodoma paieškoje. Tai pirmas žingsnis norint suprasti realią savo svetainės SEO būklę.",
+            "Google Rich Results Test įrankis leidžia patikrinti, ar jūsų struktūriniai duomenys (Schema.org) yra teisingi ir ar Google juos apskritai atpažįsta.",
+          ],
+        },
+        {
+          heading: "3. Kuo šios klaidos rizikingos ilguoju laikotarpiu?",
+          paragraphs: [
+            "SEO klaidos retai sukelia akimirksniu pastebimą žalą — jos veikia palaipsniui. Svetainė be struktūrinių duomenų ir toliau 'veikia', tačiau lėtai praranda galimybes atsidurti paieškos rezultatų viršuje, kur konkurentai su tvarkinga technine baze ją aplenkia mėnesis po mėnesio.",
+            "Kadangi šias klaidas ištaisyti daug pigiau naujos svetainės kūrimo metu nei vėliau perdarant jau veikiančią svetainę, verta techninį SEO patikrinimą įtraukti į pirminę projekto apimtį, o ne palikti 'vėlesniam etapui'.",
+          ],
+        },
       ],
       takeaways: [
         "Techninis SEO yra pamatas — be jo joks turinys nepasieks Google viršūnės.",
         "SiteStudio visose svetainėse integruoja 100% techniškai tvarkingą SEO architektūrą.",
+        "Reguliariai tikrinkite savo svetainę per nemokamą Google Search Console įrankį.",
       ],
     },
   },
@@ -420,7 +590,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Kaip sukurti vieno puslapio svetainę (landing page), kuri konvertuoja?",
     description: "Anatomija sėkmingo landing page: antraštės, pasitikėjimo elementai, pasiūlymas ir CTA mygtukai.",
     publishedAt: "2026-08-12",
-    readTime: "8 min.",
+    readTime: "10 min.",
     category: "Dizainas",
     content: {
       intro: "Landing page (nukreipimo puslapis) turi vienintelį tikslą — paversti lankytoją klientu. Čia nėra jokių blaškančių meniu punktų ar perteklinių nuorodų. Kiekvienas elementas, spalva ir žodis turi vesti link vieno veiksmo: užklausos, skambučio arba pirkimo.",
@@ -434,10 +604,26 @@ export const BLOG_POSTS: BlogPost[] = [
             "Paprasta užklausos forma: Ne daugiau 2–3 laukelių (Vardas, Kontaktai, Žinutė).",
           ],
         },
+        {
+          heading: "2. Dažniausios klaidos kuriant landing page",
+          paragraphs: [
+            "Per daug informacijos vienoje vietoje: bandymas papasakoti apie visas paslaugas, visą įmonės istoriją ir visus privalumus viename puslapyje sukuria chaosą. Landing page turi vieną tikslą — vieną pasiūlymą.",
+            "Neaiškus veiksmo raginimas (CTA): mygtukas su užrašu 'Sužinoti daugiau' yra silpnas. Konkretus, veiksmą įvardijantis tekstas — 'Gauti nemokamą sąmatą' arba 'Užsisakyti skambutį' — konvertuoja žymiai geriau.",
+            "Ilga, sudėtinga forma: kiekvienas papildomas laukelis formoje sumažina tikimybę, kad lankytojas ją užpildys. Prašykite tik būtiniausios informacijos, likusius klausimus išsiaiškinsite jau pokalbio metu.",
+          ],
+        },
+        {
+          heading: "3. Technologijos svarba landing page greičiui",
+          paragraphs: [
+            "Kadangi landing page dažnai naudojamas kartu su mokama reklama (Google Ads, Meta Ads), kiekviena papildoma krovimosi sekundė tiesiogiai kainuoja pinigus — mokate už paspaudimus, o lėtai kraunantis puslapis pames dalį jau apmokėtų lankytojų dar prieš jiems pamačius pasiūlymą.",
+            "Todėl landing page technologiniam pagrindui verta rinktis tą patį principą kaip ir visai svetainei — statinį generavimą ir minimalų išorinių skriptų kiekį, kad puslapis atsidarytų per milisekundes, o ne sekundes.",
+          ],
+        },
       ],
       takeaways: [
         "Vienas puslapis — viena aiški žinutė ir vienas pagrindinis veiksmo mygtukas.",
         "Pašalinkite visus blaškančius elementus, kad lankytojas sutelktų dėmesį į pasiūlymą.",
+        "Jei naudojate mokamą reklamą, puslapio greitis tiesiogiai veikia jūsų reklamos biudžeto efektyvumą.",
       ],
     },
   },
@@ -446,7 +632,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Ką apima profesionali interneto svetainės priežiūra ir saugumas?",
     description: "Kodėl svetainei reikalingas nuolatinis monitoringas, atsarginės kopijos ir techninis atnaujinimas.",
     publishedAt: "2026-08-13",
-    readTime: "7 min.",
+    readTime: "10 min.",
     category: "Priežiūra",
     content: {
       intro: "Paleidus svetainę darbas nesibaigia. Internetas yra dinamiška aplinka: atsiranda nauji naršyklių reikalavimai, atnaujinami saugumo protokolai, o serveriams reikalingos reguliarios atsarginės kopijos. Šiame gide paaiškiname, kodėl priežiūra yra geriausias draudimas jūsų verslui.",
@@ -459,9 +645,25 @@ export const BLOG_POSTS: BlogPost[] = [
             "Saugumo sertifikatai ir atnaujinimai: SSL sertifikatų atnaujinimas, saugumo paketų diegimas ir apsauga nuo DDoS atakų.",
           ],
         },
+        {
+          heading: "2. Kas atsitinka, jei priežiūros nėra?",
+          paragraphs: [
+            "Be reguliarios priežiūros svetainė pamažu 'sensta' — pasenusios technologijos tampa pažeidžiamos naujoms saugumo grėsmėms, o be atsarginių kopijų bet koks serverio gedimas ar netyčinis ištrynimas gali reikšti visišką duomenų praradimą.",
+            "Dar dažnesnė problema — pasibaigęs arba netinkamai sukonfigūruotas SSL sertifikatas. Naršyklė tokiu atveju rodo įspėjimą 'Ryšys nesaugus', kuris akimirksniu sugriauna lankytojo pasitikėjimą ir jis tiesiog uždaro puslapį.",
+          ],
+        },
+        {
+          heading: "3. Kaip pasirinkti priežiūros planą pagal svetainės tipą?",
+          paragraphs: [
+            "Statinei reprezentacinei svetainei be duomenų bazės pakanka bazinio plano — atsarginių kopijų, veikimo stebėjimo ir retų saugumo atnaujinimų.",
+            "El. parduotuvei ar svetainei su duomenų baze (užsakymai, kliento paskyros) rekomenduojama dažnesnė atsarginių kopijų daryba (kasdien, o ne kartą per savaitę) ir greitesnis reagavimo laikas sutrikimo atveju, nes čia sustojęs veikimas tiesiogiai reiškia prarastus pardavimus.",
+          ],
+        },
       ],
       takeaways: [
         "SiteStudio priežiūros planai prasideda nuo 8–10 €/mėn. be jokių ilgalaikių privalomų įsipareigojimų.",
+        "Be atsarginių kopijų bet koks serverio incidentas gali reikšti negrįžtamą duomenų praradimą.",
+        "El. parduotuvėms ir sistemoms su duomenų baze reikalinga dažnesnė ir aktyvesnė priežiūra nei statinei svetainei.",
       ],
     },
   },
@@ -470,7 +672,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "B2B svetainių kūrimas: kaip pritraukti verslo klientus internete?",
     description: "Kuo B2B svetainės skiriasi nuo B2C ir kaip pateikti paslaugas įmonių vadovams bei pirkimų vadybininkams.",
     publishedAt: "2026-08-14",
-    readTime: "8 min.",
+    readTime: "10 min.",
     category: "B2B",
     content: {
       intro: "Verslas verslui (B2B) pirkėjai elgiasi visiškai kitaip nei privatūs vartotojai. Čia sprendimai priimami racionaliai, vertinant patirtį, terminus, finansinį stabilumą ir rizikas. B2B svetainė turi kalbėti profesionalia, konkrečia kalba.",
@@ -483,9 +685,25 @@ export const BLOG_POSTS: BlogPost[] = [
             "Tiesioginis ryšys su specialistu: B2B vadovai nenori bendrauti su pardavimų robotais — jie nori greito atsakymo iš kompetentingo eksperto.",
           ],
         },
+        {
+          heading: "2. B2B pirkimo ciklo ypatumai",
+          paragraphs: [
+            "Skirtingai nei B2C, kur pirkimo sprendimas dažnai priimamas per kelias minutes, B2B pirkimo ciklas gali trukti savaites ar mėnesius, ir sprendime dalyvauja keli žmonės — vadovas, pirkimų specialistas, kartais ir techninis ekspertas. Svetainė turi turėti pakankamai informacijos, kad kiekvienas iš jų rastų sau aktualius atsakymus be papildomo skambučio.",
+            "Todėl B2B svetainėje itin svarbu turėti atsisiunčiamus dokumentus (PDF pristatymus, specifikacijas), kuriuos pirkimų vadybininkas galėtų persiųsti kolegoms vidiniam aptarimui.",
+          ],
+        },
+        {
+          heading: "3. Turinio strategija B2B svetainei",
+          paragraphs: [
+            "Tinklaraštis su ekspertiniais straipsniais apie jūsų srities iššūkius ir sprendimus stiprina profesionalų autoritetą ir padeda pritraukti organinį srautą per specifinius, mažiau konkurencingus raktažodžius, kuriais ieško būtent B2B pirkėjai, o ne plataus vartojimo klientai.",
+            "Aiškiai nurodyti sertifikatai, standartų atitiktys (ISO ir panašūs) ir ilgametė veiklos patirtis B2B kontekste veikia kaip vieni stipriausių pasitikėjimo signalų.",
+          ],
+        },
       ],
       takeaways: [
         "B2B svetainėje svarbiausia skaidrumas, patirtis ir aiškus bendradarbiavimo procesas.",
+        "B2B pirkimo sprendimas dažnai priimamas komandos, todėl svetainė turi turėti informacijos kiekvienam dalyviui.",
+        "Ekspertinis tinklaraštis stiprina autoritetą ir pritraukia tikslinius B2B raktažodžius.",
       ],
     },
   },
@@ -494,7 +712,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Domenas ir talpinimas (hostingas): ką svarbu žinoti prieš perkant?",
     description: "Kaip išsirinkti gerą .lt domeną, kuo skiriasi serveriai ir kodėl neverta permokėti.",
     publishedAt: "2026-08-14",
-    readTime: "7 min.",
+    readTime: "10 min.",
     category: "Gidai",
     content: {
       intro: "Domenas yra jūsų įmonės adresas internete, o talpinimas (hostingas) — serveris, kuriame saugomi svetainės failai. Teisingas šių elementų pasirinkimas užtikrina greitį, saugumą ir sklandų el. pašto veikimą.",
@@ -513,9 +731,25 @@ export const BLOG_POSTS: BlogPost[] = [
             "Rinkitės modernius serverius su NVMe SSD diskais, HTTP/3 ir LiteSpeed arba Nginx web serveriais.",
           ],
         },
+        {
+          heading: "3. Kodėl svarbu, kur fiziškai yra serveris?",
+          paragraphs: [
+            "Jei jūsų pagrindiniai klientai yra Lietuvoje ar Baltijos šalyse, serveris, esantis geografiškai arti (Europoje), užtikrina mažesnį duomenų kelionės laiką (latenciją) ir greitesnį puslapio atsakymą, lyginant su serveriu kitame žemyne.",
+            "Taip pat svarbu, kad serverio infrastruktūra atitiktų BDAR reikalavimus — duomenys apie jūsų klientus turėtų būti saugomi Europos Sąjungos teritorijoje esančiuose duomenų centruose.",
+          ],
+        },
+        {
+          heading: "4. El. pašto adresai savo domene",
+          paragraphs: [
+            "Turint savo domeną, verta iš karto susikonfigūruoti profesionalius el. pašto adresus (pvz., info@jusuimone.lt) vietoj nemokamų gmail.com ar yahoo.com adresų. Tai kelia žymiai daugiau pasitikėjimo tiek klientams, tiek verslo partneriams.",
+            "Svarbu teisingai sukonfigūruoti SPF, DKIM ir DMARC įrašus domeno nustatymuose — be jų jūsų siunčiami laiškai gali patekti į gavėjų šlamšto (spam) aplankus, net jei turinys visiškai teisėtas.",
+          ],
+        },
       ],
       takeaways: [
         "Svetainė ir domenas visais atvejais privalo priklausyti jums, o ne agentūrai.",
+        "Rinkitės serverius, kurių duomenų centrai yra Europos Sąjungoje — tai svarbu ir greičiui, ir BDAR atitikčiai.",
+        "Sukonfigūruokite profesionalius el. pašto adresus savo domene su teisingais SPF/DKIM/DMARC įrašais.",
       ],
     },
   },
@@ -524,7 +758,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Kas yra Schema.org struktūriniai duomenys ir kodėl jie svarbūs Google?",
     description: "Kaip JSON-LD padeda Google ir AI asistentams (ChatGPT, Gemini) teisingai suprasti jūsų verslą ir rodyti išplėstinius rezultatus.",
     publishedAt: "2026-08-15",
-    readTime: "8 min.",
+    readTime: "11 min.",
     category: "SEO",
     content: {
       intro: "Schema.org struktūriniai duomenys — tai universali semantinė kalba, padedanti paieškos sistemoms (Google, Bing) ir AI agentams (ChatGPT, Perplexity, Google Gemini) tiksliai suprasti jūsų svetainės turinį.",
@@ -536,9 +770,27 @@ export const BLOG_POSTS: BlogPost[] = [
             "AI paieškos paruošimas (GEO / AEO): Dirbtinio intelekto paieškos varikliai remiasi Schema.org JSON-LD grafais, kad pateiktų tikslius atsakymus vartotojams.",
           ],
         },
+        {
+          heading: "2. Svarbiausi struktūrinių duomenų tipai verslo svetainei",
+          paragraphs: [
+            "Organization / ProfessionalService: apibrėžia jūsų įmonę kaip subjektą — pavadinimą, kontaktus, aptarnaujamą teritoriją. Tai pagrindas, ant kurio remiasi visi kiti struktūriniai duomenys svetainėje.",
+            "Service ir Offer: aprašo konkrečias jūsų teikiamas paslaugas ir jų kainas mašininiu, Google suprantamu formatu, todėl paieškos sistema gali tiksliau susieti jūsų svetainę su vartotojo ieškoma paslauga.",
+            "BreadcrumbList: rodo puslapio vietą svetainės struktūroje ir Google paieškoje gali būti vaizduojamas kaip patogus nuorodų kelias tiesiai po pavadinimu.",
+            "FAQPage: struktūrizuoja dažnai užduodamus klausimus taip, kad juos galėtų tiesiogiai cituoti tiek Google, tiek AI asistentai, atsakydami į vartotojo užklausą be poreikio jam apsilankyti svetainėje.",
+          ],
+        },
+        {
+          heading: "3. Kaip patikrinti, ar struktūriniai duomenys veikia teisingai?",
+          paragraphs: [
+            "Google siūlo nemokamą 'Rich Results Test' įrankį — įklijavus savo svetainės adresą, jis parodo, kokius struktūrinius duomenis Google aptiko ir ar juose nėra klaidų. Tai naudinga patikrinti po kiekvieno didesnio svetainės atnaujinimo.",
+            "Svarbu, kad struktūriniuose duomenyse nurodyta informacija visada atitiktų tai, kas realiai matoma svetainės puslapyje — Google aktyviai baudžia svetaines, kurių JSON-LD duomenys neatitinka vartotojui rodomo turinio.",
+          ],
+        },
       ],
       takeaways: [
         "Visose SiteStudio svetainėse diegiamas išsamus JSON-LD Schema.org grafas.",
+        "Struktūriniai duomenys yra ne tik Google, bet ir AI paieškos asistentų (ChatGPT, Perplexity) supratimo pagrindas.",
+        "Reguliariai tikrinkite struktūrinius duomenis per nemokamą Google Rich Results Test įrankį.",
       ],
     },
   },
@@ -547,7 +799,7 @@ export const BLOG_POSTS: BlogPost[] = [
     title: "Kaip padidinti esamos svetainės konversijas be papildomo reklamos biudžeto?",
     description: "Paprasti, bet veiksmingi pakeitimai: formų trumpinimas, pasitikėjimo ženklai ir aiškūs veiksmo raginimai.",
     publishedAt: "2026-08-15",
-    readTime: "8 min.",
+    readTime: "10 min.",
     category: "Konversijos",
     content: {
       intro: "Daugelis verslų mano, kad norint gauti daugiau užsakymų, reikia išleisti dvigubai daugiau pinigų reklamai. Tačiau dažnai pakanka sutvarkyti esamos svetainės konversijos kelią (CRO), kad iš to paties lankytojų skaičiaus gautumėte dvigubai daugiau užklausų.",
@@ -562,9 +814,26 @@ export const BLOG_POSTS: BlogPost[] = [
             "5. Pabrėžkite atsakymo greitį: pvz., 'Atsakome per 1 darbo dieną'.",
           ],
         },
+        {
+          heading: "2. Kaip išmatuoti, ar pakeitimai veikia?",
+          paragraphs: [
+            "Prieš darant pakeitimus, užsifiksuokite dabartinį konversijos rodiklį (kiek procentų lankytojų palieka užklausą) per Google Analytics. Be šio pradinio skaičiaus neįmanoma objektyviai įvertinti, ar pakeitimai iš tiesų padėjo.",
+            "Rekomenduojama pakeitimus diegti po vieną ir stebėti rezultatus bent 2–4 savaites prieš darant kitą — taip aiškiai matysite, kuris konkretus pakeitimas davė didžiausią efektą, o ne bandysite atspėti iš bendro rezultato.",
+          ],
+        },
+        {
+          heading: "3. Pasitikėjimo elementai, kurie realiai veikia",
+          paragraphs: [
+            "Realūs atliktų darbų pavyzdžiai su nuorodomis į veikiančias svetaines veikia geriau nei bet koks tekstinis pažadas apie kokybę — lankytojas gali pats patikrinti jūsų darbo rezultatą.",
+            "Aiškiai nurodyta kaina (net jei tik orientacinė 'nuo X €') pašalina didžiausią barjerą — nežinomybę. Klientai, kurie nedrįsta klausti kainos, dažnai tiesiog išeina pas konkurentą, kuris ją nurodo atvirai.",
+            "Konkretus atsakymo laikas ('atsakome per 1 darbo dieną') sumažina baimę, kad užklausa 'nueis į niekur' — tai viena paprasčiausių, bet efektyviausių pasitikėjimo priemonių.",
+          ],
+        },
       ],
       takeaways: [
         "Mažiau trinties formose = daugiau užklausų iš to paties lankytojų srauto.",
+        "Prieš keičiant svetainę, užsifiksuokite pradinį konversijos rodiklį, kad galėtumėte objektyviai palyginti rezultatus.",
+        "Diekite pakeitimus po vieną, kad aiškiai matytumėte, kuris iš jų davė didžiausią efektą.",
       ],
     },
   },

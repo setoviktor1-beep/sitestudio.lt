@@ -4,12 +4,13 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { getDict } from "@/lib/i18n";
+import { getDict, pathAlternates } from "@/lib/i18n";
 import { BLOG_POSTS, getBlogPostBySlug } from "@/lib/blog";
 import {
   siteGraph,
   webPageNode,
   breadcrumbNode,
+  PERSON_ID,
 } from "@/lib/jsonld";
 
 export const dynamicParams = false;
@@ -35,6 +36,7 @@ export async function generateMetadata({
     description,
     alternates: {
       canonical: `/tinklarastis/${post.slug}`,
+      languages: pathAlternates(`/tinklarastis/${post.slug}`),
     },
     openGraph: {
       type: "article",
@@ -77,12 +79,11 @@ export default async function BlogPostPage({
     "@id": `https://sitestudio.lt${path}#article`,
     headline: post.title,
     description: post.description,
+    image: ["https://sitestudio.lt/opengraph-image"],
     datePublished: post.publishedAt,
     dateModified: post.publishedAt,
     author: {
-      "@type": "Person",
-      name: "Viktor Seto",
-      url: "https://sitestudio.lt/apie",
+      "@id": PERSON_ID,
     },
     publisher: {
       "@id": "https://sitestudio.lt/#organization",
@@ -161,6 +162,39 @@ export default async function BlogPostPage({
                 </div>
               )}
             </div>
+
+            {/* Related pages block for the pricing post */}
+            {post.slug === "kiek-kainuoja-svetaines-kurimas" && (
+              <div className="mt-10 rounded-2xl border border-[#0f172a]/10 bg-[#f6f8fb] p-7">
+                <h3 className="text-base font-bold text-[#0f172a] mb-4">Susiję puslapiai</h3>
+                <ul className="space-y-3">
+                  <li>
+                    <Link
+                      href="/svetainiu-kurimas"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2456d6] hover:underline"
+                    >
+                      <span>→</span>
+                      Svetainių kūrimas — kainos, apimtis ir procesas
+                    </Link>
+                    <p className="mt-0.5 text-xs text-[#64748b]">
+                      Išsami informacija apie paslaugą su kainų lentele ir DUK.
+                    </p>
+                  </li>
+                  <li>
+                    <Link
+                      href="/skaiciuokle"
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2456d6] hover:underline"
+                    >
+                      <span>→</span>
+                      Svetainės kainos skaičiuoklė
+                    </Link>
+                    <p className="mt-0.5 text-xs text-[#64748b]">
+                      Suskaičiuokite orientacinę savo svetainės kainą per 2 minutes.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            )}
 
             {/* Author Box */}
             <div className="mt-12 rounded-2xl border border-[#0f172a]/10 p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-white">

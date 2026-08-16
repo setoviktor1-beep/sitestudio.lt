@@ -3,14 +3,14 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { getDict } from "@/lib/i18n";
+import { getDict, pathAlternates } from "@/lib/i18n";
 import { siteGraph, webPageNode, breadcrumbNode, PERSON_ID } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
   title: "Apie SiteStudio — kas kuria jūsų svetainę",
   description:
-    "SiteStudio — Viktor Seto svetainių ir interneto sistemų studija. Bendraujate tiesiogiai su žmogumi, kuris kuria jūsų projektą: be vadybininkų grandinės ir agentūros antkainio. Dirbame visoje Lietuvoje nuotoliu.",
-  alternates: { canonical: "/apie" },
+    "SiteStudio — Viktor Seto svetainių ir interneto sistemų studija Lietuvoje. Bendraujate tiesiogiai su vykdytoju: be vadybininkų grandinės, su aiškia kaina raštu.",
+  alternates: { canonical: "/apie", languages: pathAlternates("/apie") },
 };
 
 const values = [

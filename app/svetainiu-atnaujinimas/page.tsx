@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import ServicePage, { type ServicePageContent } from "@/components/ServicePage";
+import { pathAlternates } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Svetainių atnaujinimas — iš pasenusios svetainės į šiuolaikišką",
   description:
-    "Svetainių atnaujinimas: naujas dizainas, sutvarkyta mobili versija, greitis ir SEO klaidos. Turinį perkeliame be praradimų, senus adresus nukreipiame, kad neprarastumėte pozicijų Google.",
-  alternates: { canonical: "/svetainiu-atnaujinimas" },
+    "Svetainių atnaujinimas: naujas dizainas, sutvarkyta mobili versija ir greitis. Turinį perkeliame be praradimų, Google pozicijos išlaikomos.",
+  alternates: { canonical: "/svetainiu-atnaujinimas", languages: pathAlternates("/svetainiu-atnaujinimas") },
 };
 
 const content: ServicePageContent = {

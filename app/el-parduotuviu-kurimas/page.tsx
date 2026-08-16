@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import ServicePage, { type ServicePageContent } from "@/components/ServicePage";
+import { pathAlternates } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "El. parduotuvių kūrimas — parduotuvė su mokėjimais ir užsakymų valdymu",
   description:
-    "Elektroninių parduotuvių kūrimas Lietuvos verslui: produktų katalogas, krepšelis, mokėjimai internetu, užsakymų valdymas ir pristatymo integracijos. Individualus pasiūlymas pagal apimtį.",
-  alternates: { canonical: "/el-parduotuviu-kurimas" },
+    "El. parduotuvių kūrimas verslui: produktų katalogas, krepšelis, mokėjimai internetu (Montonio, Stripe), užsakymų valdymas ir pristatymo integracijos.",
+  alternates: { canonical: "/el-parduotuviu-kurimas", languages: pathAlternates("/el-parduotuviu-kurimas") },
 };
 
 const content: ServicePageContent = {
@@ -87,10 +88,16 @@ const content: ServicePageContent = {
     note: "El. parduotuvės apimtis labai priklauso nuo asortimento ir integracijų, todėl kainą skaičiuojame individualiai. Pasiūlyme visada matote galutinę sumą ir kas į ją įeina. Kainos be PVM.",
     rows: [
       {
+        name: "Startas",
+        price: "nuo 1200 €",
+        description:
+          "Bazinis katalogas, krepšelis, mokėjimų integracija (Stripe/Montonio) ir užsakymų valdymas.",
+      },
+      {
         name: "Individualus pasiūlymas",
         price: "pagal apimtį",
         description:
-          "Katalogas, krepšelis, mokėjimai, užsakymų valdymas ir pristatymo integracijos pagal jūsų poreikį.",
+          "Didesnis asortimentas, papildomos integracijos ir pristatymo sprendimai pagal jūsų poreikį.",
       },
       {
         name: "Terminas",

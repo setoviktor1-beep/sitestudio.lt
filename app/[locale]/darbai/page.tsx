@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Works from "@/components/Works";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { getDict, isLocale, prefixedLocales, type Locale } from "@/lib/i18n";
+import { getDict, isLocale, prefixedLocales, type Locale, pathAlternates } from "@/lib/i18n";
 import { portfolioProjects } from "@/lib/portfolio";
 import { siteGraph, webPageNode, portfolioListNode, breadcrumbNode } from "@/lib/jsonld";
 
@@ -26,7 +26,7 @@ export async function generateMetadata({
   return {
     title: `${dict.nav.works} — SiteStudio`,
     description: dict.works.sub,
-    alternates: { canonical: `/${locale}/darbai` },
+    alternates: { canonical: `/${locale}/darbai`, languages: pathAlternates("/darbai") },
   };
 }
 

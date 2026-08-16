@@ -61,3 +61,16 @@ export const languageAlternates: Record<string, string> = {
   ru: "/ru",
   "x-default": "/",
 };
+
+/**
+ * hreflang map for an arbitrary interior path, e.g. "/svetainiu-kurimas".
+ * "lt" lives at the root (no prefix); other locales are prefixed.
+ */
+export function pathAlternates(suffix: string): Record<string, string> {
+  const clean = suffix === "/" ? "" : suffix;
+  const result: Record<string, string> = { "x-default": clean || "/" };
+  for (const locale of locales) {
+    result[locale] = locale === "lt" ? clean || "/" : `/${locale}${clean}`;
+  }
+  return result;
+}

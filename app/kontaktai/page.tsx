@@ -3,14 +3,14 @@ import Navbar from "@/components/Navbar";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { getDict } from "@/lib/i18n";
+import { getDict, pathAlternates } from "@/lib/i18n";
 import { siteGraph, webPageNode, breadcrumbNode } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
   title: "Kontaktai — gaukite pasiūlymą dėl svetainės",
   description:
-    "Susisiekite su SiteStudio dėl svetainės, el. parduotuvės, interneto sistemos ar automatizavimo. Atsakome per vieną darbo dieną. El. paštas: viktor@sitestudio.lt.",
-  alternates: { canonical: "/kontaktai" },
+    "Susisiekite su SiteStudio dėl svetainės, el. parduotuvės ar automatizavimo. Atsakome per vieną darbo dieną, konsultacija nemokama.",
+  alternates: { canonical: "/kontaktai", languages: pathAlternates("/kontaktai") },
 };
 
 export default async function KontaktaiPage() {

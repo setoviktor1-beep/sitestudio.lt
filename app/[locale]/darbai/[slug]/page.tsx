@@ -5,7 +5,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { getDict, isLocale, prefixedLocales, type Locale } from "@/lib/i18n";
+import { getDict, isLocale, prefixedLocales, type Locale, pathAlternates } from "@/lib/i18n";
 import { portfolioProjects } from "@/lib/portfolio";
 import { siteGraph, webPageNode, breadcrumbNode } from "@/lib/jsonld";
 
@@ -41,7 +41,7 @@ export async function generateMetadata({
   return {
     title,
     description,
-    alternates: { canonical: `/${locale}/darbai/${slug}` },
+    alternates: { canonical: `/${locale}/darbai/${slug}`, languages: pathAlternates(`/darbai/${slug}`) },
     openGraph: {
       type: "website",
       url: `https://sitestudio.lt/${locale}/darbai/${slug}`,

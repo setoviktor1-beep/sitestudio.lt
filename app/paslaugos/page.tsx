@@ -5,14 +5,14 @@ import Services from "@/components/Services";
 import Pricing from "@/components/Pricing";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { getDict } from "@/lib/i18n";
+import { getDict, pathAlternates } from "@/lib/i18n";
 import { siteGraph, webPageNode, breadcrumbNode } from "@/lib/jsonld";
 
 export const metadata: Metadata = {
-  title: "Paslaugos — svetainių kūrimas, el. parduotuvės, automatizavimas",
+  title: "Paslaugos — svetainių kūrimas nuo 200 €, el. parduotuvės",
   description:
-    "SiteStudio paslaugos: svetainių kūrimas ir atnaujinimas, el. parduotuvės, turinio valdymas, individualios interneto sistemos ir procesų automatizavimas Lietuvos verslui.",
-  alternates: { canonical: "/paslaugos" },
+    "SiteStudio paslaugos: svetainių kūrimas, atnaujinimas, el. parduotuvės, individualios interneto sistemos ir procesų automatizavimas verslui.",
+  alternates: { canonical: "/paslaugos", languages: pathAlternates("/paslaugos") },
 };
 
 const serviceHub = [

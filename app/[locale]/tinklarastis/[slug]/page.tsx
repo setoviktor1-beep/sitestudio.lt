@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { prefixedLocales, type Locale, getDict, languageAlternates } from "@/lib/i18n";
-import { siteGraph, webPageNode, breadcrumbNode } from "@/lib/jsonld";
+import { siteGraph, webPageNode, breadcrumbNode, PERSON_ID } from "@/lib/jsonld";
 import { BLOG_POSTS } from "@/lib/blog";
 import { getLocalizedBlogPost, getLocalizedBlogPosts } from "@/lib/blog-i18n";
 
@@ -73,18 +73,14 @@ export default async function LocalizedBlogPostPage({ params }: Props) {
     "@id": `https://sitestudio.lt${path}#article`,
     headline: post.title,
     description: post.description,
+    image: ["https://sitestudio.lt/opengraph-image"],
     datePublished: post.publishedAt,
     dateModified: post.publishedAt,
     author: {
-      "@type": "Person",
-      name: "Viktor Seto",
-      jobTitle: "Founder & Lead Developer",
-      url: "https://sitestudio.lt/apie",
+      "@id": PERSON_ID,
     },
     publisher: {
-      "@type": "Organization",
-      name: "SiteStudio",
-      url: "https://sitestudio.lt",
+      "@id": "https://sitestudio.lt/#organization",
     },
     mainEntityOfPage: {
       "@id": `https://sitestudio.lt${path}#webpage`,

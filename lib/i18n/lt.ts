@@ -1,6 +1,6 @@
 export const lt = {
   meta: {
-    title: "Svetainių kūrimas verslui Lietuvoje | SiteStudio",
+    title: "Svetainių kūrimas verslui — nuo 200 € | SiteStudio",
     description:
       "Profesionalus svetainių kūrimas verslui: internetinės svetainės, el. parduotuvės ir individualios interneto sistemos visoje Lietuvoje. Aiški kaina ir terminas raštu, tiesioginis ryšys su vykdytoju.",
   },

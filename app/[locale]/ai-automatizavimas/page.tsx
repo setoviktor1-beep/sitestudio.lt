@@ -6,7 +6,7 @@ import Automation from "@/components/Automation";
 import Pricing from "@/components/Pricing";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { getDict, isLocale, prefixedLocales, type Locale } from "@/lib/i18n";
+import { getDict, isLocale, prefixedLocales, type Locale, pathAlternates } from "@/lib/i18n";
 import { siteGraph, webPageNode, breadcrumbNode } from "@/lib/jsonld";
 
 export const dynamicParams = false;
@@ -27,7 +27,7 @@ export async function generateMetadata({
   return {
     title: `${dict.services.items[5]?.title ?? "AI & Automation"} — SiteStudio`,
     description: dict.services.items[5]?.description ?? dict.meta.description,
-    alternates: { canonical: `/${locale}/ai-automatizavimas` },
+    alternates: { canonical: `/${locale}/ai-automatizavimas`, languages: pathAlternates("/ai-automatizavimas") },
   };
 }
 

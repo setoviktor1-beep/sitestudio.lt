@@ -61,7 +61,7 @@ export default function Services({ dict, locale = "lt" }: { dict: Dict; locale?:
               {locale === "lt" && serviceCardLinks[idx] && (
                 <Link
                   href={serviceCardLinks[idx].href}
-                  className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-[#2456d6] hover:underline"
+                  className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-[#2456d6] hover:underline min-h-[44px] py-2.5"
                 >
                   {serviceCardLinks[idx].label}
                   <span aria-hidden="true">→</span>

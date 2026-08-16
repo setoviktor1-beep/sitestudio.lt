@@ -5,7 +5,7 @@ import Services from "@/components/Services";
 import Pricing from "@/components/Pricing";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { getDict, isLocale, prefixedLocales, type Locale } from "@/lib/i18n";
+import { getDict, isLocale, prefixedLocales, type Locale, pathAlternates } from "@/lib/i18n";
 import { siteGraph, webPageNode, breadcrumbNode } from "@/lib/jsonld";
 
 export const dynamicParams = false;
@@ -26,7 +26,7 @@ export async function generateMetadata({
   return {
     title: `${dict.services.items[0].title} — SiteStudio`,
     description: dict.services.items[0].description,
-    alternates: { canonical: `/${locale}/svetainiu-kurimas` },
+    alternates: { canonical: `/${locale}/svetainiu-kurimas`, languages: pathAlternates("/svetainiu-kurimas") },
   };
 }
 

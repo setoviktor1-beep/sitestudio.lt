@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { getDict, isLocale, prefixedLocales, type Locale } from "@/lib/i18n";
+import { getDict, isLocale, prefixedLocales, type Locale, pathAlternates } from "@/lib/i18n";
 import { siteGraph, webPageNode, breadcrumbNode } from "@/lib/jsonld";
 
 export const dynamicParams = false;
@@ -25,7 +25,7 @@ export async function generateMetadata({
   return {
     title: `${dict.nav.cta} — SiteStudio`,
     description: dict.meta.description,
-    alternates: { canonical: `/${locale}/kontaktai` },
+    alternates: { canonical: `/${locale}/kontaktai`, languages: pathAlternates("/kontaktai") },
   };
 }
 

@@ -125,19 +125,19 @@ export default function CookieConsent() {
       )}
 
       {visible ? (
-        <div className="fixed inset-x-0 bottom-0 z-50 p-4 sm:p-6" role="dialog" aria-label={t.settings}>
-          <div className="mx-auto flex max-w-3xl flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-xl sm:flex-row sm:items-center">
-            <p className="flex-1 text-sm text-slate-700">
+        <div className="fixed inset-x-0 bottom-0 z-50 p-2 sm:p-6" role="dialog" aria-label={t.settings}>
+          <div className="mx-auto flex max-w-3xl flex-col gap-2 rounded-2xl border border-slate-200 bg-white/98 p-3 shadow-xl backdrop-blur sm:flex-row sm:items-center sm:gap-4 sm:p-5">
+            <p className="flex-1 text-xs leading-snug text-slate-700 sm:text-sm sm:leading-normal">
               {t.message}{" "}
               <Link href={legalPath(locale, "cookies")} className="font-medium text-slate-900 underline underline-offset-2 hover:text-slate-600">
                 {t.policy}
               </Link>
             </p>
-            <div className="flex shrink-0 gap-3">
-              <button type="button" onClick={() => choose("denied")} className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-50">
+            <div className="flex shrink-0 gap-2 sm:gap-3">
+              <button type="button" onClick={() => choose("denied")} className="flex-1 rounded-lg border border-slate-300 px-3 py-2 text-xs font-medium text-slate-700 transition hover:bg-slate-50 sm:flex-none sm:px-4 sm:text-sm">
                 {t.decline}
               </button>
-              <button type="button" onClick={() => choose("granted")} className="rounded-lg bg-[#0f172a] px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-700">
+              <button type="button" onClick={() => choose("granted")} className="flex-1 rounded-lg bg-[#2456d6] px-3 py-2 text-xs font-medium text-white transition hover:bg-[#1a41ab] sm:flex-none sm:px-4 sm:text-sm">
                 {t.accept}
               </button>
             </div>

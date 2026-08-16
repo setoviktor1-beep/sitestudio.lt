@@ -18,11 +18,11 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://sitestudio.lt"),
   title: {
-    default: "Svetainių kūrimas verslui Lietuvoje | SiteStudio",
+    default: "Svetainių kūrimas verslui — nuo 200 € | SiteStudio",
     template: "%s | SiteStudio",
   },
   description:
-    "Profesionalus svetainių kūrimas verslui: internetinės svetainės, el. parduotuvės ir individualios interneto sistemos visoje Lietuvoje. Aiški kaina ir terminas raštu, tiesioginis ryšys su vykdytoju.",
+    "Profesionalus svetainių kūrimas verslui: internetinės svetainės, el. parduotuvės ir interneto sistemos visoje Lietuvoje. Aiški kaina ir terminas raštu.",
   alternates: {
     canonical: "/",
     languages: {
@@ -40,14 +40,14 @@ export const metadata: Metadata = {
     locale: "lt_LT",
     url: "https://sitestudio.lt",
     siteName: "SiteStudio",
-    title: "Svetainių kūrimas verslui Lietuvoje | SiteStudio",
+    title: "Svetainių kūrimas verslui — nuo 200 € | SiteStudio",
     description:
       "Internetinės svetainės, el. parduotuvės ir interneto sistemos Lietuvos verslui. Aiški kaina, aiškus terminas, tiesioginis ryšys su vykdytoju.",
   },
   // og:image and twitter:image come from app/opengraph-image.tsx.
   twitter: {
     card: "summary_large_image",
-    title: "Svetainių kūrimas verslui Lietuvoje | SiteStudio",
+    title: "Svetainių kūrimas verslui — nuo 200 € | SiteStudio",
     description:
       "Internetinės svetainės, el. parduotuvės ir interneto sistemos Lietuvos verslui.",
   },

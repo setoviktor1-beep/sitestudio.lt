@@ -3,7 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { getDict } from "@/lib/i18n";
+import { getDict, pathAlternates } from "@/lib/i18n";
 import { BLOG_POSTS } from "@/lib/blog";
 import { siteGraph, webPageNode, breadcrumbNode } from "@/lib/jsonld";
 
@@ -13,6 +13,7 @@ export const metadata: Metadata = {
     "Ekspertiniai gidai, kainų analizė, techninio SEO patarimai ir rekomendacijos Lietuvos verslui.",
   alternates: {
     canonical: "/tinklarastis",
+    languages: pathAlternates("/tinklarastis"),
   },
 };
 

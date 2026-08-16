@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import ServicePage, { type ServicePageContent } from "@/components/ServicePage";
+import { pathAlternates } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Interneto sistemų kūrimas — rezervacijos, paskyros, MVP",
   description:
-    "Individualių interneto sistemų kūrimas: rezervacijų ir užsakymų sistemos, klientų paskyros, administravimo skydeliai, skaičiuoklės ir MVP naujam produktui. Pritaikyta jūsų verslo procesui.",
-  alternates: { canonical: "/interneto-sistemu-kurimas" },
+    "Individualių interneto sistemų kūrimas: rezervacijos, klientų paskyros, administravimo skydeliai, skaičiuoklės ir MVP. Pritaikyta jūsų verslo procesui.",
+  alternates: { canonical: "/interneto-sistemu-kurimas", languages: pathAlternates("/interneto-sistemu-kurimas") },
 };
 
 const content: ServicePageContent = {
@@ -88,16 +89,16 @@ const content: ServicePageContent = {
     note: "Kiekviena sistema skirtinga, todėl kainą skaičiuojame pagal apimtį — po proceso analizės gaunate konkrečią sumą ir terminą raštu. Kainos be PVM.",
     rows: [
       {
+        name: "MVP",
+        price: "nuo 1800 €",
+        description:
+          "Pirminė produkto versija su pagrindine funkcija — greičiausias kelias patikrinti idėją rinkoje.",
+      },
+      {
         name: "Individualus pasiūlymas",
         price: "pagal apimtį",
         description:
           "Rezervacijos, užsakymų valdymas, klientų paskyros, skaičiuoklės, administravimo skydeliai.",
-      },
-      {
-        name: "MVP",
-        price: "pagal apimtį",
-        description:
-          "Pirminė produkto versija su pagrindine funkcija — greičiausias kelias patikrinti idėją rinkoje.",
       },
       {
         name: "Plėtra etapais",
