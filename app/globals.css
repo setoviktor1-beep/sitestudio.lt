@@ -91,8 +91,36 @@
 /* Subtle hero background */
 .hero-surface {
   background:
-    radial-gradient(ellipse 70% 55% at 75% 10%, rgba(36, 86, 214, 0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 88% 8%, rgba(36, 86, 214, 0.1) 0%, transparent 60%),
+    radial-gradient(ellipse 45% 40% at 8% 92%, rgba(94, 234, 212, 0.08) 0%, transparent 60%),
     linear-gradient(180deg, #f6f8fb 0%, #ffffff 100%);
+}
+
+.hero-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(15, 23, 42, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 78% 30%, black 0%, transparent 72%);
+  mask-image: radial-gradient(ellipse 70% 60% at 78% 30%, black 0%, transparent 72%);
+  pointer-events: none;
+}
+
+/* Faint dot-grid texture for section backgrounds */
+.bg-dot-grid {
+  position: relative;
+}
+
+.bg-dot-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(15, 23, 42, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 15%, black 85%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, black 15%, black 85%, transparent 100%);
+  pointer-events: none;
 }
 
 /* Hero entrance + float animations */
@@ -157,6 +185,18 @@
 
 .shadow-card {
   box-shadow: 0 20px 48px -20px rgba(15, 23, 42, 0.14);
+}
+
+/* Recommended pricing plan */
+.pricing-highlight {
+  border-color: rgba(36, 86, 214, 0.35);
+  box-shadow: 0 24px 56px -20px rgba(36, 86, 214, 0.28);
+}
+
+@media (min-width: 1024px) {
+  .pricing-highlight {
+    transform: scale(1.035);
+  }
 }
 
 /* Browser mockup frame used in hero and works */

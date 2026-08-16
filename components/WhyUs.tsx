@@ -13,7 +13,7 @@ export default function WhyUs({ dict }: { dict: Dict }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {dict.why.reasons.map((reason, idx) => (
-            <div key={reason.title} className="flex gap-5 rounded-2xl border border-[#0f172a]/10 p-7 card-hover">
+            <div key={reason.title} className="flex gap-5 rounded-2xl border border-[#0f172a]/10 bg-white p-7 shadow-soft card-hover">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#e8eefc] text-sm font-bold text-[#2456d6]">
                 {String(idx + 1).padStart(2, "0")}
               </span>

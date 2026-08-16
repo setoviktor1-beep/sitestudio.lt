@@ -50,7 +50,7 @@ export default function Hero({ dict, locale = "lt" }: { dict: Dict; locale?: Loc
           </div>
 
           {/* Visual — real client work */}
-          <div className="relative hidden sm:block lg:pl-4">
+          <div className="relative hidden sm:block lg:pl-4 lg:scale-[1.12] lg:origin-left">
             <div className="hero-fade-up hero-delay-2">
               <div className="browser-frame">
                 <div className="browser-frame-bar">
@@ -67,14 +67,14 @@ export default function Hero({ dict, locale = "lt" }: { dict: Dict; locale?: Loc
                     alt="leonamai.lt svetainė"
                     fill
                     priority
-                    sizes="(min-width: 1024px) 45vw, 90vw"
+                    sizes="(min-width: 1024px) 50vw, 90vw"
                     className="object-cover object-top"
                   />
                 </div>
               </div>
             </div>
 
-            <div className="hero-fade-up hero-delay-4 hero-float absolute -bottom-10 -left-6 lg:-left-12 w-[52%]">
+            <div className="hero-fade-up hero-delay-4 hero-float absolute -bottom-12 -left-8 lg:-left-14 w-[54%]">
               <div className="browser-frame !shadow-[0_28px_60px_-20px_rgba(15,23,42,0.35)]">
                 <div className="browser-frame-bar">
                   <span className="browser-dot" />
@@ -89,14 +89,14 @@ export default function Hero({ dict, locale = "lt" }: { dict: Dict; locale?: Loc
                     src="/works/mini-social.png"
                     alt="mini-social.online aplikacija"
                     fill
-                    sizes="(min-width: 1024px) 22vw, 45vw"
+                    sizes="(min-width: 1024px) 25vw, 45vw"
                     className="object-cover object-top"
                   />
                 </div>
               </div>
             </div>
 
-            <div className="hero-fade-up hero-delay-5 absolute -top-5 -right-2 lg:-right-6 flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold text-[#0f172a] shadow-lg ring-1 ring-black/5">
+            <div className="hero-fade-up hero-delay-5 absolute -top-6 -right-4 lg:-right-10 flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-semibold text-[#0f172a] shadow-lg ring-1 ring-black/5">
               <span className="relative flex h-2.5 w-2.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
                 <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
