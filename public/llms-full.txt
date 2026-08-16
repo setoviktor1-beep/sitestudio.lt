@@ -1,0 +1,84 @@
+# SiteStudio — Pilna dokumentacija ir paslaugų gidas
+
+> SiteStudio yra moderni interneto svetainių, el. parduotuvių ir individualių interneto sistemų kūrimo studija, skirta mažam ir vidutiniam verslui bei savarankiškiems specialistams.
+
+## Bendra informacija
+- **Pavadinimas**: SiteStudio
+- **Svetainė**: https://sitestudio.lt
+- **Vykdytojas**: Viktor Seto (Svetainių ir interneto sistemų kūrėjas)
+- **El. paštas**: info@sitestudio.lt / viktor@sitestudio.lt
+- **Darbo modelis**: Tiesioginis bendravimas su vykdytoju, nuotolinis darbas su klientais visoje Lietuvoje ir užsienyje.
+- **Palaikomos kalbos**: Lietuvių (LT), English (EN), Polski (PL), Latviešu (LV), Eesti (ET), Русский (RU).
+
+## Paslaugos išsamiai
+
+### 1. Svetainių kūrimas (https://sitestudio.lt/svetainiu-kurimas)
+- **Kam skirta**: Paslaugų verslams, meistrams, specialistams, įmonėms, norinčioms modernios reprezentacinės svetainės.
+- **Ką gaunate**:
+  - Unikalus, šiuolaikiškas dizainas pagal veiklos specifiką.
+  - Puikiai pritaikyta mobili versija (mobile-first).
+  - Greitas užkrovimas ir optimizuotas kodas (Next.js / React / TypeScript).
+  - Užklausų formos su pranešimais į el. paštą arba Telegram.
+  - Bazinis techninis SEO: meta žymos, Open Graph, Sitemap.xml, Schema.org struktūriniai duomenys.
+  - SSL sertifikatas ir paleidimas su kliento domenu.
+- **Kaina**: Nuo 200 € (Startas) / Nuo 500 € (Verslas su CMS).
+- **Terminas**: 1–4 savaitės.
+
+### 2. El. parduotuvių kūrimas (https://sitestudio.lt/el-parduotuviu-kurimas)
+- **Kam skirta**: Prekybos verslams, norintiems pradėti ar atnaujinti prekybą internetu.
+- **Ką gaunate**:
+  - Prekių katalogas, kategorijos, filtracija, paieška.
+  - Pirkinių krepšelis ir patogus atsiskaitymo procesas (checkout).
+  - Mokėjimų vartai: Stripe, Montonio, Paysera, banklinkai, Apple Pay / Google Pay.
+  - Pristatymo integracijos: Omniva, DPD, LP Express.
+  - Užsakymų valdymo sistema ir automatiniai pranešimai pirkėjui bei administratoriui.
+- **Kaina**: Pagal projekto apimtį.
+- **Terminas**: Nuo 3–4 savaičių.
+
+### 3. Turinio valdymo sistemos (CMS) (https://sitestudio.lt/svetainiu-kurimas#turinio-valdymas)
+- **Paskirtis**: Leidžia klientui patiems atnaujinti tekstus, įkelti naujas darbų nuotraukas, koreguoti kainas ir skelbti naujienas.
+- **Privalumai**: Aiški, intuityvi administravimo aplinka; 1 valandos apmokymai; jokių periodinių mokesčių programuotojui už smulkius tekstų pataisymus.
+
+### 4. Svetainių atnaujinimas ir redizainas (https://sitestudio.lt/svetainiu-atnaujinimas)
+- **Kam skirta**: Įmonėms su pasenusiomis, lėtomis, nepritaikytomis telefonams svetainėmis.
+- **Atliekami darbai**:
+  - Dizaino ir informacijos struktūros atnaujinimas.
+  - Mobilios versijos ir greitaveikos sutvarkymas.
+  - Turinio perkėlimas ir 301 nukreipimai, kad nebūtų prarastos Google pozicijos.
+  - Techninių SEO klaidų ištaisymas.
+- **Kaina**: Nuo 200 €.
+
+### 5. Individualios interneto sistemos (https://sitestudio.lt/interneto-sistemu-kurimas)
+- **Sprendimai**:
+  - Paslaugų rezervacijų ir vizitų planavimo sistemos.
+  - Klientų savitarnos paskyros ir dokumentų peržiūra.
+  - Paslaugų ar gaminių kainų skaičiuoklės.
+  - MVP (minimalaus veikiančio produkto) kūrimas idėjos patikrinimui rinkoje.
+
+### 6. AI ir verslo procesų automatizavimas (https://sitestudio.lt/ai-automatizavimas)
+- **Sprendimai**:
+  - Išmanios užklausų formos ir AI asistentai.
+  - Užsakymų, sąskaitų ir duomenų automatinis perkėlimas į Google Sheets ar CRM.
+  - El. laiškų ir dokumentų apdorojimas.
+
+## Kainų skaičiuoklė
+- Adresas: https://sitestudio.lt/skaiciuokle
+- Paskirtis: Leidžia klientams interaktyviai susidėti projekto tipą, papildomas funkcijas ir sužinoti preliminarią kainą bei terminą.
+
+## Kainų struktūra
+- **Startas**: nuo 200 € (Landing page / iki 5 psl., 1–2 sav.)
+- **Verslas**: nuo 500 € (Kelių psl. svetainė su CMS, 2–4 sav.)
+- **Individualus**: pagal apimtį (El. parduotuvės, sistemos, automatizavimas)
+- **Talpinimas ir priežiūra**: 8 €/mėn. (80 €/m.) Startas, 10 €/mėn. (100 €/m.) Verslas
+
+## Portfolio pavyzdžiai
+1. **Leonamai** (https://leonamai.lt): Vonios remonto meistro svetainė su vietiniu SEO.
+2. **Situacija** (https://situacija.eu): Plytelių klojimo meistro svetainė su savarankišku turinio valdymu.
+3. **MiniSocial** (https://mini-social.online): Socialinio tinklo interneto platforma su realaus laiko funkcijomis ir Android programėle.
+4. **FutTech Store** (https://futtech.store): El. parduotuvės demo su Stripe mokėjimais, pirkėjo paskyra ir Directus CMS.
+5. **Teisinė Atrama** (https://teisinėatrama.lt): Teisinės pagalbos ir konsultacijų svetainė su straipsniais ir DUK.
+
+## Kontaktai
+- Svetainė: https://sitestudio.lt
+- El. paštas: info@sitestudio.lt / viktor@sitestudio.lt
+- Užklausų forma: https://sitestudio.lt/kontaktai

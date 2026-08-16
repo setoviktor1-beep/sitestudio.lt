@@ -8,13 +8,14 @@ export default function Footer({ dict, locale = "lt" }: { dict: Dict; locale?: L
   const anchor = (hash: string) => (base === "/" ? `/#${hash}` : `${base}#${hash}`);
   const isLt = locale === "lt";
 
-  // Dedicated Lithuanian service pages — the other locales don't have them.
+  // Dedicated Lithuanian service pages.
   const serviceLinks = [
     { href: "/svetainiu-kurimas", label: "Svetainių kūrimas" },
     { href: "/el-parduotuviu-kurimas", label: "El. parduotuvių kūrimas" },
     { href: "/svetainiu-atnaujinimas", label: "Svetainių atnaujinimas" },
     { href: "/interneto-sistemu-kurimas", label: "Interneto sistemų kūrimas" },
     { href: "/ai-automatizavimas", label: "AI ir automatizavimas" },
+    { href: "/skaiciuokle", label: "Kainos skaičiuoklė" },
   ];
 
   return (
@@ -31,6 +32,15 @@ export default function Footer({ dict, locale = "lt" }: { dict: Dict; locale?: L
               </span>
             </div>
             <p className="leading-relaxed max-w-xs">{dict.footer.tagline}</p>
+            <div className="mt-4 flex gap-3 text-xs">
+              <Link href="/llms.txt" className="text-white/40 hover:text-white transition-colors">
+                llms.txt
+              </Link>
+              <span>•</span>
+              <Link href="/sitemap.xml" className="text-white/40 hover:text-white transition-colors">
+                sitemap.xml
+              </Link>
+            </div>
           </div>
 
           <div>
@@ -40,17 +50,20 @@ export default function Footer({ dict, locale = "lt" }: { dict: Dict; locale?: L
                 <>
                   <li><Link href="/paslaugos" className="hover:text-white transition-colors">{dict.nav.services}</Link></li>
                   <li><Link href="/darbai" className="hover:text-white transition-colors">{dict.nav.works}</Link></li>
+                  <li><Link href="/tinklarastis" className="hover:text-white transition-colors">Gidai ir straipsniai</Link></li>
+                  <li><Link href="/skaiciuokle" className="hover:text-white transition-colors">Kainos skaičiuoklė</Link></li>
                   <li><Link href="/apie" className="hover:text-white transition-colors">Apie SiteStudio</Link></li>
                   <li><Link href="/#kainos" className="hover:text-white transition-colors">{dict.nav.pricing}</Link></li>
                   <li><Link href="/kontaktai" className="hover:text-white transition-colors">{dict.footer.contacts}</Link></li>
                 </>
               ) : (
                 <>
-                  <li><Link href={anchor("paslaugos")} className="hover:text-white transition-colors">{dict.nav.services}</Link></li>
-                  <li><Link href={anchor("darbai")} className="hover:text-white transition-colors">{dict.nav.works}</Link></li>
+                  <li><Link href={`/${locale}/paslaugos`} className="hover:text-white transition-colors">{dict.nav.services}</Link></li>
+                  <li><Link href={`/${locale}/darbai`} className="hover:text-white transition-colors">{dict.nav.works}</Link></li>
+                  <li><Link href={`/${locale}/apie`} className="hover:text-white transition-colors">About</Link></li>
                   <li><Link href={anchor("kainos")} className="hover:text-white transition-colors">{dict.nav.pricing}</Link></li>
                   <li><Link href={anchor("duk")} className="hover:text-white transition-colors">{dict.nav.faq}</Link></li>
-                  <li><Link href={anchor("kontaktai")} className="hover:text-white transition-colors">{dict.footer.contacts}</Link></li>
+                  <li><Link href={`/${locale}/kontaktai`} className="hover:text-white transition-colors">{dict.footer.contacts}</Link></li>
                 </>
               )}
             </ul>

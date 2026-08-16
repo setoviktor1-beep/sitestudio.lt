@@ -1,0 +1,44 @@
+# SiteStudio
+
+> Svetainių, el. parduotuvių ir individualių interneto sistemų kūrimo studija mažam ir vidutiniam verslui. Aiški kaina, aiškus terminas ir tiesioginis ryšys su vykdytoju.
+
+## Pagrindinė informacija
+- **Vykdytojas / Įkūrėjas**: Viktor Seto
+- **Svetainė**: https://sitestudio.lt
+- **El. paštas**: info@sitestudio.lt / viktor@sitestudio.lt
+- **Veiklos modelis**: Nuotolinis internetinis darbas su klientais visoje Lietuvoje ir Europoje
+- **Palaikomos kalbos**: Lietuvių (LT), English (EN), Polski (PL), Latviešu (LV), Eesti (ET), Русский (RU)
+
+## Teikiamos paslaugos
+- [Svetainių kūrimas](https://sitestudio.lt/svetainiu-kurimas): Reprezentacinės ir paslaugų svetainės, landing puslapiai nuo 200 €. Terminas 1–2 savaitės.
+- [El. parduotuvių kūrimas](https://sitestudio.lt/el-parduotuviu-kurimas): E-komercijos sprendimai su prekių katalogu, krepšeliu, Stripe/Montonio integracijomis ir užsakymų valdymu.
+- [Turinio valdymo sistemos (CMS)](https://sitestudio.lt/svetainiu-kurimas#turinio-valdymas): Patogi administravimo aplinka tekstų, nuotraukų, kainų ir naujienų savarankiškam redagavimui be programuotojo.
+- [Svetainių atnaujinimas](https://sitestudio.lt/svetainiu-atnaujinimas): Pasenusių svetainių modernizavimas, dizaino atnaujinimas, mobilios versijos ir SEO klaidų taisymas.
+- [Interneto sistemų kūrimas](https://sitestudio.lt/interneto-sistemu-kurimas): Rezervacijų sistemos, klientų savitarnos paskyros, skaičiuoklės, MVP startuoliams.
+- [AI ir procesų automatizavimas](https://sitestudio.lt/ai-automatizavimas): Užklausų apdorojimas, dokumentų generavimas, integracijos su CRM, el. paštu ir lentelėmis.
+- [Kainos skaičiuoklė](https://sitestudio.lt/skaiciuokle): Interaktyvus įrankis preliminariai projekto kainai ir terminui apskaičiuoti.
+
+## Kainodara
+- **Startas (nuo 200 €)**: Landing page arba svetainė iki 5 puslapių su kontaktų forma, greitu veikimu ir baziniu SEO. Terminas: 1–2 savaitės.
+- **Verslas (nuo 500 €)**: Kelių puslapių svetainė su turinio valdymo sistema (CMS), darbų galerija ir techniniu SEO. Terminas: 2–4 savaitės.
+- **Individualus (pagal apimtį)**: El. parduotuvės, rezervacijos, klientų paskyros, procesų automatizavimas. Terminas: nuo 3–4 savaičių.
+- **Talpinimas ir priežiūra**: nuo 8 €/mėn. (80 €/m.) Startas, 10 €/mėn. (100 €/m.) Verslas, arba savarankiškas talpinimas.
+
+## Realūs atlikti darbai (Portfolio)
+- [Leonamai](https://sitestudio.lt/darbai/leonamai): Vonios remonto meistro paslaugų svetainė (leonamai.lt).
+- [Situacija](https://sitestudio.lt/darbai/situacija): Plytelių klojimo meistro svetainė su turinio valdymo sistema (situacija.eu).
+- [MiniSocial](https://sitestudio.lt/darbai/mini-social): Pilna socialinio tinklo interneto aplikacija (mini-social.online).
+- [FutTech Store](https://sitestudio.lt/darbai/futtech-store): El. parduotuvės demonstracinis projektas (futtech.store).
+- [Teisinė Atrama](https://sitestudio.lt/darbai/teisine-atrama): Teisinių paslaugų ir konsultacijų svetainė (teisinėatrama.lt).
+
+## Gidai ir žinių bazė
+- [Kiek kainuoja interneto svetainės kūrimas 2026 m.](https://sitestudio.lt/tinklarastis/kiek-kainuoja-svetaines-kurimas)
+- [Kiek kainuoja el. parduotuvės kūrimas Lietuvoje](https://sitestudio.lt/tinklarastis/kiek-kainuoja-el-parduotuves-kurimas)
+- [Next.js prieš WordPress: kurį pasirinkti verslui](https://sitestudio.lt/tinklarastis/nextjs-vs-wordpress)
+- [Kada verta atnaujinti pasenusią svetainę](https://sitestudio.lt/tinklarastis/svetaines-atnaujinimas-kada-verta)
+- [Vietinis SEO: kaip paslaugų verslui užimti pirmas vietas Google](https://sitestudio.lt/tinklarastis/vietinis-seo-verslui)
+- [Visi gidai ir straipsniai](https://sitestudio.lt/tinklarastis)
+
+## Kontaktai
+- [Kontaktai ir užklausos forma](https://sitestudio.lt/kontaktai)
+- [Apie mus ir darbo principai](https://sitestudio.lt/apie)
