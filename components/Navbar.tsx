@@ -46,7 +46,8 @@ export default function Navbar({
       ? [
           { href: "/paslaugos", label: dict.nav.services },
           { href: "/darbai", label: dict.nav.works },
-          { href: "/tinklarastis", label: "Gidai" },
+          { href: "/tinklarastis", label: "Tinklaraštis" },
+          { href: "/skaiciuokle", label: "Skaičiuoklė" },
           { href: "/apie", label: "Apie" },
           { href: "/#kainos", label: dict.nav.pricing },
           { href: "/#duk", label: dict.nav.faq },
