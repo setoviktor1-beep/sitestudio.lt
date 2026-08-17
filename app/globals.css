@@ -31,11 +31,11 @@
   :focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 2px;
-    border-radius: 4px;
+    border-radius: 6px;
   }
 }
 
-/* Primary button */
+/* Primary button with tactile micro-interactions */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -49,13 +49,22 @@
   color: #ffffff;
   background-color: var(--color-accent);
   box-shadow: 0 4px 14px rgba(36, 86, 214, 0.25);
-  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.15s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  user-select: none;
 }
 
 .btn-primary:hover {
   background-color: var(--color-accent-deep);
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(36, 86, 214, 0.3);
+  box-shadow: 0 8px 24px rgba(36, 86, 214, 0.32);
+}
+
+.btn-primary:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 2px 8px rgba(36, 86, 214, 0.2);
 }
 
 /* Ghost / secondary button */
@@ -71,12 +80,23 @@
   font-size: 1rem;
   font-weight: 600;
   color: var(--color-ink);
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.2s ease,
+              transform 0.15s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.2s ease;
+  cursor: pointer;
+  user-select: none;
 }
 
 .btn-ghost:hover {
   background-color: var(--color-surface-alt);
   border-color: rgba(15, 23, 42, 0.24);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+.btn-ghost:active {
+  transform: translateY(0) scale(0.98);
 }
 
 /* Section label (small caps eyebrow) */
@@ -161,22 +181,17 @@
     hero-float 7s ease-in-out 1.2s infinite;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero-fade-up,
-  .hero-float {
-    animation: none;
-  }
-}
-
-/* Card hover */
+/* Card hover lift */
 .card-hover {
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.2s ease;
 }
 
 .card-hover:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 32px -8px rgba(15, 23, 42, 0.1);
-  border-color: rgba(36, 86, 214, 0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.12);
+  border-color: rgba(36, 86, 214, 0.3);
 }
 
 .shadow-soft {
@@ -235,12 +250,29 @@ html {
   color: var(--color-ink);
 }
 
-/* Reduced motion */
+/* Cookie consent banner */
+.cookie-reopen-btn {
+  display: none;
+}
+html[data-cookie-consent="granted"] .cookie-banner,
+html[data-cookie-consent="denied"] .cookie-banner {
+  display: none;
+}
+html[data-cookie-consent="granted"] .cookie-reopen-btn,
+html[data-cookie-consent="denied"] .cookie-reopen-btn {
+  display: block;
+}
+
+/* Reduced motion accessibility */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+  .hero-fade-up,
+  .hero-float {
+    animation: none !important;
   }
 }

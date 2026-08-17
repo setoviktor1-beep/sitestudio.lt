@@ -39,8 +39,6 @@ export default function Navbar({
   const base = homePath(locale);
   const anchor = (hash: string) => (base === "/" ? `/#${hash}` : `${base}#${hash}`);
 
-  // The Lithuanian site has real crawlable pages; other locales only have a
-  // localized one-pager, so they keep the section anchors.
   const navLinks =
     locale === "lt"
       ? [
@@ -70,12 +68,12 @@ export default function Navbar({
         onClick={() => setLangOpen(!langOpen)}
         aria-expanded={langOpen}
         aria-haspopup="menu"
-        className="flex items-center gap-1.5 rounded-lg border border-black/10 bg-white px-2.5 py-1.5 text-xs font-semibold text-[#334155] hover:border-[#2456d6]/40 hover:text-[#2456d6] transition-colors"
+        className="flex items-center gap-1.5 rounded-lg border border-black/10 bg-white px-2.5 py-1.5 text-xs font-semibold text-[#334155] hover:border-[#2456d6]/40 hover:text-[#2456d6] transition-colors cursor-pointer active:scale-95"
       >
         <Flag locale={locale} className="h-3.5 w-5 rounded-[3px] shadow-sm ring-1 ring-black/10" />
         {localeNames[locale]}
         <svg
-          className={`w-3 h-3 transition-transform ${langOpen ? "rotate-180" : ""}`}
+          className={`w-3 h-3 transition-transform duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] ${langOpen ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -85,39 +83,41 @@ export default function Navbar({
         </svg>
       </button>
 
-      {langOpen && (
-        <div
-          role="menu"
-          className="absolute left-0 lg:left-auto lg:right-0 top-full mt-2 w-40 rounded-xl border border-black/5 bg-white py-1.5 shadow-xl"
-        >
-          {locales.map((l) => (
-            <Link
-              key={l}
-              href={languagePaths?.[l] ?? homePath(l)}
-              hrefLang={l}
-              role="menuitem"
-              onClick={() => {
-                setLangOpen(false);
-                setMobileMenuOpen(false);
-              }}
-              className={`flex items-center gap-2.5 px-3.5 py-2 text-sm transition-colors ${
-                l === locale
-                  ? "bg-[#2456d6]/10 font-semibold text-[#2456d6]"
-                  : "text-[#334155] hover:bg-black/5"
-              }`}
-            >
-              <Flag locale={l} className="h-3.5 w-5 rounded-[3px] shadow-sm ring-1 ring-black/10" />
-              {localeFullNames[l]}
-            </Link>
-          ))}
-        </div>
-      )}
+      <div
+        role="menu"
+        className={`absolute left-0 lg:left-auto lg:right-0 top-full mt-2 w-40 rounded-xl border border-black/5 bg-white py-1.5 shadow-xl transition-all duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] origin-top ${
+          langOpen
+            ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
+            : "opacity-0 scale-95 -translate-y-1 pointer-events-none"
+        }`}
+      >
+        {locales.map((l) => (
+          <Link
+            key={l}
+            href={languagePaths?.[l] ?? homePath(l)}
+            hrefLang={l}
+            role="menuitem"
+            onClick={() => {
+              setLangOpen(false);
+              setMobileMenuOpen(false);
+            }}
+            className={`flex items-center gap-2.5 px-3.5 py-2 text-sm transition-colors ${
+              l === locale
+                ? "bg-[#2456d6]/10 font-semibold text-[#2456d6]"
+                : "text-[#334155] hover:bg-black/5"
+            }`}
+          >
+            <Flag locale={l} className="h-3.5 w-5 rounded-[3px] shadow-sm ring-1 ring-black/10" />
+            {localeFullNames[l]}
+          </Link>
+        ))}
+      </div>
     </div>
   );
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
         scrolled
           ? "bg-white/90 backdrop-blur-lg shadow-sm border-b border-black/5 py-3"
           : "bg-transparent py-5"
@@ -126,7 +126,7 @@ export default function Navbar({
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8">
         {/* Logo */}
         <Link href={base} className="flex items-center gap-2.5 group" aria-label="SiteStudio">
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#2456d6] text-white font-bold text-lg transition-transform group-hover:scale-105">
+          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-[#2456d6] text-white font-bold text-lg transition-transform duration-200 group-hover:scale-105 group-active:scale-95 shadow-sm">
             S
           </span>
           <span className="text-xl font-bold tracking-tight text-[#0f172a]">
@@ -137,7 +137,11 @@ export default function Navbar({
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-[#334155]">
           {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} className="hover:text-[#2456d6] transition-colors">
+            <Link
+              key={link.href}
+              href={link.href}
+              className="relative hover:text-[#2456d6] transition-colors py-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[#2456d6] after:origin-bottom-right after:scale-x-0 hover:after:scale-x-100 hover:after:origin-bottom-left after:transition-transform after:duration-200 after:ease-out"
+            >
               {link.label}
             </Link>
           ))}
@@ -147,7 +151,7 @@ export default function Navbar({
           {langSwitcher}
           <Link
             href={ctaHref}
-            className="rounded-xl bg-[#2456d6] px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#1a41ab] transition-colors"
+            className="rounded-xl bg-[#2456d6] px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#1a41ab] transition-all duration-150 active:scale-[0.98] hover:shadow-md"
           >
             {dict.nav.cta}
           </Link>
@@ -156,7 +160,7 @@ export default function Navbar({
         {/* Mobile menu button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 text-[#0f172a]"
+          className="lg:hidden p-2 text-[#0f172a] rounded-lg active:scale-95 transition-transform cursor-pointer"
           aria-label={mobileMenuOpen ? dict.nav.menuClose : dict.nav.menuOpen}
           aria-expanded={mobileMenuOpen}
         >
@@ -170,15 +174,19 @@ export default function Navbar({
         </button>
       </div>
 
-      {/* Mobile menu */}
-      {mobileMenuOpen && (
-        <nav className="lg:hidden bg-white border-b border-black/5 px-6 py-6 mt-3 space-y-4 shadow-xl">
+      {/* Mobile menu with smooth slide transition */}
+      <div
+        className={`lg:hidden overflow-hidden transition-[max-height,opacity] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          mobileMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
+        }`}
+      >
+        <nav className="bg-white border-b border-black/5 px-6 py-6 mt-3 space-y-4 shadow-xl">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block py-1 text-[#334155] hover:text-[#2456d6] font-medium"
+              className="block py-1 text-[#334155] hover:text-[#2456d6] font-medium transition-colors"
             >
               {link.label}
             </Link>
@@ -188,13 +196,13 @@ export default function Navbar({
             <Link
               href={ctaHref}
               onClick={() => setMobileMenuOpen(false)}
-              className="block rounded-xl bg-[#2456d6] text-white px-5 py-3 text-sm font-semibold text-center"
+              className="block rounded-xl bg-[#2456d6] text-white px-5 py-3 text-sm font-semibold text-center active:scale-[0.98] transition-transform"
             >
               {dict.nav.cta}
             </Link>
           </div>
         </nav>
-      )}
+      </div>
     </header>
   );
 }
