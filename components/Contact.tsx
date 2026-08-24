@@ -87,6 +87,44 @@ export default function Contact({ dict, locale = "lt" }: { dict: Dict; locale?: 
                   <div className="text-[#0f172a] font-semibold">{t.responseValue}</div>
                 </div>
               </div>
+
+              <div className="flex items-center gap-4 pt-1">
+                <a
+                  href="https://wa.me/37067966793?text=Sveiki%2C%20noriu%20pasikonsultuoti%20d%C4%97l%20svetain%C4%97s."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Rašyti per WhatsApp"
+                  className="social-contact-icon inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-[#25D366]/30 transition-transform hover:scale-110 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#25D366]"
+                >
+                  <svg className="h-7 w-7" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+                    <path d="M16.04 3A12.93 12.93 0 0 0 5.01 22.7L3.3 29l6.45-1.69A12.96 12.96 0 1 0 16.04 3Zm0 23.72a10.74 10.74 0 0 1-5.48-1.5l-.39-.23-3.83 1 1.02-3.73-.25-.39a10.76 10.76 0 1 1 8.93 4.85Zm5.9-8.06c-.32-.16-1.91-.94-2.21-1.05-.3-.11-.51-.16-.73.16-.21.32-.83 1.05-1.02 1.26-.19.21-.38.24-.7.08-.32-.16-1.37-.5-2.6-1.61a9.75 9.75 0 0 1-1.8-2.24c-.19-.32-.02-.5.14-.66.15-.14.32-.38.49-.57.16-.19.21-.32.32-.54.11-.21.05-.4-.03-.57-.08-.16-.73-1.75-1-2.4-.26-.63-.53-.54-.73-.55h-.62c-.21 0-.57.08-.86.4-.3.32-1.13 1.1-1.13 2.69s1.16 3.12 1.32 3.34c.16.21 2.28 3.48 5.52 4.88.77.33 1.37.53 1.84.68.77.25 1.48.21 2.03.13.62-.09 1.91-.78 2.18-1.53.27-.75.27-1.4.19-1.53-.08-.14-.3-.22-.62-.38Z" />
+                  </svg>
+                </a>
+
+                <a
+                  href="https://www.facebook.com/share/1DdJnAuZuq/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Atidaryti SiteStudio Facebook profilį"
+                  className="social-contact-icon social-contact-icon-delay-1 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#1877F2] text-white shadow-lg shadow-[#1877F2]/30 transition-transform hover:scale-110 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#1877F2]"
+                >
+                  <svg className="h-8 w-8" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.03 1.79-4.7 4.53-4.7 1.31 0 2.69.24 2.69.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07Z" />
+                  </svg>
+                </a>
+
+                <a
+                  href="https://m.me/61588234395137"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Rašyti per Messenger"
+                  className="social-contact-icon social-contact-icon-delay-2 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[linear-gradient(135deg,#00B2FF,#006AFF,#A033FF)] text-white shadow-lg shadow-[#006AFF]/30 transition-transform hover:scale-110 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#006AFF]"
+                >
+                  <svg className="h-8 w-8" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2C6.48 2 2 6.15 2 11.27c0 2.92 1.46 5.52 3.74 7.22V22l3.42-1.88c.9.26 1.86.41 2.84.41 5.52 0 10-4.15 10-9.26S17.52 2 12 2Zm.99 12.48-2.55-2.72-4.98 2.72 5.47-5.81 2.62 2.72 4.91-2.72-5.47 5.81Z" />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
 

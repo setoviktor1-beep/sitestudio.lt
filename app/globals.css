@@ -181,6 +181,35 @@
     hero-float 7s ease-in-out 1.2s infinite;
 }
 
+/* Gentle, staggered motion for the icon-only contact shortcuts */
+@keyframes social-contact-float {
+  0%,
+  100% {
+    translate: 0 0;
+    rotate: 0deg;
+  }
+  50% {
+    translate: 0 -5px;
+    rotate: 3deg;
+  }
+}
+
+.social-contact-icon {
+  animation: social-contact-float 2.4s ease-in-out infinite;
+}
+
+.social-contact-icon-delay-1 {
+  animation-delay: -0.8s;
+}
+
+.social-contact-icon-delay-2 {
+  animation-delay: -1.6s;
+}
+
+.social-contact-icon:hover {
+  animation-play-state: paused;
+}
+
 /* Card hover lift */
 .card-hover {
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
