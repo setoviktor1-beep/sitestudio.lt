@@ -198,6 +198,10 @@
   animation: social-contact-float 2.4s ease-in-out infinite;
 }
 
+.social-contact-icon-delay-0 {
+  animation-delay: 0s;
+}
+
 .social-contact-icon-delay-1 {
   animation-delay: -0.8s;
 }

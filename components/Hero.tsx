@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Dict, Locale } from "@/lib/i18n";
 import { homePath } from "@/lib/i18n";
+import SocialLinks from "@/components/SocialLinks";
 
 export default function Hero({ dict, locale = "lt" }: { dict: Dict; locale?: Locale }) {
   const base = homePath(locale);
@@ -36,6 +37,8 @@ export default function Hero({ dict, locale = "lt" }: { dict: Dict; locale?: Loc
                 {dict.hero.ctaSecondary}
               </Link>
             </div>
+
+            <SocialLinks size="md" className="hero-fade-up hero-delay-4 mt-6 flex lg:hidden" />
 
             <ul className="hero-fade-up hero-delay-4 mt-8 space-y-2 text-sm text-[#475569]">
               {dict.hero.bullets.map((item) => (

@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import type { Dict, Locale } from "@/lib/i18n";
 import { locales, localeNames, localeFullNames, homePath } from "@/lib/i18n";
 import Flag from "./Flag";
+import SocialLinks from "./SocialLinks";
 
 export default function Navbar({
   dict,
@@ -147,7 +148,8 @@ export default function Navbar({
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-5">
+        <div className="hidden lg:flex items-center gap-3">
+          <SocialLinks size="sm" className="hidden xl:flex" />
           {langSwitcher}
           <Link
             href={ctaHref}
@@ -176,8 +178,10 @@ export default function Navbar({
 
       {/* Mobile menu with smooth slide transition */}
       <div
-        className={`lg:hidden overflow-hidden transition-[max-height,opacity] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          mobileMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0 pointer-events-none"
+        className={`lg:hidden transition-[max-height,opacity] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          mobileMenuOpen
+            ? "max-h-[calc(100dvh-5rem)] overflow-y-auto opacity-100"
+            : "max-h-0 overflow-hidden opacity-0 pointer-events-none"
         }`}
       >
         <nav className="bg-white border-b border-black/5 px-6 py-6 mt-3 space-y-4 shadow-xl">
@@ -192,6 +196,9 @@ export default function Navbar({
             </Link>
           ))}
           <div className="pt-4 border-t border-black/5 space-y-4">
+            <div onClick={() => setMobileMenuOpen(false)}>
+              <SocialLinks size="md" className="flex" />
+            </div>
             {langSwitcher}
             <Link
               href={ctaHref}
