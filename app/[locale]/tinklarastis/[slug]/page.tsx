@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import { prefixedLocales, type Locale, getDict, languageAlternates } from "@/lib/i18n";
+import { prefixedLocales, type Locale, getDict, pathAlternates } from "@/lib/i18n";
 import { siteGraph, webPageNode, breadcrumbNode, PERSON_ID } from "@/lib/jsonld";
 import { BLOG_POSTS } from "@/lib/blog";
 import { getLocalizedBlogPost, getLocalizedBlogPosts } from "@/lib/blog-i18n";
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: post.description,
     alternates: {
       canonical,
-      languages: languageAlternates,
+      languages: pathAlternates(`/tinklarastis/${slug}`),
     },
     openGraph: {
       title: post.title,

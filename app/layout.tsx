@@ -63,6 +63,12 @@ export default function RootLayout({
   return (
     <html lang="lt" className={`scroll-smooth ${inter.variable} ${jakarta.variable}`}>
       <body className="min-h-screen bg-white text-[#0f172a] antialiased">
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{var v=localStorage.getItem('cookie-consent');document.documentElement.setAttribute('data-cookie-consent',(v==='granted'||v==='denied')?v:'unset');}catch(e){}",
+          }}
+        />
         <a
           href="#turinys"
           className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-xl focus:bg-[#2456d6] focus:px-4 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-white"

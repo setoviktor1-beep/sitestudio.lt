@@ -138,6 +138,7 @@ const content: ServicePageContent = {
     { href: "/svetainiu-kurimas", label: "Svetainių kūrimas" },
     { href: "/el-parduotuviu-kurimas", label: "El. parduotuvių kūrimas" },
     { href: "/darbai", label: "Atlikti darbai" },
+    { href: "/skaiciuokle", label: "Kainos skaičiuoklė" },
   ],
   cta: {
     title: "Kuris darbas jūsų įmonėje kartojasi dažniausiai?",

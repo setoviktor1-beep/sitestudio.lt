@@ -144,6 +144,7 @@ const content: ServicePageContent = {
     { href: "/el-parduotuviu-kurimas", label: "El. parduotuvių kūrimas" },
     { href: "/ai-automatizavimas", label: "AI ir automatizavimas" },
     { href: "/darbai", label: "Atlikti darbai" },
+    { href: "/skaiciuokle", label: "Kainos skaičiuoklė" },
   ],
   cta: {
     title: "Jūsų svetainei reikia atnaujinimo?",

@@ -10,6 +10,7 @@ import {
   breadcrumbNode,
   faqNode,
 } from "@/lib/jsonld";
+import { getRelatedArticlesForPillar } from "@/lib/blog";
 
 export type ServicePageContent = {
   path: string;
@@ -36,6 +37,7 @@ export type ServicePageContent = {
 
 export default async function ServicePage({ content }: { content: ServicePageContent }) {
   const dict = await getDict("lt");
+  const relatedArticles = getRelatedArticlesForPillar(content.path);
   const crumbs = [
     { name: "Pradžia", href: "/" },
     { name: "Paslaugos", href: "/paslaugos" },
@@ -152,14 +154,25 @@ export default async function ServicePage({ content }: { content: ServicePageCon
           {content.pricing && (
             <section className="mt-16">
               <h2 className="text-2xl font-bold">{content.pricing.title}</h2>
-              <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-                {content.pricing.rows.map((row) => (
-                  <div key={row.name} className="rounded-2xl border border-[#0f172a]/10 bg-[#f6f8fb] p-7">
-                    <h3 className="font-bold">{row.name}</h3>
-                    <p className="mt-1 text-2xl font-extrabold text-[#2456d6]">{row.price}</p>
-                    <p className="mt-3 text-sm text-[#475569] leading-relaxed">{row.description}</p>
-                  </div>
-                ))}
+              <div className="mt-8 overflow-x-auto rounded-2xl border border-[#0f172a]/10">
+                <table className="w-full min-w-[560px] border-collapse text-left text-sm">
+                  <thead>
+                    <tr className="bg-[#f6f8fb]">
+                      <th scope="col" className="p-5 font-bold text-[#0f172a]">Planas</th>
+                      <th scope="col" className="p-5 font-bold text-[#2456d6]">Kaina</th>
+                      <th scope="col" className="p-5 font-bold text-[#0f172a]">Kas įeina</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {content.pricing.rows.map((row) => (
+                      <tr key={row.name} className="border-t border-[#0f172a]/10">
+                        <th scope="row" className="p-5 align-top font-bold text-[#0f172a]">{row.name}</th>
+                        <td className="p-5 align-top text-lg font-extrabold text-[#2456d6] whitespace-nowrap">{row.price}</td>
+                        <td className="p-5 align-top leading-relaxed text-[#475569]">{row.description}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
               {content.pricing.note && (
                 <p className="mt-5 text-sm text-[#64748b] max-w-3xl">{content.pricing.note}</p>
@@ -204,6 +217,30 @@ export default async function ServicePage({ content }: { content: ServicePageCon
                     </summary>
                     <p className="mt-4 text-sm text-[#475569] leading-relaxed">{item.a}</p>
                   </details>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Related articles */}
+          {relatedArticles.length > 0 && (
+            <section className="mt-16">
+              <h2 className="text-2xl font-bold">Susiję straipsniai</h2>
+              <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {relatedArticles.map((post) => (
+                  <Link
+                    key={post.slug}
+                    href={`/tinklarastis/${post.slug}`}
+                    className="group flex flex-col justify-between rounded-2xl border border-[#0f172a]/10 p-5 hover:border-[#2456d6] transition-all bg-white"
+                  >
+                    <div>
+                      <span className="text-[11px] font-semibold text-[#2456d6]">{post.category}</span>
+                      <h3 className="font-bold text-sm text-[#0f172a] mt-1 group-hover:text-[#2456d6] transition-colors">
+                        {post.title}
+                      </h3>
+                    </div>
+                    <p className="text-xs text-[#64748b] mt-4">{post.readTime} skaitymo</p>
+                  </Link>
                 ))}
               </div>
             </section>

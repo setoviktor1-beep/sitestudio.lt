@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { getDict, pathAlternates } from "@/lib/i18n";
-import { BLOG_POSTS, getBlogPostBySlug } from "@/lib/blog";
+import { BLOG_POSTS, getBlogPostBySlug, getPillarForPost, getBioVariant, getCtaVariant } from "@/lib/blog";
 import {
   siteGraph,
   webPageNode,
@@ -102,6 +102,9 @@ export default async function BlogPostPage({
   );
 
   const otherPosts = BLOG_POSTS.filter((p) => p.slug !== post.slug).slice(0, 3);
+  const pillar = getPillarForPost(post.slug);
+  const bio = getBioVariant(post.slug);
+  const cta = getCtaVariant(post.slug);
 
   return (
     <div className="min-h-screen bg-white text-[#0f172a] antialiased">
@@ -148,6 +151,38 @@ export default async function BlogPostPage({
                 </section>
               ))}
 
+              {post.slug === "kiek-kainuoja-svetaines-kurimas" && (
+                <div className="mt-10 overflow-x-auto rounded-2xl border border-[#0f172a]/10">
+                  <table className="w-full min-w-[560px] border-collapse text-left text-sm">
+                    <caption className="sr-only">Svetainių kainų rėžiai Lietuvoje 2026 m.</caption>
+                    <thead>
+                      <tr className="bg-[#f6f8fb]">
+                        <th scope="col" className="p-5 font-bold text-[#0f172a]">Svetainės tipas</th>
+                        <th scope="col" className="p-5 font-bold text-[#2456d6]">Kainos rėžis</th>
+                        <th scope="col" className="p-5 font-bold text-[#0f172a]">Terminas</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-t border-[#0f172a]/10">
+                        <th scope="row" className="p-5 align-top font-bold text-[#0f172a]">Starto / Landing page</th>
+                        <td className="p-5 align-top text-base font-extrabold text-[#2456d6] whitespace-nowrap">200 € – 500 €</td>
+                        <td className="p-5 align-top text-[#475569]">1–2 savaitės</td>
+                      </tr>
+                      <tr className="border-t border-[#0f172a]/10">
+                        <th scope="row" className="p-5 align-top font-bold text-[#0f172a]">Verslo svetainė su CMS</th>
+                        <td className="p-5 align-top text-base font-extrabold text-[#2456d6] whitespace-nowrap">500 € – 1 500 €</td>
+                        <td className="p-5 align-top text-[#475569]">2–4 savaitės</td>
+                      </tr>
+                      <tr className="border-t border-[#0f172a]/10">
+                        <th scope="row" className="p-5 align-top font-bold text-[#0f172a]">El. parduotuvė / individuali sistema</th>
+                        <td className="p-5 align-top text-base font-extrabold text-[#2456d6] whitespace-nowrap">1 200 € – 4 000+ €</td>
+                        <td className="p-5 align-top text-[#475569]">nuo 3–4 savaičių</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              )}
+
               {post.content.takeaways.length > 0 && (
                 <div className="mt-10 rounded-2xl bg-[#f6f8fb] border border-[#0f172a]/10 p-7">
                   <h3 className="text-lg font-bold text-[#0f172a] mb-3">Pagrindinės išvados</h3>
@@ -165,35 +200,37 @@ export default async function BlogPostPage({
               )}
             </div>
 
-            {/* Related pages block for the pricing post */}
-            {post.slug === "kiek-kainuoja-svetaines-kurimas" && (
+            {/* Related pages block, derived from this post's topic pillar */}
+            {pillar && (
               <div className="mt-10 rounded-2xl border border-[#0f172a]/10 bg-[#f6f8fb] p-7">
                 <h3 className="text-base font-bold text-[#0f172a] mb-4">Susiję puslapiai</h3>
                 <ul className="space-y-3">
                   <li>
                     <Link
-                      href="/svetainiu-kurimas"
+                      href={pillar.href}
                       className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2456d6] hover:underline"
                     >
                       <span>→</span>
-                      Svetainių kūrimas — kainos, apimtis ir procesas
+                      {pillar.label}
                     </Link>
                     <p className="mt-0.5 text-xs text-[#64748b]">
                       Išsami informacija apie paslaugą su kainų lentele ir DUK.
                     </p>
                   </li>
-                  <li>
-                    <Link
-                      href="/skaiciuokle"
-                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2456d6] hover:underline"
-                    >
-                      <span>→</span>
-                      Svetainės kainos skaičiuoklė
-                    </Link>
-                    <p className="mt-0.5 text-xs text-[#64748b]">
-                      Suskaičiuokite orientacinę savo svetainės kainą per 2 minutes.
-                    </p>
-                  </li>
+                  {post.slug === "kiek-kainuoja-svetaines-kurimas" && (
+                    <li>
+                      <Link
+                        href="/skaiciuokle"
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#2456d6] hover:underline"
+                      >
+                        <span>→</span>
+                        Svetainės kainos skaičiuoklė
+                      </Link>
+                      <p className="mt-0.5 text-xs text-[#64748b]">
+                        Suskaičiuokite orientacinę savo svetainės kainą per 2 minutes.
+                      </p>
+                    </li>
+                  )}
                 </ul>
               </div>
             )}
@@ -206,19 +243,17 @@ export default async function BlogPostPage({
               <div>
                 <p className="font-bold text-sm text-[#0f172a]">Viktor Seto</p>
                 <p className="text-xs text-[#64748b]">Svetainių ir interneto sistemų kūrėjas • SiteStudio įkūrėjas</p>
-                <p className="text-xs text-[#475569] mt-1">Padeda Lietuvos verslams kurti greitas, konvertuojančias svetaines ir automatizuoti procesus.</p>
+                <p className="text-xs text-[#475569] mt-1">{bio}</p>
               </div>
             </div>
 
             {/* CTA Banner */}
             <div className="mt-12 rounded-3xl bg-[#2456d6] p-8 text-white">
-              <h2 className="text-2xl font-bold">Turite klausimų dėl savo svetainės?</h2>
-              <p className="mt-2 text-white/80 text-sm">
-                Pasitarkite tiesiogiai su kūrėju — per vieną darbo dieną atsakysime ir pateiksime rekomendacijas.
-              </p>
+              <h2 className="text-2xl font-bold">{cta.title}</h2>
+              <p className="mt-2 text-white/80 text-sm">{cta.text}</p>
               <div className="mt-5">
                 <Link href="/kontaktai" className="rounded-xl bg-white px-6 py-2.5 text-sm font-bold text-[#2456d6] shadow-sm hover:bg-[#f8fafc] transition-colors inline-block">
-                  Gauti nemokamą konsultaciją
+                  {cta.button}
                 </Link>
               </div>
             </div>

@@ -1,7 +1,18 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getDict } from "@/lib/i18n";
+
+// Overrides the root layout's homepage title/canonical, which would
+// otherwise be inherited here and make Google treat this error page as a
+// duplicate of the homepage.
+export const metadata: Metadata = {
+  title: "Puslapis nerastas (404) | SiteStudio",
+  description: "Ieškomas puslapis nerastas. Galbūt jis buvo perkeltas arba adresas įvestas neteisingai.",
+  alternates: { canonical: undefined },
+  robots: { index: false, follow: true },
+};
 
 export default async function NotFound() {
   const dict = await getDict("lt");

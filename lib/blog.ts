@@ -846,3 +846,96 @@ export function getAllBlogSlugs(): string[] {
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
   return BLOG_POSTS.find((p) => p.slug === slug);
 }
+
+/**
+ * Lightweight topic tagging: maps each service pillar page to the blog posts
+ * that genuinely support it, so pillar pages can link out to relevant guides
+ * and posts can link back to their pillar (instead of a hardcoded, one-off
+ * related-articles widget). Curated manually since post `category` values
+ * are display labels, not a pillar taxonomy.
+ */
+export const PILLAR_ARTICLE_SLUGS: Record<string, string[]> = {
+  "/svetainiu-kurimas": [
+    "kiek-kainuoja-svetaines-kurimas",
+    "nextjs-vs-wordpress",
+    "kaip-pasiruosti-svetaines-kurimui",
+    "kas-yra-turinio-valdymo-sistema",
+    "kaip-sukurti-efektyvu-landing-page",
+    "b2b-svetainiu-kurimas",
+  ],
+  "/el-parduotuviu-kurimas": [
+    "kiek-kainuoja-el-parduotuves-kurimas",
+    "el-parduotuves-mokejimu-budai-lietuvoje",
+  ],
+  "/ai-automatizavimas": ["ai-automatizavimas-smulkiam-verslui"],
+  "/svetainiu-atnaujinimas": [
+    "svetaines-atnaujinimas-kada-verta",
+    "svetaines-greicio-optimizavimas",
+    "svetaines-konversiju-didinimas",
+  ],
+  "/interneto-sistemu-kurimas": ["kas-yra-turinio-valdymo-sistema"],
+};
+
+const PILLAR_LABELS: Record<string, string> = {
+  "/svetainiu-kurimas": "Svetainių kūrimas — kainos, apimtis ir procesas",
+  "/el-parduotuviu-kurimas": "El. parduotuvių kūrimas",
+  "/ai-automatizavimas": "AI ir verslo procesų automatizavimas",
+  "/svetainiu-atnaujinimas": "Svetainių atnaujinimas",
+  "/interneto-sistemu-kurimas": "Interneto sistemų kūrimas",
+};
+
+/** Reverse lookup: which pillar page a given post slug primarily supports. */
+export function getPillarForPost(slug: string): { href: string; label: string } | undefined {
+  for (const [href, slugs] of Object.entries(PILLAR_ARTICLE_SLUGS)) {
+    if (slugs.includes(slug)) return { href, label: PILLAR_LABELS[href] };
+  }
+  return undefined;
+}
+
+export function getRelatedArticlesForPillar(path: string): BlogPost[] {
+  const slugs = PILLAR_ARTICLE_SLUGS[path] ?? [];
+  return slugs
+    .map((slug) => getBlogPostBySlug(slug))
+    .filter((p): p is BlogPost => Boolean(p));
+}
+
+/**
+ * Rotating variants of the author bio blurb and CTA banner text shown on
+ * every blog post. Same facts each time (same author, same offer), just
+ * phrased differently, so the 17 posts don't repeat one identical string.
+ * Selected deterministically by post index so output is stable per slug.
+ */
+const AUTHOR_BIO_VARIANTS = [
+  "Padeda Lietuvos verslams kurti greitas, konvertuojančias svetaines ir automatizuoti procesus.",
+  "Kuria svetaines ir sistemas, kurios krauna greitai ir realiai atneša užklausų, o ne tik gražiai atrodo.",
+  "Dirba tiesiogiai su klientais visoje Lietuvoje — nuo pirmo pokalbio iki svetainės paleidimo ir priežiūros.",
+  "Specializuojasi Next.js svetainėse, el. parduotuvėse ir procesų automatizavime mažam bei vidutiniam verslui.",
+];
+
+const CTA_VARIANTS = [
+  {
+    title: "Turite klausimų dėl savo svetainės?",
+    text: "Pasitarkite tiesiogiai su kūrėju — per vieną darbo dieną atsakysime ir pateiksime rekomendacijas.",
+    button: "Gauti nemokamą konsultaciją",
+  },
+  {
+    title: "Planuojate naują svetainę ar atnaujinimą?",
+    text: "Parašykite, ko reikia — per vieną darbo dieną gausite konkretų atsakymą ir orientacinę kainą.",
+    button: "Susisiekti dėl pasiūlymo",
+  },
+  {
+    title: "Norite sužinoti, kiek kainuotų jūsų projektas?",
+    text: "Trumpai aprašykite poreikį tiesiogiai vykdytojui — jokių tarpininkų, atsakome per vieną darbo dieną.",
+    button: "Gauti kainos pasiūlymą",
+  },
+];
+
+export function getBioVariant(slug: string): string {
+  const idx = BLOG_POSTS.findIndex((p) => p.slug === slug);
+  return AUTHOR_BIO_VARIANTS[(idx < 0 ? 0 : idx) % AUTHOR_BIO_VARIANTS.length];
+}
+
+export function getCtaVariant(slug: string): (typeof CTA_VARIANTS)[number] {
+  const idx = BLOG_POSTS.findIndex((p) => p.slug === slug);
+  return CTA_VARIANTS[(idx < 0 ? 0 : idx) % CTA_VARIANTS.length];
+}

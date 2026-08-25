@@ -127,8 +127,6 @@ export function serviceNode(
         priceCurrency: "EUR",
       };
       // Derive a machine-readable minPrice from display strings like "nuo 200 €".
-      // Custom-quote rows ("pagal apimtį", "sutartinai") have no digits and are
-      // correctly left without a priceSpecification.
       const match = o.price.match(/(\d[\d\s.,]*)\s*€/);
       if (match) {
         const minPrice = Number(match[1].replace(/[\s.]/g, "").replace(",", "."));
@@ -140,6 +138,16 @@ export function serviceNode(
           };
           offer.availability = "https://schema.org/InStock";
         }
+      } else {
+        // Custom-quote rows ("pagal apimtį", "sutartinai") have no digits —
+        // an Offer with only priceCurrency and no price is incomplete per
+        // schema.org, so signal "price on request" instead of a bare currency.
+        offer.priceSpecification = {
+          "@type": "PriceSpecification",
+          priceCurrency: "EUR",
+          valueAddedTaxIncluded: false,
+          description: "Kaina priklauso nuo projekto apimties, pateikiama individualiu pasiūlymu",
+        };
       }
       return offer;
     });

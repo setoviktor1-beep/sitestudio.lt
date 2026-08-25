@@ -148,6 +148,7 @@ const content: ServicePageContent = {
     { href: "/el-parduotuviu-kurimas", label: "El. parduotuvių kūrimas" },
     { href: "/interneto-sistemu-kurimas", label: "Interneto sistemų kūrimas" },
     { href: "/darbai", label: "Atlikti darbai" },
+    { href: "/skaiciuokle", label: "Kainos skaičiuoklė" },
   ],
   cta: {
     title: "Reikia svetainės jūsų verslui?",

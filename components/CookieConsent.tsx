@@ -65,8 +65,14 @@ function removeAnalyticsCookies() {
 }
 
 export default function CookieConsent() {
-  const [ready, setReady] = useState(false);
-  const [visible, setVisible] = useState(false);
+  // `mounted` gates only *interactive* JS-driven visibility overrides, not the
+  // initial paint: the banner markup below is always server-rendered so it is
+  // eligible to paint immediately instead of waiting on hydration, and a
+  // blocking inline script in app/layout.tsx sets the `data-cookie-consent`
+  // attribute (read by CSS in globals.css) before first paint so returning
+  // visitors who already chose see no flash of the banner.
+  const [mounted, setMounted] = useState(false);
+  const [visible, setVisible] = useState(true);
   const [analyticsEnabled, setAnalyticsEnabled] = useState(false);
   const pathname = usePathname();
 
@@ -78,13 +84,20 @@ export default function CookieConsent() {
 
   useEffect(() => {
     const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored === "granted") setAnalyticsEnabled(true);
-    else if (stored !== "denied") setVisible(true);
-    setReady(true);
+    if (stored === "granted") {
+      setAnalyticsEnabled(true);
+      setVisible(false);
+    } else if (stored === "denied") {
+      setVisible(false);
+    } else {
+      setVisible(true);
+    }
+    setMounted(true);
   }, []);
 
   const choose = (choice: "granted" | "denied") => {
     localStorage.setItem(STORAGE_KEY, choice);
+    document.documentElement.setAttribute("data-cookie-consent", choice);
     if (choice === "granted") {
       const w = window as typeof window & { gtag?: (...args: unknown[]) => void };
       w.gtag?.("consent", "update", { analytics_storage: "granted" });
@@ -99,7 +112,16 @@ export default function CookieConsent() {
     setVisible(false);
   };
 
-  if (!ready) return null;
+  const reopen = () => {
+    document.documentElement.setAttribute("data-cookie-consent", "unset");
+    setVisible(true);
+  };
+
+  // Before hydration completes, no inline `display` is applied here and the
+  // CSS attribute selectors in globals.css decide visibility (no JS needed
+  // for correct first paint). After hydration, real consent state governs.
+  const bannerStyle = mounted ? { display: visible ? undefined : "none" } : undefined;
+  const reopenStyle = mounted ? { display: visible ? "none" : undefined } : undefined;
 
   return (
     <>
@@ -124,34 +146,37 @@ export default function CookieConsent() {
         </>
       )}
 
-      {visible ? (
-        <div className="fixed inset-x-0 bottom-0 z-50 p-2 sm:p-6" role="dialog" aria-label={t.settings}>
-          <div className="mx-auto flex max-w-3xl flex-col gap-2 rounded-2xl border border-slate-200 bg-white/98 p-3 shadow-xl backdrop-blur sm:flex-row sm:items-center sm:gap-4 sm:p-5">
-            <p className="flex-1 text-xs leading-snug text-slate-700 sm:text-sm sm:leading-normal">
-              {t.message}{" "}
-              <Link href={legalPath(locale, "cookies")} className="font-medium text-slate-900 underline underline-offset-2 hover:text-slate-600">
-                {t.policy}
-              </Link>
-            </p>
-            <div className="flex shrink-0 gap-2 sm:gap-3">
-              <button type="button" onClick={() => choose("denied")} className="flex-1 rounded-lg border border-slate-300 px-3 py-2 text-xs font-medium text-slate-700 transition hover:bg-slate-50 sm:flex-none sm:px-4 sm:text-sm">
-                {t.decline}
-              </button>
-              <button type="button" onClick={() => choose("granted")} className="flex-1 rounded-lg bg-[#2456d6] px-3 py-2 text-xs font-medium text-white transition hover:bg-[#1a41ab] sm:flex-none sm:px-4 sm:text-sm">
-                {t.accept}
-              </button>
-            </div>
+      <div
+        className="cookie-banner fixed inset-x-0 bottom-0 z-50 p-2 sm:p-6"
+        style={bannerStyle}
+        role="dialog"
+        aria-label={t.settings}
+      >
+        <div className="mx-auto flex max-w-3xl flex-col gap-2 rounded-2xl border border-slate-200 bg-white/98 p-3 shadow-xl backdrop-blur sm:flex-row sm:items-center sm:gap-4 sm:p-5">
+          <p className="flex-1 text-xs leading-snug text-slate-700 sm:text-sm sm:leading-normal">
+            {t.message}{" "}
+            <Link href={legalPath(locale, "cookies")} className="font-medium text-slate-900 underline underline-offset-2 hover:text-slate-600">
+              {t.policy}
+            </Link>
+          </p>
+          <div className="flex shrink-0 gap-2 sm:gap-3">
+            <button type="button" onClick={() => choose("denied")} className="flex-1 rounded-lg border border-slate-300 px-3 py-2 text-xs font-medium text-slate-700 transition hover:bg-slate-50 sm:flex-none sm:px-4 sm:text-sm">
+              {t.decline}
+            </button>
+            <button type="button" onClick={() => choose("granted")} className="flex-1 rounded-lg bg-[#2456d6] px-3 py-2 text-xs font-medium text-white transition hover:bg-[#1a41ab] sm:flex-none sm:px-4 sm:text-sm">
+              {t.accept}
+            </button>
           </div>
         </div>
-      ) : (
-        <button
-          type="button"
-          onClick={() => setVisible(true)}
-          className="fixed bottom-3 left-3 z-40 rounded-lg border border-slate-300 bg-white/95 px-3 py-2 text-xs font-medium text-slate-600 shadow-sm backdrop-blur hover:text-[#2456d6]"
-        >
-          {t.settings}
-        </button>
-      )}
+      </div>
+      <button
+        type="button"
+        onClick={reopen}
+        style={reopenStyle}
+        className="cookie-reopen-btn fixed bottom-3 left-3 z-40 rounded-lg border border-slate-300 bg-white/95 px-3 py-2 text-xs font-medium text-slate-600 shadow-sm backdrop-blur hover:text-[#2456d6]"
+      >
+        {t.settings}
+      </button>
     </>
   );
 }
