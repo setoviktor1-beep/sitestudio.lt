@@ -4,7 +4,7 @@
  */
 export async function sendTelegramContactNotification(params: {
   name: string;
-  email: string;
+  email?: string;
   phone?: string;
   message: string;
 }): Promise<void> {
@@ -17,7 +17,7 @@ export async function sendTelegramContactNotification(params: {
     "Nauja užklausa iš sitestudio.lt",
     "",
     `Vardas: ${params.name}`,
-    `El. paštas: ${params.email}`,
+    `El. paštas: ${params.email || "—"}`,
     `Telefonas: ${params.phone || "—"}`,
     "",
     "Žinutė:",

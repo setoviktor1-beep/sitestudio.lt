@@ -14,6 +14,7 @@ import type { Dict, Locale } from "@/lib/i18n";
 import { homePath } from "@/lib/i18n";
 import { siteGraph, webPageNode, faqNode, portfolioListNode } from "@/lib/jsonld";
 import { portfolioProjects } from "@/lib/portfolio";
+import PriceChatbot from "@/components/PriceChatbot";
 
 export default function HomePage({ dict, locale }: { dict: Dict; locale: Locale }) {
   const path = homePath(locale) === "/" ? "" : homePath(locale);
@@ -55,6 +56,7 @@ export default function HomePage({ dict, locale }: { dict: Dict; locale: Locale 
         <Contact dict={dict} locale={locale} />
       </main>
       <Footer dict={dict} locale={locale} />
+      {locale === "lt" && <PriceChatbot />}
     </div>
   );
 }

@@ -24,13 +24,16 @@ function ensureTable(): Promise<void> {
         `CREATE TABLE IF NOT EXISTS contact_request (
            id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
            name TEXT NOT NULL,
-           email TEXT NOT NULL,
+           email TEXT,
            phone TEXT,
            message TEXT NOT NULL,
            ip_hash TEXT,
            created_at TIMESTAMPTZ NOT NULL DEFAULT now()
          )`
       )
+      .then(async () => {
+        await pool.query("ALTER TABLE contact_request ALTER COLUMN email DROP NOT NULL");
+      })
       .then(() => undefined)
       .catch((err) => {
         tableReady = null; // retry on next request
@@ -87,7 +90,19 @@ export async function POST(request: NextRequest) {
   if (name.length < 2 || name.length > 200) {
     return NextResponse.json({ error: "Įrašykite vardą (2–200 simbolių)." }, { status: 400 });
   }
-  if (!EMAIL_RE.test(email) || email.length > 320) {
+  if (!email && !phone) {
+    return NextResponse.json(
+      { error: "Įrašykite el. paštą arba telefono numerį." },
+      { status: 400 }
+    );
+  }
+  if (!email && phone.replace(/\D/g, "").length < 5) {
+    return NextResponse.json(
+      { error: "Įrašykite el. paštą arba teisingą telefono numerį." },
+      { status: 400 }
+    );
+  }
+  if (email && (!EMAIL_RE.test(email) || email.length > 320)) {
     return NextResponse.json({ error: "Įrašykite teisingą el. pašto adresą." }, { status: 400 });
   }
   if (phone.length > 50) {
@@ -128,7 +143,7 @@ export async function POST(request: NextRequest) {
       to: notifyTo,
       subject: `Nauja užklausa iš sitestudio.lt — ${name}`,
       text:
-        `Vardas: ${name}\nEl. paštas: ${email}\nTelefonas: ${phone || "—"}\n\n` +
+        `Vardas: ${name}\nEl. paštas: ${email || "—"}\nTelefonas: ${phone || "—"}\n\n` +
         `Žinutė:\n${message}`,
     }),
     sendTelegramContactNotification({ name, email, phone, message }),

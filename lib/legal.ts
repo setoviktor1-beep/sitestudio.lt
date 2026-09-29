@@ -91,7 +91,7 @@ const lt: Record<LegalKey, LegalDocument> = {
       {
         heading: "1. Kokius duomenis renkame",
         bullets: [
-          "Kontaktų forma: vardas, el. paštas, neprivalomas telefono numeris, žinutė, pateikimo laikas ir vienkryptė IP adreso maiša apsaugai nuo piktnaudžiavimo.",
+          "Kontaktų forma ir pokalbių asistentas: vardas, el. paštas arba telefono numeris, žinutė su pasirinkta paslauga bei kainos įverčiu, pateikimo laikas ir vienkryptė IP adreso maiša apsaugai nuo piktnaudžiavimo.",
           "Paskyra: vardas, el. paštas, saugi slaptažodžio maiša, patvirtinimo ir atkūrimo duomenys, sesijos bei saugumo audito įrašai.",
           "Techniniai duomenys: užklausos laikas, naršyklės ir įrenginio informacija, IP adresas tiek, kiek būtina ryšiui, serverio saugumui ir klaidų diagnostikai.",
           "Google Analytics 4, tik gavus sutikimą: puslapių peržiūros, sąveikos, sesijų statistika, apytikslė geografinė vieta, naršyklės, įrenginio ir nukreipiančio šaltinio informacija. Į kontaktų formas įvestų duomenų į Analytics nesiunčiame.",
