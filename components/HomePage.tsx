@@ -56,7 +56,7 @@ export default function HomePage({ dict, locale }: { dict: Dict; locale: Locale 
         <Contact dict={dict} locale={locale} />
       </main>
       <Footer dict={dict} locale={locale} />
-      {locale === "lt" && <PriceChatbot />}
+      <PriceChatbot key={locale} locale={locale} />
     </div>
   );
 }

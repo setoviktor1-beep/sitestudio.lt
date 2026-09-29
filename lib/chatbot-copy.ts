@@ -1,0 +1,178 @@
+import type { Locale } from "@/lib/i18n";
+
+export type ChatStep = "service" | "new_site" | "site_update" | "system";
+export type PriceId = "website_start" | "website_business" | "website_update_start" | "website_update_business" | "website_quote" | "ecommerce" | "web_system_mvp" | "web_system_quote" | "automation_quote";
+
+type Copy = {
+  title: string; subtitle: string; launcher: string; close: string; greeting: string;
+  restartGreeting: string; loading: string; loadError: string; retry: string;
+  resultIntro: string; noPrice: string; selection: string; quote: string; from: string;
+  excludingVat: string; timeline: string; proposal: string; another: string;
+  emailUs: string; leadTitle: string; leadIntro: string; name: string; contact: string;
+  contactPlaceholder: string; consent: string; privacy: string; send: string;
+  sending: string; back: string; success: string; successDetail: string;
+  restart: string; submitError: string; honeypot: string;
+  questions: Record<ChatStep, string>;
+  answers: Record<ChatStep, string[]>;
+  prices: Record<PriceId, { title: string; description: string }>;
+  timelines: { short: string; medium: string; long: string; scope: string };
+};
+
+export const chatbotCopy: Record<Locale, Copy> = {
+  lt: {
+    title: "SiteStudio", subtitle: "Paslaugų konsultantas", launcher: "Pasitarti", close: "Uždaryti pokalbį",
+    greeting: "Sveiki! Kuo galime jums padėti?", restartGreeting: "Pradėkime iš naujo. Kuo galime padėti?",
+    loading: "Įkeliamos kainos…", loadError: "Kainų nepavyko įkelti. Parašykite mums el. paštu.", retry: "Bandyti dar kartą",
+    resultIntro: "Štai orientacinis įvertis:", noPrice: "Šiai paslaugai įvertį pateiksime individualiai.", selection: "Jūsų pasirinkimas",
+    quote: "Pagal apimtį", from: "Nuo", excludingVat: "Be PVM", timeline: "Terminas", proposal: "Gauti pasiūlymą", another: "Rinktis kitą paslaugą",
+    emailUs: "Rašyti el. paštu", leadTitle: "Palikite kontaktą", leadIntro: "Atsakysime dėl pasirinktos paslaugos ir įverčio.",
+    name: "Vardas", contact: "El. paštas arba telefono numeris", contactPlaceholder: "vardas@imone.lt arba +370…",
+    consent: "Sutinku, kad mano kontaktas būtų naudojamas atsakymui į užklausą.", privacy: "Privatumo politika",
+    send: "Siųsti užklausą", sending: "Siunčiama…", back: "Grįžti prie įverčio", success: "Užklausa išsiųsta",
+    successDetail: "Susisieksime jūsų nurodytu kontaktu.", restart: "Pradėti naują pokalbį", submitError: "Nepavyko išsiųsti užklausos.", honeypot: "Palikite tuščią",
+    questions: { service: "Kuo galime padėti?", new_site: "Kokio tipo svetainės reikia?", site_update: "Kokį atnaujinimą planuojate?", system: "Kokios sistemos reikia?" },
+    answers: { service: ["Nauja svetainė", "El. parduotuvė", "Svetainės atnaujinimas", "Sistema arba MVP", "AI automatizavimas"], new_site: ["Iki 5 puslapių", "Su turinio valdymu", "Didesnė ar individuali"], site_update: ["Iki 5 puslapių", "Su turinio valdymu"], system: ["Produkto MVP", "Individuali sistema"] },
+    prices: {
+      website_start: { title: "Svetainė iki 5 puslapių", description: "Nedidelė reprezentacinė svetainė be turinio valdymo sistemos." },
+      website_business: { title: "Svetainė su turinio valdymu", description: "Kelių puslapių svetainė, kurioje patys galėsite keisti turinį." },
+      website_update_start: { title: "Nedidelės svetainės atnaujinimas", description: "Iki 5 puslapių atnaujinimas su turinio perkėlimu." },
+      website_update_business: { title: "Svetainės atnaujinimas su turinio valdymu", description: "Kelių puslapių atnaujinimas su turinio valdymu ir techniniu SEO." },
+      website_quote: { title: "Didesnė arba individuali svetainė", description: "Svetainė su papildomomis funkcijomis ar integracijomis." },
+      ecommerce: { title: "El. parduotuvė", description: "Katalogas, krepšelis, mokėjimai ir užsakymų valdymas." },
+      web_system_mvp: { title: "Interneto sistemos MVP", description: "Pirmoji produkto versija su pagrindine funkcija." },
+      web_system_quote: { title: "Individuali interneto sistema", description: "Rezervacijos, paskyros, skaičiuoklės ar integracijos." },
+      automation_quote: { title: "AI ir procesų automatizavimas", description: "Įvertinama pagal procesą ir reikalingas integracijas." },
+    },
+    timelines: { short: "1–2 savaitės", medium: "2–4 savaitės", long: "Nuo 4 savaičių", scope: "Pagal apimtį" },
+  },
+  en: {
+    title: "SiteStudio", subtitle: "Service advisor", launcher: "Let's talk", close: "Close chat",
+    greeting: "Hi! How can we help you?", restartGreeting: "Let's start again. How can we help?",
+    loading: "Loading prices…", loadError: "Prices could not be loaded. Please email us.", retry: "Try again",
+    resultIntro: "Here's an initial estimate:", noPrice: "We'll prepare a custom estimate for this service.", selection: "Your selection",
+    quote: "Custom quote", from: "From", excludingVat: "Excl. VAT", timeline: "Timeline", proposal: "Get a proposal", another: "Choose another service",
+    emailUs: "Email us", leadTitle: "Leave your details", leadIntro: "We'll get back to you about this service and estimate.",
+    name: "Name", contact: "Email or phone number", contactPlaceholder: "name@company.com or +370…",
+    consent: "I agree to the use of my contact details to reply to this enquiry.", privacy: "Privacy policy",
+    send: "Send enquiry", sending: "Sending…", back: "Back to estimate", success: "Enquiry sent",
+    successDetail: "We'll contact you using the details provided.", restart: "Start a new chat", submitError: "Could not send your enquiry.", honeypot: "Leave empty",
+    questions: { service: "What can we help you with?", new_site: "What kind of website do you need?", site_update: "What update are you planning?", system: "What kind of system do you need?" },
+    answers: { service: ["New website", "Online store", "Website redesign", "System or MVP", "AI automation"], new_site: ["Up to 5 pages", "With content management", "Larger or custom site"], site_update: ["Up to 5 pages", "With content management"], system: ["Product MVP", "Custom system"] },
+    prices: {
+      website_start: { title: "Website up to 5 pages", description: "A small business website without a content management system." },
+      website_business: { title: "Website with content management", description: "A multipage website you can update yourself." },
+      website_update_start: { title: "Small website redesign", description: "Redesign of up to 5 pages, including content migration." },
+      website_update_business: { title: "Website redesign with content management", description: "Multipage redesign with content management and technical SEO." },
+      website_quote: { title: "Larger or custom website", description: "A website with additional features or integrations." },
+      ecommerce: { title: "Online store", description: "Catalog, cart, payments and order management." },
+      web_system_mvp: { title: "Web application MVP", description: "The first version of your product with its core feature." },
+      web_system_quote: { title: "Custom web application", description: "Bookings, accounts, calculators or integrations." },
+      automation_quote: { title: "AI and process automation", description: "Priced according to the process and required integrations." },
+    },
+    timelines: { short: "1–2 weeks", medium: "2–4 weeks", long: "From 4 weeks", scope: "Depends on scope" },
+  },
+  pl: {
+    title: "SiteStudio", subtitle: "Doradca usług", launcher: "Porozmawiajmy", close: "Zamknij czat",
+    greeting: "Cześć! W czym możemy pomóc?", restartGreeting: "Zacznijmy od nowa. W czym możemy pomóc?",
+    loading: "Ładowanie cen…", loadError: "Nie udało się wczytać cen. Napisz do nas.", retry: "Spróbuj ponownie",
+    resultIntro: "Oto wstępna wycena:", noPrice: "Przygotujemy indywidualną wycenę tej usługi.", selection: "Twój wybór",
+    quote: "Wycena indywidualna", from: "Od", excludingVat: "Bez VAT", timeline: "Termin", proposal: "Otrzymaj ofertę", another: "Wybierz inną usługę",
+    emailUs: "Napisz e-mail", leadTitle: "Zostaw kontakt", leadIntro: "Odpowiemy w sprawie tej usługi i wyceny.",
+    name: "Imię", contact: "E-mail lub numer telefonu", contactPlaceholder: "imie@firma.pl lub +48…",
+    consent: "Zgadzam się na wykorzystanie moich danych kontaktowych do odpowiedzi na zapytanie.", privacy: "Polityka prywatności",
+    send: "Wyślij zapytanie", sending: "Wysyłanie…", back: "Wróć do wyceny", success: "Zapytanie wysłane",
+    successDetail: "Skontaktujemy się z Tobą pod wskazanym adresem lub numerem.", restart: "Rozpocznij nową rozmowę", submitError: "Nie udało się wysłać zapytania.", honeypot: "Pozostaw puste",
+    questions: { service: "W czym możemy pomóc?", new_site: "Jakiej strony potrzebujesz?", site_update: "Jaką zmianę planujesz?", system: "Jakiego systemu potrzebujesz?" },
+    answers: { service: ["Nowa strona", "Sklep internetowy", "Modernizacja strony", "System lub MVP", "Automatyzacja AI"], new_site: ["Do 5 podstron", "Z zarządzaniem treścią", "Większa lub indywidualna"], site_update: ["Do 5 podstron", "Z zarządzaniem treścią"], system: ["MVP produktu", "System indywidualny"] },
+    prices: {
+      website_start: { title: "Strona do 5 podstron", description: "Mała strona firmowa bez systemu zarządzania treścią." },
+      website_business: { title: "Strona z zarządzaniem treścią", description: "Wielostronicowa witryna, którą możesz samodzielnie aktualizować." },
+      website_update_start: { title: "Modernizacja małej strony", description: "Odświeżenie do 5 podstron wraz z przeniesieniem treści." },
+      website_update_business: { title: "Modernizacja strony z CMS", description: "Odświeżenie strony z CMS i technicznym SEO." },
+      website_quote: { title: "Większa lub indywidualna strona", description: "Strona z dodatkowymi funkcjami lub integracjami." },
+      ecommerce: { title: "Sklep internetowy", description: "Katalog, koszyk, płatności i obsługa zamówień." },
+      web_system_mvp: { title: "MVP aplikacji internetowej", description: "Pierwsza wersja produktu z główną funkcją." },
+      web_system_quote: { title: "Indywidualna aplikacja internetowa", description: "Rezerwacje, konta, kalkulatory lub integracje." },
+      automation_quote: { title: "AI i automatyzacja procesów", description: "Cena zależy od procesu i potrzebnych integracji." },
+    },
+    timelines: { short: "1–2 tygodnie", medium: "2–4 tygodnie", long: "Od 4 tygodni", scope: "Zależnie od zakresu" },
+  },
+  lv: {
+    title: "SiteStudio", subtitle: "Pakalpojumu konsultants", launcher: "Parunāsim", close: "Aizvērt tērzēšanu",
+    greeting: "Sveiki! Kā varam palīdzēt?", restartGreeting: "Sāksim no jauna. Kā varam palīdzēt?",
+    loading: "Ielādē cenas…", loadError: "Cenas neizdevās ielādēt. Rakstiet mums e-pastu.", retry: "Mēģināt vēlreiz",
+    resultIntro: "Lūk, aptuvena tāme:", noPrice: "Šim pakalpojumam sagatavosim individuālu tāmi.", selection: "Jūsu izvēle",
+    quote: "Individuāla tāme", from: "No", excludingVat: "Bez PVN", timeline: "Termiņš", proposal: "Saņemt piedāvājumu", another: "Izvēlēties citu pakalpojumu",
+    emailUs: "Rakstīt e-pastu", leadTitle: "Atstājiet kontaktus", leadIntro: "Sazināsimies par šo pakalpojumu un tāmi.",
+    name: "Vārds", contact: "E-pasts vai tālruņa numurs", contactPlaceholder: "vards@uznemums.lv vai +371…",
+    consent: "Piekrītu savu kontaktinformāciju izmantot atbildei uz pieprasījumu.", privacy: "Privātuma politika",
+    send: "Nosūtīt pieprasījumu", sending: "Sūta…", back: "Atpakaļ pie tāmes", success: "Pieprasījums nosūtīts",
+    successDetail: "Sazināsimies, izmantojot norādītos kontaktus.", restart: "Sākt jaunu sarunu", submitError: "Pieprasījumu neizdevās nosūtīt.", honeypot: "Atstājiet tukšu",
+    questions: { service: "Kā varam palīdzēt?", new_site: "Kāda veida vietne vajadzīga?", site_update: "Kādu atjauninājumu plānojat?", system: "Kāda sistēma vajadzīga?" },
+    answers: { service: ["Jauna vietne", "Interneta veikals", "Vietnes atjaunošana", "Sistēma vai MVP", "AI automatizācija"], new_site: ["Līdz 5 lapām", "Ar satura pārvaldību", "Lielāka vai individuāla"], site_update: ["Līdz 5 lapām", "Ar satura pārvaldību"], system: ["Produkta MVP", "Individuāla sistēma"] },
+    prices: {
+      website_start: { title: "Vietne līdz 5 lapām", description: "Neliela uzņēmuma vietne bez satura pārvaldības sistēmas." },
+      website_business: { title: "Vietne ar satura pārvaldību", description: "Vairāku lapu vietne, ko varat atjaunināt paši." },
+      website_update_start: { title: "Nelielas vietnes atjaunošana", description: "Līdz 5 lapu atjaunošana ar satura pārnešanu." },
+      website_update_business: { title: "Vietnes atjaunošana ar satura pārvaldību", description: "Atjaunošana ar satura pārvaldību un tehnisko SEO." },
+      website_quote: { title: "Lielāka vai individuāla vietne", description: "Vietne ar papildu funkcijām vai integrācijām." },
+      ecommerce: { title: "Interneta veikals", description: "Katalogs, grozs, maksājumi un pasūtījumu pārvaldība." },
+      web_system_mvp: { title: "Tīmekļa sistēmas MVP", description: "Produkta pirmā versija ar galveno funkciju." },
+      web_system_quote: { title: "Individuāla tīmekļa sistēma", description: "Rezervācijas, konti, kalkulatori vai integrācijas." },
+      automation_quote: { title: "AI un procesu automatizācija", description: "Cena atkarīga no procesa un nepieciešamajām integrācijām." },
+    },
+    timelines: { short: "1–2 nedēļas", medium: "2–4 nedēļas", long: "No 4 nedēļām", scope: "Atkarīgs no apjoma" },
+  },
+  et: {
+    title: "SiteStudio", subtitle: "Teenuste nõustaja", launcher: "Räägime", close: "Sulge vestlus",
+    greeting: "Tere! Kuidas saame aidata?", restartGreeting: "Alustame uuesti. Kuidas saame aidata?",
+    loading: "Hindade laadimine…", loadError: "Hindu ei õnnestunud laadida. Kirjutage meile.", retry: "Proovi uuesti",
+    resultIntro: "Siin on esialgne hinnang:", noPrice: "Selle teenuse jaoks koostame personaalse pakkumise.", selection: "Teie valik",
+    quote: "Personaalne pakkumine", from: "Alates", excludingVat: "KM-ta", timeline: "Tähtaeg", proposal: "Küsi pakkumist", another: "Vali teine teenus",
+    emailUs: "Saada e-kiri", leadTitle: "Jätke kontaktandmed", leadIntro: "Vastame selle teenuse ja hinnangu kohta.",
+    name: "Nimi", contact: "E-post või telefoninumber", contactPlaceholder: "nimi@ettevote.ee või +372…",
+    consent: "Nõustun oma kontaktandmete kasutamisega päringule vastamiseks.", privacy: "Privaatsuspoliitika",
+    send: "Saada päring", sending: "Saatmine…", back: "Tagasi hinnangu juurde", success: "Päring saadetud",
+    successDetail: "Võtame teiega antud kontaktidel ühendust.", restart: "Alusta uut vestlust", submitError: "Päringut ei õnnestunud saata.", honeypot: "Jätke tühjaks",
+    questions: { service: "Kuidas saame aidata?", new_site: "Millist veebilehte vajate?", site_update: "Millist uuendust plaanite?", system: "Millist süsteemi vajate?" },
+    answers: { service: ["Uus veebileht", "E-pood", "Veebilehe uuendamine", "Süsteem või MVP", "AI automatiseerimine"], new_site: ["Kuni 5 lehte", "Sisuhaldusega", "Suurem või erilahendus"], site_update: ["Kuni 5 lehte", "Sisuhaldusega"], system: ["Toote MVP", "Eritellimusel süsteem"] },
+    prices: {
+      website_start: { title: "Veebileht kuni 5 lehte", description: "Väike ettevõtte veebileht ilma sisuhaldussüsteemita." },
+      website_business: { title: "Sisuhaldusega veebileht", description: "Mitmeleheküljeline veebileht, mida saate ise uuendada." },
+      website_update_start: { title: "Väikese veebilehe uuendamine", description: "Kuni 5 lehe uuendus koos sisu üleviimisega." },
+      website_update_business: { title: "Sisuhaldusega veebilehe uuendamine", description: "Uuendus koos sisuhalduse ja tehnilise SEO-ga." },
+      website_quote: { title: "Suurem või eritellimusel veebileht", description: "Veebileht lisafunktsioonide või integratsioonidega." },
+      ecommerce: { title: "E-pood", description: "Kataloog, ostukorv, maksed ja tellimuste haldus." },
+      web_system_mvp: { title: "Veebirakenduse MVP", description: "Toote esimene versioon põhifunktsiooniga." },
+      web_system_quote: { title: "Eritellimusel veebirakendus", description: "Broneeringud, kontod, kalkulaatorid või integratsioonid." },
+      automation_quote: { title: "AI ja protsesside automatiseerimine", description: "Hind sõltub protsessist ja vajalikest integratsioonidest." },
+    },
+    timelines: { short: "1–2 nädalat", medium: "2–4 nädalat", long: "Alates 4 nädalast", scope: "Sõltub mahust" },
+  },
+  ru: {
+    title: "SiteStudio", subtitle: "Консультант по услугам", launcher: "Обсудить проект", close: "Закрыть чат",
+    greeting: "Здравствуйте! Чем можем помочь?", restartGreeting: "Начнём сначала. Чем можем помочь?",
+    loading: "Загружаем цены…", loadError: "Не удалось загрузить цены. Напишите нам.", retry: "Повторить",
+    resultIntro: "Вот предварительная оценка:", noPrice: "Для этой услуги подготовим индивидуальную оценку.", selection: "Ваш выбор",
+    quote: "Индивидуальная оценка", from: "От", excludingVat: "Без НДС", timeline: "Срок", proposal: "Получить предложение", another: "Выбрать другую услугу",
+    emailUs: "Написать нам", leadTitle: "Оставьте контакты", leadIntro: "Ответим по выбранной услуге и оценке.",
+    name: "Имя", contact: "Эл. почта или телефон", contactPlaceholder: "name@company.com или +370…",
+    consent: "Согласен на использование моих контактов для ответа на запрос.", privacy: "Политика конфиденциальности",
+    send: "Отправить запрос", sending: "Отправка…", back: "Вернуться к оценке", success: "Запрос отправлен",
+    successDetail: "Свяжемся с вами по указанным контактам.", restart: "Начать новый разговор", submitError: "Не удалось отправить запрос.", honeypot: "Оставьте пустым",
+    questions: { service: "Чем можем помочь?", new_site: "Какой сайт вам нужен?", site_update: "Какое обновление планируете?", system: "Какая система вам нужна?" },
+    answers: { service: ["Новый сайт", "Интернет-магазин", "Обновление сайта", "Система или MVP", "Автоматизация с AI"], new_site: ["До 5 страниц", "С управлением контентом", "Крупный или индивидуальный"], site_update: ["До 5 страниц", "С управлением контентом"], system: ["MVP продукта", "Индивидуальная система"] },
+    prices: {
+      website_start: { title: "Сайт до 5 страниц", description: "Небольшой сайт компании без системы управления контентом." },
+      website_business: { title: "Сайт с управлением контентом", description: "Многостраничный сайт, который вы сможете обновлять сами." },
+      website_update_start: { title: "Обновление небольшого сайта", description: "Обновление до 5 страниц с переносом контента." },
+      website_update_business: { title: "Обновление сайта с управлением контентом", description: "Обновление с управлением контентом и техническим SEO." },
+      website_quote: { title: "Крупный или индивидуальный сайт", description: "Сайт с дополнительными функциями или интеграциями." },
+      ecommerce: { title: "Интернет-магазин", description: "Каталог, корзина, платежи и управление заказами." },
+      web_system_mvp: { title: "MVP веб-приложения", description: "Первая версия продукта с основной функцией." },
+      web_system_quote: { title: "Индивидуальное веб-приложение", description: "Бронирование, аккаунты, калькуляторы или интеграции." },
+      automation_quote: { title: "AI и автоматизация процессов", description: "Стоимость зависит от процесса и необходимых интеграций." },
+    },
+    timelines: { short: "1–2 недели", medium: "2–4 недели", long: "От 4 недель", scope: "Зависит от объёма" },
+  },
+};
